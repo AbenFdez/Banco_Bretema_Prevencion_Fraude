@@ -1,0 +1,25 @@
+oficina_id,nombre,municipio,provincia,tipo
+OF-01,Santiago Centro,Santiago de Compostela,A Coruña,Sede central
+OF-02,Santiago Fontiñas,Santiago de Compostela,A Coruña,Urbana
+OF-03,A Coruña Cantón,A Coruña,A Coruña,Urbana
+OF-04,A Coruña Matogrande,A Coruña,A Coruña,Urbana
+OF-05,Ferrol,Ferrol,A Coruña,Urbana
+OF-06,Carballo,Carballo,A Coruña,Comarcal
+OF-07,Ribeira,Ribeira,A Coruña,Comarcal
+OF-08,Arteixo,Arteixo,A Coruña,Comarcal
+OF-09,Lugo Centro,Lugo,Lugo,Urbana
+OF-10,Monforte de Lemos,Monforte de Lemos,Lugo,Comarcal
+OF-11,Viveiro,Viveiro,Lugo,Comarcal
+OF-12,Vilalba,Vilalba,Lugo,Comarcal
+OF-13,Ourense Centro,Ourense,Ourense,Urbana
+OF-14,Ourense O Couto,Ourense,Ourense,Urbana
+OF-15,Verín,Verín,Ourense,Comarcal
+OF-16,O Barco de Valdeorras,O Barco de Valdeorras,Ourense,Comarcal
+OF-17,Pontevedra Centro,Pontevedra,Pontevedra,Urbana
+OF-18,Vigo Centro,Vigo,Pontevedra,Urbana
+OF-19,Vigo Bouzas,Vigo,Pontevedra,Urbana
+OF-20,Vigo Teis,Vigo,Pontevedra,Urbana
+OF-21,Vilagarcía de Arousa,Vilagarcía de Arousa,Pontevedra,Comarcal
+OF-22,Cangas,Cangas,Pontevedra,Comarcal
+OF-23,Lalín,Lalín,Pontevedra,Comarcal
+OF-24,Tui,Tui,Pontevedra,Comarcal

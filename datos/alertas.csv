@@ -1,0 +1,950 @@
+alerta_id,transaccion_id,tarjeta_id,cliente_id,fecha_hora,tipo_alerta,motivo,puntuacion_riesgo,prioridad,estado,resolucion,fecha_resolucion
+AL-00001,TX-0000098,TJ-002348,CL-01737,2026-06-01 09:43:29,Importe inusual,"Importe de 374,99 € frente a un gasto habitual de 50,87 € por operación",50,Baja,Cerrada,Falso positivo,2026-06-02 01:43:29
+AL-00002,TX-0000147,TJ-002352,CL-01740,2026-06-01 10:58:04,País inusual,"Primera compra en Portugal en los últimos 60 días: 70,05 € en Braga",50,Baja,Cerrada,Falso positivo,2026-06-01 13:58:04
+AL-00003,TX-0000198,TJ-002975,CL-02214,2026-06-01 11:45:47,País inusual,"Primera compra en Portugal en los últimos 60 días: 55,80 € en Viana do Castelo",65,Media,Cerrada,Falso positivo,2026-06-03 12:45:47
+AL-00004,TX-0000262,TJ-002554,CL-01894,2026-06-01 12:40:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 66,92 € en Valença",62,Media,Cerrada,Falso positivo,2026-06-03 10:40:46
+AL-00005,TX-0000261,TJ-001121,CL-00820,2026-06-01 12:41:35,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,69 € en Porto",60,Media,Cerrada,Falso positivo,2026-06-01 21:41:35
+AL-00006,TX-0000293,TJ-001431,CL-01051,2026-06-01 13:05:37,Importe inusual,"Importe de 723,74 € frente a un gasto habitual de 82,41 € por operación",59,Baja,Cerrada,Falso positivo,2026-06-02 07:05:37
+AL-00007,TX-0000332,TJ-002598,CL-01927,2026-06-01 13:37:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 242,09 € en Braga",64,Media,Cerrada,Falso positivo,2026-06-02 13:37:52
+AL-00008,TX-0000367,TJ-002612,CL-01936,2026-06-01 14:02:54,Comercio de alto riesgo,"Compra de 86,53 € en un comercio de tarjetas regalo (Lituania)",52,Baja,Cerrada,Falso positivo,2026-06-01 22:02:54
+AL-00009,TX-0000466,TJ-000486,CL-00345,2026-06-01 15:39:24,País inusual,"Primera compra en Portugal en los últimos 60 días: 51,81 € en Viana do Castelo",47,Baja,Cerrada,Falso positivo,2026-06-02 17:39:24
+AL-00010,TX-0000498,TJ-000150,CL-00108,2026-06-01 16:30:18,País inusual,"Primera compra en Portugal en los últimos 60 días: 25,09 € en Viana do Castelo",63,Media,Cerrada,Falso positivo,2026-06-02 17:30:18
+AL-00011,TX-0000516,TJ-002718,CL-02015,2026-06-01 16:46:04,País inusual,"Primera compra en Portugal en los últimos 60 días: 211,56 € en Viana do Castelo",47,Baja,Cerrada,Falso positivo,2026-06-03 16:46:04
+AL-00012,TX-0000700,TJ-003103,CL-02304,2026-06-01 19:14:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 153,96 € en Porto",51,Baja,Cerrada,Falso positivo,2026-06-02 10:14:58
+AL-00013,TX-0000718,TJ-001611,CL-01187,2026-06-01 19:32:37,País inusual,"Primera compra en Portugal en los últimos 60 días: 71,16 € en Chaves",36,Baja,Cerrada,Falso positivo,2026-06-02 09:32:37
+AL-00014,TX-0000748,TJ-001213,CL-00890,2026-06-01 19:59:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 44,38 € en Valença",46,Baja,Cerrada,Falso positivo,2026-06-02 10:59:50
+AL-00015,TX-0000762,TJ-001209,CL-00886,2026-06-01 20:13:48,Comercio de alto riesgo,"Compra de 143,01 € en un comercio de criptoactivos (Estonia)",72,Media,Cerrada,Falso positivo,2026-06-02 00:13:48
+AL-00016,TX-0000803,TJ-003084,CL-02291,2026-06-01 20:51:17,País inusual,"Primera compra en Portugal en los últimos 60 días: 218,24 € en Porto",64,Media,Cerrada,Falso positivo,2026-06-03 19:51:17
+AL-00017,TX-0000872,TJ-000590,CL-00428,2026-06-01 22:30:33,País inusual,"Primera compra en Portugal en los últimos 60 días: 577,68 € en Porto",55,Baja,Cerrada,Falso positivo,2026-06-02 21:30:33
+AL-00018,TX-0000909,TJ-002020,CL-01494,2026-06-02 06:26:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 196,07 € en Viana do Castelo",52,Baja,Cerrada,Falso positivo,2026-06-04 01:26:58
+AL-00019,TX-0001193,TJ-000298,CL-00208,2026-06-02 12:40:59,País inusual,"Primera compra en Portugal en los últimos 60 días: 141,83 € en Porto",57,Baja,Cerrada,Falso positivo,2026-06-02 16:40:59
+AL-00020,TX-0001201,TJ-001673,CL-01231,2026-06-02 12:47:15,País inusual,"Primera compra en Portugal en los últimos 60 días: 40,70 € en Chaves",52,Baja,Cerrada,Falso positivo,2026-06-02 15:47:15
+AL-00021,TX-0001216,TJ-000891,CL-00646,2026-06-02 12:53:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 54,04 € en Viana do Castelo",49,Baja,Cerrada,Falso positivo,2026-06-03 17:53:19
+AL-00022,TX-0001222,TJ-001825,CL-01343,2026-06-02 12:55:32,País inusual,"Primera compra en Portugal en los últimos 60 días: 32,33 € en Viana do Castelo",58,Baja,Cerrada,Falso positivo,2026-06-04 06:55:32
+AL-00023,TX-0001309,TJ-000803,CL-00580,2026-06-02 14:12:19,Importe inusual,"Importe de 1.199,05 € frente a un gasto habitual de 95,04 € por operación",65,Media,Cerrada,Falso positivo,2026-06-04 15:12:19
+AL-00024,TX-0001344,TJ-003117,CL-02312,2026-06-02 14:54:30,País inusual,"Primera compra en Portugal en los últimos 60 días: 35,48 € en Chaves",60,Media,Cerrada,Falso positivo,2026-06-03 00:54:30
+AL-00025,TX-0001369,TJ-002269,CL-01677,2026-06-02 15:22:31,País inusual,"Primera compra en Portugal en los últimos 60 días: 24,17 € en Braga",59,Baja,Cerrada,Falso positivo,2026-06-04 03:22:31
+AL-00026,TX-0001398,TJ-002851,CL-02116,2026-06-02 15:52:28,Importe inusual,"Importe de 695,46 € frente a un gasto habitual de 106,90 € por operación",64,Media,Cerrada,Falso positivo,2026-06-04 07:52:28
+AL-00027,TX-0001497,TJ-000579,CL-00420,2026-06-02 17:24:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 143,86 € en Porto",51,Baja,Cerrada,Falso positivo,2026-06-03 20:24:50
+AL-00028,TX-0001787,TJ-002594,CL-01925,2026-06-02 21:32:42,Comercio de alto riesgo,"Compra de 48,97 € en un comercio de tarjetas regalo (Chipre)",52,Baja,Cerrada,Falso positivo,2026-06-03 03:32:42
+AL-00029,TX-0001836,TJ-001578,CL-01160,2026-06-02 23:08:06,Importe inusual,"Importe de 517,73 € frente a un gasto habitual de 56,30 € por operación",57,Baja,Cerrada,Falso positivo,2026-06-04 18:08:06
+AL-00030,TX-0001890,TJ-000748,CL-00539,2026-06-03 08:00:32,País inusual,"Primera compra en Portugal en los últimos 60 días: 84,19 € en Viana do Castelo",41,Baja,Cerrada,Falso positivo,2026-06-04 23:00:32
+AL-00031,TX-0002286,TJ-001757,CL-01298,2026-06-03 15:15:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 69,38 € en Porto",49,Baja,Cerrada,Falso positivo,2026-06-05 00:15:50
+AL-00032,TX-0002401,TJ-000013,CL-00009,2026-06-03 16:53:18,Importe inusual,"Importe de 557,27 € frente a un gasto habitual de 46,64 € por operación",75,Media,Cerrada,Falso positivo,2026-06-05 13:53:18
+AL-00033,TX-0002460,TJ-002187,CL-01621,2026-06-03 17:47:06,Importe inusual,"Importe de 692,09 € frente a un gasto habitual de 93,23 € por operación",50,Baja,Cerrada,Falso positivo,2026-06-05 18:47:06
+AL-00034,TX-0002486,TJ-000294,CL-00205,2026-06-03 18:03:08,Importe inusual,"Importe de 356,19 € frente a un gasto habitual de 54,20 € por operación",85,Alta,Cerrada,Falso positivo,2026-06-05 06:03:08
+AL-00035,TX-0002504,TJ-000602,CL-00437,2026-06-03 18:16:49,Importe inusual,"Importe de 654,25 € frente a un gasto habitual de 53,36 € por operación",60,Media,Cerrada,Falso positivo,2026-06-03 20:16:49
+AL-00036,TX-0002602,TJ-000850,CL-00616,2026-06-03 19:18:09,Importe inusual,"Importe de 373,17 € frente a un gasto habitual de 50,00 € por operación",56,Baja,Cerrada,Falso positivo,2026-06-04 11:18:09
+AL-00037,TX-0002615,TJ-001241,CL-00909,2026-06-03 19:28:18,País inusual,"Primera compra en Portugal en los últimos 60 días: 148,15 € en Braga",50,Baja,Cerrada,Falso positivo,2026-06-04 17:28:18
+AL-00038,TX-0002784,TJ-002273,CL-01681,2026-06-03 22:43:26,País inusual,"Primera compra en Portugal en los últimos 60 días: 28,06 € en Braga",46,Baja,Cerrada,Falso positivo,2026-06-04 02:43:26
+AL-00039,TX-0002938,TJ-002742,CL-02030,2026-06-04 10:49:34,País inusual,"Primera compra en Portugal en los últimos 60 días: 46,22 € en Viana do Castelo",55,Baja,Cerrada,Falso positivo,2026-06-06 06:49:34
+AL-00040,TX-0003052,TJ-003189,CL-02364,2026-06-04 12:37:16,Comercio de alto riesgo,"Compra de 33,88 € en un comercio de tarjetas regalo (Chipre)",67,Media,Cerrada,Falso positivo,2026-06-04 14:37:16
+AL-00041,TX-0003269,TJ-000481,CL-00341,2026-06-04 15:56:26,País inusual,"Primera compra en Portugal en los últimos 60 días: 98,72 € en Chaves",51,Baja,Cerrada,Falso positivo,2026-06-05 21:56:26
+AL-00042,TX-0003349,TJ-000863,CL-00626,2026-06-04 17:19:56,País inusual,"Primera compra en Portugal en los últimos 60 días: 48,50 € en Viana do Castelo",43,Baja,Cerrada,Falso positivo,2026-06-06 00:19:56
+AL-00043,TX-0003377,TJ-000874,CL-00634,2026-06-04 17:38:10,Importe inusual,"Importe de 1.022,88 € frente a un gasto habitual de 65,03 € por operación",42,Baja,Cerrada,Falso positivo,2026-06-06 14:38:10
+AL-00044,TX-0003516,TJ-001923,CL-01421,2026-06-04 19:10:47,País inusual,"Primera compra en Portugal en los últimos 60 días: 114,02 € en Viana do Castelo",55,Baja,Cerrada,Falso positivo,2026-06-06 20:10:47
+AL-00045,TX-0003652,TJ-001902,CL-01405,2026-06-04 21:18:10,País inusual,"Primera compra en Portugal en los últimos 60 días: 65,02 € en Viana do Castelo",59,Baja,Cerrada,Falso positivo,2026-06-05 19:18:10
+AL-00046,TX-0003997,TJ-000455,CL-00322,2026-06-05 12:20:08,País inusual,"Primera compra en Portugal en los últimos 60 días: 40,70 € en Braga",52,Baja,Cerrada,Falso positivo,2026-06-05 17:20:08
+AL-00047,TX-0004117,TJ-002655,CL-01967,2026-06-05 13:41:47,Importe inusual,"Importe de 724,46 € frente a un gasto habitual de 44,37 € por operación",66,Media,Cerrada,Falso positivo,2026-06-05 19:41:47
+AL-00048,TX-0004362,TJ-002008,CL-01486,2026-06-05 17:49:07,Comercio de alto riesgo,"Compra de 139,02 € en un comercio de criptoactivos (Estonia)",54,Baja,Cerrada,Falso positivo,2026-06-07 00:49:07
+AL-00049,TX-0004402,TJ-000694,CL-00503,2026-06-05 18:25:59,País inusual,"Primera compra en Portugal en los últimos 60 días: 106,01 € en Porto",41,Baja,Cerrada,Falso positivo,2026-06-06 06:25:59
+AL-00050,TX-0004539,TJ-000539,CL-00392,2026-06-05 20:15:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 750,54 € en Porto",40,Baja,Cerrada,Falso positivo,2026-06-06 21:15:46
+AL-00051,TX-0004687,TJ-000128,CL-00090,2026-06-06 06:56:39,País inusual,"Primera compra en Portugal en los últimos 60 días: 13,37 € en Valença",50,Baja,Cerrada,Falso positivo,2026-06-07 23:56:39
+AL-00052,TX-0004745,TJ-001627,CL-01199,2026-06-06 09:10:05,País inusual,"Primera compra en Portugal en los últimos 60 días: 27,49 € en Braga",54,Baja,Cerrada,Falso positivo,2026-06-07 07:10:05
+AL-00053,TX-0004818,TJ-000732,CL-00529,2026-06-06 10:27:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 68,20 € en Braga",40,Baja,Cerrada,Falso positivo,2026-06-08 01:27:50
+AL-00054,TX-0004857,TJ-002421,CL-01798,2026-06-06 11:20:40,País inusual,"Primera compra en Portugal en los últimos 60 días: 113,53 € en Viana do Castelo",70,Media,Cerrada,Falso positivo,2026-06-06 17:20:40
+AL-00055,TX-0004887,TJ-003170,CL-02349,2026-06-06 11:56:06,País inusual,"Primera compra en Portugal en los últimos 60 días: 115,70 € en Chaves",68,Media,Cerrada,Falso positivo,2026-06-08 02:56:06
+AL-00056,TX-0004908,TJ-003205,CL-02375,2026-06-06 12:06:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 17,61 € en Braga",54,Baja,Cerrada,Falso positivo,2026-06-06 16:06:21
+AL-00057,TX-0005079,TJ-001665,CL-01226,2026-06-06 14:40:01,País inusual,"Primera compra en Portugal en los últimos 60 días: 33,61 € en Porto",52,Baja,Cerrada,Falso positivo,2026-06-08 12:40:01
+AL-00058,TX-0005084,TJ-002144,CL-01589,2026-06-06 14:48:49,País inusual,"Primera compra en Portugal en los últimos 60 días: 75,67 € en Braga",47,Baja,Cerrada,Falso positivo,2026-06-08 15:48:49
+AL-00059,TX-0005143,TJ-001523,CL-01120,2026-06-06 15:51:39,País inusual,"Primera compra en Portugal en los últimos 60 días: 29,73 € en Valença",43,Baja,Cerrada,Falso positivo,2026-06-08 10:51:39
+AL-00060,TX-0005259,TJ-001446,CL-01064,2026-06-06 17:57:02,Comercio de alto riesgo,"Compra de 193,77 € en un comercio de criptoactivos (Estonia)",50,Baja,Cerrada,Falso positivo,2026-06-08 10:57:02
+AL-00061,TX-0005439,TJ-002436,CL-01811,2026-06-06 20:38:14,País inusual,"Primera compra en Portugal en los últimos 60 días: 164,06 € en Porto",56,Baja,Cerrada,Falso positivo,2026-06-08 19:38:14
+AL-00062,TX-0005454,TJ-001193,CL-00875,2026-06-06 20:50:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 25,66 € en Viana do Castelo",52,Baja,Cerrada,Falso positivo,2026-06-06 23:50:21
+AL-00063,TX-0005476,TJ-002829,CL-02097,2026-06-06 21:11:25,País inusual,"Primera compra en Portugal en los últimos 60 días: 20,07 € en Viana do Castelo",35,Baja,Cerrada,Falso positivo,2026-06-08 01:11:25
+AL-00064,TX-0005587,TJ-001272,CL-00931,2026-06-07 08:15:38,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,41 € en Chaves",55,Baja,Cerrada,Falso positivo,2026-06-07 10:15:38
+AL-00065,TX-0005614,TJ-000232,CL-00164,2026-06-07 08:56:30,País inusual,"Primera compra en Portugal en los últimos 60 días: 51,13 € en Chaves",43,Baja,Cerrada,Falso positivo,2026-06-09 06:56:30
+AL-00066,TX-0005635,TJ-001629,CL-01201,2026-06-07 09:29:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 29,29 € en Valença",65,Media,Cerrada,Falso positivo,2026-06-08 22:29:52
+AL-00067,TX-0005652,TJ-001253,CL-00917,2026-06-07 09:59:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 28,84 € en Porto",53,Baja,Cerrada,Falso positivo,2026-06-08 16:59:52
+AL-00068,TX-0005712,TJ-001358,CL-00989,2026-06-07 11:14:15,País inusual,"Primera compra en Portugal en los últimos 60 días: 26,87 € en Valença",45,Baja,Cerrada,Falso positivo,2026-06-08 20:14:15
+AL-00069,TX-0005758,TJ-001587,CL-01168,2026-06-07 11:46:28,Importe inusual,"Importe de 468,85 € frente a un gasto habitual de 42,28 € por operación",61,Media,Cerrada,Falso positivo,2026-06-09 05:46:28
+AL-00070,TX-0005785,TJ-001791,CL-01321,2026-06-07 12:13:42,País inusual,"Primera compra en Portugal en los últimos 60 días: 56,28 € en Chaves",59,Baja,Cerrada,Falso positivo,2026-06-08 20:13:42
+AL-00071,TX-0005894,TJ-000240,CL-00172,2026-06-07 13:32:58,Importe inusual,"Importe de 735,06 € frente a un gasto habitual de 85,87 € por operación",58,Baja,Cerrada,Falso positivo,2026-06-07 23:32:58
+AL-00072,TX-0005902,TJ-001674,CL-01231,2026-06-07 13:38:45,País inusual,"Primera compra en Portugal en los últimos 60 días: 92,88 € en Viana do Castelo",61,Media,Cerrada,Falso positivo,2026-06-07 17:38:45
+AL-00073,TX-0005907,TJ-001362,CL-00994,2026-06-07 13:43:57,País inusual,"Primera compra en Portugal en los últimos 60 días: 38,10 € en Chaves",60,Media,Cerrada,Falso positivo,2026-06-08 12:43:57
+AL-00074,TX-0006014,TJ-003219,CL-02383,2026-06-07 15:53:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 37,06 € en Chaves",66,Media,Cerrada,Falso positivo,2026-06-09 05:53:20
+AL-00075,TX-0006069,TJ-000087,CL-00064,2026-06-07 16:48:13,Importe inusual,"Importe de 516,48 € frente a un gasto habitual de 53,49 € por operación",76,Media,Cerrada,Falso positivo,2026-06-09 13:48:13
+AL-00076,TX-0006191,TJ-002180,CL-01616,2026-06-07 18:38:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 41,66 € en Porto",46,Baja,Cerrada,Falso positivo,2026-06-08 08:38:46
+AL-00077,TX-0006224,TJ-001202,CL-00881,2026-06-07 19:02:23,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,77 € en Braga",48,Baja,Cerrada,Falso positivo,2026-06-08 12:02:23
+AL-00078,TX-0006287,TJ-000759,CL-00545,2026-06-07 19:56:53,Importe inusual,"Importe de 371,62 € frente a un gasto habitual de 47,77 € por operación",60,Media,Cerrada,Falso positivo,2026-06-08 19:56:53
+AL-00079,TX-0006329,TJ-002850,CL-02115,2026-06-07 20:40:54,Importe inusual,"Importe de 426,34 € frente a un gasto habitual de 39,61 € por operación",55,Baja,Cerrada,Falso positivo,2026-06-08 15:40:54
+AL-00080,TX-0006418,TJ-000750,CL-00540,2026-06-07 22:07:35,País inusual,"Primera compra en Portugal en los últimos 60 días: 16,10 € en Chaves",52,Baja,Cerrada,Falso positivo,2026-06-10 01:07:35
+AL-00081,TX-0006589,TJ-000898,CL-00651,2026-06-08 10:10:32,País inusual,"Primera compra en Portugal en los últimos 60 días: 54,70 € en Valença",66,Media,Cerrada,Falso positivo,2026-06-08 23:10:32
+AL-00082,TX-0006602,TJ-000354,CL-00249,2026-06-08 10:18:27,Comercio de alto riesgo,"Compra de 298,03 € en un comercio de criptoactivos (Estonia)",75,Media,Cerrada,Falso positivo,2026-06-09 00:18:27
+AL-00083,TX-0006611,TJ-001051,CL-00763,2026-06-08 10:31:55,País inusual,"Primera compra en Portugal en los últimos 60 días: 121,53 € en Porto",46,Baja,Cerrada,Falso positivo,2026-06-09 18:31:55
+AL-00084,TX-0006654,TJ-001762,CL-01301,2026-06-08 11:11:24,País inusual,"Primera compra en Portugal en los últimos 60 días: 59,52 € en Viana do Castelo",51,Baja,Cerrada,Falso positivo,2026-06-08 22:11:24
+AL-00085,TX-0006949,TJ-001822,CL-01341,2026-06-08 16:04:08,Comercio de alto riesgo,"Compra de 36,11 € en un comercio de tarjetas regalo (Lituania)",64,Media,Cerrada,Falso positivo,2026-06-08 20:04:08
+AL-00086,TX-0007095,TJ-001496,CL-01100,2026-06-08 18:12:37,País inusual,"Primera compra en Portugal en los últimos 60 días: 89,10 € en Valença",43,Baja,Cerrada,Falso positivo,2026-06-08 21:12:37
+AL-00087,TX-0007112,TJ-000957,CL-00692,2026-06-08 18:19:49,Comercio de alto riesgo,"Compra de 61,15 € en un comercio de tarjetas regalo (Chipre)",76,Media,Cerrada,Falso positivo,2026-06-10 04:19:49
+AL-00088,TX-0007133,TJ-003146,CL-02331,2026-06-08 18:38:21,Importe inusual,"Importe de 466,59 € frente a un gasto habitual de 62,61 € por operación",64,Media,Cerrada,Falso positivo,2026-06-10 03:38:21
+AL-00089,TX-0007264,TJ-001134,CL-00829,2026-06-08 20:17:56,País inusual,"Primera compra en Portugal en los últimos 60 días: 60,90 € en Valença",53,Baja,Cerrada,Falso positivo,2026-06-09 13:17:56
+AL-00090,TX-0007311,TJ-001527,CL-01123,2026-06-08 20:54:04,País inusual,"Primera compra en Portugal en los últimos 60 días: 75,89 € en Chaves",57,Baja,Cerrada,Falso positivo,2026-06-09 08:54:04
+AL-00091,TX-0007370,TJ-000404,CL-00286,2026-06-08 22:08:49,Importe inusual,"Importe de 445,12 € frente a un gasto habitual de 43,05 € por operación",51,Baja,Cerrada,Falso positivo,2026-06-09 21:08:49
+AL-00092,TX-0007474,TJ-002245,CL-01660,2026-06-09 09:06:17,País inusual,"Primera compra en Portugal en los últimos 60 días: 34,34 € en Viana do Castelo",59,Baja,Cerrada,Falso positivo,2026-06-10 08:06:17
+AL-00093,TX-0007670,TJ-001592,CL-01172,2026-06-09 12:21:38,Importe inusual,"Importe de 475,49 € frente a un gasto habitual de 68,54 € por operación",61,Media,Cerrada,Falso positivo,2026-06-11 08:21:38
+AL-00094,TX-0007716,TJ-001090,CL-00796,2026-06-09 12:55:24,Comercio de alto riesgo,"Compra de 209,74 € en un comercio de criptoactivos (Estonia)",57,Baja,Cerrada,Falso positivo,2026-06-10 10:55:24
+AL-00095,TX-0007921,TJ-001915,CL-01414,2026-06-09 16:06:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 43,88 € en Chaves",60,Media,Cerrada,Falso positivo,2026-06-09 21:06:43
+AL-00096,TX-0008058,TJ-002198,CL-01629,2026-06-09 17:58:55,Importe inusual,"Importe de 1.173,15 € frente a un gasto habitual de 83,34 € por operación",56,Baja,Cerrada,Falso positivo,2026-06-09 20:58:55
+AL-00097,TX-0008083,TJ-002781,CL-02061,2026-06-09 18:20:13,País inusual,"Primera compra en Portugal en los últimos 60 días: 25,84 € en Chaves",64,Media,Cerrada,Falso positivo,2026-06-11 16:20:13
+AL-00098,TX-0008270,TJ-000930,CL-00676,2026-06-09 21:09:33,País inusual,"Primera compra en Portugal en los últimos 60 días: 183,58 € en Braga",53,Baja,Cerrada,Falso positivo,2026-06-10 02:09:33
+AL-00099,TX-0008308,TJ-000215,CL-00154,2026-06-09 22:16:41,País inusual,"Primera compra en Portugal en los últimos 60 días: 32,46 € en Porto",58,Baja,Cerrada,Falso positivo,2026-06-10 14:16:41
+AL-00100,TX-0008332,TJ-000802,CL-00579,2026-06-09 23:35:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 30,65 € en Viana do Castelo",36,Baja,Cerrada,Falso positivo,2026-06-10 06:35:52
+AL-00101,TX-0008646,TJ-002704,CL-02004,2026-06-10 12:54:16,Importe inusual,"Importe de 531,76 € frente a un gasto habitual de 60,60 € por operación",77,Media,Cerrada,Falso positivo,2026-06-11 15:54:16
+AL-00102,TX-0008736,TJ-002700,CL-02000,2026-06-10 14:23:46,Importe inusual,"Importe de 439,04 € frente a un gasto habitual de 64,33 € por operación",58,Baja,Cerrada,Falso positivo,2026-06-12 11:23:46
+AL-00103,TX-0008740,TJ-003218,CL-02382,2026-06-10 14:28:34,Importe inusual,"Importe de 399,57 € frente a un gasto habitual de 55,38 € por operación",46,Baja,Cerrada,Falso positivo,2026-06-10 18:28:34
+AL-00104,TX-0008770,TJ-000334,CL-00235,2026-06-10 15:06:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 77,53 € en Porto",52,Baja,Cerrada,Falso positivo,2026-06-12 03:06:50
+AL-00105,TX-0009029,TJ-002019,CL-01494,2026-06-10 19:03:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 123,80 € en Viana do Castelo",35,Baja,Cerrada,Falso positivo,2026-06-11 06:03:50
+AL-00106,TX-0009108,TJ-002751,CL-02038,2026-06-10 20:13:48,Comercio de alto riesgo,"Compra de 50,76 € en un comercio de tarjetas regalo (Chipre)",70,Media,Cerrada,Falso positivo,2026-06-12 12:13:48
+AL-00107,TX-0009621,TJ-001717,CL-01266,2026-06-11 13:45:16,País inusual,"Primera compra en Portugal en los últimos 60 días: 130,65 € en Viana do Castelo",45,Baja,Cerrada,Falso positivo,2026-06-13 00:45:16
+AL-00108,TX-0009806,TJ-002278,CL-01686,2026-06-11 16:59:27,País inusual,"Primera compra en Portugal en los últimos 60 días: 24,21 € en Valença",53,Baja,Cerrada,Falso positivo,2026-06-12 15:59:27
+AL-00109,TX-0010466,TJ-002290,CL-01697,2026-06-12 12:39:40,País inusual,"Primera compra en Portugal en los últimos 60 días: 110,94 € en Porto",53,Baja,Cerrada,Falso positivo,2026-06-13 02:39:40
+AL-00110,TX-0010540,TJ-001509,CL-01111,2026-06-12 13:30:26,Comercio de alto riesgo,"Compra de 159,13 € en un comercio de criptoactivos (Estonia)",51,Baja,Cerrada,Falso positivo,2026-06-14 13:30:26
+AL-00111,TX-0010700,TJ-000787,CL-00566,2026-06-12 16:23:33,País inusual,"Primera compra en Portugal en los últimos 60 días: 167,87 € en Viana do Castelo",48,Baja,Cerrada,Falso positivo,2026-06-12 19:23:33
+AL-00112,TX-0010815,TJ-000313,CL-00218,2026-06-12 17:59:28,País inusual,"Primera compra en Portugal en los últimos 60 días: 27,61 € en Valença",44,Baja,Cerrada,Falso positivo,2026-06-14 07:59:28
+AL-00113,TX-0011242,TJ-000223,CL-00158,2026-06-13 10:23:31,Importe inusual,"Importe de 351,84 € frente a un gasto habitual de 51,98 € por operación",56,Baja,Cerrada,Falso positivo,2026-06-13 23:23:31
+AL-00114,TX-0011461,TJ-002246,CL-01661,2026-06-13 13:27:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 93,43 € en Chaves",42,Baja,Cerrada,Falso positivo,2026-06-14 11:27:52
+AL-00115,TX-0011459,TJ-003063,CL-02276,2026-06-13 13:28:59,País inusual,"Primera compra en Portugal en los últimos 60 días: 37,37 € en Porto",55,Baja,Cerrada,Falso positivo,2026-06-15 01:28:59
+AL-00116,TX-0011525,TJ-000617,CL-00447,2026-06-13 14:25:14,País inusual,"Primera compra en Portugal en los últimos 60 días: 49,07 € en Valença",63,Media,Cerrada,Falso positivo,2026-06-15 06:25:14
+AL-00117,TX-0011560,TJ-002037,CL-01506,2026-06-13 14:56:32,País inusual,"Primera compra en Portugal en los últimos 60 días: 35,69 € en Chaves",57,Baja,Cerrada,Falso positivo,2026-06-13 17:56:32
+AL-00118,TX-0011561,TJ-000576,CL-00418,2026-06-13 14:56:36,Comercio de alto riesgo,"Compra de 138,30 € en un comercio de tarjetas regalo (Lituania)",63,Media,Cerrada,Falso positivo,2026-06-14 04:56:36
+AL-00119,TX-0011591,TJ-001960,CL-01446,2026-06-13 15:35:07,Importe inusual,"Importe de 534,01 € frente a un gasto habitual de 71,04 € por operación",58,Baja,Cerrada,Falso positivo,2026-06-15 12:35:07
+AL-00120,TX-0011603,TJ-001842,CL-01359,2026-06-13 15:54:53,País inusual,"Primera compra en Portugal en los últimos 60 días: 60,53 € en Porto",55,Baja,Cerrada,Falso positivo,2026-06-14 16:54:53
+AL-00121,TX-0011615,TJ-001811,CL-01333,2026-06-13 16:06:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 63,86 € en Chaves",47,Baja,Cerrada,Falso positivo,2026-06-14 16:06:46
+AL-00122,TX-0011863,TJ-000684,CL-00496,2026-06-13 19:55:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 30,65 € en Braga",58,Baja,Cerrada,Falso positivo,2026-06-15 14:55:21
+AL-00123,TX-0011889,TJ-000563,CL-00409,2026-06-13 20:25:16,Importe inusual,"Importe de 638,56 € frente a un gasto habitual de 43,50 € por operación",60,Media,Cerrada,Falso positivo,2026-06-15 15:25:16
+AL-00124,TX-0011916,TJ-000274,CL-00192,2026-06-13 20:53:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 252,21 € en Braga",61,Media,Cerrada,Falso positivo,2026-06-14 02:53:46
+AL-00125,TX-0012137,TJ-002535,CL-01878,2026-06-14 10:50:01,Comercio de alto riesgo,"Compra de 47,82 € en un comercio de criptoactivos (Estonia)",58,Baja,Cerrada,Falso positivo,2026-06-16 02:50:01
+AL-00126,TX-0012163,TJ-002858,CL-02122,2026-06-14 11:18:48,Importe inusual,"Importe de 473,68 € frente a un gasto habitual de 49,27 € por operación",70,Media,Cerrada,Falso positivo,2026-06-15 06:18:48
+AL-00127,TX-0012255,TJ-000545,CL-00396,2026-06-14 12:49:58,Importe inusual,"Importe de 452,77 € frente a un gasto habitual de 52,14 € por operación",71,Media,Cerrada,Falso positivo,2026-06-16 07:49:58
+AL-00128,TX-0012624,TJ-000263,CL-00188,2026-06-14 18:18:37,País inusual,"Primera compra en Portugal en los últimos 60 días: 14,31 € en Porto",55,Baja,Cerrada,Falso positivo,2026-06-16 18:18:37
+AL-00129,TX-0012813,TJ-001912,CL-01413,2026-06-14 21:25:51,Importe inusual,"Importe de 755,20 € frente a un gasto habitual de 48,66 € por operación",66,Media,Cerrada,Falso positivo,2026-06-15 06:25:51
+AL-00130,TX-0012812,TJ-002349,CL-01738,2026-06-14 21:27:42,País inusual,"Primera compra en Portugal en los últimos 60 días: 293,96 € en Porto",44,Baja,Cerrada,Falso positivo,2026-06-17 00:27:42
+AL-00131,TX-0012926,TJ-001366,CL-00998,2026-06-15 08:30:52,Importe inusual,"Importe de 715,10 € frente a un gasto habitual de 51,26 € por operación",58,Baja,Cerrada,Falso positivo,2026-06-15 23:30:52
+AL-00132,TX-0012933,TJ-001172,CL-00860,2026-06-15 08:55:53,Importe inusual,"Importe de 1.384,06 € frente a un gasto habitual de 64,76 € por operación",50,Baja,Cerrada,Falso positivo,2026-06-17 06:55:53
+AL-00133,TX-0013083,TJ-000173,CL-00125,2026-06-15 11:30:47,País inusual,"Primera compra en Portugal en los últimos 60 días: 67,43 € en Valença",54,Baja,Cerrada,Falso positivo,2026-06-17 08:30:47
+AL-00134,TX-0013106,TJ-003062,CL-02276,2026-06-15 11:55:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 52,71 € en Chaves",55,Baja,Cerrada,Falso positivo,2026-06-16 21:55:21
+AL-00135,TX-0013131,TJ-001321,CL-00960,2026-06-15 12:14:47,País inusual,"Primera compra en Portugal en los últimos 60 días: 664,50 € en Porto",51,Baja,Cerrada,Falso positivo,2026-06-16 15:14:47
+AL-00136,TX-0013183,TJ-000371,CL-00263,2026-06-15 12:55:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 405,90 € en Porto",59,Baja,Cerrada,Falso positivo,2026-06-16 15:55:21
+AL-00137,TX-0013253,TJ-002941,CL-02189,2026-06-15 14:02:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 124,79 € en Porto",55,Baja,Cerrada,Falso positivo,2026-06-17 12:02:20
+AL-00138,TX-0013687,TJ-001175,CL-00863,2026-06-15 20:35:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 61,33 € en Chaves",58,Baja,Cerrada,Falso positivo,2026-06-16 22:35:46
+AL-00139,TX-0013877,TJ-002934,CL-02185,2026-06-16 09:14:12,Importe inusual,"Importe de 634,34 € frente a un gasto habitual de 60,77 € por operación",68,Media,Cerrada,Falso positivo,2026-06-16 20:14:12
+AL-00140,TX-0013910,TJ-000736,CL-00532,2026-06-16 10:13:01,Importe inusual,"Importe de 423,58 € frente a un gasto habitual de 50,00 € por operación",63,Media,Cerrada,Falso positivo,2026-06-17 21:13:01
+AL-00141,TX-0013925,TJ-003149,CL-02334,2026-06-16 10:29:57,Importe inusual,"Importe de 1.155,23 € frente a un gasto habitual de 50,55 € por operación",70,Media,Cerrada,Falso positivo,2026-06-18 13:29:57
+AL-00142,TX-0013987,TJ-002317,CL-01714,2026-06-16 11:19:15,Importe inusual,"Importe de 848,11 € frente a un gasto habitual de 50,19 € por operación",62,Media,Cerrada,Falso positivo,2026-06-18 05:19:15
+AL-00143,TX-0014088,TJ-001601,CL-01180,2026-06-16 12:36:04,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,57 € en Valença",42,Baja,Cerrada,Falso positivo,2026-06-18 04:36:04
+AL-00144,TX-0014099,TJ-000431,CL-00306,2026-06-16 12:45:08,País inusual,"Primera compra en Portugal en los últimos 60 días: 38,61 € en Valença",46,Baja,Cerrada,Falso positivo,2026-06-16 18:45:08
+AL-00145,TX-0014157,TJ-002922,CL-02175,2026-06-16 13:42:23,País inusual,"Primera compra en Portugal en los últimos 60 días: 34,51 € en Viana do Castelo",53,Baja,Cerrada,Falso positivo,2026-06-18 06:42:23
+AL-00146,TX-0014179,TJ-001550,CL-01140,2026-06-16 14:07:48,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,96 € en Chaves",51,Baja,Cerrada,Falso positivo,2026-06-18 12:07:48
+AL-00147,TX-0014267,TJ-001867,CL-01377,2026-06-16 15:56:17,País inusual,"Primera compra en Portugal en los últimos 60 días: 27,86 € en Valença",49,Baja,Cerrada,Falso positivo,2026-06-17 05:56:17
+AL-00148,TX-0014275,TJ-000971,CL-00703,2026-06-16 15:58:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 82,77 € en Porto",64,Media,Cerrada,Falso positivo,2026-06-18 01:58:19
+AL-00149,TX-0014337,TJ-001041,CL-00757,2026-06-16 17:09:23,País inusual,"Primera compra en Portugal en los últimos 60 días: 26,71 € en Braga",53,Baja,Cerrada,Falso positivo,2026-06-17 20:09:23
+AL-00150,TX-0014550,TJ-000939,CL-00681,2026-06-16 20:03:59,País inusual,"Primera compra en Portugal en los últimos 60 días: 193,12 € en Porto",50,Baja,Cerrada,Falso positivo,2026-06-18 13:03:59
+AL-00151,TX-0014591,TJ-001802,CL-01327,2026-06-16 20:34:15,País inusual,"Primera compra en Portugal en los últimos 60 días: 46,90 € en Valença",57,Baja,Cerrada,Falso positivo,2026-06-18 13:34:15
+AL-00152,TX-0014622,TJ-000733,CL-00529,2026-06-16 21:03:56,País inusual,"Primera compra en Portugal en los últimos 60 días: 74,93 € en Porto",64,Media,Cerrada,Falso positivo,2026-06-17 08:03:56
+AL-00153,TX-0014680,TJ-002993,CL-02225,2026-06-16 22:34:54,País inusual,"Primera compra en Portugal en los últimos 60 días: 47,80 € en Chaves",75,Media,Cerrada,Falso positivo,2026-06-17 17:34:54
+AL-00154,TX-0014705,TJ-000511,CL-00363,2026-06-17 00:32:58,Importe inusual,"Importe de 586,57 € frente a un gasto habitual de 95,88 € por operación",55,Baja,Cerrada,Falso positivo,2026-06-17 05:32:58
+AL-00155,TX-0014743,TJ-001477,CL-01086,2026-06-17 07:35:12,País inusual,"Primera compra en Portugal en los últimos 60 días: 334,60 € en Viana do Castelo",51,Baja,Cerrada,Falso positivo,2026-06-19 05:35:12
+AL-00156,TX-0014747,TJ-001124,CL-00822,2026-06-17 07:46:56,País inusual,"Primera compra en Portugal en los últimos 60 días: 178,06 € en Viana do Castelo",69,Media,Cerrada,Falso positivo,2026-06-18 14:46:56
+AL-00157,TX-0014751,TJ-000226,CL-00160,2026-06-17 07:56:27,País inusual,"Primera compra en Portugal en los últimos 60 días: 222,49 € en Braga",65,Media,Cerrada,Falso positivo,2026-06-18 15:56:27
+AL-00158,TX-0014909,TJ-001416,CL-01039,2026-06-17 11:07:34,Importe inusual,"Importe de 580,87 € frente a un gasto habitual de 53,35 € por operación",58,Baja,Cerrada,Falso positivo,2026-06-19 01:07:34
+AL-00159,TX-0014982,TJ-001174,CL-00862,2026-06-17 12:08:38,País inusual,"Primera compra en Portugal en los últimos 60 días: 76,35 € en Valença",50,Baja,Cerrada,Falso positivo,2026-06-17 16:08:38
+AL-00160,TX-0015115,TJ-000299,CL-00209,2026-06-17 13:57:17,Importe inusual,"Importe de 422,88 € frente a un gasto habitual de 68,10 € por operación",53,Baja,Cerrada,Falso positivo,2026-06-19 04:57:17
+AL-00161,TX-0015560,TJ-002338,CL-01729,2026-06-17 21:03:59,Importe inusual,"Importe de 522,20 € frente a un gasto habitual de 43,32 € por operación",48,Baja,Cerrada,Falso positivo,2026-06-18 16:03:59
+AL-00162,TX-0015561,TJ-002379,CL-01761,2026-06-17 21:07:00,País inusual,"Primera compra en Portugal en los últimos 60 días: 404,14 € en Braga",52,Baja,Cerrada,Falso positivo,2026-06-19 02:07:00
+AL-00163,TX-0015566,TJ-000104,CL-00076,2026-06-17 21:10:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 63,15 € en Valença",44,Baja,Cerrada,Falso positivo,2026-06-18 12:10:50
+AL-00164,TX-0015635,TJ-000906,CL-00658,2026-06-18 03:16:47,Comercio de alto riesgo,"Compra de 726,06 € en un comercio de tarjetas regalo (Lituania) a las 03:13",82,Alta,Cerrada,Fraude confirmado,2026-06-19 08:16:47
+AL-00165,TX-0015828,TJ-002255,CL-01667,2026-06-18 11:33:40,Importe inusual,"Importe de 588,65 € frente a un gasto habitual de 95,26 € por operación",64,Media,Cerrada,Falso positivo,2026-06-20 01:33:40
+AL-00166,TX-0015886,TJ-002539,CL-01881,2026-06-18 12:28:47,Importe inusual,"Importe de 662,51 € frente a un gasto habitual de 49,82 € por operación",65,Media,Cerrada,Falso positivo,2026-06-19 03:28:47
+AL-00167,TX-0015891,TJ-000868,CL-00630,2026-06-18 12:28:47,País inusual,"Primera compra en Portugal en los últimos 60 días: 77,13 € en Valença",51,Baja,Cerrada,Falso positivo,2026-06-19 23:28:47
+AL-00168,TX-0016383,TJ-000861,CL-00625,2026-06-18 20:17:08,País inusual,"Primera compra en Portugal en los últimos 60 días: 30,84 € en Chaves",47,Baja,Cerrada,Falso positivo,2026-06-20 01:17:08
+AL-00169,TX-0016419,TJ-002831,CL-02098,2026-06-18 20:55:10,País inusual,"Primera compra en Portugal en los últimos 60 días: 117,59 € en Chaves",35,Baja,Cerrada,Falso positivo,2026-06-19 04:55:10
+AL-00170,TX-0016457,TJ-002280,CL-01687,2026-06-18 21:32:47,País inusual,"Primera compra en Portugal en los últimos 60 días: 236,71 € en Viana do Castelo",35,Baja,Cerrada,Falso positivo,2026-06-20 18:32:47
+AL-00171,TX-0016620,TJ-002337,CL-01729,2026-06-19 09:52:37,País inusual,"Primera compra en Portugal en los últimos 60 días: 36,22 € en Braga",60,Media,Cerrada,Falso positivo,2026-06-19 15:52:37
+AL-00172,TX-0016752,TJ-000328,CL-00230,2026-06-19 12:19:16,País inusual,"Primera compra en Portugal en los últimos 60 días: 61,62 € en Braga",61,Media,Cerrada,Falso positivo,2026-06-21 12:19:16
+AL-00173,TX-0016785,TJ-002399,CL-01778,2026-06-19 12:50:03,País inusual,"Primera compra en Portugal en los últimos 60 días: 67,26 € en Valença",49,Baja,Cerrada,Falso positivo,2026-06-20 08:50:03
+AL-00174,TX-0016794,TJ-000416,CL-00296,2026-06-19 12:57:28,Importe inusual,"Importe de 772,51 € frente a un gasto habitual de 56,54 € por operación",65,Media,Cerrada,Falso positivo,2026-06-20 10:57:28
+AL-00175,TX-0016895,TJ-003192,CL-02366,2026-06-19 14:21:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 25,98 € en Porto",50,Baja,Cerrada,Falso positivo,2026-06-20 05:21:50
+AL-00176,TX-0016907,TJ-001994,CL-01475,2026-06-19 14:33:05,País inusual,"Primera compra en Portugal en los últimos 60 días: 13,89 € en Valença",44,Baja,Cerrada,Falso positivo,2026-06-21 02:33:05
+AL-00177,TX-0017039,TJ-000929,CL-00675,2026-06-19 17:03:33,País inusual,"Primera compra en Portugal en los últimos 60 días: 95,73 € en Braga",47,Baja,Cerrada,Falso positivo,2026-06-21 09:03:33
+AL-00178,TX-0017109,TJ-002945,CL-02191,2026-06-19 18:04:22,País inusual,"Primera compra en Portugal en los últimos 60 días: 258,72 € en Braga",55,Baja,Cerrada,Falso positivo,2026-06-21 14:04:22
+AL-00179,TX-0017167,TJ-001466,CL-01077,2026-06-19 18:50:26,País inusual,"Primera compra en Portugal en los últimos 60 días: 48,16 € en Porto",52,Baja,Cerrada,Falso positivo,2026-06-21 08:50:26
+AL-00180,TX-0017180,TJ-000931,CL-00676,2026-06-19 19:06:52,Comercio de alto riesgo,"Compra de 61,40 € en un comercio de tarjetas regalo (Chipre)",57,Baja,Cerrada,Falso positivo,2026-06-21 01:06:52
+AL-00181,TX-0017498,TJ-001172,CL-00860,2026-06-20 08:28:06,País inusual,"Primera compra en Portugal en los últimos 60 días: 136,99 € en Porto",55,Baja,Cerrada,Falso positivo,2026-06-22 02:28:06
+AL-00182,TX-0017842,TJ-002498,CL-01853,2026-06-20 14:36:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 47,98 € en Braga",47,Baja,Cerrada,Falso positivo,2026-06-22 17:36:21
+AL-00183,TX-0017942,TJ-001470,CL-01080,2026-06-20 16:31:33,Importe inusual,"Importe de 411,59 € frente a un gasto habitual de 45,53 € por operación",66,Media,Cerrada,Falso positivo,2026-06-21 04:31:33
+AL-00184,TX-0018018,TJ-000042,CL-00030,2026-06-20 17:52:30,País inusual,"Primera compra en Portugal en los últimos 60 días: 118,62 € en Valença",63,Media,Cerrada,Falso positivo,2026-06-20 22:52:30
+AL-00185,TX-0018023,TJ-000839,CL-00607,2026-06-20 17:59:06,País inusual,"Primera compra en Portugal en los últimos 60 días: 204,07 € en Braga",47,Baja,Cerrada,Falso positivo,2026-06-21 22:59:06
+AL-00186,TX-0018037,TJ-001624,CL-01196,2026-06-20 18:11:29,País inusual,"Primera compra en Portugal en los últimos 60 días: 97,24 € en Valença",59,Baja,Cerrada,Falso positivo,2026-06-20 20:11:29
+AL-00187,TX-0018075,TJ-002690,CL-01993,2026-06-20 18:37:12,País inusual,"Primera compra en Portugal en los últimos 60 días: 21,63 € en Chaves",49,Baja,Cerrada,Falso positivo,2026-06-21 01:37:12
+AL-00188,TX-0018182,TJ-002991,CL-02224,2026-06-20 20:00:23,País inusual,"Primera compra en Portugal en los últimos 60 días: 57,79 € en Porto",44,Baja,Cerrada,Falso positivo,2026-06-21 08:00:23
+AL-00189,TX-0018320,TJ-000317,CL-00221,2026-06-20 22:34:11,País inusual,"Primera compra en Portugal en los últimos 60 días: 67,57 € en Braga",57,Baja,Cerrada,Falso positivo,2026-06-21 04:34:11
+AL-00190,TX-0018358,TJ-001603,CL-01181,2026-06-21 01:23:35,Comercio de alto riesgo,"Compra de 221,54 € en un comercio de tarjetas regalo (Chipre)",55,Baja,Cerrada,Falso positivo,2026-06-22 11:23:35
+AL-00191,TX-0018526,TJ-001085,CL-00792,2026-06-21 10:46:38,País inusual,"Primera compra en Portugal en los últimos 60 días: 25,51 € en Chaves",48,Baja,Cerrada,Falso positivo,2026-06-23 05:46:38
+AL-00192,TX-0018641,TJ-001021,CL-00741,2026-06-21 12:58:33,País inusual,"Primera compra en Portugal en los últimos 60 días: 60,10 € en Braga",70,Media,Cerrada,Falso positivo,2026-06-23 03:58:33
+AL-00193,TX-0018890,TJ-000788,CL-00567,2026-06-21 16:49:02,País inusual,"Primera compra en Portugal en los últimos 60 días: 70,06 € en Chaves",48,Baja,Cerrada,Falso positivo,2026-06-23 00:49:02
+AL-00194,TX-0018952,TJ-001911,CL-01412,2026-06-21 17:38:22,País inusual,"Primera compra en Portugal en los últimos 60 días: 124,42 € en Porto",70,Media,Cerrada,Falso positivo,2026-06-22 19:38:22
+AL-00195,TX-0018960,TJ-002493,CL-01850,2026-06-21 17:42:54,País inusual,"Primera compra en Portugal en los últimos 60 días: 58,13 € en Chaves",50,Baja,Cerrada,Falso positivo,2026-06-21 20:42:54
+AL-00196,TX-0018991,TJ-002059,CL-01524,2026-06-21 18:10:02,Importe inusual,"Importe de 497,00 € frente a un gasto habitual de 54,41 € por operación",64,Media,Cerrada,Falso positivo,2026-06-22 14:10:02
+AL-00197,TX-0019143,TJ-003226,CL-02389,2026-06-21 20:23:02,Importe inusual,"Importe de 461,70 € frente a un gasto habitual de 48,44 € por operación",68,Media,Cerrada,Falso positivo,2026-06-23 22:23:02
+AL-00198,TX-0019218,TJ-000241,CL-00172,2026-06-21 21:30:24,Importe inusual,"Importe de 606,37 € frente a un gasto habitual de 79,59 € por operación",79,Media,Cerrada,Falso positivo,2026-06-22 06:30:24
+AL-00199,TX-0019289,TJ-000791,CL-00570,2026-06-22 06:15:09,Importe inusual,"Importe de 702,48 € frente a un gasto habitual de 53,33 € por operación",64,Media,Cerrada,Falso positivo,2026-06-23 20:15:09
+AL-00200,TX-0019409,TJ-001325,CL-00963,2026-06-22 10:31:03,País inusual,"Primera compra en Portugal en los últimos 60 días: 136,21 € en Braga",44,Baja,Cerrada,Falso positivo,2026-06-22 16:31:03
+AL-00201,TX-0019469,TJ-003124,CL-02317,2026-06-22 11:28:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 148,34 € en Viana do Castelo",35,Baja,Cerrada,Falso positivo,2026-06-24 02:28:58
+AL-00202,TX-0019567,TJ-001855,CL-01368,2026-06-22 12:47:59,País inusual,"Primera compra en Portugal en los últimos 60 días: 147,46 € en Porto",64,Media,Cerrada,Falso positivo,2026-06-23 19:47:59
+AL-00203,TX-0019752,TJ-001427,CL-01049,2026-06-22 15:49:26,Importe inusual,"Importe de 637,64 € frente a un gasto habitual de 50,23 € por operación",53,Baja,Cerrada,Falso positivo,2026-06-23 20:49:26
+AL-00204,TX-0019797,TJ-001647,CL-01211,2026-06-22 16:44:44,País inusual,"Primera compra en Portugal en los últimos 60 días: 49,44 € en Chaves",54,Baja,Cerrada,Falso positivo,2026-06-23 13:44:44
+AL-00205,TX-0019864,TJ-000655,CL-00475,2026-06-22 17:38:26,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,61 € en Valença",46,Baja,Cerrada,Falso positivo,2026-06-24 12:38:26
+AL-00206,TX-0019876,TJ-001738,CL-01282,2026-06-22 17:53:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 123,55 € en Valença",55,Baja,Cerrada,Falso positivo,2026-06-24 11:53:20
+AL-00207,TX-0019894,TJ-003099,CL-02301,2026-06-22 18:00:53,País inusual,"Primera compra en Portugal en los últimos 60 días: 49,38 € en Porto",64,Media,Cerrada,Falso positivo,2026-06-23 08:00:53
+AL-00208,TX-0019972,TJ-002790,CL-02068,2026-06-22 19:07:27,País inusual,"Primera compra en Portugal en los últimos 60 días: 61,06 € en Valença",57,Baja,Cerrada,Falso positivo,2026-06-23 16:07:27
+AL-00209,TX-0020059,TJ-001300,CL-00949,2026-06-22 20:18:09,Importe inusual,"Importe de 502,87 € frente a un gasto habitual de 63,20 € por operación",85,Alta,Cerrada,Falso positivo,2026-06-23 14:18:09
+AL-00210,TX-0020117,TJ-000933,CL-00678,2026-06-22 21:28:06,País inusual,"Primera compra en Portugal en los últimos 60 días: 159,33 € en Porto",59,Baja,Cerrada,Falso positivo,2026-06-24 09:28:06
+AL-00211,TX-0020284,TJ-001165,CL-00854,2026-06-23 09:50:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 53,78 € en Porto",55,Baja,Cerrada,Falso positivo,2026-06-25 02:50:20
+AL-00212,TX-0020330,TJ-002507,CL-01858,2026-06-23 10:50:34,País inusual,"Primera compra en Portugal en los últimos 60 días: 39,08 € en Chaves",76,Media,Cerrada,Falso positivo,2026-06-25 09:50:34
+AL-00213,TX-0020337,TJ-002917,CL-02171,2026-06-23 10:55:01,Importe inusual,"Importe de 479,60 € frente a un gasto habitual de 64,87 € por operación",60,Media,Cerrada,Falso positivo,2026-06-25 12:55:01
+AL-00214,TX-0020406,TJ-001854,CL-01367,2026-06-23 11:55:05,País inusual,"Primera compra en Portugal en los últimos 60 días: 32,72 € en Viana do Castelo",44,Baja,Cerrada,Falso positivo,2026-06-25 00:55:05
+AL-00215,TX-0020506,TJ-000388,CL-00276,2026-06-23 13:17:57,País inusual,"Primera compra en Portugal en los últimos 60 días: 67,48 € en Valença",45,Baja,Cerrada,Falso positivo,2026-06-24 22:17:57
+AL-00216,TX-0020569,TJ-000736,CL-00532,2026-06-23 14:17:32,Importe inusual,"Importe de 372,99 € frente a un gasto habitual de 50,00 € por operación",74,Media,Cerrada,Falso positivo,2026-06-24 09:17:32
+AL-00217,TX-0020595,TJ-002668,CL-01976,2026-06-23 14:41:39,País inusual,"Primera compra en Portugal en los últimos 60 días: 40,24 € en Valença",59,Baja,Cerrada,Falso positivo,2026-06-24 14:41:39
+AL-00218,TX-0020641,TJ-001334,CL-00969,2026-06-23 15:51:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 168,67 € en Porto",59,Baja,Cerrada,Falso positivo,2026-06-25 18:51:52
+AL-00219,TX-0020787,TJ-001110,CL-00810,2026-06-23 18:09:42,Importe inusual,"Importe de 503,67 € frente a un gasto habitual de 53,11 € por operación",79,Media,Cerrada,Falso positivo,2026-06-25 00:09:42
+AL-00220,TX-0020932,TJ-003229,CL-02391,2026-06-23 20:01:02,País inusual,"Primera compra en Portugal en los últimos 60 días: 74,58 € en Porto",54,Baja,Cerrada,Falso positivo,2026-06-24 06:01:02
+AL-00221,TX-0021044,TJ-001894,CL-01398,2026-06-23 22:48:15,País inusual,"Primera compra en Portugal en los últimos 60 días: 53,36 € en Valença",50,Baja,Cerrada,Falso positivo,2026-06-24 07:48:15
+AL-00222,TX-0021056,TJ-001324,CL-00962,2026-06-23 23:48:33,País inusual,"Primera compra en Portugal en los últimos 60 días: 22,86 € en Braga",35,Baja,Cerrada,Falso positivo,2026-06-24 02:48:33
+AL-00223,TX-0021067,TJ-001028,CL-00748,2026-06-24 04:34:52,Comercio de alto riesgo,"Compra de 257,87 € en un comercio de tarjetas regalo (Estados Unidos) a las 04:30",82,Alta,Cerrada,Fraude confirmado,2026-06-25 11:34:52
+AL-00224,TX-0021143,TJ-001274,CL-00932,2026-06-24 09:24:44,País inusual,"Primera compra en Portugal en los últimos 60 días: 26,84 € en Valença",45,Baja,Cerrada,Falso positivo,2026-06-24 13:24:44
+AL-00225,TX-0021318,TJ-000501,CL-00355,2026-06-24 12:42:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 16,98 € en Viana do Castelo",59,Baja,Cerrada,Falso positivo,2026-06-26 03:42:52
+AL-00226,TX-0021605,TJ-002017,CL-01493,2026-06-24 17:37:03,País inusual,"Primera compra en Portugal en los últimos 60 días: 41,44 € en Chaves",53,Baja,Cerrada,Falso positivo,2026-06-25 15:37:03
+AL-00227,TX-0021733,TJ-001200,CL-00880,2026-06-24 19:29:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 122,84 € en Braga",54,Baja,Cerrada,Falso positivo,2026-06-26 00:29:19
+AL-00228,TX-0021991,TJ-000443,CL-00313,2026-06-25 08:55:28,País inusual,"Primera compra en Portugal en los últimos 60 días: 202,11 € en Viana do Castelo",58,Baja,Cerrada,Falso positivo,2026-06-27 08:55:28
+AL-00229,TX-0022086,TJ-000524,CL-00378,2026-06-25 10:40:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 209,72 € en Viana do Castelo",59,Baja,Cerrada,Falso positivo,2026-06-26 07:40:20
+AL-00230,TX-0022098,TJ-002599,CL-01928,2026-06-25 10:53:28,País inusual,"Primera compra en Portugal en los últimos 60 días: 21,61 € en Valença",45,Baja,Cerrada,Falso positivo,2026-06-26 18:53:28
+AL-00231,TX-0022130,TJ-000794,CL-00573,2026-06-25 11:21:53,País inusual,"Primera compra en Portugal en los últimos 60 días: 88,23 € en Braga",36,Baja,Cerrada,Falso positivo,2026-06-27 07:21:53
+AL-00232,TX-0022406,TJ-002095,CL-01554,2026-06-25 15:46:22,País inusual,"Primera compra en Portugal en los últimos 60 días: 39,93 € en Valença",46,Baja,Cerrada,Falso positivo,2026-06-26 15:46:22
+AL-00233,TX-0022438,TJ-002324,CL-01718,2026-06-25 16:21:53,País inusual,"Primera compra en Portugal en los últimos 60 días: 46,40 € en Chaves",60,Media,Cerrada,Falso positivo,2026-06-27 10:21:53
+AL-00234,TX-0022481,TJ-003206,CL-02376,2026-06-25 16:59:02,Comercio de alto riesgo,"Compra de 208,23 € en un comercio de joyería (Emiratos Árabes Unidos)",53,Baja,Cerrada,Falso positivo,2026-06-27 06:59:02
+AL-00235,TX-0022545,TJ-001003,CL-00728,2026-06-25 17:50:05,País inusual,"Primera compra en Portugal en los últimos 60 días: 50,27 € en Valença",50,Baja,Cerrada,Falso positivo,2026-06-26 08:50:05
+AL-00236,TX-0022769,TJ-000857,CL-00621,2026-06-25 20:57:27,País inusual,"Primera compra en Portugal en los últimos 60 días: 28,83 € en Valença",40,Baja,Cerrada,Falso positivo,2026-06-26 22:57:27
+AL-00237,TX-0023013,TJ-000025,CL-00018,2026-06-26 11:02:29,País inusual,"Primera compra en Portugal en los últimos 60 días: 204,17 € en Braga",70,Media,Cerrada,Falso positivo,2026-06-26 17:02:29
+AL-00238,TX-0023143,TJ-001385,CL-01012,2026-06-26 12:53:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 29,52 € en Valença",61,Media,Cerrada,Falso positivo,2026-06-28 11:53:43
+AL-00239,TX-0023976,TJ-001769,CL-01307,2026-06-27 11:50:05,País inusual,"Primera compra en Portugal en los últimos 60 días: 57,32 € en Chaves",37,Baja,Cerrada,Falso positivo,2026-06-29 07:50:05
+AL-00240,TX-0023989,TJ-001323,CL-00961,2026-06-27 12:06:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 68,45 € en Valença",57,Baja,Cerrada,Falso positivo,2026-06-29 13:06:50
+AL-00241,TX-0024230,TJ-001619,CL-01195,2026-06-27 16:02:11,Importe inusual,"Importe de 393,98 € frente a un gasto habitual de 47,85 € por operación",58,Baja,Cerrada,Falso positivo,2026-06-29 12:02:11
+AL-00242,TX-0024289,TJ-001473,CL-01082,2026-06-27 16:51:41,Comercio de alto riesgo,"Compra de 154,27 € en un comercio de joyería (Emiratos Árabes Unidos)",60,Media,Cerrada,Falso positivo,2026-06-28 07:51:41
+AL-00243,TX-0024476,TJ-002710,CL-02009,2026-06-27 19:19:53,País inusual,"Primera compra en Portugal en los últimos 60 días: 164,27 € en Braga",43,Baja,Cerrada,Falso positivo,2026-06-28 22:19:53
+AL-00244,TX-0024521,TJ-002525,CL-01871,2026-06-27 19:42:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 360,69 € en Porto",62,Media,Cerrada,Falso positivo,2026-06-29 20:42:43
+AL-00245,TX-0024689,TJ-002359,CL-01748,2026-06-27 23:54:07,País inusual,"Primera compra en Portugal en los últimos 60 días: 36,91 € en Braga",57,Baja,Cerrada,Falso positivo,2026-06-28 09:54:07
+AL-00246,TX-0025166,TJ-003046,CL-02266,2026-06-28 16:21:08,País inusual,"Primera compra en Portugal en los últimos 60 días: 44,22 € en Braga",72,Media,Cerrada,Falso positivo,2026-06-29 16:21:08
+AL-00247,TX-0025242,TJ-000425,CL-00302,2026-06-28 17:41:51,País inusual,"Primera compra en Portugal en los últimos 60 días: 29,90 € en Valença",56,Baja,Cerrada,Falso positivo,2026-06-28 22:41:51
+AL-00248,TX-0025368,TJ-000698,CL-00505,2026-06-28 19:25:18,País inusual,"Primera compra en Portugal en los últimos 60 días: 10,36 € en Braga",76,Media,Cerrada,Falso positivo,2026-06-29 12:25:18
+AL-00249,TX-0025384,TJ-002456,CL-01825,2026-06-28 19:33:08,Importe inusual,"Importe de 815,11 € frente a un gasto habitual de 68,59 € por operación",59,Baja,Cerrada,Falso positivo,2026-06-29 18:33:08
+AL-00250,TX-0025852,TJ-000337,CL-00237,2026-06-29 12:32:55,País inusual,"Primera compra en Portugal en los últimos 60 días: 15,04 € en Viana do Castelo",60,Media,Cerrada,Falso positivo,2026-07-01 07:32:55
+AL-00251,TX-0026247,TJ-002626,CL-01945,2026-06-29 19:11:11,País inusual,"Primera compra en Portugal en los últimos 60 días: 438,09 € en Viana do Castelo",59,Baja,Cerrada,Falso positivo,2026-06-30 04:11:11
+AL-00252,TX-0026381,TJ-000182,CL-00130,2026-06-29 20:53:32,País inusual,"Primera compra en Portugal en los últimos 60 días: 135,83 € en Viana do Castelo",40,Baja,Cerrada,Falso positivo,2026-07-01 13:53:32
+AL-00253,TX-0026458,TJ-000109,CL-00078,2026-06-29 22:59:09,Importe inusual,"Importe de 726,64 € frente a un gasto habitual de 55,34 € por operación",42,Baja,Cerrada,Falso positivo,2026-06-30 08:59:09
+AL-00254,TX-0026485,TJ-002829,CL-02097,2026-06-30 04:59:17,Ráfaga de operaciones,"3 compras online en 12 minutos entre las 04:58 y las 05:10, en comercios extranjeros, por un total de 1.249,49 €",75,Media,Cerrada,Fraude confirmado,2026-06-30 15:59:17
+AL-00255,TX-0026567,TJ-000147,CL-00105,2026-06-30 09:40:22,País inusual,"Primera compra en Portugal en los últimos 60 días: 33,78 € en Viana do Castelo",57,Baja,Cerrada,Falso positivo,2026-07-02 03:40:22
+AL-00256,TX-0026602,TJ-000364,CL-00256,2026-06-30 10:31:15,País inusual,"Primera compra en Portugal en los últimos 60 días: 49,62 € en Valença",54,Baja,Cerrada,Falso positivo,2026-07-01 11:31:15
+AL-00257,TX-0026910,TJ-002144,CL-01589,2026-06-30 15:13:31,Importe inusual,"Importe de 501,39 € frente a un gasto habitual de 71,05 € por operación",51,Baja,Cerrada,Falso positivo,2026-07-02 08:13:31
+AL-00258,TX-0026946,TJ-000041,CL-00030,2026-06-30 15:50:53,Importe inusual,"Importe de 812,15 € frente a un gasto habitual de 80,50 € por operación",69,Media,Cerrada,Falso positivo,2026-07-02 16:50:53
+AL-00259,TX-0027422,TJ-000028,CL-00021,2026-07-01 09:08:38,Importe inusual,"Importe de 728,29 € frente a un gasto habitual de 90,57 € por operación",81,Alta,Cerrada,Falso positivo,2026-07-02 00:08:38
+AL-00260,TX-0028247,TJ-003004,CL-02235,2026-07-01 23:25:38,País inusual,"Primera compra en Portugal en los últimos 60 días: 196,97 € en Porto",57,Baja,Cerrada,Falso positivo,2026-07-03 11:25:38
+AL-00261,TX-0028380,TJ-003037,CL-02259,2026-07-02 10:20:32,Importe inusual,"Importe de 494,38 € frente a un gasto habitual de 80,55 € por operación",69,Media,Cerrada,Falso positivo,2026-07-04 08:20:32
+AL-00262,TX-0028389,TJ-002752,CL-02039,2026-07-02 10:26:48,Comercio de alto riesgo,"Compra de 37,30 € en un comercio de tarjetas regalo (Chipre)",48,Baja,Cerrada,Falso positivo,2026-07-04 08:26:48
+AL-00263,TX-0028507,TJ-001521,CL-01119,2026-07-02 12:06:41,Importe inusual,"Importe de 514,75 € frente a un gasto habitual de 58,71 € por operación",80,Alta,Cerrada,Falso positivo,2026-07-02 18:06:41
+AL-00264,TX-0028546,TJ-001192,CL-00874,2026-07-02 12:38:01,Importe inusual,"Importe de 1.003,31 € frente a un gasto habitual de 47,93 € por operación",54,Baja,Cerrada,Falso positivo,2026-07-03 21:38:01
+AL-00265,TX-0028808,TJ-001821,CL-01340,2026-07-02 16:50:07,Importe inusual,"Importe de 831,27 € frente a un gasto habitual de 52,36 € por operación",66,Media,Cerrada,Falso positivo,2026-07-04 15:50:07
+AL-00266,TX-0029231,TJ-000156,CL-00111,2026-07-03 06:10:34,País inusual,"Primera compra en Portugal en los últimos 60 días: 42,57 € en Chaves",35,Baja,Cerrada,Falso positivo,2026-07-04 15:10:34
+AL-00267,TX-0029239,TJ-002342,CL-01732,2026-07-03 06:58:37,País inusual,"Primera compra en Portugal en los últimos 60 días: 142,11 € en Braga",56,Baja,Cerrada,Falso positivo,2026-07-03 23:58:37
+AL-00268,TX-0029293,TJ-002019,CL-01494,2026-07-03 09:27:05,Comercio de alto riesgo,"Compra de 222,46 € en un comercio de tarjetas regalo (Lituania)",57,Baja,Cerrada,Falso positivo,2026-07-04 09:27:05
+AL-00269,TX-0029422,TJ-000034,CL-00026,2026-07-03 11:47:30,Importe inusual,"Importe de 778,97 € frente a un gasto habitual de 86,57 € por operación",51,Baja,Cerrada,Falso positivo,2026-07-04 06:47:30
+AL-00270,TX-0029618,TJ-001009,CL-00732,2026-07-03 14:47:54,País inusual,"Primera compra en Portugal en los últimos 60 días: 124,01 € en Viana do Castelo",52,Baja,Cerrada,Falso positivo,2026-07-04 18:47:54
+AL-00271,TX-0029636,TJ-001416,CL-01039,2026-07-03 15:04:14,Importe inusual,"Importe de 392,91 € frente a un gasto habitual de 53,35 € por operación",65,Media,Cerrada,Falso positivo,2026-07-04 16:04:14
+AL-00272,TX-0029657,TJ-001839,CL-01356,2026-07-03 15:27:56,País inusual,"Primera compra en Portugal en los últimos 60 días: 40,45 € en Valença",65,Media,Cerrada,Falso positivo,2026-07-05 02:27:56
+AL-00273,TX-0029769,TJ-000374,CL-00265,2026-07-03 17:29:36,País inusual,"Primera compra en Portugal en los últimos 60 días: 250,52 € en Braga",42,Baja,Cerrada,Falso positivo,2026-07-05 03:29:36
+AL-00274,TX-0030240,TJ-000984,CL-00714,2026-07-04 10:33:03,Comercio de alto riesgo,"Compra de 89,82 € en un comercio de criptoactivos (Estonia)",61,Media,Cerrada,Falso positivo,2026-07-05 23:33:03
+AL-00275,TX-0030771,TJ-002435,CL-01810,2026-07-04 18:18:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 68,09 € en Braga",47,Baja,Cerrada,Falso positivo,2026-07-05 12:18:21
+AL-00276,TX-0031277,TJ-000254,CL-00182,2026-07-05 12:31:14,Comercio de alto riesgo,"Compra de 44,86 € en un comercio de tarjetas regalo (Chipre)",66,Media,Cerrada,Falso positivo,2026-07-07 14:31:14
+AL-00277,TX-0031369,TJ-000589,CL-00427,2026-07-05 13:37:00,País inusual,"Primera compra en Portugal en los últimos 60 días: 36,97 € en Valença",47,Baja,Cerrada,Falso positivo,2026-07-06 07:37:00
+AL-00278,TX-0031423,TJ-002859,CL-02123,2026-07-05 14:43:34,País inusual,"Primera compra en Portugal en los últimos 60 días: 52,96 € en Chaves",50,Baja,Cerrada,Falso positivo,2026-07-06 03:43:34
+AL-00279,TX-0031432,TJ-000696,CL-00504,2026-07-05 14:47:34,Importe inusual,"Importe de 1.635,40 € frente a un gasto habitual de 83,24 € por operación",50,Baja,Cerrada,Falso positivo,2026-07-07 16:47:34
+AL-00280,TX-0031856,TJ-002551,CL-01892,2026-07-05 21:59:22,País inusual,"Primera compra en Portugal en los últimos 60 días: 60,91 € en Viana do Castelo",47,Baja,Cerrada,Falso positivo,2026-07-06 05:59:22
+AL-00281,TX-0032150,TJ-001973,CL-01459,2026-07-06 12:28:57,País inusual,"Primera compra en Portugal en los últimos 60 días: 67,70 € en Chaves",35,Baja,Cerrada,Falso positivo,2026-07-07 16:28:57
+AL-00282,TX-0032154,TJ-000395,CL-00281,2026-07-06 12:29:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 107,00 € en Valença",46,Baja,Cerrada,Falso positivo,2026-07-07 17:29:19
+AL-00283,TX-0032207,TJ-002614,CL-01938,2026-07-06 13:19:41,País inusual,"Primera compra en Portugal en los últimos 60 días: 56,73 € en Chaves",44,Baja,Cerrada,Falso positivo,2026-07-06 22:19:41
+AL-00284,TX-0032416,TJ-000714,CL-00516,2026-07-06 16:48:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 155,81 € en Porto",69,Media,Cerrada,Falso positivo,2026-07-06 23:48:21
+AL-00285,TX-0032465,TJ-002243,CL-01658,2026-07-06 17:35:25,Comercio de alto riesgo,"Compra de 681,35 € en un comercio de joyería (Emiratos Árabes Unidos)",56,Baja,Cerrada,Falso positivo,2026-07-07 06:35:25
+AL-00286,TX-0032646,TJ-000194,CL-00137,2026-07-06 20:06:09,País inusual,"Primera compra en Portugal en los últimos 60 días: 183,74 € en Braga",47,Baja,Cerrada,Falso positivo,2026-07-08 20:06:09
+AL-00287,TX-0032668,TJ-002431,CL-01806,2026-07-06 20:16:34,País inusual,"Primera compra en Portugal en los últimos 60 días: 188,51 € en Porto",56,Baja,Cerrada,Falso positivo,2026-07-07 04:16:34
+AL-00288,TX-0032685,TJ-001728,CL-01275,2026-07-06 20:35:33,País inusual,"Primera compra en Portugal en los últimos 60 días: 81,66 € en Chaves",41,Baja,Cerrada,Falso positivo,2026-07-08 16:35:33
+AL-00289,TX-0033028,TJ-000867,CL-00629,2026-07-07 12:03:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 80,36 € en Valença",50,Baja,Cerrada,Falso positivo,2026-07-08 20:03:43
+AL-00290,TX-0033032,TJ-002905,CL-02162,2026-07-07 12:03:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 10,29 € en Braga",53,Baja,Cerrada,Falso positivo,2026-07-08 09:03:50
+AL-00291,TX-0033198,TJ-001537,CL-01131,2026-07-07 14:47:19,Importe inusual,"Importe de 457,90 € frente a un gasto habitual de 42,01 € por operación",71,Media,Cerrada,Falso positivo,2026-07-09 10:47:19
+AL-00292,TX-0033455,TJ-003017,CL-02246,2026-07-07 18:51:22,País inusual,"Primera compra en Portugal en los últimos 60 días: 75,40 € en Braga",39,Baja,Cerrada,Falso positivo,2026-07-09 07:51:22
+AL-00293,TX-0033624,TJ-000678,CL-00492,2026-07-07 21:25:57,Comercio de alto riesgo,"Compra de 265,06 € en un comercio de criptoactivos (Estonia)",70,Media,Cerrada,Falso positivo,2026-07-08 12:25:57
+AL-00294,TX-0033676,TJ-001052,CL-00764,2026-07-07 22:58:41,Comercio de alto riesgo,"Compra de 477,63 € en un comercio de criptoactivos (Estonia)",77,Media,Cerrada,Falso positivo,2026-07-09 21:58:41
+AL-00295,TX-0033734,TJ-001186,CL-00870,2026-07-08 08:18:31,Importe inusual,"Importe de 425,83 € frente a un gasto habitual de 50,40 € por operación",76,Media,Cerrada,Falso positivo,2026-07-09 20:18:31
+AL-00296,TX-0033878,TJ-002208,CL-01635,2026-07-08 11:34:54,País inusual,"Primera compra en Portugal en los últimos 60 días: 18,28 € en Viana do Castelo",37,Baja,Cerrada,Falso positivo,2026-07-10 05:34:54
+AL-00297,TX-0034029,TJ-000471,CL-00334,2026-07-08 13:48:38,País inusual,"Primera compra en Portugal en los últimos 60 días: 84,93 € en Valença",55,Baja,Cerrada,Falso positivo,2026-07-09 19:48:38
+AL-00298,TX-0034196,TJ-001471,CL-01081,2026-07-08 16:45:48,País inusual,"Primera compra en Portugal en los últimos 60 días: 41,86 € en Viana do Castelo",45,Baja,Cerrada,Falso positivo,2026-07-10 15:45:48
+AL-00299,TX-0034520,TJ-001193,CL-00875,2026-07-08 22:00:58,Importe inusual,"Importe de 408,36 € frente a un gasto habitual de 54,07 € por operación",57,Baja,Cerrada,Falso positivo,2026-07-11 01:00:58
+AL-00300,TX-0034603,TJ-001081,CL-00788,2026-07-09 08:19:44,Importe inusual,"Importe de 847,23 € frente a un gasto habitual de 53,36 € por operación",55,Baja,Cerrada,Falso positivo,2026-07-09 17:19:44
+AL-00301,TX-0034665,TJ-001006,CL-00730,2026-07-09 09:49:38,Importe inusual,"Importe de 954,41 € frente a un gasto habitual de 77,39 € por operación",52,Baja,Cerrada,Falso positivo,2026-07-11 02:49:38
+AL-00302,TX-0035104,TJ-001030,CL-00749,2026-07-09 16:54:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 32,77 € en Chaves",59,Baja,Cerrada,Falso positivo,2026-07-10 00:54:43
+AL-00303,TX-0035140,TJ-003100,CL-02302,2026-07-09 17:30:50,Importe inusual,"Importe de 1.687,82 € frente a un gasto habitual de 88,47 € por operación",64,Media,Cerrada,Falso positivo,2026-07-10 18:30:50
+AL-00304,TX-0035331,TJ-003225,CL-02388,2026-07-09 20:01:00,País inusual,"Primera compra en Portugal en los últimos 60 días: 83,82 € en Braga",57,Baja,Cerrada,Falso positivo,2026-07-11 19:01:00
+AL-00305,TX-0035424,TJ-002576,CL-01912,2026-07-09 21:34:58,Comercio de alto riesgo,"Compra de 121,18 € en un comercio de tarjetas regalo (Chipre)",55,Baja,Cerrada,Falso positivo,2026-07-11 09:34:58
+AL-00306,TX-0035565,TJ-002166,CL-01605,2026-07-10 09:30:33,País inusual,"Primera compra en Portugal en los últimos 60 días: 118,14 € en Porto",45,Baja,Cerrada,Falso positivo,2026-07-11 11:30:33
+AL-00307,TX-0035725,TJ-001465,CL-01076,2026-07-10 12:10:15,País inusual,"Primera compra en Portugal en los últimos 60 días: 36,15 € en Viana do Castelo",42,Baja,Cerrada,Falso positivo,2026-07-12 13:10:15
+AL-00308,TX-0035809,TJ-002101,CL-01558,2026-07-10 13:12:47,País inusual,"Primera compra en Portugal en los últimos 60 días: 6,51 € en Viana do Castelo",41,Baja,Cerrada,Falso positivo,2026-07-12 06:12:47
+AL-00309,TX-0036046,TJ-001614,CL-01190,2026-07-10 17:14:57,País inusual,"Primera compra en Portugal en los últimos 60 días: 52,59 € en Braga",49,Baja,Cerrada,Falso positivo,2026-07-12 09:14:57
+AL-00310,TX-0036091,TJ-002285,CL-01693,2026-07-10 17:59:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 26,64 € en Chaves",57,Baja,Cerrada,Falso positivo,2026-07-10 23:59:20
+AL-00311,TX-0036180,TJ-002642,CL-01959,2026-07-10 19:05:23,País inusual,"Primera compra en Portugal en los últimos 60 días: 77,32 € en Porto",66,Media,Cerrada,Falso positivo,2026-07-12 14:05:23
+AL-00312,TX-0036361,TJ-002356,CL-01745,2026-07-10 22:15:33,Importe inusual,"Importe de 429,96 € frente a un gasto habitual de 50,00 € por operación",63,Media,Cerrada,Falso positivo,2026-07-11 17:15:33
+AL-00313,TX-0036709,TJ-000269,CL-00189,2026-07-11 13:08:03,Importe inusual,"Importe de 594,53 € frente a un gasto habitual de 91,74 € por operación",73,Media,Cerrada,Falso positivo,2026-07-12 03:08:03
+AL-00314,TX-0036839,TJ-002669,CL-01977,2026-07-11 14:47:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 16,65 € en Braga",65,Media,Cerrada,Falso positivo,2026-07-12 14:47:52
+AL-00315,TX-0037033,TJ-000135,CL-00096,2026-07-11 17:58:11,País inusual,"Primera compra en Portugal en los últimos 60 días: 54,89 € en Viana do Castelo",42,Baja,Cerrada,Falso positivo,2026-07-13 16:58:11
+AL-00316,TX-0037105,TJ-002192,CL-01624,2026-07-11 18:45:14,País inusual,"Primera compra en Portugal en los últimos 60 días: 125,19 € en Chaves",38,Baja,Cerrada,Falso positivo,2026-07-12 22:45:14
+AL-00317,TX-0037212,TJ-000718,CL-00519,2026-07-11 20:08:09,País inusual,"Primera compra en Portugal en los últimos 60 días: 47,02 € en Chaves",62,Media,Cerrada,Falso positivo,2026-07-12 14:08:09
+AL-00318,TX-0037359,TJ-000011,CL-00007,2026-07-12 00:25:14,Operación nocturna online,"Compra online de 293,61 € en Irlanda a las 00:23, fuera del horario habitual del cliente",93,Alta,Cerrada,Fraude confirmado,2026-07-12 02:25:14
+AL-00319,TX-0037437,TJ-000936,CL-00679,2026-07-12 09:14:03,País inusual,"Primera compra en Portugal en los últimos 60 días: 89,81 € en Valença",56,Baja,Cerrada,Falso positivo,2026-07-14 04:14:03
+AL-00320,TX-0037559,TJ-001119,CL-00818,2026-07-12 11:33:05,País inusual,"Primera compra en Portugal en los últimos 60 días: 136,81 € en Braga",35,Baja,Cerrada,Falso positivo,2026-07-12 13:33:05
+AL-00321,TX-0038339,TJ-001115,CL-00814,2026-07-13 08:46:00,País inusual,"Primera compra en Portugal en los últimos 60 días: 16,40 € en Porto",50,Baja,Cerrada,Falso positivo,2026-07-13 11:46:00
+AL-00322,TX-0038403,TJ-002315,CL-01713,2026-07-13 10:04:42,Importe inusual,"Importe de 354,23 € frente a un gasto habitual de 42,65 € por operación",48,Baja,Cerrada,Falso positivo,2026-07-14 01:04:42
+AL-00323,TX-0038644,TJ-001555,CL-01144,2026-07-13 13:21:28,País inusual,"Primera compra en Portugal en los últimos 60 días: 101,71 € en Porto",40,Baja,Cerrada,Falso positivo,2026-07-14 22:21:28
+AL-00324,TX-0038645,TJ-002716,CL-02013,2026-07-13 13:22:01,País inusual,"Primera compra en Portugal en los últimos 60 días: 33,09 € en Viana do Castelo",55,Baja,Cerrada,Falso positivo,2026-07-15 01:22:01
+AL-00325,TX-0038983,TJ-001780,CL-01314,2026-07-13 18:38:42,Comercio de alto riesgo,"Compra de 100,31 € en un comercio de tarjetas regalo (Lituania)",64,Media,Cerrada,Falso positivo,2026-07-15 06:38:42
+AL-00326,TX-0039074,TJ-000686,CL-00497,2026-07-13 19:48:39,País inusual,"Primera compra en Portugal en los últimos 60 días: 32,18 € en Braga",58,Baja,Cerrada,Falso positivo,2026-07-14 14:48:39
+AL-00327,TX-0039234,TJ-001386,CL-01014,2026-07-13 22:36:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,74 € en Porto",70,Media,Cerrada,Falso positivo,2026-07-15 17:36:43
+AL-00328,TX-0039280,TJ-000353,CL-00249,2026-07-14 07:06:34,Importe inusual,"Importe de 723,33 € frente a un gasto habitual de 117,80 € por operación",77,Media,Cerrada,Falso positivo,2026-07-16 06:06:34
+AL-00329,TX-0039326,TJ-002218,CL-01642,2026-07-14 08:43:16,País inusual,"Primera compra en Portugal en los últimos 60 días: 17,05 € en Chaves",62,Media,Cerrada,Falso positivo,2026-07-15 07:43:16
+AL-00330,TX-0039412,TJ-003141,CL-02329,2026-07-14 10:30:29,Importe inusual,"Importe de 679,89 € frente a un gasto habitual de 58,21 € por operación",58,Baja,Cerrada,Falso positivo,2026-07-15 07:30:29
+AL-00331,TX-0039547,TJ-001170,CL-00858,2026-07-14 12:35:39,País inusual,"Primera compra en Portugal en los últimos 60 días: 78,50 € en Porto",58,Baja,Cerrada,Falso positivo,2026-07-16 05:35:39
+AL-00332,TX-0039601,TJ-001794,CL-01322,2026-07-14 13:15:22,Importe inusual,"Importe de 959,18 € frente a un gasto habitual de 77,50 € por operación",60,Media,Cerrada,Falso positivo,2026-07-14 19:15:22
+AL-00333,TX-0039981,TJ-002688,CL-01992,2026-07-14 19:18:21,Comercio de alto riesgo,"Compra de 100,47 € en un comercio de tarjetas regalo (Chipre)",58,Baja,Cerrada,Falso positivo,2026-07-15 04:18:21
+AL-00334,TX-0039999,TJ-002767,CL-02050,2026-07-14 19:33:09,País inusual,"Primera compra en Portugal en los últimos 60 días: 62,86 € en Braga",44,Baja,Cerrada,Falso positivo,2026-07-16 12:33:09
+AL-00335,TX-0040239,TJ-000079,CL-00058,2026-07-15 09:00:38,País inusual,"Primera compra en Portugal en los últimos 60 días: 40,40 € en Braga",48,Baja,Cerrada,Falso positivo,2026-07-17 07:00:38
+AL-00336,TX-0040341,TJ-000881,CL-00639,2026-07-15 10:56:27,País inusual,"Primera compra en Portugal en los últimos 60 días: 177,97 € en Viana do Castelo",42,Baja,Cerrada,Falso positivo,2026-07-17 08:56:27
+AL-00337,TX-0041590,TJ-003212,CL-02379,2026-07-16 15:22:07,Comercio de alto riesgo,"Compra de 90,98 € en un comercio de tarjetas regalo (Lituania)",63,Media,Cerrada,Falso positivo,2026-07-17 18:22:07
+AL-00338,TX-0041872,TJ-000032,CL-00024,2026-07-16 20:05:40,País inusual,"Primera compra en Portugal en los últimos 60 días: 110,57 € en Viana do Castelo",47,Baja,Cerrada,Falso positivo,2026-07-16 23:05:40
+AL-00339,TX-0041962,TJ-001513,CL-01114,2026-07-16 21:51:58,Comercio de alto riesgo,"Compra de 37,94 € en un comercio de tarjetas regalo (Lituania)",63,Media,Cerrada,Falso positivo,2026-07-17 18:51:58
+AL-00340,TX-0042205,TJ-000013,CL-00009,2026-07-17 11:40:43,Importe inusual,"Importe de 420,39 € frente a un gasto habitual de 46,64 € por operación",67,Media,Cerrada,Falso positivo,2026-07-18 13:40:43
+AL-00341,TX-0042304,TJ-001318,CL-00958,2026-07-17 13:01:00,País inusual,"Primera compra en Portugal en los últimos 60 días: 35,26 € en Viana do Castelo",59,Baja,Cerrada,Falso positivo,2026-07-18 23:01:00
+AL-00342,TX-0042764,TJ-002926,CL-02178,2026-07-17 19:52:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 53,56 € en Porto",68,Media,Cerrada,Falso positivo,2026-07-19 11:52:19
+AL-00343,TX-0043337,TJ-002973,CL-02212,2026-07-18 15:01:28,Importe inusual,"Importe de 470,62 € frente a un gasto habitual de 41,34 € por operación",71,Media,Cerrada,Falso positivo,2026-07-19 19:01:28
+AL-00344,TX-0043439,TJ-001585,CL-01166,2026-07-18 16:37:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 49,91 € en Valença",48,Baja,Cerrada,Falso positivo,2026-07-19 18:37:58
+AL-00345,TX-0043562,TJ-000587,CL-00426,2026-07-18 18:19:12,País inusual,"Primera compra en Portugal en los últimos 60 días: 139,28 € en Porto",46,Baja,Cerrada,Falso positivo,2026-07-20 16:19:12
+AL-00346,TX-0043879,TJ-001925,CL-01422,2026-07-19 08:17:13,País inusual,"Primera compra en Portugal en los últimos 60 días: 38,72 € en Braga",36,Baja,Cerrada,Falso positivo,2026-07-19 22:17:13
+AL-00347,TX-0043999,TJ-002877,CL-02139,2026-07-19 10:55:57,País inusual,"Primera compra en Portugal en los últimos 60 días: 96,93 € en Braga",57,Baja,Cerrada,Falso positivo,2026-07-20 00:55:57
+AL-00348,TX-0044000,TJ-001583,CL-01164,2026-07-19 10:58:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 59,53 € en Viana do Castelo",38,Baja,Cerrada,Falso positivo,2026-07-21 00:58:21
+AL-00349,TX-0044074,TJ-002956,CL-02200,2026-07-19 11:57:44,Importe inusual,"Importe de 705,78 € frente a un gasto habitual de 57,08 € por operación",58,Baja,Cerrada,Falso positivo,2026-07-20 09:57:44
+AL-00350,TX-0044283,TJ-001930,CL-01425,2026-07-19 14:57:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 36,86 € en Porto",64,Media,Cerrada,Falso positivo,2026-07-21 10:57:52
+AL-00351,TX-0044358,TJ-002046,CL-01514,2026-07-19 16:26:20,Importe inusual,"Importe de 631,33 € frente a un gasto habitual de 81,37 € por operación",67,Media,Cerrada,Falso positivo,2026-07-20 06:26:20
+AL-00352,TX-0044452,TJ-001918,CL-01417,2026-07-19 17:52:17,Importe inusual,"Importe de 363,15 € frente a un gasto habitual de 49,85 € por operación",63,Media,Cerrada,Falso positivo,2026-07-20 12:52:17
+AL-00353,TX-0044456,TJ-002465,CL-01830,2026-07-19 17:55:06,País inusual,"Primera compra en Portugal en los últimos 60 días: 67,11 € en Viana do Castelo",60,Media,Cerrada,Falso positivo,2026-07-20 18:55:06
+AL-00354,TX-0044483,TJ-001844,CL-01360,2026-07-19 18:09:18,País inusual,"Primera compra en Portugal en los últimos 60 días: 24,78 € en Viana do Castelo",48,Baja,Cerrada,Falso positivo,2026-07-21 03:09:18
+AL-00355,TX-0044607,TJ-000353,CL-00249,2026-07-19 19:39:02,Importe inusual,"Importe de 1.708,28 € frente a un gasto habitual de 117,80 € por operación",66,Media,Cerrada,Falso positivo,2026-07-20 01:39:02
+AL-00356,TX-0044718,TJ-000341,CL-00240,2026-07-19 21:20:36,País inusual,"Primera compra en Portugal en los últimos 60 días: 49,40 € en Viana do Castelo",52,Baja,Cerrada,Falso positivo,2026-07-20 01:20:36
+AL-00357,TX-0044748,TJ-000489,CL-00347,2026-07-19 21:52:24,Importe inusual,"Importe de 930,13 € frente a un gasto habitual de 68,23 € por operación",64,Media,Cerrada,Falso positivo,2026-07-21 15:52:24
+AL-00358,TX-0044757,TJ-001885,CL-01389,2026-07-19 22:05:31,Importe inusual,"Importe de 517,68 € frente a un gasto habitual de 50,81 € por operación",72,Media,Cerrada,Falso positivo,2026-07-21 16:05:31
+AL-00359,TX-0044810,TJ-002885,CL-02146,2026-07-20 07:03:13,País inusual,"Primera compra en Portugal en los últimos 60 días: 86,26 € en Braga",60,Media,Cerrada,Falso positivo,2026-07-21 21:03:13
+AL-00360,TX-0044983,TJ-003156,CL-02339,2026-07-20 11:27:02,Comercio de alto riesgo,"Compra de 94,16 € en un comercio de tarjetas regalo (Lituania)",73,Media,Cerrada,Falso positivo,2026-07-22 02:27:02
+AL-00361,TX-0045279,TJ-002136,CL-01586,2026-07-20 15:40:44,Importe inusual,"Importe de 884,86 € frente a un gasto habitual de 50,77 € por operación",72,Media,Cerrada,Falso positivo,2026-07-21 17:40:44
+AL-00362,TX-0045323,TJ-003031,CL-02254,2026-07-20 16:29:37,País inusual,"Primera compra en Portugal en los últimos 60 días: 44,38 € en Chaves",72,Media,Cerrada,Falso positivo,2026-07-22 19:29:37
+AL-00363,TX-0045417,TJ-000169,CL-00122,2026-07-20 17:55:30,Comercio de alto riesgo,"Compra de 178,95 € en un comercio de joyería (Emiratos Árabes Unidos)",64,Media,Cerrada,Falso positivo,2026-07-21 09:55:30
+AL-00364,TX-0046124,TJ-002881,CL-02144,2026-07-21 14:47:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 104,50 € en Viana do Castelo",60,Media,Cerrada,Falso positivo,2026-07-23 00:47:50
+AL-00365,TX-0046304,TJ-002053,CL-01519,2026-07-21 17:36:41,País inusual,"Primera compra en Portugal en los últimos 60 días: 92,67 € en Viana do Castelo",61,Media,Cerrada,Falso positivo,2026-07-23 15:36:41
+AL-00366,TX-0046642,TJ-003060,CL-02274,2026-07-21 23:52:35,País inusual,"Primera compra en Portugal en los últimos 60 días: 46,20 € en Chaves",54,Baja,Cerrada,Falso positivo,2026-07-23 23:52:35
+AL-00367,TX-0046662,TJ-002061,CL-01525,2026-07-22 06:20:56,País inusual,"Primera compra en Portugal en los últimos 60 días: 19,10 € en Braga",42,Baja,Cerrada,Falso positivo,2026-07-22 14:20:56
+AL-00368,TX-0046952,TJ-001537,CL-01131,2026-07-22 13:01:35,País inusual,"Primera compra en Portugal en los últimos 60 días: 15,66 € en Viana do Castelo",41,Baja,Cerrada,Falso positivo,2026-07-24 00:01:35
+AL-00369,TX-0047036,TJ-001740,CL-01284,2026-07-22 14:23:52,Comercio de alto riesgo,"Compra de 35,72 € en un comercio de tarjetas regalo (Chipre)",59,Baja,Cerrada,Falso positivo,2026-07-24 03:23:52
+AL-00370,TX-0047043,TJ-001422,CL-01044,2026-07-22 14:32:42,Comercio de alto riesgo,"Compra de 526,54 € en un comercio de criptoactivos (Estonia)",64,Media,Cerrada,Falso positivo,2026-07-24 12:32:42
+AL-00371,TX-0047140,TJ-002845,CL-02109,2026-07-22 16:31:42,País inusual,"Primera compra en Portugal en los últimos 60 días: 61,32 € en Braga",64,Media,Cerrada,Falso positivo,2026-07-24 02:31:42
+AL-00372,TX-0047731,TJ-001291,CL-00943,2026-07-23 11:17:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 15,12 € en Viana do Castelo",43,Baja,Cerrada,Falso positivo,2026-07-25 03:17:46
+AL-00373,TX-0047962,TJ-001374,CL-01003,2026-07-23 15:25:09,País inusual,"Primera compra en Portugal en los últimos 60 días: 46,81 € en Chaves",55,Baja,Cerrada,Falso positivo,2026-07-24 03:25:09
+AL-00374,TX-0048471,TJ-000439,CL-00311,2026-07-24 08:21:26,País inusual,"Primera compra en Portugal en los últimos 60 días: 60,37 € en Porto",47,Baja,Cerrada,Falso positivo,2026-07-25 00:21:26
+AL-00375,TX-0048737,TJ-001779,CL-01313,2026-07-24 13:12:17,País inusual,"Primera compra en Portugal en los últimos 60 días: 108,77 € en Viana do Castelo",41,Baja,Cerrada,Falso positivo,2026-07-25 17:12:17
+AL-00376,TX-0048972,TJ-003091,CL-02295,2026-07-24 16:54:29,Importe inusual,"Importe de 612,01 € frente a un gasto habitual de 79,90 € por operación",59,Baja,Cerrada,Falso positivo,2026-07-25 18:54:29
+AL-00377,TX-0049538,TJ-001356,CL-00987,2026-07-25 12:01:36,Importe inusual,"Importe de 524,85 € frente a un gasto habitual de 40,65 € por operación",74,Media,Cerrada,Falso positivo,2026-07-26 05:01:36
+AL-00378,TX-0049690,TJ-000365,CL-00257,2026-07-25 13:57:33,Importe inusual,"Importe de 399,87 € frente a un gasto habitual de 29,66 € por operación",62,Media,Cerrada,Falso positivo,2026-07-27 11:57:33
+AL-00379,TX-0049717,TJ-002763,CL-02047,2026-07-25 14:29:14,País inusual,"Primera compra en Portugal en los últimos 60 días: 60,04 € en Chaves",53,Baja,Cerrada,Falso positivo,2026-07-26 07:29:14
+AL-00380,TX-0049895,TJ-001288,CL-00941,2026-07-25 17:33:28,Importe inusual,"Importe de 573,68 € frente a un gasto habitual de 75,78 € por operación",56,Baja,Cerrada,Falso positivo,2026-07-27 00:33:28
+AL-00381,TX-0050200,TJ-000857,CL-00621,2026-07-25 21:24:05,Importe inusual,"Importe de 499,41 € frente a un gasto habitual de 50,29 € por operación",57,Baja,Cerrada,Falso positivo,2026-07-27 15:24:05
+AL-00382,TX-0050257,TJ-003130,CL-02322,2026-07-26 00:27:37,Operación nocturna online,"Compra online de 621,97 € en Irlanda a las 00:23, fuera del horario habitual del cliente",85,Alta,Cerrada,Fraude confirmado,2026-07-26 04:27:37
+AL-00383,TX-0050395,TJ-001411,CL-01035,2026-07-26 10:21:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 40,74 € en Chaves",44,Baja,Cerrada,Falso positivo,2026-07-26 19:21:19
+AL-00384,TX-0050610,TJ-000420,CL-00299,2026-07-26 13:23:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 113,74 € en Porto",79,Media,Cerrada,Falso positivo,2026-07-27 19:23:58
+AL-00385,TX-0050647,TJ-002089,CL-01550,2026-07-26 13:52:30,Importe inusual,"Importe de 902,50 € frente a un gasto habitual de 83,57 € por operación",55,Baja,Cerrada,Falso positivo,2026-07-28 03:52:30
+AL-00386,TX-0050929,TJ-001382,CL-01010,2026-07-26 18:16:44,País inusual,"Primera compra en Portugal en los últimos 60 días: 78,02 € en Valença",41,Baja,Cerrada,Falso positivo,2026-07-27 06:16:44
+AL-00387,TX-0050945,TJ-001561,CL-01147,2026-07-26 18:28:44,Importe inusual,"Importe de 541,72 € frente a un gasto habitual de 83,13 € por operación",60,Media,Cerrada,Falso positivo,2026-07-27 08:28:44
+AL-00388,TX-0050955,TJ-000674,CL-00491,2026-07-26 18:32:04,País inusual,"Primera compra en Portugal en los últimos 60 días: 83,45 € en Valença",47,Baja,Cerrada,Falso positivo,2026-07-27 03:32:04
+AL-00389,TX-0051025,TJ-002799,CL-02074,2026-07-26 19:28:04,Importe inusual,"Importe de 445,65 € frente a un gasto habitual de 44,69 € por operación",43,Baja,Cerrada,Falso positivo,2026-07-27 19:28:04
+AL-00390,TX-0051455,TJ-001931,CL-01426,2026-07-27 12:02:27,Comercio de alto riesgo,"Compra de 167,03 € en un comercio de criptoactivos (Estonia)",56,Baja,Cerrada,Falso positivo,2026-07-29 01:02:27
+AL-00391,TX-0051482,TJ-001207,CL-00885,2026-07-27 12:25:44,País inusual,"Primera compra en Portugal en los últimos 60 días: 48,46 € en Porto",38,Baja,Cerrada,Falso positivo,2026-07-27 15:25:44
+AL-00392,TX-0052120,TJ-000054,CL-00038,2026-07-27 23:06:43,Importe inusual,"Importe de 604,90 € frente a un gasto habitual de 93,64 € por operación",73,Media,Cerrada,Falso positivo,2026-07-28 11:06:43
+AL-00393,TX-0052705,TJ-000200,CL-00142,2026-07-28 18:08:15,Importe inusual,"Importe de 387,11 € frente a un gasto habitual de 41,16 € por operación",51,Baja,Cerrada,Falso positivo,2026-07-29 14:08:15
+AL-00394,TX-0052712,TJ-002804,CL-02078,2026-07-28 18:16:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 33,48 € en Porto",51,Baja,Cerrada,Falso positivo,2026-07-29 21:16:58
+AL-00395,TX-0052766,TJ-001652,CL-01216,2026-07-28 19:02:22,Comercio de alto riesgo,"Compra de 44,11 € en un comercio de tarjetas regalo (Lituania)",63,Media,Cerrada,Falso positivo,2026-07-29 14:02:22
+AL-00396,TX-0052931,TJ-000975,CL-00706,2026-07-28 21:33:36,Importe inusual,"Importe de 460,77 € frente a un gasto habitual de 51,45 € por operación",78,Media,Cerrada,Falso positivo,2026-07-30 22:33:36
+AL-00397,TX-0053387,TJ-002625,CL-01945,2026-07-29 15:09:50,Comercio de alto riesgo,"Compra de 98,09 € en un comercio de tarjetas regalo (Chipre)",67,Media,Cerrada,Falso positivo,2026-07-30 22:09:50
+AL-00398,TX-0053937,TJ-002854,CL-02118,2026-07-30 08:29:41,País inusual,"Primera compra en Portugal en los últimos 60 días: 74,52 € en Chaves",40,Baja,Cerrada,Falso positivo,2026-07-31 16:29:41
+AL-00399,TX-0054024,TJ-001598,CL-01177,2026-07-30 10:30:09,Importe inusual,"Importe de 549,63 € frente a un gasto habitual de 43,91 € por operación",67,Media,Cerrada,Falso positivo,2026-07-30 13:30:09
+AL-00400,TX-0054065,TJ-000995,CL-00723,2026-07-30 11:03:41,Importe inusual,"Importe de 577,27 € frente a un gasto habitual de 49,54 € por operación",63,Media,Cerrada,Falso positivo,2026-07-31 12:03:41
+AL-00401,TX-0054427,TJ-002500,CL-01854,2026-07-30 16:44:02,Importe inusual,"Importe de 495,73 € frente a un gasto habitual de 49,72 € por operación",81,Alta,Cerrada,Falso positivo,2026-07-30 21:44:02
+AL-00402,TX-0054641,TJ-001299,CL-00948,2026-07-30 20:00:23,País inusual,"Primera compra en Portugal en los últimos 60 días: 71,58 € en Braga",57,Baja,Cerrada,Falso positivo,2026-08-01 14:00:23
+AL-00403,TX-0054648,TJ-002550,CL-01891,2026-07-30 20:05:35,País inusual,"Primera compra en Portugal en los últimos 60 días: 64,39 € en Braga",61,Media,Cerrada,Falso positivo,2026-08-01 12:05:35
+AL-00404,TX-0054794,TJ-002426,CL-01802,2026-07-31 04:12:22,Ráfaga de operaciones,"3 compras online en 19 minutos entre las 04:07 y las 04:26, en comercios extranjeros, por un total de 1.240,60 €",87,Alta,Cerrada,Fraude confirmado,2026-07-31 08:12:22
+AL-00405,TX-0055226,TJ-001375,CL-01003,2026-07-31 14:43:39,País inusual,"Primera compra en Portugal en los últimos 60 días: 31,71 € en Porto",59,Baja,Cerrada,Falso positivo,2026-08-01 04:43:39
+AL-00406,TX-0055264,TJ-001111,CL-00811,2026-07-31 15:34:20,Comercio de alto riesgo,"Compra de 493,72 € en un comercio de joyería (Emiratos Árabes Unidos)",59,Baja,Cerrada,Falso positivo,2026-08-01 02:34:20
+AL-00407,TX-0055567,TJ-002725,CL-02021,2026-07-31 19:57:00,País inusual,"Primera compra en Portugal en los últimos 60 días: 75,84 € en Chaves",59,Baja,Cerrada,Falso positivo,2026-08-02 02:57:00
+AL-00408,TX-0055569,TJ-003176,CL-02353,2026-07-31 19:58:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 29,47 € en Viana do Castelo",52,Baja,Cerrada,Falso positivo,2026-08-02 19:58:20
+AL-00409,TX-0055659,TJ-001086,CL-00792,2026-07-31 21:21:39,Importe inusual,"Importe de 492,00 € frente a un gasto habitual de 77,78 € por operación",53,Baja,Cerrada,Falso positivo,2026-08-01 06:21:39
+AL-00410,TX-0055704,TJ-003147,CL-02332,2026-07-31 22:41:02,País inusual,"Primera compra en Portugal en los últimos 60 días: 74,08 € en Valença",56,Baja,Cerrada,Falso positivo,2026-08-02 18:41:02
+AL-00411,TX-0056287,TJ-002193,CL-01624,2026-08-01 16:50:23,Importe inusual,"Importe de 1.384,93 € frente a un gasto habitual de 93,57 € por operación",67,Media,Cerrada,Falso positivo,2026-08-02 12:50:23
+AL-00412,TX-0056308,TJ-002371,CL-01755,2026-08-01 17:09:34,País inusual,"Primera compra en Portugal en los últimos 60 días: 84,16 € en Valença",44,Baja,Cerrada,Falso positivo,2026-08-02 04:09:34
+AL-00413,TX-0056350,TJ-000778,CL-00557,2026-08-01 17:53:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 97,10 € en Valença",58,Baja,Cerrada,Falso positivo,2026-08-03 10:53:58
+AL-00414,TX-0056529,TJ-000371,CL-00263,2026-08-01 20:23:52,Importe inusual,"Importe de 2.246,70 € frente a un gasto habitual de 79,70 € por operación",59,Baja,Cerrada,Falso positivo,2026-08-03 06:23:52
+AL-00415,TX-0056648,TJ-001011,CL-00733,2026-08-01 23:46:31,Comercio de alto riesgo,"Compra de 457,73 € en un comercio de criptoactivos (Estonia)",64,Media,Cerrada,Falso positivo,2026-08-03 05:46:31
+AL-00416,TX-0056658,TJ-001400,CL-01026,2026-08-02 05:18:10,País inusual,"Primera compra en Portugal en los últimos 60 días: 37,62 € en Chaves",40,Baja,Cerrada,Falso positivo,2026-08-03 18:18:10
+AL-00417,TX-0056850,TJ-000884,CL-00641,2026-08-02 11:36:02,Importe inusual,"Importe de 578,24 € frente a un gasto habitual de 79,83 € por operación",84,Alta,Cerrada,Falso positivo,2026-08-04 13:36:02
+AL-00418,TX-0056966,TJ-000493,CL-00350,2026-08-02 13:32:56,País inusual,"Primera compra en Portugal en los últimos 60 días: 106,90 € en Braga",66,Media,Cerrada,Falso positivo,2026-08-04 07:32:56
+AL-00419,TX-0056967,TJ-000650,CL-00471,2026-08-02 13:33:24,Importe inusual,"Importe de 390,74 € frente a un gasto habitual de 59,91 € por operación",48,Baja,Cerrada,Falso positivo,2026-08-03 12:33:24
+AL-00420,TX-0057353,TJ-000018,CL-00014,2026-08-02 19:16:23,Importe inusual,"Importe de 489,22 € frente a un gasto habitual de 42,03 € por operación",61,Media,Cerrada,Falso positivo,2026-08-03 06:16:23
+AL-00421,TX-0057698,TJ-002376,CL-01759,2026-08-03 10:06:59,País inusual,"Primera compra en Portugal en los últimos 60 días: 33,81 € en Valença",35,Baja,Cerrada,Falso positivo,2026-08-03 21:06:59
+AL-00422,TX-0057806,TJ-002361,CL-01750,2026-08-03 11:52:06,País inusual,"Primera compra en Portugal en los últimos 60 días: 77,07 € en Viana do Castelo",52,Baja,Cerrada,Falso positivo,2026-08-04 16:52:06
+AL-00423,TX-0057904,TJ-000537,CL-00389,2026-08-03 13:07:49,País inusual,"Primera compra en Portugal en los últimos 60 días: 58,34 € en Valença",51,Baja,Cerrada,Falso positivo,2026-08-05 16:07:49
+AL-00424,TX-0058000,TJ-000296,CL-00207,2026-08-03 14:46:56,Importe inusual,"Importe de 383,43 € frente a un gasto habitual de 62,91 € por operación",67,Media,Cerrada,Falso positivo,2026-08-04 13:46:56
+AL-00425,TX-0058333,TJ-002116,CL-01571,2026-08-03 20:01:44,País inusual,"Primera compra en Portugal en los últimos 60 días: 371,17 € en Viana do Castelo",47,Baja,Cerrada,Falso positivo,2026-08-04 14:01:44
+AL-00426,TX-0058759,TJ-001483,CL-01089,2026-08-04 12:31:25,Comercio de alto riesgo,"Compra de 44,19 € en un comercio de tarjetas regalo (Chipre)",64,Media,Cerrada,Falso positivo,2026-08-04 20:31:25
+AL-00427,TX-0058860,TJ-001964,CL-01449,2026-08-04 13:43:17,Importe inusual,"Importe de 507,53 € frente a un gasto habitual de 60,03 € por operación",58,Baja,Cerrada,Falso positivo,2026-08-05 01:43:17
+AL-00428,TX-0059154,TJ-001868,CL-01378,2026-08-04 19:08:28,Importe inusual,"Importe de 514,36 € frente a un gasto habitual de 54,93 € por operación",45,Baja,Cerrada,Falso positivo,2026-08-05 18:08:28
+AL-00429,TX-0059356,TJ-002072,CL-01536,2026-08-04 22:36:20,Importe inusual,"Importe de 398,15 € frente a un gasto habitual de 49,98 € por operación",58,Baja,Cerrada,Falso positivo,2026-08-05 14:36:20
+AL-00430,TX-0059485,TJ-002409,CL-01788,2026-08-05 09:57:17,Importe inusual,"Importe de 655,68 € frente a un gasto habitual de 76,86 € por operación",56,Baja,Cerrada,Falso positivo,2026-08-05 23:57:17
+AL-00431,TX-0059579,TJ-002948,CL-02194,2026-08-05 11:23:55,Importe inusual,"Importe de 353,45 € frente a un gasto habitual de 56,03 € por operación",69,Media,Cerrada,Falso positivo,2026-08-05 23:23:55
+AL-00432,TX-0059851,TJ-001421,CL-01043,2026-08-05 15:44:53,País inusual,"Primera compra en Portugal en los últimos 60 días: 30,59 € en Valença",71,Media,Cerrada,Falso positivo,2026-08-07 00:44:53
+AL-00433,TX-0060456,TJ-001184,CL-00868,2026-08-06 11:09:45,País inusual,"Primera compra en Portugal en los últimos 60 días: 125,03 € en Viana do Castelo",39,Baja,Cerrada,Falso positivo,2026-08-08 09:09:45
+AL-00434,TX-0060465,TJ-002733,CL-02025,2026-08-06 11:20:18,Importe inusual,"Importe de 470,12 € frente a un gasto habitual de 66,20 € por operación",51,Baja,Cerrada,Falso positivo,2026-08-07 10:20:18
+AL-00435,TX-0060534,TJ-000632,CL-00459,2026-08-06 12:12:52,Importe inusual,"Importe de 547,70 € frente a un gasto habitual de 44,50 € por operación",58,Baja,Cerrada,Falso positivo,2026-08-07 19:12:52
+AL-00436,TX-0061114,TJ-000748,CL-00539,2026-08-06 20:49:54,País inusual,"Primera compra en Portugal en los últimos 60 días: 52,43 € en Valença",53,Baja,Cerrada,Falso positivo,2026-08-07 11:49:54
+AL-00437,TX-0062198,TJ-001616,CL-01192,2026-08-08 03:23:37,Operación nocturna online,"Compra online de 360,76 € en Emiratos Árabes Unidos a las 03:20, fuera del horario habitual del cliente",96,Alta,Cerrada,Fraude confirmado,2026-08-09 06:23:37
+AL-00438,TX-0062214,TJ-002072,CL-01536,2026-08-08 07:12:21,Importe inusual,"Importe de 520,03 € frente a un gasto habitual de 49,98 € por operación",75,Media,Cerrada,Falso positivo,2026-08-09 22:12:21
+AL-00439,TX-0062519,TJ-000621,CL-00451,2026-08-08 13:39:00,País inusual,"Primera compra en Portugal en los últimos 60 días: 57,11 € en Valença",58,Baja,Cerrada,Falso positivo,2026-08-10 05:39:00
+AL-00440,TX-0062665,TJ-002937,CL-02186,2026-08-08 16:03:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 32,71 € en Porto",45,Baja,Cerrada,Falso positivo,2026-08-10 19:03:43
+AL-00441,TX-0062823,TJ-002942,CL-02190,2026-08-08 18:13:11,País inusual,"Primera compra en Portugal en los últimos 60 días: 33,50 € en Braga",39,Baja,Cerrada,Falso positivo,2026-08-10 00:13:11
+AL-00442,TX-0063067,TJ-000548,CL-00399,2026-08-08 21:54:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 31,12 € en Chaves",63,Media,Cerrada,Falso positivo,2026-08-09 02:54:19
+AL-00443,TX-0063170,TJ-000741,CL-00535,2026-08-09 08:37:18,País inusual,"Primera compra en Portugal en los últimos 60 días: 8,79 € en Chaves",47,Baja,Cerrada,Falso positivo,2026-08-09 15:37:18
+AL-00444,TX-0063198,TJ-001959,CL-01446,2026-08-09 09:25:34,Comercio de alto riesgo,"Compra de 125,51 € en un comercio de tarjetas regalo (Chipre)",60,Media,Cerrada,Falso positivo,2026-08-09 17:25:34
+AL-00445,TX-0063234,TJ-000798,CL-00577,2026-08-09 10:15:42,País inusual,"Primera compra en Portugal en los últimos 60 días: 77,49 € en Porto",57,Baja,Cerrada,Falso positivo,2026-08-10 05:15:42
+AL-00446,TX-0064229,TJ-003038,CL-02259,2026-08-10 12:12:44,País inusual,"Primera compra en Portugal en los últimos 60 días: 59,68 € en Braga",45,Baja,Cerrada,Falso positivo,2026-08-11 13:12:44
+AL-00447,TX-0064600,TJ-001685,CL-01240,2026-08-10 17:57:36,País inusual,"Primera compra en Portugal en los últimos 60 días: 179,29 € en Porto",45,Baja,Cerrada,Falso positivo,2026-08-12 11:57:36
+AL-00448,TX-0064809,TJ-001390,CL-01019,2026-08-10 21:45:15,Importe inusual,"Importe de 971,83 € frente a un gasto habitual de 84,27 € por operación",46,Baja,Cerrada,Falso positivo,2026-08-12 11:45:15
+AL-00449,TX-0065118,TJ-002076,CL-01541,2026-08-11 12:13:55,País inusual,"Primera compra en Portugal en los últimos 60 días: 182,91 € en Porto",59,Baja,Cerrada,Falso positivo,2026-08-12 10:13:55
+AL-00450,TX-0065299,TJ-000419,CL-00299,2026-08-11 15:13:27,País inusual,"Primera compra en Portugal en los últimos 60 días: 137,47 € en Braga",50,Baja,Cerrada,Falso positivo,2026-08-12 20:13:27
+AL-00451,TX-0065365,TJ-000774,CL-00555,2026-08-11 16:24:11,País inusual,"Primera compra en Portugal en los últimos 60 días: 190,00 € en Braga",63,Media,Cerrada,Falso positivo,2026-08-13 07:24:11
+AL-00452,TX-0065623,TJ-002693,CL-01995,2026-08-11 20:16:34,Importe inusual,"Importe de 1.081,82 € frente a un gasto habitual de 88,09 € por operación",54,Baja,Cerrada,Falso positivo,2026-08-12 19:16:34
+AL-00453,TX-0065660,TJ-002900,CL-02156,2026-08-11 20:54:07,País inusual,"Primera compra en Portugal en los últimos 60 días: 30,94 € en Valença",39,Baja,Cerrada,Falso positivo,2026-08-12 21:54:07
+AL-00454,TX-0065699,TJ-002860,CL-02124,2026-08-11 21:38:47,País inusual,"Primera compra en Portugal en los últimos 60 días: 41,95 € en Porto",53,Baja,Cerrada,Falso positivo,2026-08-12 23:38:47
+AL-00455,TX-0065743,TJ-000477,CL-00338,2026-08-11 22:44:14,País inusual,"Primera compra en Portugal en los últimos 60 días: 272,05 € en Porto",49,Baja,Cerrada,Falso positivo,2026-08-13 11:44:14
+AL-00456,TX-0065787,TJ-000289,CL-00202,2026-08-12 07:04:32,Importe inusual,"Importe de 730,74 € frente a un gasto habitual de 100,47 € por operación",62,Media,Cerrada,Falso positivo,2026-08-12 12:04:32
+AL-00457,TX-0065823,TJ-003126,CL-02318,2026-08-12 08:35:24,País inusual,"Primera compra en Portugal en los últimos 60 días: 48,27 € en Viana do Castelo",67,Media,Cerrada,Falso positivo,2026-08-13 05:35:24
+AL-00458,TX-0065945,TJ-001570,CL-01153,2026-08-12 11:05:42,País inusual,"Primera compra en Portugal en los últimos 60 días: 61,28 € en Braga",59,Baja,Cerrada,Falso positivo,2026-08-13 20:05:42
+AL-00459,TX-0066104,TJ-000954,CL-00690,2026-08-12 13:19:09,Importe inusual,"Importe de 822,83 € frente a un gasto habitual de 103,66 € por operación",69,Media,Cerrada,Falso positivo,2026-08-13 00:19:09
+AL-00460,TX-0066323,TJ-002400,CL-01779,2026-08-12 16:51:18,Comercio de alto riesgo,"Compra de 99,27 € en un comercio de tarjetas regalo (Lituania)",53,Baja,Cerrada,Falso positivo,2026-08-14 17:51:18
+AL-00461,TX-0066474,TJ-002623,CL-01945,2026-08-12 18:53:02,Importe inusual,"Importe de 754,70 € frente a un gasto habitual de 79,04 € por operación",72,Media,Cerrada,Falso positivo,2026-08-14 06:53:02
+AL-00462,TX-0066613,TJ-003217,CL-02382,2026-08-12 20:40:15,País inusual,"Primera compra en Portugal en los últimos 60 días: 37,94 € en Viana do Castelo",44,Baja,Cerrada,Falso positivo,2026-08-14 21:40:15
+AL-00463,TX-0066938,TJ-001163,CL-00852,2026-08-13 11:24:44,País inusual,"Primera compra en Portugal en los últimos 60 días: 13,94 € en Porto",38,Baja,Cerrada,Falso positivo,2026-08-14 19:24:44
+AL-00464,TX-0067339,TJ-002947,CL-02193,2026-08-13 17:48:19,Importe inusual,"Importe de 426,30 € frente a un gasto habitual de 48,74 € por operación",58,Baja,Cerrada,Falso positivo,2026-08-15 09:48:19
+AL-00465,TX-0067361,TJ-000683,CL-00496,2026-08-13 18:12:05,Importe inusual,"Importe de 608,05 € frente a un gasto habitual de 55,87 € por operación",56,Baja,Cerrada,Falso positivo,2026-08-15 01:12:05
+AL-00466,TX-0067593,TJ-000908,CL-00659,2026-08-13 22:08:30,País inusual,"Primera compra en Portugal en los últimos 60 días: 26,21 € en Valença",58,Baja,Cerrada,Falso positivo,2026-08-14 20:08:30
+AL-00467,TX-0067674,TJ-000304,CL-00212,2026-08-14 08:14:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 19,28 € en Viana do Castelo",52,Baja,Cerrada,Falso positivo,2026-08-14 11:14:20
+AL-00468,TX-0067987,TJ-000853,CL-00619,2026-08-14 13:56:37,País inusual,"Primera compra en Portugal en los últimos 60 días: 50,82 € en Chaves",56,Baja,Cerrada,Falso positivo,2026-08-14 20:56:37
+AL-00469,TX-0068000,TJ-003059,CL-02273,2026-08-14 14:10:59,Importe inusual,"Importe de 606,93 € frente a un gasto habitual de 72,38 € por operación",59,Baja,Cerrada,Falso positivo,2026-08-16 10:10:59
+AL-00470,TX-0068355,TJ-001057,CL-00768,2026-08-14 19:42:17,País inusual,"Primera compra en Portugal en los últimos 60 días: 102,77 € en Viana do Castelo",45,Baja,Cerrada,Falso positivo,2026-08-16 19:42:17
+AL-00471,TX-0068402,TJ-002537,CL-01880,2026-08-14 20:21:32,País inusual,"Primera compra en Portugal en los últimos 60 días: 76,88 € en Braga",51,Baja,Cerrada,Falso positivo,2026-08-14 22:21:32
+AL-00472,TX-0068408,TJ-001242,CL-00911,2026-08-14 20:33:00,Comercio de alto riesgo,"Compra de 109,72 € en un comercio de tarjetas regalo (Lituania)",66,Media,Cerrada,Falso positivo,2026-08-16 09:33:00
+AL-00473,TX-0068725,TJ-001136,CL-00830,2026-08-15 11:30:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 81,01 € en Braga",35,Baja,Cerrada,Falso positivo,2026-08-16 00:30:58
+AL-00474,TX-0068840,TJ-000475,CL-00336,2026-08-15 13:11:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 143,25 € en Braga",48,Baja,Cerrada,Falso positivo,2026-08-17 10:11:52
+AL-00475,TX-0068893,TJ-001670,CL-01229,2026-08-15 13:55:48,Importe inusual,"Importe de 393,35 € frente a un gasto habitual de 65,44 € por operación",64,Media,Cerrada,Falso positivo,2026-08-16 16:55:48
+AL-00476,TX-0069150,TJ-000213,CL-00152,2026-08-15 18:26:01,Comercio de alto riesgo,"Compra de 701,73 € en un comercio de joyería (Emiratos Árabes Unidos)",50,Baja,Cerrada,Falso positivo,2026-08-16 05:26:01
+AL-00477,TX-0069222,TJ-002953,CL-02198,2026-08-15 19:12:06,Importe inusual,"Importe de 696,27 € frente a un gasto habitual de 52,25 € por operación",64,Media,Cerrada,Falso positivo,2026-08-17 08:12:06
+AL-00478,TX-0069712,TJ-002466,CL-01831,2026-08-16 13:07:10,Importe inusual,"Importe de 1.071,15 € frente a un gasto habitual de 64,20 € por operación",68,Media,Cerrada,Falso positivo,2026-08-18 04:07:10
+AL-00479,TX-0069749,TJ-002190,CL-01622,2026-08-16 13:43:03,País inusual,"Primera compra en Portugal en los últimos 60 días: 255,05 € en Porto",49,Baja,Cerrada,Falso positivo,2026-08-17 22:43:03
+AL-00480,TX-0069844,TJ-002646,CL-01962,2026-08-16 15:26:01,Importe inusual,"Importe de 787,87 € frente a un gasto habitual de 56,61 € por operación",69,Media,Cerrada,Falso positivo,2026-08-17 14:26:01
+AL-00481,TX-0070050,TJ-002294,CL-01701,2026-08-16 18:42:01,Importe inusual,"Importe de 633,13 € frente a un gasto habitual de 64,80 € por operación",74,Media,Cerrada,Falso positivo,2026-08-18 00:42:01
+AL-00482,TX-0070458,TJ-000674,CL-00491,2026-08-17 10:56:05,Importe inusual,"Importe de 353,51 € frente a un gasto habitual de 54,03 € por operación",61,Media,Cerrada,Falso positivo,2026-08-19 12:56:05
+AL-00483,TX-0070498,TJ-000995,CL-00723,2026-08-17 11:27:00,Importe inusual,"Importe de 1.215,48 € frente a un gasto habitual de 49,54 € por operación",76,Media,Cerrada,Falso positivo,2026-08-18 03:27:00
+AL-00484,TX-0070653,TJ-002781,CL-02061,2026-08-17 13:48:01,Importe inusual,"Importe de 475,48 € frente a un gasto habitual de 44,30 € por operación",71,Media,Cerrada,Falso positivo,2026-08-18 15:48:01
+AL-00485,TX-0070716,TJ-001300,CL-00949,2026-08-17 14:42:14,Importe inusual,"Importe de 537,95 € frente a un gasto habitual de 63,20 € por operación",51,Baja,Cerrada,Falso positivo,2026-08-17 18:42:14
+AL-00486,TX-0070780,TJ-000498,CL-00354,2026-08-17 15:50:14,Importe inusual,"Importe de 442,30 € frente a un gasto habitual de 39,35 € por operación",73,Media,Cerrada,Falso positivo,2026-08-18 12:50:14
+AL-00487,TX-0071056,TJ-001323,CL-00961,2026-08-17 19:56:51,Importe inusual,"Importe de 465,25 € frente a un gasto habitual de 51,85 € por operación",42,Baja,Cerrada,Falso positivo,2026-08-19 22:56:51
+AL-00488,TX-0071197,TJ-003102,CL-02303,2026-08-18 04:02:48,Ráfaga de operaciones,"3 compras online en 10 minutos entre las 03:57 y las 04:08, en comercios extranjeros, por un total de 1.410,52 €",89,Alta,Cerrada,Fraude confirmado,2026-08-19 03:02:48
+AL-00489,TX-0071360,TJ-001263,CL-00925,2026-08-18 10:36:07,Comercio de alto riesgo,"Compra de 313,45 € en un comercio de criptoactivos (Estonia)",58,Baja,Cerrada,Falso positivo,2026-08-20 01:36:07
+AL-00490,TX-0071743,TJ-002318,CL-01715,2026-08-18 16:58:29,Importe inusual,"Importe de 634,93 € frente a un gasto habitual de 99,31 € por operación",42,Baja,Cerrada,Falso positivo,2026-08-20 10:58:29
+AL-00491,TX-0071951,TJ-003235,CL-02397,2026-08-18 20:00:01,Importe inusual,"Importe de 459,11 € frente a un gasto habitual de 52,09 € por operación",64,Media,Cerrada,Falso positivo,2026-08-19 09:00:01
+AL-00492,TX-0072793,TJ-001676,CL-01233,2026-08-19 19:42:57,Importe inusual,"Importe de 381,00 € frente a un gasto habitual de 57,45 € por operación",63,Media,Cerrada,Falso positivo,2026-08-21 06:42:57
+AL-00493,TX-0072831,TJ-002236,CL-01654,2026-08-19 20:17:32,Importe inusual,"Importe de 411,13 € frente a un gasto habitual de 49,33 € por operación",75,Media,Cerrada,Falso positivo,2026-08-20 15:17:32
+AL-00494,TX-0073026,TJ-002547,CL-01889,2026-08-20 08:56:35,País inusual,"Primera compra en Portugal en los últimos 60 días: 146,94 € en Porto",51,Baja,Cerrada,Falso positivo,2026-08-21 17:56:35
+AL-00495,TX-0073027,TJ-000624,CL-00453,2026-08-20 08:59:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 58,23 € en Chaves",50,Baja,Cerrada,Falso positivo,2026-08-21 17:59:43
+AL-00496,TX-0073547,TJ-002295,CL-01701,2026-08-20 17:36:24,Comercio de alto riesgo,"Compra de 94,83 € en un comercio de tarjetas regalo (Lituania)",58,Baja,Cerrada,Falso positivo,2026-08-22 01:36:24
+AL-00497,TX-0073613,TJ-001252,CL-00916,2026-08-20 18:30:21,Importe inusual,"Importe de 686,63 € frente a un gasto habitual de 105,34 € por operación",64,Media,Cerrada,Falso positivo,2026-08-22 02:30:21
+AL-00498,TX-0073769,TJ-001562,CL-01147,2026-08-20 20:48:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 281,08 € en Porto",46,Baja,Cerrada,Falso positivo,2026-08-22 15:48:19
+AL-00499,TX-0073843,TJ-001829,CL-01346,2026-08-20 22:37:46,Importe inusual,"Importe de 354,74 € frente a un gasto habitual de 47,28 € por operación",67,Media,Cerrada,Falso positivo,2026-08-22 10:37:46
+AL-00500,TX-0074137,TJ-000227,CL-00160,2026-08-21 12:26:25,País inusual,"Primera compra en Portugal en los últimos 60 días: 111,30 € en Braga",43,Baja,Cerrada,Falso positivo,2026-08-22 12:26:25
+AL-00501,TX-0074205,TJ-000003,CL-00003,2026-08-21 13:26:28,Comercio de alto riesgo,"Compra de 34,67 € en un comercio de tarjetas regalo (Lituania)",57,Baja,Cerrada,Falso positivo,2026-08-23 04:26:28
+AL-00502,TX-0074347,TJ-002870,CL-02133,2026-08-21 15:47:11,Comercio de alto riesgo,"Compra de 40,26 € en un comercio de tarjetas regalo (Chipre)",80,Alta,Cerrada,Falso positivo,2026-08-22 01:47:11
+AL-00503,TX-0074462,TJ-000633,CL-00460,2026-08-21 17:45:45,País inusual,"Primera compra en Portugal en los últimos 60 días: 53,15 € en Valença",49,Baja,Cerrada,Falso positivo,2026-08-22 04:45:45
+AL-00504,TX-0074673,TJ-001902,CL-01405,2026-08-21 20:47:42,Importe inusual,"Importe de 630,11 € frente a un gasto habitual de 95,12 € por operación",69,Media,Cerrada,Falso positivo,2026-08-22 10:47:42
+AL-00505,TX-0075089,TJ-001997,CL-01477,2026-08-22 13:17:30,País inusual,"Primera compra en Portugal en los últimos 60 días: 75,47 € en Valença",68,Media,Cerrada,Falso positivo,2026-08-24 08:17:30
+AL-00506,TX-0075242,TJ-001332,CL-00968,2026-08-22 15:51:58,Importe inusual,"Importe de 624,96 € frente a un gasto habitual de 89,35 € por operación",61,Media,Cerrada,Falso positivo,2026-08-23 08:51:58
+AL-00507,TX-0075531,TJ-001961,CL-01446,2026-08-22 20:00:00,Importe inusual,"Importe de 660,18 € frente a un gasto habitual de 85,98 € por operación",57,Baja,Cerrada,Falso positivo,2026-08-24 03:00:00
+AL-00508,TX-0075724,TJ-000769,CL-00551,2026-08-23 08:05:40,País inusual,"Primera compra en Portugal en los últimos 60 días: 149,23 € en Porto",66,Media,Cerrada,Falso positivo,2026-08-23 17:05:40
+AL-00509,TX-0076139,TJ-001547,CL-01138,2026-08-23 15:48:27,País inusual,"Primera compra en Portugal en los últimos 60 días: 44,10 € en Braga",42,Baja,Cerrada,Falso positivo,2026-08-25 09:48:27
+AL-00510,TX-0077473,TJ-001923,CL-01421,2026-08-25 02:16:48,Ráfaga de operaciones,"3 compras online en 16 minutos entre las 02:13 y las 02:30, en comercios extranjeros, por un total de 1.775,18 €",97,Alta,Cerrada,Fraude confirmado,2026-08-27 00:16:48
+AL-00511,TX-0077509,TJ-000194,CL-00137,2026-08-25 08:15:32,Importe inusual,"Importe de 611,30 € frente a un gasto habitual de 62,95 € por operación",68,Media,Cerrada,Falso positivo,2026-08-27 03:15:32
+AL-00512,TX-0077580,TJ-001331,CL-00967,2026-08-25 10:05:12,Comercio de alto riesgo,"Compra de 296,12 € en un comercio de joyería (Emiratos Árabes Unidos)",64,Media,Cerrada,Falso positivo,2026-08-26 09:05:12
+AL-00513,TX-0077754,TJ-002182,CL-01617,2026-08-25 12:35:10,Importe inusual,"Importe de 985,64 € frente a un gasto habitual de 47,67 € por operación",46,Baja,Cerrada,Falso positivo,2026-08-27 14:35:10
+AL-00514,TX-0077953,TJ-000433,CL-00308,2026-08-25 15:21:33,País inusual,"Primera compra en Portugal en los últimos 60 días: 143,41 € en Viana do Castelo",70,Media,Cerrada,Falso positivo,2026-08-27 11:21:33
+AL-00515,TX-0078153,TJ-001578,CL-01160,2026-08-25 18:25:39,Importe inusual,"Importe de 497,73 € frente a un gasto habitual de 56,30 € por operación",77,Media,Cerrada,Falso positivo,2026-08-26 11:25:39
+AL-00516,TX-0078226,TJ-000449,CL-00317,2026-08-25 19:27:14,Importe inusual,"Importe de 441,81 € frente a un gasto habitual de 54,23 € por operación",54,Baja,Cerrada,Falso positivo,2026-08-26 12:27:14
+AL-00517,TX-0078521,TJ-002220,CL-01643,2026-08-26 09:05:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,17 € en Viana do Castelo",59,Baja,Cerrada,Falso positivo,2026-08-26 16:05:21
+AL-00518,TX-0078814,TJ-003003,CL-02234,2026-08-26 13:41:56,País inusual,"Primera compra en Portugal en los últimos 60 días: 44,94 € en Viana do Castelo",49,Baja,Cerrada,Falso positivo,2026-08-26 17:41:56
+AL-00519,TX-0079588,TJ-000958,CL-00693,2026-08-27 11:47:07,País inusual,"Primera compra en Portugal en los últimos 60 días: 47,98 € en Chaves",66,Media,Cerrada,Falso positivo,2026-08-28 18:47:07
+AL-00520,TX-0080002,TJ-000428,CL-00304,2026-08-27 17:50:58,Importe inusual,"Importe de 412,09 € frente a un gasto habitual de 44,82 € por operación",63,Media,Cerrada,Falso positivo,2026-08-29 15:50:58
+AL-00521,TX-0080089,TJ-000433,CL-00308,2026-08-27 18:50:33,Importe inusual,"Importe de 631,28 € frente a un gasto habitual de 69,23 € por operación",62,Media,Cerrada,Falso positivo,2026-08-29 10:50:33
+AL-00522,TX-0080095,TJ-000803,CL-00580,2026-08-27 18:55:42,País inusual,"Primera compra en Portugal en los últimos 60 días: 19,48 € en Chaves",53,Baja,Cerrada,Falso positivo,2026-08-29 14:55:42
+AL-00523,TX-0080262,TJ-002501,CL-01855,2026-08-27 22:24:14,País inusual,"Primera compra en Portugal en los últimos 60 días: 58,34 € en Valença",57,Baja,Cerrada,Falso positivo,2026-08-28 07:24:14
+AL-00524,TX-0080324,TJ-000471,CL-00334,2026-08-28 08:12:15,Importe inusual,"Importe de 650,42 € frente a un gasto habitual de 89,67 € por operación",87,Alta,Cerrada,Falso positivo,2026-08-28 21:12:15
+AL-00525,TX-0080421,TJ-001644,CL-01209,2026-08-28 11:09:33,Importe inusual,"Importe de 609,97 € frente a un gasto habitual de 46,81 € por operación",70,Media,Cerrada,Falso positivo,2026-08-29 08:09:33
+AL-00526,TX-0080499,TJ-002185,CL-01620,2026-08-28 12:44:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 102,97 € en Porto",37,Baja,Cerrada,Falso positivo,2026-08-28 20:44:19
+AL-00527,TX-0080661,TJ-001509,CL-01111,2026-08-28 15:17:51,País inusual,"Primera compra en Portugal en los últimos 60 días: 18,19 € en Chaves",61,Media,Cerrada,Falso positivo,2026-08-30 13:17:51
+AL-00528,TX-0080750,TJ-001756,CL-01297,2026-08-28 16:54:56,Comercio de alto riesgo,"Compra de 65,02 € en un comercio de tarjetas regalo (Lituania)",72,Media,Cerrada,Falso positivo,2026-08-29 13:54:56
+AL-00529,TX-0080780,TJ-000299,CL-00209,2026-08-28 17:20:10,País inusual,"Primera compra en Portugal en los últimos 60 días: 52,82 € en Braga",63,Media,Cerrada,Falso positivo,2026-08-30 18:20:10
+AL-00530,TX-0081030,TJ-001035,CL-00753,2026-08-28 21:00:28,Importe inusual,"Importe de 386,79 € frente a un gasto habitual de 52,53 € por operación",76,Media,Cerrada,Falso positivo,2026-08-30 20:00:28
+AL-00531,TX-0081109,TJ-000948,CL-00686,2026-08-29 04:42:26,Importe inusual,"Importe de 447,26 € frente a un gasto habitual de 44,42 € por operación",59,Baja,Cerrada,Falso positivo,2026-08-31 05:42:26
+AL-00532,TX-0081297,TJ-002718,CL-02015,2026-08-29 11:30:23,Importe inusual,"Importe de 376,55 € frente a un gasto habitual de 40,72 € por operación",84,Alta,Cerrada,Falso positivo,2026-08-31 13:30:23
+AL-00533,TX-0081309,TJ-002775,CL-02057,2026-08-29 11:45:02,Comercio de alto riesgo,"Compra de 138,09 € en un comercio de tarjetas regalo (Lituania)",60,Media,Cerrada,Falso positivo,2026-08-31 14:45:02
+AL-00534,TX-0081378,TJ-002474,CL-01834,2026-08-29 12:48:42,Comercio de alto riesgo,"Compra de 235,53 € en un comercio de joyería (Emiratos Árabes Unidos)",69,Media,Cerrada,Falso positivo,2026-08-30 23:48:42
+AL-00535,TX-0081520,TJ-002581,CL-01915,2026-08-29 15:13:52,Comercio de alto riesgo,"Compra de 81,65 € en un comercio de tarjetas regalo (Lituania)",78,Media,Cerrada,Falso positivo,2026-08-30 06:13:52
+AL-00536,TX-0081800,TJ-001864,CL-01375,2026-08-29 19:14:47,País inusual,"Primera compra en Portugal en los últimos 60 días: 154,87 € en Porto",48,Baja,Cerrada,Falso positivo,2026-08-30 15:14:47
+AL-00537,TX-0081854,TJ-002216,CL-01640,2026-08-29 19:58:16,Importe inusual,"Importe de 400,74 € frente a un gasto habitual de 48,49 € por operación",61,Media,Cerrada,Falso positivo,2026-08-30 17:58:16
+AL-00538,TX-0081958,TJ-002403,CL-01782,2026-08-29 22:00:09,Importe inusual,"Importe de 491,78 € frente a un gasto habitual de 43,91 € por operación",54,Baja,Cerrada,Falso positivo,2026-08-31 08:00:09
+AL-00539,TX-0082198,TJ-002847,CL-02113,2026-08-30 11:15:00,País inusual,"Primera compra en Portugal en los últimos 60 días: 193,37 € en Viana do Castelo",38,Baja,Cerrada,Falso positivo,2026-09-01 10:15:00
+AL-00540,TX-0082514,TJ-001014,CL-00736,2026-08-30 15:59:48,Importe inusual,"Importe de 410,21 € frente a un gasto habitual de 66,20 € por operación",52,Baja,Cerrada,Falso positivo,2026-08-31 05:59:48
+AL-00541,TX-0082720,TJ-000790,CL-00569,2026-08-30 19:08:35,Importe inusual,"Importe de 453,63 € frente a un gasto habitual de 42,91 € por operación",42,Baja,Cerrada,Falso positivo,2026-09-01 14:08:35
+AL-00542,TX-0082745,TJ-001770,CL-01307,2026-08-30 19:26:23,Importe inusual,"Importe de 1.360,13 € frente a un gasto habitual de 84,95 € por operación",62,Media,Cerrada,Falso positivo,2026-08-31 07:26:23
+AL-00543,TX-0083214,TJ-000937,CL-00679,2026-08-31 12:46:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 238,89 € en Braga",61,Media,Cerrada,Falso positivo,2026-09-01 23:46:21
+AL-00544,TX-0083308,TJ-001276,CL-00933,2026-08-31 13:58:24,Comercio de alto riesgo,"Compra de 489,75 € en un comercio de joyería (Emiratos Árabes Unidos)",67,Media,Cerrada,Falso positivo,2026-09-01 08:58:24
+AL-00545,TX-0083452,TJ-000346,CL-00243,2026-08-31 16:35:04,Importe inusual,"Importe de 765,62 € frente a un gasto habitual de 89,69 € por operación",73,Media,Cerrada,Falso positivo,2026-09-02 13:35:04
+AL-00546,TX-0083784,TJ-002670,CL-01978,2026-08-31 20:51:45,Importe inusual,"Importe de 432,62 € frente a un gasto habitual de 43,68 € por operación",71,Media,Cerrada,Falso positivo,2026-09-02 21:51:45
+AL-00547,TX-0083782,TJ-000814,CL-00587,2026-08-31 20:52:06,Comercio de alto riesgo,"Compra de 43,63 € en un comercio de tarjetas regalo (Lituania)",62,Media,Cerrada,Falso positivo,2026-09-01 18:52:06
+AL-00548,TX-0084006,TJ-002312,CL-01712,2026-09-01 09:47:51,Comercio de alto riesgo,"Compra de 111,42 € en un comercio de tarjetas regalo (Lituania)",54,Baja,Cerrada,Falso positivo,2026-09-02 00:47:51
+AL-00549,TX-0084012,TJ-001183,CL-00868,2026-09-01 10:00:03,Importe inusual,"Importe de 573,87 € frente a un gasto habitual de 56,48 € por operación",53,Baja,Cerrada,Falso positivo,2026-09-02 09:00:03
+AL-00550,TX-0084224,TJ-002748,CL-02035,2026-09-01 13:31:16,Importe inusual,"Importe de 439,55 € frente a un gasto habitual de 61,76 € por operación",63,Media,Cerrada,Falso positivo,2026-09-02 23:31:16
+AL-00551,TX-0085000,TJ-003152,CL-02336,2026-09-02 12:05:07,País inusual,"Primera compra en Portugal en los últimos 60 días: 41,74 € en Porto",51,Baja,Cerrada,Falso positivo,2026-09-04 09:05:07
+AL-00552,TX-0085176,TJ-000206,CL-00147,2026-09-02 14:17:05,Comercio de alto riesgo,"Compra de 194,70 € en un comercio de criptoactivos (Estonia)",56,Baja,Cerrada,Falso positivo,2026-09-04 17:17:05
+AL-00553,TX-0085259,TJ-000645,CL-00469,2026-09-02 15:41:51,País inusual,"Primera compra en Portugal en los últimos 60 días: 22,01 € en Viana do Castelo",41,Baja,Cerrada,Falso positivo,2026-09-03 22:41:51
+AL-00554,TX-0085477,TJ-001891,CL-01395,2026-09-02 18:59:16,Importe inusual,"Importe de 366,96 € frente a un gasto habitual de 55,48 € por operación",61,Media,Cerrada,Falso positivo,2026-09-03 18:59:16
+AL-00555,TX-0085602,TJ-001294,CL-00944,2026-09-02 20:33:56,País inusual,"Primera compra en Portugal en los últimos 60 días: 19,53 € en Braga",35,Baja,Cerrada,Falso positivo,2026-09-02 23:33:56
+AL-00556,TX-0085934,TJ-002089,CL-01550,2026-09-03 11:37:39,Importe inusual,"Importe de 825,05 € frente a un gasto habitual de 83,57 € por operación",60,Media,Cerrada,Falso positivo,2026-09-05 05:37:39
+AL-00557,TX-0086002,TJ-003103,CL-02304,2026-09-03 12:51:08,País inusual,"Primera compra en Portugal en los últimos 60 días: 58,74 € en Porto",52,Baja,Cerrada,Falso positivo,2026-09-03 21:51:08
+AL-00558,TX-0086054,TJ-002157,CL-01597,2026-09-03 13:29:51,Comercio de alto riesgo,"Compra de 56,76 € en un comercio de tarjetas regalo (Lituania)",57,Baja,Cerrada,Falso positivo,2026-09-05 09:29:51
+AL-00559,TX-0086712,TJ-002392,CL-01770,2026-09-04 10:18:09,Importe inusual,"Importe de 707,51 € frente a un gasto habitual de 86,08 € por operación",44,Baja,Cerrada,Falso positivo,2026-09-05 14:18:09
+AL-00560,TX-0086982,TJ-000772,CL-00553,2026-09-04 14:01:25,País inusual,"Primera compra en Portugal en los últimos 60 días: 13,02 € en Chaves",51,Baja,Cerrada,Falso positivo,2026-09-05 05:01:25
+AL-00561,TX-0087071,TJ-000306,CL-00214,2026-09-04 16:00:59,País inusual,"Primera compra en Portugal en los últimos 60 días: 83,14 € en Porto",78,Media,Cerrada,Falso positivo,2026-09-05 13:00:59
+AL-00562,TX-0087175,TJ-000311,CL-00217,2026-09-04 17:29:43,Importe inusual,"Importe de 2.148,55 € frente a un gasto habitual de 51,19 € por operación",60,Media,Cerrada,Falso positivo,2026-09-04 21:29:43
+AL-00563,TX-0087265,TJ-002556,CL-01895,2026-09-04 18:33:12,País inusual,"Primera compra en Portugal en los últimos 60 días: 22,76 € en Viana do Castelo",49,Baja,Cerrada,Falso positivo,2026-09-06 02:33:12
+AL-00564,TX-0087787,TJ-002255,CL-01667,2026-09-05 12:30:34,Importe inusual,"Importe de 669,27 € frente a un gasto habitual de 95,26 € por operación",61,Media,Cerrada,Falso positivo,2026-09-06 09:30:34
+AL-00565,TX-0087904,TJ-001571,CL-01154,2026-09-05 14:13:14,País inusual,"Primera compra en Portugal en los últimos 60 días: 22,41 € en Viana do Castelo",59,Baja,Cerrada,Falso positivo,2026-09-07 03:13:14
+AL-00566,TX-0088059,TJ-001949,CL-01439,2026-09-05 17:04:12,Importe inusual,"Importe de 850,71 € frente a un gasto habitual de 76,38 € por operación",72,Media,Cerrada,Falso positivo,2026-09-06 18:04:12
+AL-00567,TX-0088658,TJ-001103,CL-00805,2026-09-06 11:50:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 86,90 € en Braga",56,Baja,Cerrada,Falso positivo,2026-09-06 21:50:46
+AL-00568,TX-0088764,TJ-001392,CL-01020,2026-09-06 13:06:22,País inusual,"Primera compra en Portugal en los últimos 60 días: 101,50 € en Chaves",65,Media,Cerrada,Falso positivo,2026-09-08 16:06:22
+AL-00569,TX-0089136,TJ-000417,CL-00297,2026-09-06 18:59:24,País inusual,"Primera compra en Portugal en los últimos 60 días: 10,42 € en Valença",65,Media,Cerrada,Falso positivo,2026-09-07 04:59:24
+AL-00570,TX-0089552,TJ-002449,CL-01819,2026-09-07 11:24:08,Importe inusual,"Importe de 519,44 € frente a un gasto habitual de 61,83 € por operación",64,Media,Cerrada,Falso positivo,2026-09-09 09:24:08
+AL-00571,TX-0089650,TJ-000160,CL-00113,2026-09-07 12:39:36,Importe inusual,"Importe de 546,94 € frente a un gasto habitual de 77,26 € por operación",72,Media,Cerrada,Falso positivo,2026-09-07 17:39:36
+AL-00572,TX-0089852,TJ-001042,CL-00757,2026-09-07 16:20:03,Comercio de alto riesgo,"Compra de 153,16 € en un comercio de joyería (Emiratos Árabes Unidos)",50,Baja,Cerrada,Falso positivo,2026-09-09 18:20:03
+AL-00573,TX-0089938,TJ-000296,CL-00207,2026-09-07 17:51:18,Comercio de alto riesgo,"Compra de 312,04 € en un comercio de joyería (Emiratos Árabes Unidos)",66,Media,Cerrada,Falso positivo,2026-09-09 00:51:18
+AL-00574,TX-0090153,TJ-000038,CL-00028,2026-09-07 21:01:35,Importe inusual,"Importe de 408,78 € frente a un gasto habitual de 60,30 € por operación",61,Media,Cerrada,Falso positivo,2026-09-08 16:01:35
+AL-00575,TX-0090354,TJ-001628,CL-01201,2026-09-08 10:02:02,País inusual,"Primera compra en Portugal en los últimos 60 días: 167,71 € en Porto",49,Baja,Cerrada,Falso positivo,2026-09-08 18:02:02
+AL-00576,TX-0090388,TJ-002869,CL-02132,2026-09-08 10:48:18,Importe inusual,"Importe de 828,51 € frente a un gasto habitual de 65,48 € por operación",72,Media,Cerrada,Falso positivo,2026-09-09 04:48:18
+AL-00577,TX-0090406,TJ-003193,CL-02367,2026-09-08 11:05:20,Importe inusual,"Importe de 367,13 € frente a un gasto habitual de 45,42 € por operación",67,Media,Cerrada,Falso positivo,2026-09-10 04:05:20
+AL-00578,TX-0090563,TJ-001321,CL-00960,2026-09-08 13:29:58,Importe inusual,"Importe de 480,15 € frente a un gasto habitual de 71,69 € por operación",56,Baja,Cerrada,Falso positivo,2026-09-09 08:29:58
+AL-00579,TX-0090708,TJ-001204,CL-00883,2026-09-08 15:40:13,País inusual,"Primera compra en Portugal en los últimos 60 días: 29,44 € en Valença",60,Media,Cerrada,Falso positivo,2026-09-10 11:40:13
+AL-00580,TX-0091348,TJ-002470,CL-01832,2026-09-09 11:40:59,Importe inusual,"Importe de 451,82 € frente a un gasto habitual de 48,80 € por operación",76,Media,Cerrada,Falso positivo,2026-09-11 00:40:59
+AL-00581,TX-0091525,TJ-002975,CL-02214,2026-09-09 13:57:10,País inusual,"Primera compra en Portugal en los últimos 60 días: 40,50 € en Chaves",56,Baja,Cerrada,Falso positivo,2026-09-11 15:57:10
+AL-00582,TX-0091614,TJ-002331,CL-01724,2026-09-09 15:19:37,Comercio de alto riesgo,"Compra de 27,72 € en un comercio de tarjetas regalo (Chipre)",60,Media,Cerrada,Falso positivo,2026-09-09 20:19:37
+AL-00583,TX-0091934,TJ-001444,CL-01062,2026-09-09 20:03:05,País inusual,"Primera compra en Portugal en los últimos 60 días: 116,68 € en Porto",56,Baja,Cerrada,Falso positivo,2026-09-10 09:03:05
+AL-00584,TX-0092222,TJ-000929,CL-00675,2026-09-10 10:06:29,Importe inusual,"Importe de 2.572,53 € frente a un gasto habitual de 46,64 € por operación",42,Baja,Cerrada,Falso positivo,2026-09-11 03:06:29
+AL-00585,TX-0092481,TJ-002337,CL-01729,2026-09-10 13:50:29,País inusual,"Primera compra en Portugal en los últimos 60 días: 39,61 € en Porto",59,Baja,Cerrada,Falso positivo,2026-09-10 22:50:29
+AL-00586,TX-0092721,TJ-002990,CL-02223,2026-09-10 17:44:19,Comercio de alto riesgo,"Compra de 322,83 € en un comercio de joyería (Emiratos Árabes Unidos)",45,Baja,Cerrada,Falso positivo,2026-09-11 11:44:19
+AL-00587,TX-0092854,TJ-002264,CL-01674,2026-09-10 19:32:41,Importe inusual,"Importe de 421,93 € frente a un gasto habitual de 65,69 € por operación",68,Media,Cerrada,Falso positivo,2026-09-11 22:32:41
+AL-00588,TX-0093547,TJ-003165,CL-02347,2026-09-11 16:25:24,Importe inusual,"Importe de 437,53 € frente a un gasto habitual de 50,00 € por operación",70,Media,Cerrada,Falso positivo,2026-09-11 19:25:24
+AL-00589,TX-0093828,TJ-002964,CL-02206,2026-09-11 20:22:19,Importe inusual,"Importe de 565,16 € frente a un gasto habitual de 48,54 € por operación",76,Media,Cerrada,Falso positivo,2026-09-12 02:22:19
+AL-00590,TX-0093920,TJ-000327,CL-00229,2026-09-11 22:44:34,Importe inusual,"Importe de 407,42 € frente a un gasto habitual de 55,57 € por operación",60,Media,Cerrada,Falso positivo,2026-09-12 19:44:34
+AL-00591,TX-0094074,TJ-002751,CL-02038,2026-09-12 10:23:08,Comercio de alto riesgo,"Compra de 369,75 € en un comercio de joyería (Emiratos Árabes Unidos)",65,Media,Cerrada,Falso positivo,2026-09-13 22:23:08
+AL-00592,TX-0094176,TJ-001970,CL-01455,2026-09-12 11:51:16,Comercio de alto riesgo,"Compra de 52,88 € en un comercio de tarjetas regalo (Chipre)",62,Media,Cerrada,Falso positivo,2026-09-13 16:51:16
+AL-00593,TX-0094207,TJ-001367,CL-00998,2026-09-12 12:14:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 28,03 € en Porto",47,Baja,Cerrada,Falso positivo,2026-09-13 14:14:46
+AL-00594,TX-0094402,TJ-000077,CL-00057,2026-09-12 15:14:39,País inusual,"Primera compra en Portugal en los últimos 60 días: 27,02 € en Viana do Castelo",40,Baja,Cerrada,Falso positivo,2026-09-14 03:14:39
+AL-00595,TX-0094585,TJ-002891,CL-02149,2026-09-12 18:17:41,Importe inusual,"Importe de 505,54 € frente a un gasto habitual de 71,58 € por operación",63,Media,Cerrada,Falso positivo,2026-09-14 18:17:41
+AL-00596,TX-0094889,TJ-003209,CL-02377,2026-09-13 02:19:47,Comercio de alto riesgo,"Compra de 247,96 € en un comercio de criptoactivos (Malta) a las 02:16",92,Alta,Cerrada,Fraude confirmado,2026-09-13 14:19:47
+AL-00597,TX-0095254,TJ-003059,CL-02273,2026-09-13 14:27:56,Comercio de alto riesgo,"Compra de 616,08 € en un comercio de joyería (Emiratos Árabes Unidos)",58,Baja,Cerrada,Falso positivo,2026-09-13 22:27:56
+AL-00598,TX-0095689,TJ-000210,CL-00150,2026-09-13 21:48:35,Importe inusual,"Importe de 519,82 € frente a un gasto habitual de 60,59 € por operación",69,Media,Cerrada,Falso positivo,2026-09-15 11:48:35
+AL-00599,TX-0095841,TJ-002210,CL-01636,2026-09-14 09:55:04,País inusual,"Primera compra en Portugal en los últimos 60 días: 279,57 € en Viana do Castelo",65,Media,Cerrada,Falso positivo,2026-09-15 07:55:04
+AL-00600,TX-0096120,TJ-000623,CL-00452,2026-09-14 14:09:34,País inusual,"Primera compra en Portugal en los últimos 60 días: 23,24 € en Porto",68,Media,Cerrada,Falso positivo,2026-09-16 02:09:34
+AL-00601,TX-0096491,TJ-001198,CL-00878,2026-09-14 20:02:15,País inusual,"Primera compra en Portugal en los últimos 60 días: 77,28 € en Chaves",79,Media,Cerrada,Falso positivo,2026-09-15 22:02:15
+AL-00602,TX-0096700,TJ-002520,CL-01868,2026-09-15 08:49:07,País inusual,"Primera compra en Portugal en los últimos 60 días: 293,08 € en Viana do Castelo",52,Baja,Cerrada,Falso positivo,2026-09-17 05:49:07
+AL-00603,TX-0096728,TJ-001331,CL-00967,2026-09-15 09:28:29,Comercio de alto riesgo,"Compra de 119,49 € en un comercio de tarjetas regalo (Lituania)",54,Baja,Cerrada,Falso positivo,2026-09-15 22:28:29
+AL-00604,TX-0096779,TJ-002996,CL-02227,2026-09-15 10:25:51,País inusual,"Primera compra en Portugal en los últimos 60 días: 133,22 € en Porto",56,Baja,Cerrada,Falso positivo,2026-09-15 20:25:51
+AL-00605,TX-0097963,TJ-002253,CL-01665,2026-09-16 14:08:15,Importe inusual,"Importe de 469,31 € frente a un gasto habitual de 54,92 € por operación",55,Baja,Cerrada,Falso positivo,2026-09-17 14:08:15
+AL-00606,TX-0098116,TJ-002466,CL-01831,2026-09-16 16:33:31,Importe inusual,"Importe de 648,27 € frente a un gasto habitual de 64,20 € por operación",56,Baja,Cerrada,Falso positivo,2026-09-17 14:33:31
+AL-00607,TX-0098246,TJ-001603,CL-01181,2026-09-16 18:48:20,Importe inusual,"Importe de 526,33 € frente a un gasto habitual de 84,27 € por operación",67,Media,Cerrada,Falso positivo,2026-09-17 11:48:20
+AL-00608,TX-0098660,TJ-002619,CL-01942,2026-09-17 10:58:36,Importe inusual,"Importe de 888,79 € frente a un gasto habitual de 90,02 € por operación",68,Media,Cerrada,Falso positivo,2026-09-17 22:58:36
+AL-00609,TX-0098895,TJ-000274,CL-00192,2026-09-17 14:20:55,Importe inusual,"Importe de 618,78 € frente a un gasto habitual de 50,58 € por operación",66,Media,Cerrada,Falso positivo,2026-09-18 15:20:55
+AL-00610,TX-0098894,TJ-002768,CL-02051,2026-09-17 14:22:24,Importe inusual,"Importe de 910,50 € frente a un gasto habitual de 50,73 € por operación",84,Alta,Cerrada,Falso positivo,2026-09-18 11:22:24
+AL-00611,TX-0099162,TJ-000922,CL-00669,2026-09-17 18:49:59,Importe inusual,"Importe de 677,92 € frente a un gasto habitual de 92,66 € por operación",66,Media,Cerrada,Falso positivo,2026-09-18 11:49:59
+AL-00612,TX-0099304,TJ-000746,CL-00537,2026-09-17 20:51:35,Importe inusual,"Importe de 631,63 € frente a un gasto habitual de 31,62 € por operación",64,Media,Cerrada,Falso positivo,2026-09-18 17:51:35
+AL-00613,TX-0099494,TJ-000615,CL-00446,2026-09-18 09:45:06,Importe inusual,"Importe de 393,51 € frente a un gasto habitual de 55,03 € por operación",63,Media,Cerrada,Falso positivo,2026-09-19 19:45:06
+AL-00614,TX-0100530,TJ-003185,CL-02361,2026-09-19 10:51:14,País inusual,"Primera compra en Portugal en los últimos 60 días: 36,76 € en Valença",62,Media,Cerrada,Falso positivo,2026-09-19 22:51:14
+AL-00615,TX-0101147,TJ-002499,CL-01854,2026-09-19 20:21:48,Comercio de alto riesgo,"Compra de 23,47 € en un comercio de tarjetas regalo (Chipre)",64,Media,Cerrada,Falso positivo,2026-09-21 13:21:48
+AL-00616,TX-0101339,TJ-000221,CL-00157,2026-09-20 08:12:08,País inusual,"Primera compra en Portugal en los últimos 60 días: 165,28 € en Braga",43,Baja,Cerrada,Falso positivo,2026-09-21 08:12:08
+AL-00617,TX-0101551,TJ-001282,CL-00937,2026-09-20 12:29:51,Importe inusual,"Importe de 976,37 € frente a un gasto habitual de 91,33 € por operación",47,Baja,Cerrada,Falso positivo,2026-09-21 16:29:51
+AL-00618,TX-0101693,TJ-001294,CL-00944,2026-09-20 14:14:56,Importe inusual,"Importe de 358,34 € frente a un gasto habitual de 38,87 € por operación",74,Media,Cerrada,Falso positivo,2026-09-22 12:14:56
+AL-00619,TX-0101945,TJ-000901,CL-00655,2026-09-20 18:24:26,Comercio de alto riesgo,"Compra de 235,89 € en un comercio de criptoactivos (Estonia)",66,Media,Cerrada,Falso positivo,2026-09-21 08:24:26
+AL-00620,TX-0102030,TJ-003039,CL-02260,2026-09-20 19:19:04,Importe inusual,"Importe de 578,22 € frente a un gasto habitual de 49,15 € por operación",64,Media,Cerrada,Falso positivo,2026-09-22 00:19:04
+AL-00621,TX-0102046,TJ-002177,CL-01614,2026-09-20 19:37:26,País inusual,"Primera compra en Portugal en los últimos 60 días: 32,63 € en Braga",44,Baja,Cerrada,Falso positivo,2026-09-22 08:37:26
+AL-00622,TX-0102221,TJ-002371,CL-01755,2026-09-21 06:13:33,Comercio de alto riesgo,"Compra de 62,18 € en un comercio de tarjetas regalo (Lituania)",62,Media,Cerrada,Falso positivo,2026-09-21 15:13:33
+AL-00623,TX-0102252,TJ-001384,CL-01011,2026-09-21 08:12:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 118,34 € en Braga",51,Baja,Cerrada,Falso positivo,2026-09-22 03:12:43
+AL-00624,TX-0102339,TJ-002660,CL-01971,2026-09-21 10:25:15,País inusual,"Primera compra en Portugal en los últimos 60 días: 88,75 € en Valença",59,Baja,Cerrada,Falso positivo,2026-09-23 12:25:15
+AL-00625,TX-0102671,TJ-001237,CL-00907,2026-09-21 16:14:40,Comercio de alto riesgo,"Compra de 49,73 € en un comercio de tarjetas regalo (Lituania)",61,Media,Cerrada,Falso positivo,2026-09-22 09:14:40
+AL-00626,TX-0103193,TJ-001095,CL-00800,2026-09-22 10:02:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 201,36 € en Porto",60,Media,Cerrada,Falso positivo,2026-09-22 14:02:43
+AL-00627,TX-0103205,TJ-001032,CL-00751,2026-09-22 10:19:52,País inusual,"Primera compra en Portugal en los últimos 60 días: 28,69 € en Porto",42,Baja,Cerrada,Falso positivo,2026-09-23 02:19:52
+AL-00628,TX-0103556,TJ-002278,CL-01686,2026-09-22 16:00:32,País inusual,"Primera compra en Portugal en los últimos 60 días: 28,62 € en Porto",48,Baja,Cerrada,Falso positivo,2026-09-24 18:00:32
+AL-00629,TX-0103753,TJ-001726,CL-01273,2026-09-22 18:47:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 75,24 € en Chaves",55,Baja,Cerrada,Falso positivo,2026-09-23 03:47:46
+AL-00630,TX-0103895,TJ-000240,CL-00172,2026-09-22 21:06:27,Importe inusual,"Importe de 557,61 € frente a un gasto habitual de 85,87 € por operación",67,Media,Cerrada,Falso positivo,2026-09-24 03:06:27
+AL-00631,TX-0104602,TJ-003002,CL-02233,2026-09-23 17:59:42,País inusual,"Primera compra en Portugal en los últimos 60 días: 30,87 € en Braga",52,Baja,Cerrada,Falso positivo,2026-09-24 20:59:42
+AL-00632,TX-0104944,TJ-001546,CL-01138,2026-09-24 07:40:55,Importe inusual,"Importe de 700,84 € frente a un gasto habitual de 44,84 € por operación",65,Media,Cerrada,Falso positivo,2026-09-26 07:40:55
+AL-00633,TX-0105053,TJ-002165,CL-01604,2026-09-24 10:28:40,Importe inusual,"Importe de 538,67 € frente a un gasto habitual de 48,54 € por operación",57,Baja,Cerrada,Falso positivo,2026-09-25 19:28:40
+AL-00634,TX-0105132,TJ-001980,CL-01464,2026-09-24 11:55:23,País inusual,"Primera compra en Portugal en los últimos 60 días: 49,83 € en Chaves",58,Baja,Cerrada,Falso positivo,2026-09-25 15:55:23
+AL-00635,TX-0105197,TJ-000442,CL-00313,2026-09-24 12:48:03,Importe inusual,"Importe de 442,33 € frente a un gasto habitual de 68,25 € por operación",72,Media,Cerrada,Falso positivo,2026-09-25 09:48:03
+AL-00636,TX-0105415,TJ-001188,CL-00871,2026-09-24 16:31:44,País inusual,"Primera compra en Portugal en los últimos 60 días: 78,80 € en Braga",51,Baja,Cerrada,Falso positivo,2026-09-25 13:31:44
+AL-00637,TX-0105464,TJ-002188,CL-01621,2026-09-24 17:18:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 202,45 € en Porto",50,Baja,Cerrada,Falso positivo,2026-09-26 11:18:20
+AL-00638,TX-0105768,TJ-001875,CL-01383,2026-09-24 22:02:26,Comercio de alto riesgo,"Compra de 1.399,63 € en un comercio de criptoactivos (Estonia)",76,Media,Cerrada,Falso positivo,2026-09-26 12:02:26
+AL-00639,TX-0106046,TJ-000269,CL-00189,2026-09-25 12:10:21,Importe inusual,"Importe de 1.100,08 € frente a un gasto habitual de 91,74 € por operación",55,Baja,Cerrada,Falso positivo,2026-09-26 03:10:21
+AL-00640,TX-0106348,TJ-000548,CL-00399,2026-09-25 16:59:56,Importe inusual,"Importe de 363,57 € frente a un gasto habitual de 44,31 € por operación",51,Baja,Cerrada,Falso positivo,2026-09-27 08:59:56
+AL-00641,TX-0106452,TJ-000539,CL-00392,2026-09-25 18:25:07,País inusual,"Primera compra en Portugal en los últimos 60 días: 160,79 € en Braga",56,Baja,Cerrada,Falso positivo,2026-09-26 06:25:07
+AL-00642,TX-0106827,TJ-002768,CL-02051,2026-09-26 09:49:12,Importe inusual,"Importe de 487,14 € frente a un gasto habitual de 50,73 € por operación",66,Media,Cerrada,Falso positivo,2026-09-26 11:49:12
+AL-00643,TX-0106846,TJ-002951,CL-02196,2026-09-26 10:07:34,País inusual,"Primera compra en Portugal en los últimos 60 días: 40,94 € en Viana do Castelo",57,Baja,Cerrada,Falso positivo,2026-09-28 03:07:34
+AL-00644,TX-0107042,TJ-001049,CL-00762,2026-09-26 13:22:31,País inusual,"Primera compra en Portugal en los últimos 60 días: 57,01 € en Chaves",51,Baja,Cerrada,Falso positivo,2026-09-27 01:22:31
+AL-00645,TX-0107068,TJ-002300,CL-01704,2026-09-26 13:45:23,Importe inusual,"Importe de 358,03 € frente a un gasto habitual de 33,80 € por operación",62,Media,Cerrada,Falso positivo,2026-09-27 14:45:23
+AL-00646,TX-0107311,TJ-002549,CL-01890,2026-09-26 17:56:12,Importe inusual,"Importe de 780,83 € frente a un gasto habitual de 46,78 € por operación",73,Media,Cerrada,Falso positivo,2026-09-27 17:56:12
+AL-00647,TX-0107337,TJ-000692,CL-00502,2026-09-26 18:17:36,País inusual,"Primera compra en Portugal en los últimos 60 días: 94,10 € en Braga",55,Baja,Cerrada,Falso positivo,2026-09-27 14:17:36
+AL-00648,TX-0107570,TJ-001556,CL-01145,2026-09-26 21:30:03,País inusual,"Primera compra en Portugal en los últimos 60 días: 113,17 € en Porto",42,Baja,Cerrada,Falso positivo,2026-09-28 22:30:03
+AL-00649,TX-0107761,TJ-000010,CL-00006,2026-09-27 10:11:29,País inusual,"Primera compra en Portugal en los últimos 60 días: 76,05 € en Porto",62,Media,Cerrada,Falso positivo,2026-09-28 15:11:29
+AL-00650,TX-0108018,TJ-000083,CL-00061,2026-09-27 13:57:45,País inusual,"Primera compra en Portugal en los últimos 60 días: 61,50 € en Braga",55,Baja,Cerrada,Falso positivo,2026-09-28 05:57:45
+AL-00651,TX-0108232,TJ-001953,CL-01442,2026-09-27 17:23:06,País inusual,"Primera compra en Portugal en los últimos 60 días: 252,98 € en Porto",61,Media,Cerrada,Falso positivo,2026-09-29 07:23:06
+AL-00652,TX-0108444,TJ-002598,CL-01927,2026-09-27 20:13:09,País inusual,"Primera compra en Portugal en los últimos 60 días: 50,81 € en Braga",59,Baja,Cerrada,Falso positivo,2026-09-28 02:13:09
+AL-00653,TX-0108487,TJ-002679,CL-01984,2026-09-27 20:49:45,País inusual,"Primera compra en Portugal en los últimos 60 días: 26,00 € en Viana do Castelo",47,Baja,Cerrada,Falso positivo,2026-09-28 00:49:45
+AL-00654,TX-0108572,TJ-003114,CL-02311,2026-09-27 23:00:18,País inusual,"Primera compra en Portugal en los últimos 60 días: 46,03 € en Braga",50,Baja,Cerrada,Falso positivo,2026-09-29 03:00:18
+AL-00655,TX-0108849,TJ-002353,CL-01742,2026-09-28 12:33:28,Comercio de alto riesgo,"Compra de 86,32 € en un comercio de tarjetas regalo (Lituania)",65,Media,Cerrada,Falso positivo,2026-09-29 00:33:28
+AL-00656,TX-0108861,TJ-002676,CL-01982,2026-09-28 12:43:09,País inusual,"Primera compra en Portugal en los últimos 60 días: 252,33 € en Porto",59,Baja,Cerrada,Falso positivo,2026-09-29 22:43:09
+AL-00657,TX-0109115,TJ-002905,CL-02162,2026-09-28 17:11:35,Importe inusual,"Importe de 401,49 € frente a un gasto habitual de 50,95 € por operación",57,Baja,Cerrada,Falso positivo,2026-09-30 08:11:35
+AL-00658,TX-0109233,TJ-002197,CL-01628,2026-09-28 18:50:24,País inusual,"Primera compra en Portugal en los últimos 60 días: 26,03 € en Valença",57,Baja,Cerrada,Falso positivo,2026-09-29 03:50:24
+AL-00659,TX-0109844,TJ-002225,CL-01647,2026-09-29 13:35:37,Importe inusual,"Importe de 379,37 € frente a un gasto habitual de 58,09 € por operación",54,Baja,Cerrada,Falso positivo,2026-09-30 09:35:37
+AL-00660,TX-0110069,TJ-002268,CL-01677,2026-09-29 17:19:59,País inusual,"Primera compra en Portugal en los últimos 60 días: 232,84 € en Braga",62,Media,Cerrada,Falso positivo,2026-10-01 18:19:59
+AL-00661,TX-0110317,TJ-000396,CL-00281,2026-09-29 20:23:27,Importe inusual,"Importe de 465,42 € frente a un gasto habitual de 73,97 € por operación",63,Media,Cerrada,Falso positivo,2026-10-01 06:23:27
+AL-00662,TX-0110437,TJ-001882,CL-01387,2026-09-29 22:25:16,Importe inusual,"Importe de 517,39 € frente a un gasto habitual de 77,58 € por operación",60,Media,Cerrada,Falso positivo,2026-09-30 15:25:16
+AL-00663,TX-0110473,TJ-001664,CL-01226,2026-09-30 05:05:44,Importe inusual,"Importe de 360,65 € frente a un gasto habitual de 54,34 € por operación",53,Baja,Cerrada,Falso positivo,2026-10-01 06:05:44
+AL-00664,TX-0110831,TJ-002377,CL-01760,2026-09-30 13:49:03,País inusual,"Primera compra en Portugal en los últimos 60 días: 64,86 € en Chaves",44,Baja,Cerrada,Falso positivo,2026-10-02 00:49:03
+AL-00665,TX-0111926,TJ-002793,CL-02070,2026-10-01 17:37:27,País inusual,"Primera compra en Portugal en los últimos 60 días: 180,99 € en Valença",49,Baja,Cerrada,Falso positivo,2026-10-02 06:37:27
+AL-00666,TX-0112249,TJ-001822,CL-01341,2026-10-01 23:22:23,Importe inusual,"Importe de 547,07 € frente a un gasto habitual de 47,50 € por operación",56,Baja,Cerrada,Falso positivo,2026-10-03 09:22:23
+AL-00667,TX-0112257,TJ-000975,CL-00706,2026-10-02 00:48:12,País inusual,"Primera compra en Portugal en los últimos 60 días: 38,29 € en Braga",58,Baja,Cerrada,Falso positivo,2026-10-02 08:48:12
+AL-00668,TX-0112560,TJ-002897,CL-02154,2026-10-02 13:05:35,País inusual,"Primera compra en Portugal en los últimos 60 días: 136,27 € en Porto",51,Baja,Cerrada,Falso positivo,2026-10-04 01:05:35
+AL-00669,TX-0112714,TJ-000936,CL-00679,2026-10-02 16:04:36,País inusual,"Primera compra en Portugal en los últimos 60 días: 199,28 € en Porto",51,Baja,Cerrada,Falso positivo,2026-10-03 00:04:36
+AL-00670,TX-0113140,TJ-002673,CL-01980,2026-10-02 22:29:38,Importe inusual,"Importe de 553,39 € frente a un gasto habitual de 68,20 € por operación",56,Baja,Cerrada,Falso positivo,2026-10-04 06:29:38
+AL-00671,TX-0113321,TJ-002867,CL-02131,2026-10-03 10:48:14,Importe inusual,"Importe de 1.436,44 € frente a un gasto habitual de 79,58 € por operación",67,Media,Cerrada,Falso positivo,2026-10-03 23:48:14
+AL-00672,TX-0113392,TJ-000606,CL-00440,2026-10-03 11:58:53,País inusual,"Primera compra en Portugal en los últimos 60 días: 34,90 € en Braga",35,Baja,Cerrada,Falso positivo,2026-10-04 19:58:53
+AL-00673,TX-0113403,TJ-003126,CL-02318,2026-10-03 12:04:50,Comercio de alto riesgo,"Compra de 113,44 € en un comercio de criptoactivos (Estonia)",57,Baja,Cerrada,Falso positivo,2026-10-04 15:04:50
+AL-00674,TX-0113498,TJ-002753,CL-02039,2026-10-03 13:31:46,País inusual,"Primera compra en Portugal en los últimos 60 días: 220,75 € en Porto",40,Baja,Cerrada,Falso positivo,2026-10-04 00:31:46
+AL-00675,TX-0113719,TJ-001866,CL-01377,2026-10-03 16:48:57,Importe inusual,"Importe de 465,78 € frente a un gasto habitual de 55,10 € por operación",72,Media,Cerrada,Falso positivo,2026-10-04 12:48:57
+AL-00676,TX-0113776,TJ-002807,CL-02081,2026-10-03 17:36:22,Comercio de alto riesgo,"Compra de 52,39 € en un comercio de tarjetas regalo (Chipre)",51,Baja,Cerrada,Falso positivo,2026-10-04 15:36:22
+AL-00677,TX-0114037,TJ-001528,CL-01124,2026-10-03 20:56:04,Importe inusual,"Importe de 826,48 € frente a un gasto habitual de 82,70 € por operación",65,Media,Cerrada,Falso positivo,2026-10-05 19:56:04
+AL-00678,TX-0114205,TJ-001811,CL-01333,2026-10-04 09:17:20,Importe inusual,"Importe de 372,57 € frente a un gasto habitual de 57,36 € por operación",48,Baja,Cerrada,Falso positivo,2026-10-04 21:17:20
+AL-00679,TX-0114252,TJ-001169,CL-00857,2026-10-04 10:17:28,País inusual,"Primera compra en Portugal en los últimos 60 días: 30,75 € en Viana do Castelo",62,Media,Cerrada,Falso positivo,2026-10-06 12:17:28
+AL-00680,TX-0114262,TJ-000922,CL-00669,2026-10-04 10:26:35,País inusual,"Primera compra en Portugal en los últimos 60 días: 417,08 € en Porto",47,Baja,Cerrada,Falso positivo,2026-10-05 14:26:35
+AL-00681,TX-0114356,TJ-000726,CL-00525,2026-10-04 12:03:51,País inusual,"Primera compra en Portugal en los últimos 60 días: 36,18 € en Valença",57,Baja,Cerrada,Falso positivo,2026-10-05 08:03:51
+AL-00682,TX-0114494,TJ-000561,CL-00408,2026-10-04 13:52:31,Importe inusual,"Importe de 710,63 € frente a un gasto habitual de 57,18 € por operación",77,Media,Cerrada,Falso positivo,2026-10-06 11:52:31
+AL-00683,TX-0114807,TJ-000590,CL-00428,2026-10-04 18:53:44,Importe inusual,"Importe de 541,58 € frente a un gasto habitual de 55,09 € por operación",53,Baja,Cerrada,Falso positivo,2026-10-06 21:53:44
+AL-00684,TX-0114824,TJ-003052,CL-02270,2026-10-04 19:05:28,País inusual,"Primera compra en Portugal en los últimos 60 días: 108,53 € en Chaves",67,Media,Cerrada,Falso positivo,2026-10-05 06:05:28
+AL-00685,TX-0114992,TJ-001902,CL-01405,2026-10-04 21:25:34,Importe inusual,"Importe de 1.032,47 € frente a un gasto habitual de 95,12 € por operación",67,Media,Cerrada,Falso positivo,2026-10-04 23:25:34
+AL-00686,TX-0115841,TJ-001412,CL-01036,2026-10-05 19:20:26,Importe inusual,"Importe de 523,51 € frente a un gasto habitual de 42,76 € por operación",82,Alta,Cerrada,Falso positivo,2026-10-07 16:20:26
+AL-00687,TX-0115917,TJ-002390,CL-01770,2026-10-05 20:24:34,Importe inusual,"Importe de 1.438,69 € frente a un gasto habitual de 85,37 € por operación",64,Media,Cerrada,Falso positivo,2026-10-07 09:24:34
+AL-00688,TX-0115966,TJ-001571,CL-01154,2026-10-05 21:10:26,Importe inusual,"Importe de 475,42 € frente a un gasto habitual de 52,12 € por operación",65,Media,Cerrada,Falso positivo,2026-10-05 23:10:26
+AL-00689,TX-0116040,TJ-000880,CL-00638,2026-10-05 23:15:22,Importe inusual,"Importe de 527,74 € frente a un gasto habitual de 43,80 € por operación",66,Media,Cerrada,Falso positivo,2026-10-06 01:15:22
+AL-00690,TX-0116078,TJ-001109,CL-00809,2026-10-06 07:39:07,País inusual,"Primera compra en Portugal en los últimos 60 días: 24,47 € en Viana do Castelo",43,Baja,Cerrada,Falso positivo,2026-10-07 14:39:07
+AL-00691,TX-0116181,TJ-000658,CL-00478,2026-10-06 10:45:56,Importe inusual,"Importe de 513,87 € frente a un gasto habitual de 55,37 € por operación",60,Media,Cerrada,Falso positivo,2026-10-07 00:45:56
+AL-00692,TX-0116388,TJ-000864,CL-00627,2026-10-06 13:52:42,País inusual,"Primera compra en Portugal en los últimos 60 días: 118,68 € en Braga",61,Media,Cerrada,Falso positivo,2026-10-07 21:52:42
+AL-00693,TX-0116412,TJ-002631,CL-01949,2026-10-06 14:17:34,País inusual,"Primera compra en Portugal en los últimos 60 días: 31,24 € en Braga",56,Baja,Cerrada,Falso positivo,2026-10-07 04:17:34
+AL-00694,TX-0116730,TJ-002896,CL-02153,2026-10-06 19:14:05,Comercio de alto riesgo,"Compra de 85,78 € en un comercio de tarjetas regalo (Chipre)",67,Media,Cerrada,Falso positivo,2026-10-08 01:14:05
+AL-00695,TX-0117598,TJ-002268,CL-01677,2026-10-07 18:52:50,Importe inusual,"Importe de 443,21 € frente a un gasto habitual de 57,14 € por operación",42,Baja,Cerrada,Falso positivo,2026-10-09 13:52:50
+AL-00696,TX-0117949,TJ-001791,CL-01321,2026-10-08 10:02:02,Importe inusual,"Importe de 400,15 € frente a un gasto habitual de 56,05 € por operación",73,Media,Cerrada,Falso positivo,2026-10-08 23:02:02
+AL-00697,TX-0118038,TJ-001740,CL-01284,2026-10-08 11:34:08,Importe inusual,"Importe de 418,42 € frente a un gasto habitual de 47,68 € por operación",45,Baja,Cerrada,Falso positivo,2026-10-09 17:34:08
+AL-00698,TX-0118115,TJ-001124,CL-00822,2026-10-08 12:24:05,Importe inusual,"Importe de 641,89 € frente a un gasto habitual de 98,96 € por operación",76,Media,Cerrada,Falso positivo,2026-10-10 11:24:05
+AL-00699,TX-0118654,TJ-002539,CL-01881,2026-10-08 20:36:09,País inusual,"Primera compra en Portugal en los últimos 60 días: 53,26 € en Chaves",54,Baja,Cerrada,Falso positivo,2026-10-10 22:36:09
+AL-00700,TX-0119036,TJ-002355,CL-01744,2026-10-09 12:44:18,País inusual,"Primera compra en Portugal en los últimos 60 días: 57,69 € en Porto",54,Baja,Cerrada,Falso positivo,2026-10-10 23:44:18
+AL-00701,TX-0119140,TJ-001471,CL-01081,2026-10-09 14:20:22,Comercio de alto riesgo,"Compra de 236,77 € en un comercio de joyería (Emiratos Árabes Unidos)",48,Baja,Cerrada,Falso positivo,2026-10-10 09:20:22
+AL-00702,TX-0119173,TJ-001042,CL-00757,2026-10-09 14:56:11,Importe inusual,"Importe de 591,63 € frente a un gasto habitual de 60,86 € por operación",63,Media,Cerrada,Falso positivo,2026-10-10 23:56:11
+AL-00703,TX-0119545,TJ-002754,CL-02040,2026-10-09 20:19:01,País inusual,"Primera compra en Portugal en los últimos 60 días: 22,20 € en Braga",57,Baja,Cerrada,Falso positivo,2026-10-11 15:19:01
+AL-00704,TX-0119854,TJ-000234,CL-00166,2026-10-10 11:04:06,País inusual,"Primera compra en Portugal en los últimos 60 días: 23,29 € en Chaves",38,Baja,Cerrada,Falso positivo,2026-10-11 06:04:06
+AL-00705,TX-0120002,TJ-002830,CL-02097,2026-10-10 12:57:19,Comercio de alto riesgo,"Compra de 92,76 € en un comercio de criptoactivos (Estonia)",57,Baja,Cerrada,Falso positivo,2026-10-11 10:57:19
+AL-00706,TX-0120105,TJ-002891,CL-02149,2026-10-10 14:42:34,Importe inusual,"Importe de 914,10 € frente a un gasto habitual de 71,58 € por operación",49,Baja,Cerrada,Falso positivo,2026-10-10 21:42:34
+AL-00707,TX-0120118,TJ-001680,CL-01236,2026-10-10 14:50:45,País inusual,"Primera compra en Portugal en los últimos 60 días: 150,21 € en Porto",58,Baja,Cerrada,Falso positivo,2026-10-12 10:50:45
+AL-00708,TX-0120164,TJ-002756,CL-02042,2026-10-10 15:38:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 274,23 € en Porto",52,Baja,Cerrada,Falso positivo,2026-10-12 10:38:20
+AL-00709,TX-0120230,TJ-000374,CL-00265,2026-10-10 16:41:51,País inusual,"Primera compra en Portugal en los últimos 60 días: 53,26 € en Chaves",49,Baja,Cerrada,Falso positivo,2026-10-10 21:41:51
+AL-00710,TX-0120289,TJ-002153,CL-01595,2026-10-10 17:32:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 28,52 € en Valença",35,Baja,Cerrada,Falso positivo,2026-10-12 06:32:43
+AL-00711,TX-0120378,TJ-001108,CL-00809,2026-10-10 18:50:53,País inusual,"Primera compra en Portugal en los últimos 60 días: 39,15 € en Braga",38,Baja,Cerrada,Falso positivo,2026-10-11 17:50:53
+AL-00712,TX-0120513,TJ-003221,CL-02385,2026-10-10 20:41:32,Importe inusual,"Importe de 386,48 € frente a un gasto habitual de 45,08 € por operación",80,Alta,Cerrada,Falso positivo,2026-10-11 01:41:32
+AL-00713,TX-0120538,TJ-001918,CL-01417,2026-10-10 21:10:40,Importe inusual,"Importe de 1.112,48 € frente a un gasto habitual de 49,85 € por operación",76,Media,Cerrada,Falso positivo,2026-10-11 13:10:40
+AL-00714,TX-0121240,TJ-000474,CL-00336,2026-10-11 17:32:39,Importe inusual,"Importe de 1.100,18 € frente a un gasto habitual de 44,74 € por operación",74,Media,Cerrada,Falso positivo,2026-10-11 22:32:39
+AL-00715,TX-0121323,TJ-002485,CL-01842,2026-10-11 18:37:55,Importe inusual,"Importe de 419,41 € frente a un gasto habitual de 60,69 € por operación",46,Baja,Cerrada,Falso positivo,2026-10-12 10:37:55
+AL-00716,TX-0121511,TJ-001053,CL-00765,2026-10-11 21:17:14,Comercio de alto riesgo,"Compra de 157,73 € en un comercio de joyería (Emiratos Árabes Unidos)",53,Baja,Cerrada,Falso positivo,2026-10-12 05:17:14
+AL-00717,TX-0121676,TJ-001657,CL-01221,2026-10-12 10:00:17,Importe inusual,"Importe de 1.236,99 € frente a un gasto habitual de 52,41 € por operación",82,Alta,Cerrada,Falso positivo,2026-10-12 20:00:17
+AL-00718,TX-0122008,TJ-001663,CL-01225,2026-10-12 15:06:34,Importe inusual,"Importe de 1.114,80 € frente a un gasto habitual de 40,87 € por operación",47,Baja,Cerrada,Falso positivo,2026-10-13 23:06:34
+AL-00719,TX-0122132,TJ-002171,CL-01610,2026-10-12 17:10:44,Importe inusual,"Importe de 351,89 € frente a un gasto habitual de 53,57 € por operación",62,Media,Cerrada,Falso positivo,2026-10-14 13:10:44
+AL-00720,TX-0122224,TJ-000070,CL-00050,2026-10-12 18:22:55,Importe inusual,"Importe de 803,78 € frente a un gasto habitual de 44,28 € por operación",56,Baja,Cerrada,Falso positivo,2026-10-13 04:22:55
+AL-00721,TX-0122370,TJ-000388,CL-00276,2026-10-12 20:08:15,Comercio de alto riesgo,"Compra de 333,23 € en un comercio de joyería (Emiratos Árabes Unidos)",45,Baja,Cerrada,Falso positivo,2026-10-13 03:08:15
+AL-00722,TX-0122984,TJ-002712,CL-02011,2026-10-13 15:55:49,País inusual,"Primera compra en Portugal en los últimos 60 días: 35,15 € en Chaves",52,Baja,Cerrada,Falso positivo,2026-10-13 17:55:49
+AL-00723,TX-0123052,TJ-001230,CL-00901,2026-10-13 17:07:34,País inusual,"Primera compra en Portugal en los últimos 60 días: 101,37 € en Chaves",56,Baja,Cerrada,Falso positivo,2026-10-15 19:07:34
+AL-00724,TX-0123139,TJ-002899,CL-02155,2026-10-13 18:15:40,Comercio de alto riesgo,"Compra de 109,03 € en un comercio de criptoactivos (Estonia)",62,Media,Cerrada,Falso positivo,2026-10-15 10:15:40
+AL-00725,TX-0123291,TJ-002798,CL-02073,2026-10-13 20:19:08,Importe inusual,"Importe de 1.168,54 € frente a un gasto habitual de 92,16 € por operación",82,Alta,Cerrada,Falso positivo,2026-10-14 08:19:08
+AL-00726,TX-0123546,TJ-000264,CL-00188,2026-10-14 10:04:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 46,21 € en Valença",48,Baja,Cerrada,Falso positivo,2026-10-16 08:04:20
+AL-00727,TX-0123545,TJ-001272,CL-00931,2026-10-14 10:05:19,Comercio de alto riesgo,"Compra de 77,72 € en un comercio de tarjetas regalo (Chipre)",62,Media,Cerrada,Falso positivo,2026-10-16 02:05:19
+AL-00728,TX-0123664,TJ-000979,CL-00710,2026-10-14 11:56:03,Importe inusual,"Importe de 642,23 € frente a un gasto habitual de 41,00 € por operación",64,Media,Cerrada,Falso positivo,2026-10-16 13:56:03
+AL-00729,TX-0124074,TJ-002696,CL-01997,2026-10-14 17:56:36,Comercio de alto riesgo,"Compra de 426,40 € en un comercio de criptoactivos (Estonia)",67,Media,Cerrada,Falso positivo,2026-10-16 07:56:36
+AL-00730,TX-0124085,TJ-000860,CL-00624,2026-10-14 18:02:42,Importe inusual,"Importe de 536,76 € frente a un gasto habitual de 44,07 € por operación",62,Media,Cerrada,Falso positivo,2026-10-14 20:02:42
+AL-00731,TX-0124112,TJ-000645,CL-00469,2026-10-14 18:21:35,Importe inusual,"Importe de 739,88 € frente a un gasto habitual de 46,77 € por operación",70,Media,Cerrada,Falso positivo,2026-10-16 08:21:35
+AL-00732,TX-0124383,TJ-001961,CL-01446,2026-10-14 22:40:37,Comercio de alto riesgo,"Compra de 85,33 € en un comercio de tarjetas regalo (Lituania)",54,Baja,Cerrada,Falso positivo,2026-10-16 20:40:37
+AL-00733,TX-0124501,TJ-000409,CL-00291,2026-10-15 09:49:26,Comercio de alto riesgo,"Compra de 43,03 € en un comercio de criptoactivos (Estonia)",59,Baja,Cerrada,Falso positivo,2026-10-17 10:49:26
+AL-00734,TX-0124602,TJ-002273,CL-01681,2026-10-15 11:15:06,Importe inusual,"Importe de 799,21 € frente a un gasto habitual de 52,13 € por operación",50,Baja,Cerrada,Falso positivo,2026-10-16 08:15:06
+AL-00735,TX-0124724,TJ-002024,CL-01497,2026-10-15 12:51:29,País inusual,"Primera compra en Portugal en los últimos 60 días: 33,40 € en Braga",58,Baja,Cerrada,Falso positivo,2026-10-16 00:51:29
+AL-00736,TX-0124864,TJ-001242,CL-00911,2026-10-15 15:40:52,Importe inusual,"Importe de 804,22 € frente a un gasto habitual de 95,59 € por operación",55,Baja,Cerrada,Falso positivo,2026-10-17 00:40:52
+AL-00737,TX-0124928,TJ-003094,CL-02297,2026-10-15 16:56:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 25,41 € en Chaves",77,Media,Cerrada,Falso positivo,2026-10-15 23:56:50
+AL-00738,TX-0124932,TJ-001293,CL-00943,2026-10-15 17:02:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 229,31 € en Viana do Castelo",59,Baja,Cerrada,Falso positivo,2026-10-17 03:02:43
+AL-00739,TX-0125117,TJ-000039,CL-00028,2026-10-15 19:22:48,Importe inusual,"Importe de 714,82 € frente a un gasto habitual de 39,75 € por operación",53,Baja,Cerrada,Falso positivo,2026-10-17 14:22:48
+AL-00740,TX-0125273,TJ-000861,CL-00625,2026-10-15 22:34:13,País inusual,"Primera compra en Portugal en los últimos 60 días: 35,66 € en Valença",38,Baja,Cerrada,Falso positivo,2026-10-17 18:34:13
+AL-00741,TX-0125787,TJ-002474,CL-01834,2026-10-16 16:08:16,Importe inusual,"Importe de 354,18 € frente a un gasto habitual de 39,45 € por operación",52,Baja,Cerrada,Falso positivo,2026-10-18 03:08:16
+AL-00742,TX-0126084,TJ-003083,CL-02291,2026-10-16 20:06:48,Comercio de alto riesgo,"Compra de 57,90 € en un comercio de criptoactivos (Estonia)",49,Baja,Cerrada,Falso positivo,2026-10-17 11:06:48
+AL-00743,TX-0126688,TJ-002129,CL-01582,2026-10-17 15:48:05,País inusual,"Primera compra en Portugal en los últimos 60 días: 69,62 € en Porto",43,Baja,Cerrada,Falso positivo,2026-10-19 13:48:05
+AL-00744,TX-0126779,TJ-002375,CL-01758,2026-10-17 17:16:20,Importe inusual,"Importe de 943,56 € frente a un gasto habitual de 54,02 € por operación",65,Media,Cerrada,Falso positivo,2026-10-18 19:16:20
+AL-00745,TX-0127143,TJ-003040,CL-02261,2026-10-18 08:26:43,País inusual,"Primera compra en Portugal en los últimos 60 días: 153,63 € en Braga",50,Baja,Cerrada,Falso positivo,2026-10-19 01:26:43
+AL-00746,TX-0127187,TJ-002958,CL-02202,2026-10-18 09:31:16,Importe inusual,"Importe de 2.436,44 € frente a un gasto habitual de 56,33 € por operación",67,Media,Cerrada,Falso positivo,2026-10-19 20:31:16
+AL-00747,TX-0127263,TJ-002568,CL-01906,2026-10-18 11:01:42,País inusual,"Primera compra en Portugal en los últimos 60 días: 42,01 € en Chaves",72,Media,Cerrada,Falso positivo,2026-10-19 02:01:42
+AL-00748,TX-0127438,TJ-001151,CL-00842,2026-10-18 13:25:37,Comercio de alto riesgo,"Compra de 23,91 € en un comercio de tarjetas regalo (Chipre)",54,Baja,Cerrada,Falso positivo,2026-10-19 20:25:37
+AL-00749,TX-0127545,TJ-002394,CL-01772,2026-10-18 15:07:36,Importe inusual,"Importe de 426,12 € frente a un gasto habitual de 55,43 € por operación",67,Media,Cerrada,Falso positivo,2026-10-19 08:07:36
+AL-00750,TX-0127846,TJ-003001,CL-02232,2026-10-18 20:08:04,Importe inusual,"Importe de 496,36 € frente a un gasto habitual de 48,61 € por operación",66,Media,Cerrada,Falso positivo,2026-10-18 23:08:04
+AL-00751,TX-0127860,TJ-002382,CL-01763,2026-10-18 20:19:25,País inusual,"Primera compra en Portugal en los últimos 60 días: 24,01 € en Viana do Castelo",53,Baja,Cerrada,Falso positivo,2026-10-19 17:19:25
+AL-00752,TX-0128188,TJ-001722,CL-01269,2026-10-19 11:28:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 489,74 € en Porto",44,Baja,Cerrada,Falso positivo,2026-10-20 04:28:19
+AL-00753,TX-0128238,TJ-002814,CL-02085,2026-10-19 12:18:25,País inusual,"Primera compra en Portugal en los últimos 60 días: 112,69 € en Viana do Castelo",63,Media,Cerrada,Falso positivo,2026-10-20 10:18:25
+AL-00754,TX-0128286,TJ-002828,CL-02097,2026-10-19 12:58:17,Comercio de alto riesgo,"Compra de 80,85 € en un comercio de tarjetas regalo (Chipre)",72,Media,Cerrada,Falso positivo,2026-10-19 21:58:17
+AL-00755,TX-0128596,TJ-001917,CL-01416,2026-10-19 18:10:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 20,90 € en Braga",46,Baja,Cerrada,Falso positivo,2026-10-21 15:10:58
+AL-00756,TX-0128811,TJ-001669,CL-01229,2026-10-19 21:38:59,Importe inusual,"Importe de 520,91 € frente a un gasto habitual de 70,83 € por operación",67,Media,Cerrada,Falso positivo,2026-10-20 21:38:59
+AL-00757,TX-0128879,TJ-000888,CL-00644,2026-10-20 02:28:10,Ráfaga de operaciones,"3 compras online en 16 minutos entre las 02:23 y las 02:39, en comercios extranjeros, por un total de 1.585,82 €",82,Alta,Cerrada,Fraude confirmado,2026-10-22 05:28:10
+AL-00758,TX-0128886,TJ-002039,CL-01507,2026-10-20 04:49:17,Operación nocturna online,"Compra online de 670,21 € en Países Bajos a las 04:47, fuera del horario habitual del cliente",94,Alta,Cerrada,Fraude confirmado,2026-10-21 19:49:17
+AL-00759,TX-0128927,TJ-001376,CL-01005,2026-10-20 08:31:16,País inusual,"Primera compra en Portugal en los últimos 60 días: 490,11 € en Porto",47,Baja,Cerrada,Falso positivo,2026-10-20 17:31:16
+AL-00760,TX-0129038,TJ-002091,CL-01551,2026-10-20 10:48:37,Importe inusual,"Importe de 580,95 € frente a un gasto habitual de 47,09 € por operación",55,Baja,Cerrada,Falso positivo,2026-10-21 11:48:37
+AL-00761,TX-0129531,TJ-000378,CL-00268,2026-10-20 18:28:37,País inusual,"Primera compra en Portugal en los últimos 60 días: 27,81 € en Braga",52,Baja,Cerrada,Falso positivo,2026-10-21 16:28:37
+AL-00762,TX-0129632,TJ-002083,CL-01546,2026-10-20 19:42:50,Comercio de alto riesgo,"Compra de 99,83 € en un comercio de joyería (Emiratos Árabes Unidos)",66,Media,Cerrada,Falso positivo,2026-10-22 21:42:50
+AL-00763,TX-0129708,TJ-001795,CL-01323,2026-10-20 20:52:01,Comercio de alto riesgo,"Compra de 116,94 € en un comercio de tarjetas regalo (Lituania)",49,Baja,Cerrada,Falso positivo,2026-10-21 16:52:01
+AL-00764,TX-0129818,TJ-003061,CL-02275,2026-10-21 03:41:56,Ráfaga de operaciones,"4 compras online en 23 minutos entre las 03:36 y las 04:00, en comercios extranjeros, por un total de 1.753,40 €",74,Media,Cerrada,Fraude confirmado,2026-10-21 22:41:56
+AL-00765,TX-0129822,TJ-001298,CL-00948,2026-10-21 04:48:58,Ráfaga de operaciones,"3 compras online en 17 minutos entre las 04:45 y las 05:03, en comercios extranjeros, por un total de 1.264,54 €",84,Alta,Cerrada,Fraude confirmado,2026-10-23 00:48:58
+AL-00766,TX-0130365,TJ-002204,CL-01633,2026-10-21 17:20:30,País inusual,"Primera compra en Portugal en los últimos 60 días: 27,73 € en Chaves",53,Baja,Cerrada,Falso positivo,2026-10-21 20:20:30
+AL-00767,TX-0130428,TJ-001323,CL-00961,2026-10-21 18:08:47,Importe inusual,"Importe de 656,59 € frente a un gasto habitual de 51,85 € por operación",49,Baja,Cerrada,Falso positivo,2026-10-22 18:08:47
+AL-00768,TX-0130735,TJ-002246,CL-01661,2026-10-22 02:24:00,Ráfaga de operaciones,"5 compras online en 36 minutos entre las 02:19 y las 02:55, en comercios extranjeros, por un total de 1.474,69 €",82,Alta,Cerrada,Fraude confirmado,2026-10-24 03:24:00
+AL-00769,TX-0130948,TJ-000135,CL-00096,2026-10-22 11:47:16,País inusual,"Primera compra en Portugal en los últimos 60 días: 53,65 € en Chaves",62,Media,Cerrada,Falso positivo,2026-10-24 12:47:16
+AL-00770,TX-0131477,TJ-001947,CL-01437,2026-10-22 19:34:43,Importe inusual,"Importe de 445,33 € frente a un gasto habitual de 51,45 € por operación",56,Baja,Cerrada,Falso positivo,2026-10-23 02:34:43
+AL-00771,TX-0131677,TJ-001824,CL-01343,2026-10-23 01:32:29,Ráfaga de operaciones,"5 compras online en 31 minutos entre las 01:29 y las 02:01, en comercios extranjeros, por un total de 1.281,40 €",80,Alta,Cerrada,Fraude confirmado,2026-10-23 17:32:29
+AL-00772,TX-0131809,TJ-003169,CL-02349,2026-10-23 10:18:20,País inusual,"Primera compra en Portugal en los últimos 60 días: 304,51 € en Viana do Castelo",61,Media,Cerrada,Falso positivo,2026-10-24 01:18:20
+AL-00773,TX-0132121,TJ-003096,CL-02299,2026-10-23 15:08:31,Comercio de alto riesgo,"Compra de 262,95 € en un comercio de criptoactivos (Estonia)",56,Baja,Cerrada,Falso positivo,2026-10-25 09:08:31
+AL-00774,TX-0132176,TJ-000618,CL-00448,2026-10-23 16:11:20,Importe inusual,"Importe de 481,19 € frente a un gasto habitual de 58,05 € por operación",62,Media,Cerrada,Falso positivo,2026-10-24 04:11:20
+AL-00775,TX-0132464,TJ-002972,CL-02211,2026-10-23 20:07:42,País inusual,"Primera compra en Portugal en los últimos 60 días: 53,49 € en Chaves",76,Media,Cerrada,Falso positivo,2026-10-25 23:07:42
+AL-00776,TX-0132630,TJ-002725,CL-02021,2026-10-24 02:43:09,Ráfaga de operaciones,"4 compras online en 20 minutos entre las 02:42 y las 03:02, en comercios extranjeros, por un total de 1.881,26 €",85,Alta,Cerrada,Fraude confirmado,2026-10-24 05:43:09
+AL-00777,TX-0132636,TJ-001058,CL-00768,2026-10-24 04:14:41,Comercio de alto riesgo,"Compra de 268,50 € en un comercio de criptoactivos (Estonia) a las 04:11",97,Alta,Cerrada,Fraude confirmado,2026-10-25 17:14:41
+AL-00778,TX-0132988,TJ-000786,CL-00564,2026-10-24 13:49:00,País inusual,"Primera compra en Portugal en los últimos 60 días: 38,83 € en Braga",65,Media,Cerrada,Falso positivo,2026-10-25 15:49:00
+AL-00779,TX-0133567,TJ-000938,CL-00680,2026-10-25 07:50:42,Comercio de alto riesgo,"Compra de 80,09 € en un comercio de tarjetas regalo (Lituania)",61,Media,Cerrada,Falso positivo,2026-10-26 02:50:42
+AL-00780,TX-0133650,TJ-002332,CL-01725,2026-10-25 09:52:12,Importe inusual,"Importe de 460,82 € frente a un gasto habitual de 47,51 € por operación",65,Media,Cerrada,Falso positivo,2026-10-26 02:52:12
+AL-00781,TX-0133757,TJ-002236,CL-01654,2026-10-25 11:53:57,País inusual,"Primera compra en Portugal en los últimos 60 días: 75,21 € en Porto",46,Baja,Cerrada,Falso positivo,2026-10-25 14:53:57
+AL-00782,TX-0133850,TJ-002053,CL-01519,2026-10-25 13:03:15,País inusual,"Primera compra en Portugal en los últimos 60 días: 37,67 € en Valença",48,Baja,Cerrada,Falso positivo,2026-10-25 22:03:15
+AL-00783,TX-0133931,TJ-002300,CL-01704,2026-10-25 14:03:28,País inusual,"Primera compra en Portugal en los últimos 60 días: 15,67 € en Valença",43,Baja,Cerrada,Falso positivo,2026-10-26 14:03:28
+AL-00784,TX-0134449,TJ-002682,CL-01986,2026-10-25 21:59:56,Importe inusual,"Importe de 601,84 € frente a un gasto habitual de 86,99 € por operación",75,Media,Cerrada,Falso positivo,2026-10-27 06:59:56
+AL-00785,TX-0134521,TJ-002278,CL-01686,2026-10-26 08:13:24,Comercio de alto riesgo,"Compra de 58,26 € en un comercio de tarjetas regalo (Chipre)",57,Baja,Cerrada,Falso positivo,2026-10-27 16:13:24
+AL-00786,TX-0134722,TJ-000297,CL-00208,2026-10-26 12:17:48,Importe inusual,"Importe de 411,58 € frente a un gasto habitual de 64,07 € por operación",71,Media,Cerrada,Falso positivo,2026-10-27 14:17:48
+AL-00787,TX-0134801,TJ-002727,CL-02022,2026-10-26 13:26:07,País inusual,"Primera compra en Portugal en los últimos 60 días: 58,68 € en Braga",51,Baja,Cerrada,Falso positivo,2026-10-28 03:26:07
+AL-00788,TX-0134828,TJ-002227,CL-01648,2026-10-26 13:50:04,País inusual,"Primera compra en Portugal en los últimos 60 días: 136,79 € en Valença",40,Baja,Cerrada,Falso positivo,2026-10-26 23:50:04
+AL-00789,TX-0134871,TJ-002111,CL-01567,2026-10-26 14:34:47,Importe inusual,"Importe de 652,58 € frente a un gasto habitual de 88,41 € por operación",60,Media,Cerrada,Falso positivo,2026-10-27 23:34:47
+AL-00790,TX-0135011,TJ-001533,CL-01126,2026-10-26 17:00:57,País inusual,"Primera compra en Portugal en los últimos 60 días: 57,05 € en Braga",48,Baja,Cerrada,Falso positivo,2026-10-28 10:00:57
+AL-00791,TX-0135205,TJ-003103,CL-02304,2026-10-26 19:26:23,Importe inusual,"Importe de 535,75 € frente a un gasto habitual de 73,67 € por operación",65,Media,Cerrada,Falso positivo,2026-10-27 20:26:23
+AL-00792,TX-0135571,TJ-003171,CL-02350,2026-10-27 10:52:53,Importe inusual,"Importe de 404,97 € frente a un gasto habitual de 50,00 € por operación",53,Baja,Cerrada,Falso positivo,2026-10-27 18:52:53
+AL-00793,TX-0135638,TJ-000076,CL-00056,2026-10-27 11:59:27,País inusual,"Primera compra en Portugal en los últimos 60 días: 95,25 € en Porto",57,Baja,Cerrada,Falso positivo,2026-10-28 07:59:27
+AL-00794,TX-0135789,TJ-000279,CL-00194,2026-10-27 14:22:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,31 € en Porto",51,Baja,Cerrada,Falso positivo,2026-10-28 16:22:58
+AL-00795,TX-0136027,TJ-001162,CL-00852,2026-10-27 18:14:12,Importe inusual,"Importe de 4.088,19 € frente a un gasto habitual de 81,15 € por operación",59,Baja,Cerrada,Falso positivo,2026-10-28 05:14:12
+AL-00796,TX-0136258,TJ-002994,CL-02226,2026-10-27 21:24:41,Importe inusual,"Importe de 387,37 € frente a un gasto habitual de 50,49 € por operación",72,Media,Cerrada,Falso positivo,2026-10-29 09:24:41
+AL-00797,TX-0136260,TJ-000542,CL-00395,2026-10-27 21:27:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 90,63 € en Valença",59,Baja,Cerrada,Falso positivo,2026-10-28 21:27:19
+AL-00798,TX-0136790,TJ-003045,CL-02265,2026-10-28 15:51:30,Importe inusual,"Importe de 501,71 € frente a un gasto habitual de 77,61 € por operación",55,Baja,Cerrada,Falso positivo,2026-10-30 07:51:30
+AL-00799,TX-0136807,TJ-001159,CL-00849,2026-10-28 16:04:41,Comercio de alto riesgo,"Compra de 98,58 € en un comercio de joyería (Emiratos Árabes Unidos)",59,Baja,Cerrada,Falso positivo,2026-10-30 18:04:41
+AL-00800,TX-0136906,TJ-001146,CL-00838,2026-10-28 17:35:03,Importe inusual,"Importe de 489,60 € frente a un gasto habitual de 71,58 € por operación",46,Baja,Cerrada,Falso positivo,2026-10-28 19:35:03
+AL-00801,TX-0136957,TJ-000119,CL-00084,2026-10-28 18:16:40,Importe inusual,"Importe de 673,55 € frente a un gasto habitual de 50,06 € por operación",56,Baja,Cerrada,Falso positivo,2026-10-29 01:16:40
+AL-00802,TX-0137258,TJ-001144,CL-00836,2026-10-29 07:43:26,Importe inusual,"Importe de 624,39 € frente a un gasto habitual de 57,45 € por operación",66,Media,Cerrada,Falso positivo,2026-10-30 10:43:26
+AL-00803,TX-0137269,TJ-001852,CL-01365,2026-10-29 08:10:31,Importe inusual,"Importe de 908,37 € frente a un gasto habitual de 105,51 € por operación",68,Media,Cerrada,Falso positivo,2026-10-31 11:10:31
+AL-00804,TX-0137292,TJ-002030,CL-01501,2026-10-29 08:46:17,Importe inusual,"Importe de 2.336,08 € frente a un gasto habitual de 103,39 € por operación",65,Media,Cerrada,Falso positivo,2026-10-29 18:46:17
+AL-00805,TX-0137514,TJ-002573,CL-01910,2026-10-29 12:38:43,Importe inusual,"Importe de 382,01 € frente a un gasto habitual de 61,20 € por operación",73,Media,Cerrada,Falso positivo,2026-10-29 18:38:43
+AL-00806,TX-0137573,TJ-002083,CL-01546,2026-10-29 13:22:34,Importe inusual,"Importe de 470,59 € frente a un gasto habitual de 53,31 € por operación",67,Media,Cerrada,Falso positivo,2026-10-31 14:22:34
+AL-00807,TX-0137891,TJ-001966,CL-01451,2026-10-29 18:51:28,Importe inusual,"Importe de 378,36 € frente a un gasto habitual de 58,76 € por operación",69,Media,Cerrada,Falso positivo,2026-10-29 21:51:28
+AL-00808,TX-0137901,TJ-000420,CL-00299,2026-10-29 18:59:05,País inusual,"Primera compra en Portugal en los últimos 60 días: 36,41 € en Chaves",58,Baja,Cerrada,Falso positivo,2026-10-30 20:59:05
+AL-00809,TX-0138127,TJ-000693,CL-00502,2026-10-30 02:09:20,Operación nocturna online,"Compra online de 96,24 € en Países Bajos a las 02:06, fuera del horario habitual del cliente",85,Alta,Cerrada,Fraude confirmado,2026-11-01 00:09:20
+AL-00810,TX-0138132,TJ-002528,CL-01873,2026-10-30 03:37:11,Ráfaga de operaciones,"5 compras online en 26 minutos entre las 03:33 y las 03:59, en comercios extranjeros, por un total de 3.012,29 €",81,Alta,Cerrada,Fraude confirmado,2026-10-30 17:37:11
+AL-00811,TX-0138459,TJ-002600,CL-01928,2026-10-30 13:27:40,Comercio de alto riesgo,"Compra de 36,31 € en un comercio de criptoactivos (Estonia)",56,Baja,Cerrada,Falso positivo,2026-10-30 23:27:40
+AL-00812,TX-0138579,TJ-000544,CL-00396,2026-10-30 15:28:31,País inusual,"Primera compra en Portugal en los últimos 60 días: 25,26 € en Chaves",53,Baja,Cerrada,Falso positivo,2026-11-01 10:28:31
+AL-00813,TX-0138629,TJ-002013,CL-01490,2026-10-30 16:37:59,País inusual,"Primera compra en Portugal en los últimos 60 días: 169,47 € en Braga",54,Baja,Cerrada,Falso positivo,2026-10-31 19:37:59
+AL-00814,TX-0138736,TJ-003085,CL-02292,2026-10-30 18:16:36,Importe inusual,"Importe de 1.279,36 € frente a un gasto habitual de 56,63 € por operación",65,Media,Cerrada,Falso positivo,2026-10-31 03:16:36
+AL-00815,TX-0138926,TJ-000118,CL-00083,2026-10-30 20:30:23,Comercio de alto riesgo,"Compra de 80,88 € en un comercio de tarjetas regalo (Lituania)",64,Media,Cerrada,Falso positivo,2026-11-01 00:30:23
+AL-00816,TX-0138966,TJ-000018,CL-00014,2026-10-30 21:14:18,Comercio de alto riesgo,"Compra de 123,73 € en un comercio de criptoactivos (Estonia)",69,Media,Cerrada,Falso positivo,2026-11-01 13:14:18
+AL-00817,TX-0139054,TJ-002668,CL-01976,2026-10-31 04:01:07,Ráfaga de operaciones,"3 compras online en 21 minutos entre las 03:58 y las 04:19, en comercios extranjeros, por un total de 738,18 €",81,Alta,Cerrada,Fraude confirmado,2026-11-02 01:01:07
+AL-00818,TX-0139058,TJ-000132,CL-00093,2026-10-31 04:33:39,Ráfaga de operaciones,"3 compras online en 12 minutos entre las 04:29 y las 04:41, en comercios extranjeros, por un total de 1.044,41 €",89,Alta,Cerrada,Fraude confirmado,2026-11-02 03:33:39
+AL-00819,TX-0139159,TJ-000613,CL-00444,2026-10-31 09:51:10,Importe inusual,"Importe de 474,04 € frente a un gasto habitual de 49,91 € por operación",72,Media,Cerrada,Falso positivo,2026-11-02 06:51:10
+AL-00820,TX-0139673,TJ-002087,CL-01548,2026-10-31 17:39:11,Comercio de alto riesgo,"Compra de 21,14 € en un comercio de tarjetas regalo (Lituania)",62,Media,Cerrada,Falso positivo,2026-11-02 20:39:11
+AL-00821,TX-0139717,TJ-003166,CL-02347,2026-10-31 18:16:15,Importe inusual,"Importe de 636,56 € frente a un gasto habitual de 44,77 € por operación",68,Media,Cerrada,Falso positivo,2026-11-02 08:16:15
+AL-00822,TX-0140003,TJ-002707,CL-02007,2026-11-01 03:54:10,Ráfaga de operaciones,"3 compras online en 17 minutos entre las 03:50 y las 04:07, en comercios extranjeros, por un total de 1.566,73 €",94,Alta,Cerrada,Fraude confirmado,2026-11-01 19:54:10
+AL-00823,TX-0140049,TJ-000657,CL-00477,2026-11-01 08:28:25,Comercio de alto riesgo,"Compra de 90,69 € en un comercio de joyería (Emiratos Árabes Unidos)",70,Media,Cerrada,Falso positivo,2026-11-01 11:28:25
+AL-00824,TX-0140070,TJ-002576,CL-01912,2026-11-01 09:08:33,País inusual,"Primera compra en Portugal en los últimos 60 días: 52,16 € en Braga",40,Baja,Cerrada,Falso positivo,2026-11-03 05:08:33
+AL-00825,TX-0140627,TJ-002198,CL-01629,2026-11-01 18:00:24,Comercio de alto riesgo,"Compra de 55,69 € en un comercio de criptoactivos (Estonia)",79,Media,Cerrada,Falso positivo,2026-11-01 23:00:24
+AL-00826,TX-0140712,TJ-000527,CL-00382,2026-11-01 19:01:00,País inusual,"Primera compra en Portugal en los últimos 60 días: 93,42 € en Porto",43,Baja,Cerrada,Falso positivo,2026-11-02 09:01:00
+AL-00827,TX-0140931,TJ-002324,CL-01718,2026-11-02 01:43:29,Operación nocturna online,"Compra online de 730,39 € en Países Bajos a las 01:41, fuera del horario habitual del cliente",83,Alta,Cerrada,Fraude confirmado,2026-11-03 20:43:29
+AL-00828,TX-0141137,TJ-002313,CL-01712,2026-11-02 12:12:30,Importe inusual,"Importe de 657,08 € frente a un gasto habitual de 82,39 € por operación",60,Media,Cerrada,Falso positivo,2026-11-04 06:12:30
+AL-00829,TX-0141224,TJ-001270,CL-00929,2026-11-02 13:20:07,Importe inusual,"Importe de 691,20 € frente a un gasto habitual de 56,02 € por operación",61,Media,Cerrada,Falso positivo,2026-11-02 18:20:07
+AL-00830,TX-0141409,TJ-000021,CL-00016,2026-11-02 16:24:59,Importe inusual,"Importe de 748,90 € frente a un gasto habitual de 51,72 € por operación",67,Media,Cerrada,Falso positivo,2026-11-04 13:24:59
+AL-00831,TX-0141516,TJ-002390,CL-01770,2026-11-02 18:13:48,Importe inusual,"Importe de 1.201,80 € frente a un gasto habitual de 85,37 € por operación",69,Media,Cerrada,Falso positivo,2026-11-04 13:13:48
+AL-00832,TX-0141648,TJ-002854,CL-02118,2026-11-02 20:00:17,Importe inusual,"Importe de 414,52 € frente a un gasto habitual de 51,68 € por operación",45,Baja,Cerrada,Falso positivo,2026-11-03 16:00:17
+AL-00833,TX-0141808,TJ-002354,CL-01743,2026-11-03 01:48:07,Comercio de alto riesgo,"Compra de 418,48 € en un comercio de tarjetas regalo (Reino Unido) a las 01:46",91,Alta,Cerrada,Fraude confirmado,2026-11-03 16:48:07
+AL-00834,TX-0141816,TJ-000178,CL-00128,2026-11-03 05:03:08,Ráfaga de operaciones,"4 compras online en 31 minutos entre las 04:58 y las 05:29, en comercios extranjeros, por un total de 1.415,88 €",97,Alta,Cerrada,Fraude confirmado,2026-11-05 03:03:08
+AL-00835,TX-0141997,TJ-002963,CL-02205,2026-11-03 11:29:25,País inusual,"Primera compra en Portugal en los últimos 60 días: 112,12 € en Porto",50,Baja,Cerrada,Falso positivo,2026-11-05 03:29:25
+AL-00836,TX-0142183,TJ-000763,CL-00546,2026-11-03 14:11:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 48,71 € en Valença",41,Baja,Cerrada,Falso positivo,2026-11-03 20:11:19
+AL-00837,TX-0142278,TJ-000177,CL-00128,2026-11-03 15:45:57,País inusual,"Primera compra en Portugal en los últimos 60 días: 15,32 € en Chaves",55,Baja,Cerrada,Falso positivo,2026-11-04 06:45:57
+AL-00838,TX-0142475,TJ-001330,CL-00966,2026-11-03 18:46:17,Importe inusual,"Importe de 1.024,77 € frente a un gasto habitual de 41,15 € por operación",42,Baja,Cerrada,Falso positivo,2026-11-05 11:46:17
+AL-00839,TX-0142515,TJ-002273,CL-01681,2026-11-03 19:17:17,País inusual,"Primera compra en Portugal en los últimos 60 días: 57,58 € en Porto",56,Baja,Cerrada,Falso positivo,2026-11-05 16:17:17
+AL-00840,TX-0142951,TJ-002265,CL-01675,2026-11-04 11:59:14,País inusual,"Primera compra en Portugal en los últimos 60 días: 37,77 € en Valença",64,Media,Cerrada,Falso positivo,2026-11-05 05:59:14
+AL-00841,TX-0143085,TJ-002266,CL-01676,2026-11-04 13:54:59,Comercio de alto riesgo,"Compra de 228,99 € en un comercio de criptoactivos (Estonia)",65,Media,Cerrada,Falso positivo,2026-11-05 20:54:59
+AL-00842,TX-0143431,TJ-000391,CL-00278,2026-11-04 19:40:57,País inusual,"Primera compra en Portugal en los últimos 60 días: 24,03 € en Viana do Castelo",71,Media,Cerrada,Falso positivo,2026-11-04 22:40:57
+AL-00843,TX-0143460,TJ-001377,CL-01006,2026-11-04 20:02:38,País inusual,"Primera compra en Portugal en los últimos 60 días: 180,17 € en Porto",53,Baja,Cerrada,Falso positivo,2026-11-06 21:02:38
+AL-00844,TX-0143480,TJ-003017,CL-02246,2026-11-04 20:17:12,Comercio de alto riesgo,"Compra de 139,69 € en un comercio de criptoactivos (Estonia)",66,Media,Cerrada,Falso positivo,2026-11-06 06:17:12
+AL-00845,TX-0143526,TJ-000824,CL-00598,2026-11-04 20:59:27,País inusual,"Primera compra en Portugal en los últimos 60 días: 75,54 € en Chaves",52,Baja,Cerrada,Falso positivo,2026-11-06 21:59:27
+AL-00846,TX-0143605,TJ-000560,CL-00407,2026-11-05 02:46:09,Ráfaga de operaciones,"3 compras online en 19 minutos entre las 02:41 y las 03:00, en comercios extranjeros, por un total de 2.173,49 €",79,Media,Cerrada,Fraude confirmado,2026-11-05 16:46:09
+AL-00847,TX-0143608,TJ-001696,CL-01250,2026-11-05 03:38:56,Comercio de alto riesgo,"Compra de 807,30 € en un comercio de tarjetas regalo (Estados Unidos) a las 03:34",92,Alta,Cerrada,Fraude confirmado,2026-11-05 05:38:56
+AL-00848,TX-0143630,TJ-002083,CL-01546,2026-11-05 07:23:40,Importe inusual,"Importe de 480,73 € frente a un gasto habitual de 53,31 € por operación",61,Media,Cerrada,Falso positivo,2026-11-07 00:23:40
+AL-00849,TX-0143819,TJ-003046,CL-02266,2026-11-05 11:44:34,Importe inusual,"Importe de 653,43 € frente a un gasto habitual de 45,63 € por operación",42,Baja,Cerrada,Falso positivo,2026-11-06 20:44:34
+AL-00850,TX-0144534,TJ-001160,CL-00850,2026-11-06 02:19:21,Ráfaga de operaciones,"3 compras online en 19 minutos entre las 02:16 y las 02:36, en comercios extranjeros, por un total de 1.319,54 €",78,Media,Cerrada,Fraude confirmado,2026-11-06 08:19:21
+AL-00851,TX-0144909,TJ-002374,CL-01757,2026-11-06 14:22:01,Importe inusual,"Importe de 771,27 € frente a un gasto habitual de 88,52 € por operación",53,Baja,Cerrada,Falso positivo,2026-11-07 10:22:01
+AL-00852,TX-0145108,TJ-003225,CL-02388,2026-11-06 17:52:04,País inusual,"Primera compra en Portugal en los últimos 60 días: 100,53 € en Braga",46,Baja,Cerrada,Falso positivo,2026-11-07 21:52:04
+AL-00853,TX-0145118,TJ-000024,CL-00018,2026-11-06 17:56:58,País inusual,"Primera compra en Portugal en los últimos 60 días: 303,37 € en Porto",56,Baja,Cerrada,Falso positivo,2026-11-08 15:56:58
+AL-00854,TX-0145413,TJ-000254,CL-00182,2026-11-07 03:20:27,Ráfaga de operaciones,"4 compras online en 23 minutos entre las 03:18 y las 03:41, en comercios extranjeros, por un total de 2.259,85 €",95,Alta,Cerrada,Fraude confirmado,2026-11-07 15:20:27
+AL-00855,TX-0145418,TJ-001113,CL-00813,2026-11-07 04:35:11,Ráfaga de operaciones,"3 compras online en 18 minutos entre las 04:31 y las 04:49, en comercios extranjeros, por un total de 2.290,49 €",95,Alta,Cerrada,Fraude confirmado,2026-11-07 16:35:11
+AL-00856,TX-0145760,TJ-002256,CL-01668,2026-11-07 13:44:54,Importe inusual,"Importe de 635,79 € frente a un gasto habitual de 46,61 € por operación",58,Baja,Cerrada,Falso positivo,2026-11-09 03:44:54
+AL-00857,TX-0145840,TJ-001675,CL-01232,2026-11-07 15:11:24,Comercio de alto riesgo,"Compra de 111,47 € en un comercio de tarjetas regalo (Lituania)",56,Baja,Cerrada,Falso positivo,2026-11-09 14:11:24
+AL-00858,TX-0145912,TJ-002197,CL-01628,2026-11-07 16:31:53,Importe inusual,"Importe de 581,21 € frente a un gasto habitual de 60,96 € por operación",69,Media,Cerrada,Falso positivo,2026-11-08 00:31:53
+AL-00859,TX-0145966,TJ-001369,CL-00999,2026-11-07 17:22:29,País inusual,"Primera compra en Portugal en los últimos 60 días: 28,40 € en Valença",61,Media,Cerrada,Falso positivo,2026-11-08 21:22:29
+AL-00860,TX-0146147,TJ-001082,CL-00789,2026-11-07 19:43:22,Comercio de alto riesgo,"Compra de 465,05 € en un comercio de joyería (Emiratos Árabes Unidos)",60,Media,Cerrada,Falso positivo,2026-11-08 23:43:22
+AL-00861,TX-0146230,TJ-003207,CL-02376,2026-11-07 21:06:51,Comercio de alto riesgo,"Compra de 209,71 € en un comercio de criptoactivos (Estonia)",66,Media,Cerrada,Falso positivo,2026-11-08 09:06:51
+AL-00862,TX-0146309,TJ-001909,CL-01410,2026-11-08 02:11:12,Ráfaga de operaciones,"3 compras online en 14 minutos entre las 02:10 y las 02:24, en comercios extranjeros, por un total de 1.720,92 €",93,Alta,Cerrada,Fraude confirmado,2026-11-09 15:11:12
+AL-00863,TX-0146322,TJ-000072,CL-00052,2026-11-08 07:04:56,Importe inusual,"Importe de 384,41 € frente a un gasto habitual de 59,38 € por operación",72,Media,Cerrada,Falso positivo,2026-11-09 19:04:56
+AL-00864,TX-0146340,TJ-001642,CL-01208,2026-11-08 08:12:36,País inusual,"Primera compra en Portugal en los últimos 60 días: 48,07 € en Valença",46,Baja,Cerrada,Falso positivo,2026-11-10 10:12:36
+AL-00865,TX-0146464,TJ-000953,CL-00690,2026-11-08 10:52:38,Importe inusual,"Importe de 533,47 € frente a un gasto habitual de 80,00 € por operación",66,Media,Cerrada,Falso positivo,2026-11-09 13:52:38
+AL-00866,TX-0146752,TJ-002010,CL-01487,2026-11-08 15:56:18,Comercio de alto riesgo,"Compra de 64,98 € en un comercio de criptoactivos (Estonia)",67,Media,Cerrada,Falso positivo,2026-11-09 00:56:18
+AL-00867,TX-0147072,TJ-001090,CL-00796,2026-11-08 20:59:13,Importe inusual,"Importe de 459,28 € frente a un gasto habitual de 52,05 € por operación",78,Media,Cerrada,Falso positivo,2026-11-10 23:59:13
+AL-00868,TX-0147533,TJ-000374,CL-00265,2026-11-09 14:49:45,Importe inusual,"Importe de 554,53 € frente a un gasto habitual de 48,79 € por operación",68,Media,Cerrada,Falso positivo,2026-11-10 15:49:45
+AL-00869,TX-0147991,TJ-000706,CL-00510,2026-11-10 01:55:28,Ráfaga de operaciones,"5 compras online en 25 minutos entre las 01:54 y las 02:19, en comercios extranjeros, por un total de 2.193,71 €",97,Alta,Cerrada,Fraude confirmado,2026-11-12 02:55:28
+AL-00870,TX-0148108,TJ-002308,CL-01708,2026-11-10 10:27:31,País inusual,"Primera compra en Portugal en los últimos 60 días: 95,65 € en Braga",57,Baja,Cerrada,Falso positivo,2026-11-10 23:27:31
+AL-00871,TX-0148122,TJ-002659,CL-01971,2026-11-10 10:40:23,País inusual,"Primera compra en Portugal en los últimos 60 días: 40,70 € en Viana do Castelo",59,Baja,Cerrada,Falso positivo,2026-11-11 21:40:23
+AL-00872,TX-0148874,TJ-002386,CL-01766,2026-11-11 02:08:30,Ráfaga de operaciones,"5 compras online en 32 minutos entre las 02:03 y las 02:36, en comercios extranjeros, por un total de 2.379,73 €",82,Alta,Cerrada,Fraude confirmado,2026-11-12 18:08:30
+AL-00873,TX-0148877,TJ-001627,CL-01199,2026-11-11 02:27:52,Ráfaga de operaciones,"5 compras online en 35 minutos entre las 02:23 y las 02:59, en comercios extranjeros, por un total de 2.845,21 €",85,Alta,Cerrada,Fraude confirmado,2026-11-11 08:27:52
+AL-00874,TX-0148970,TJ-001476,CL-01085,2026-11-11 09:54:39,País inusual,"Primera compra en Portugal en los últimos 60 días: 40,95 € en Valença",56,Baja,Cerrada,Falso positivo,2026-11-13 11:54:39
+AL-00875,TX-0149248,TJ-001194,CL-00875,2026-11-11 14:41:50,País inusual,"Primera compra en Portugal en los últimos 60 días: 43,71 € en Braga",47,Baja,Cerrada,Falso positivo,2026-11-13 08:41:50
+AL-00876,TX-0149355,TJ-001546,CL-01138,2026-11-11 16:14:23,Comercio de alto riesgo,"Compra de 134,01 € en un comercio de tarjetas regalo (Lituania)",74,Media,Cerrada,Falso positivo,2026-11-12 13:14:23
+AL-00877,TX-0149434,TJ-001677,CL-01234,2026-11-11 17:26:33,Importe inusual,"Importe de 366,60 € frente a un gasto habitual de 51,19 € por operación",47,Baja,Cerrada,Falso positivo,2026-11-13 05:26:33
+AL-00878,TX-0149734,TJ-002775,CL-02057,2026-11-11 21:32:43,Importe inusual,"Importe de 388,34 € frente a un gasto habitual de 53,88 € por operación",71,Media,Cerrada,Falso positivo,2026-11-12 21:32:43
+AL-00879,TX-0149804,TJ-000949,CL-00687,2026-11-12 02:55:39,Ráfaga de operaciones,"3 compras online en 8 minutos entre las 02:50 y las 02:59, en comercios extranjeros, por un total de 790,72 €",81,Alta,Cerrada,Fraude confirmado,2026-11-12 20:55:39
+AL-00880,TX-0149863,TJ-001300,CL-00949,2026-11-12 09:02:33,Importe inusual,"Importe de 1.863,18 € frente a un gasto habitual de 63,20 € por operación",67,Media,Cerrada,Falso positivo,2026-11-13 22:02:33
+AL-00881,TX-0149887,TJ-000472,CL-00334,2026-11-12 09:48:05,Importe inusual,"Importe de 1.663,27 € frente a un gasto habitual de 69,60 € por operación",51,Baja,Cerrada,Falso positivo,2026-11-12 18:48:05
+AL-00882,TX-0150714,TJ-002631,CL-01949,2026-11-13 04:29:07,Ráfaga de operaciones,"4 compras online en 19 minutos entre las 04:24 y las 04:44, en comercios extranjeros, por un total de 1.068,50 €",89,Alta,Cerrada,Fraude confirmado,2026-11-13 14:29:07
+AL-00883,TX-0150762,TJ-001043,CL-00758,2026-11-13 08:38:15,Comercio de alto riesgo,"Compra de 597,54 € en un comercio de joyería (Emiratos Árabes Unidos)",70,Media,Cerrada,Falso positivo,2026-11-13 13:38:15
+AL-00884,TX-0150781,TJ-002733,CL-02025,2026-11-13 09:20:44,Importe inusual,"Importe de 428,20 € frente a un gasto habitual de 66,20 € por operación",66,Media,Cerrada,Falso positivo,2026-11-15 10:20:44
+AL-00885,TX-0150975,TJ-002455,CL-01824,2026-11-13 12:49:48,Comercio de alto riesgo,"Compra de 36,02 € en un comercio de tarjetas regalo (Chipre)",45,Baja,Cerrada,Falso positivo,2026-11-14 06:49:48
+AL-00886,TX-0151216,TJ-000311,CL-00217,2026-11-13 16:56:39,Importe inusual,"Importe de 479,36 € frente a un gasto habitual de 51,19 € por operación",72,Media,Cerrada,Falso positivo,2026-11-14 07:56:39
+AL-00887,TX-0151672,TJ-001169,CL-00857,2026-11-14 09:09:06,Importe inusual,"Importe de 382,38 € frente a un gasto habitual de 43,04 € por operación",55,Baja,Cerrada,Falso positivo,2026-11-16 06:09:06
+AL-00888,TX-0151675,TJ-000634,CL-00460,2026-11-14 09:11:02,Importe inusual,"Importe de 472,55 € frente a un gasto habitual de 67,05 € por operación",59,Baja,Cerrada,Falso positivo,2026-11-15 14:11:02
+AL-00889,TX-0151717,TJ-002134,CL-01584,2026-11-14 10:14:56,País inusual,"Primera compra en Portugal en los últimos 60 días: 46,44 € en Valença",54,Baja,Cerrada,Falso positivo,2026-11-14 18:14:56
+AL-00890,TX-0151802,TJ-002224,CL-01646,2026-11-14 11:39:02,Importe inusual,"Importe de 850,18 € frente a un gasto habitual de 63,48 € por operación",65,Media,Cerrada,Falso positivo,2026-11-15 21:39:02
+AL-00891,TX-0151913,TJ-000434,CL-00309,2026-11-14 13:25:56,Importe inusual,"Importe de 444,46 € frente a un gasto habitual de 51,51 € por operación",60,Media,Cerrada,Falso positivo,2026-11-15 07:25:56
+AL-00892,TX-0152065,TJ-000322,CL-00225,2026-11-14 15:24:25,Importe inusual,"Importe de 565,93 € frente a un gasto habitual de 44,11 € por operación",57,Baja,Cerrada,Falso positivo,2026-11-16 14:24:25
+AL-00893,TX-0152779,TJ-000418,CL-00298,2026-11-15 12:15:55,Importe inusual,"Importe de 395,72 € frente a un gasto habitual de 56,64 € por operación",85,Alta,Cerrada,Falso positivo,2026-11-16 15:15:55
+AL-00894,TX-0152846,TJ-003133,CL-02324,2026-11-15 13:08:54,País inusual,"Primera compra en Portugal en los últimos 60 días: 128,06 € en Porto",50,Baja,Cerrada,Falso positivo,2026-11-15 17:08:54
+AL-00895,TX-0153167,TJ-001006,CL-00730,2026-11-15 18:30:12,País inusual,"Primera compra en Portugal en los últimos 60 días: 157,03 € en Porto",41,Baja,Cerrada,Falso positivo,2026-11-16 12:30:12
+AL-00896,TX-0153178,TJ-003057,CL-02273,2026-11-15 18:39:50,Importe inusual,"Importe de 676,62 € frente a un gasto habitual de 85,00 € por operación",46,Baja,Cerrada,Falso positivo,2026-11-15 22:39:50
+AL-00897,TX-0153427,TJ-001894,CL-01398,2026-11-16 01:49:50,Ráfaga de operaciones,"5 compras online en 31 minutos entre las 01:46 y las 02:18, en comercios extranjeros, por un total de 2.174,16 €",85,Alta,Abierta,,
+AL-00898,TX-0153434,TJ-000699,CL-00505,2026-11-16 02:52:24,Comercio de alto riesgo,"Compra de 257,07 € en un comercio de criptoactivos (Malta) a las 02:49",96,Alta,Abierta,,
+AL-00899,TX-0153437,TJ-001863,CL-01375,2026-11-16 04:39:35,Operación nocturna online,"Compra online de 604,98 € en Países Bajos a las 04:35, fuera del horario habitual del cliente",79,Media,Abierta,,
+AL-00900,TX-0153706,TJ-001198,CL-00878,2026-11-16 12:44:38,País inusual,"Primera compra en Portugal en los últimos 60 días: 60,75 € en Chaves",58,Baja,Abierta,,
+AL-00901,TX-0154096,TJ-001852,CL-01365,2026-11-16 18:52:13,Comercio de alto riesgo,"Compra de 105,51 € en un comercio de tarjetas regalo (Lituania)",81,Alta,Abierta,,
+AL-00902,TX-0154198,TJ-000214,CL-00153,2026-11-16 20:19:27,Importe inusual,"Importe de 835,35 € frente a un gasto habitual de 58,83 € por operación",63,Media,Abierta,,
+AL-00903,TX-0154576,TJ-000473,CL-00335,2026-11-17 12:45:19,País inusual,"Primera compra en Portugal en los últimos 60 días: 22,81 € en Viana do Castelo",52,Baja,Abierta,,
+AL-00904,TX-0154666,TJ-001560,CL-01147,2026-11-17 13:47:31,Comercio de alto riesgo,"Compra de 179,57 € en un comercio de criptoactivos (Estonia)",70,Media,Abierta,,
+AL-00905,TX-0154782,TJ-000930,CL-00676,2026-11-17 15:43:35,País inusual,"Primera compra en Portugal en los últimos 60 días: 64,20 € en Braga",47,Baja,Abierta,,
+AL-00906,TX-0155209,TJ-003003,CL-02234,2026-11-18 01:17:05,Ráfaga de operaciones,"3 compras online en 23 minutos entre las 01:12 y las 01:35, en comercios extranjeros, por un total de 1.759,10 €",97,Alta,Abierta,,
+AL-00907,TX-0155216,TJ-002443,CL-01815,2026-11-18 03:58:19,Comercio de alto riesgo,"Compra de 433,91 € en un comercio de criptoactivos (Malta) a las 03:55",81,Alta,Abierta,,
+AL-00908,TX-0155218,TJ-001837,CL-01354,2026-11-18 04:28:15,Ráfaga de operaciones,"5 compras online en 38 minutos entre las 04:24 y las 05:03, en comercios extranjeros, por un total de 1.911,56 €",93,Alta,Abierta,,
+AL-00909,TX-0155220,TJ-001424,CL-01046,2026-11-18 04:50:13,Comercio de alto riesgo,"Compra de 485,62 € en un comercio de tarjetas regalo (Reino Unido) a las 04:47",85,Alta,Abierta,,
+AL-00910,TX-0155245,TJ-001395,CL-01023,2026-11-18 07:41:37,País inusual,"Primera compra en Portugal en los últimos 60 días: 75,14 € en Viana do Castelo",50,Baja,Abierta,,
+AL-00911,TX-0155380,TJ-001599,CL-01178,2026-11-18 11:14:54,País inusual,"Primera compra en Portugal en los últimos 60 días: 129,97 € en Porto",51,Baja,Abierta,,
+AL-00912,TX-0155473,TJ-002994,CL-02226,2026-11-18 12:48:47,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,00 € en Valença",73,Media,Abierta,,
+AL-00913,TX-0155537,TJ-000647,CL-00470,2026-11-18 13:43:24,País inusual,"Primera compra en Portugal en los últimos 60 días: 17,25 € en Chaves",63,Media,Abierta,,
+AL-00914,TX-0155669,TJ-001399,CL-01025,2026-11-18 16:38:26,País inusual,"Primera compra en Portugal en los últimos 60 días: 61,05 € en Valença",53,Baja,Abierta,,
+AL-00915,TX-0155824,TJ-000047,CL-00034,2026-11-18 18:54:55,País inusual,"Primera compra en Portugal en los últimos 60 días: 66,83 € en Porto",55,Baja,Abierta,,
+AL-00916,TX-0156041,TJ-000046,CL-00034,2026-11-19 04:37:52,Ráfaga de operaciones,"4 compras online en 21 minutos entre las 04:33 y las 04:55, en comercios extranjeros, por un total de 2.418,66 €",87,Alta,Abierta,,
+AL-00917,TX-0156073,TJ-002563,CL-01901,2026-11-19 08:07:57,País inusual,"Primera compra en Portugal en los últimos 60 días: 75,91 € en Chaves",50,Baja,Abierta,,
+AL-00918,TX-0156228,TJ-000449,CL-00317,2026-11-19 11:28:21,País inusual,"Primera compra en Portugal en los últimos 60 días: 37,42 € en Valença",52,Baja,Abierta,,
+AL-00919,TX-0156424,TJ-001584,CL-01165,2026-11-19 14:18:09,Comercio de alto riesgo,"Compra de 259,94 € en un comercio de criptoactivos (Estonia)",47,Baja,Abierta,,
+AL-00920,TX-0156876,TJ-002248,CL-01662,2026-11-19 21:02:31,Importe inusual,"Importe de 494,45 € frente a un gasto habitual de 50,00 € por operación",64,Media,Abierta,,
+AL-00921,TX-0156893,TJ-000526,CL-00381,2026-11-19 21:15:09,Importe inusual,"Importe de 894,04 € frente a un gasto habitual de 57,82 € por operación",58,Baja,Abierta,,
+AL-00922,TX-0157071,TJ-001621,CL-01195,2026-11-20 10:22:08,País inusual,"Primera compra en Portugal en los últimos 60 días: 25,06 € en Valença",54,Baja,Abierta,,
+AL-00923,TX-0157221,TJ-002945,CL-02191,2026-11-20 12:51:13,País inusual,"Primera compra en Portugal en los últimos 60 días: 144,77 € en Braga",41,Baja,Abierta,,
+AL-00924,TX-0157832,TJ-000971,CL-00703,2026-11-21 03:00:07,Ráfaga de operaciones,"5 compras online en 24 minutos entre las 02:59 y las 03:23, en comercios extranjeros, por un total de 3.072,85 €",85,Alta,Abierta,,
+AL-00925,TX-0157838,TJ-001554,CL-01143,2026-11-21 04:29:49,Ráfaga de operaciones,"5 compras online en 39 minutos entre las 04:27 y las 05:07, en comercios extranjeros, por un total de 2.174,06 €",91,Alta,Abierta,,
+AL-00926,TX-0157871,TJ-002634,CL-01952,2026-11-21 08:03:55,País inusual,"Primera compra en Portugal en los últimos 60 días: 32,38 € en Valença",38,Baja,Abierta,,
+AL-00927,TX-0158090,TJ-002608,CL-01933,2026-11-21 12:11:31,Importe inusual,"Importe de 497,47 € frente a un gasto habitual de 53,73 € por operación",59,Baja,Abierta,,
+AL-00928,TX-0158366,TJ-000207,CL-00148,2026-11-21 16:50:03,Importe inusual,"Importe de 1.034,03 € frente a un gasto habitual de 42,75 € por operación",81,Alta,Abierta,,
+AL-00929,TX-0158438,TJ-003219,CL-02383,2026-11-21 17:52:19,Comercio de alto riesgo,"Compra de 193,64 € en un comercio de joyería (Emiratos Árabes Unidos)",60,Media,Abierta,,
+AL-00930,TX-0158472,TJ-000272,CL-00192,2026-11-21 18:13:38,País inusual,"Primera compra en Portugal en los últimos 60 días: 78,20 € en Porto",65,Media,Abierta,,
+AL-00931,TX-0158533,TJ-000889,CL-00644,2026-11-21 18:55:42,Importe inusual,"Importe de 697,97 € frente a un gasto habitual de 64,76 € por operación",45,Baja,Abierta,,
+AL-00932,TX-0158753,TJ-002558,CL-01896,2026-11-22 01:59:27,Comercio de alto riesgo,"Compra de 572,78 € en un comercio de tarjetas regalo (Reino Unido) a las 01:54",87,Alta,Abierta,,
+AL-00933,TX-0158757,TJ-000489,CL-00347,2026-11-22 03:36:50,Ráfaga de operaciones,"3 compras online en 25 minutos entre las 03:34 y las 04:00, en comercios extranjeros, por un total de 1.478,75 €",88,Alta,Abierta,,
+AL-00934,TX-0158773,TJ-001641,CL-01207,2026-11-22 07:29:36,Importe inusual,"Importe de 1.515,22 € frente a un gasto habitual de 49,94 € por operación",74,Media,Abierta,,
+AL-00935,TX-0158880,TJ-002274,CL-01682,2026-11-22 10:34:17,Importe inusual,"Importe de 416,52 € frente a un gasto habitual de 53,34 € por operación",54,Baja,Abierta,,
+AL-00936,TX-0158923,TJ-001572,CL-01154,2026-11-22 11:12:07,País inusual,"Primera compra en Portugal en los últimos 60 días: 26,79 € en Porto",72,Media,Abierta,,
+AL-00937,TX-0159064,TJ-001937,CL-01430,2026-11-22 13:20:48,País inusual,"Primera compra en Portugal en los últimos 60 días: 42,56 € en Braga",36,Baja,Abierta,,
+AL-00938,TX-0159179,TJ-000501,CL-00355,2026-11-22 15:02:53,País inusual,"Primera compra en Portugal en los últimos 60 días: 123,99 € en Porto",39,Baja,Abierta,,
+AL-00939,TX-0159367,TJ-000306,CL-00214,2026-11-22 17:51:15,Comercio de alto riesgo,"Compra de 45,80 € en un comercio de criptoactivos (Estonia)",55,Baja,Abierta,,
+AL-00940,TX-0159689,TJ-001099,CL-00803,2026-11-23 03:11:25,Comercio de alto riesgo,"Compra de 806,69 € en un comercio de tarjetas regalo (Reino Unido) a las 03:09",80,Alta,Abierta,,
+AL-00941,TX-0159992,TJ-002055,CL-01521,2026-11-23 12:55:54,Importe inusual,"Importe de 443,73 € frente a un gasto habitual de 60,00 € por operación",64,Media,Abierta,,
+AL-00942,TX-0160155,TJ-002405,CL-01784,2026-11-23 15:44:41,País inusual,"Primera compra en Portugal en los últimos 60 días: 55,23 € en Braga",42,Baja,Abierta,,
+AL-00943,TX-0160195,TJ-001653,CL-01217,2026-11-23 16:34:31,Importe inusual,"Importe de 1.190,23 € frente a un gasto habitual de 48,32 € por operación",63,Media,Abierta,,
+AL-00944,TX-0160291,TJ-002395,CL-01773,2026-11-23 18:00:15,Importe inusual,"Importe de 531,04 € frente a un gasto habitual de 38,50 € por operación",50,Baja,Abierta,,
+AL-00945,TX-0160303,TJ-000775,CL-00555,2026-11-23 18:13:36,País inusual,"Primera compra en Portugal en los últimos 60 días: 45,02 € en Braga",47,Baja,Abierta,,
+AL-00946,TX-0160486,TJ-002539,CL-01881,2026-11-23 20:51:42,Comercio de alto riesgo,"Compra de 141,98 € en un comercio de criptoactivos (Estonia)",69,Media,Abierta,,
+AL-00947,TX-0160516,TJ-000049,CL-00035,2026-11-23 21:29:19,Importe inusual,"Importe de 1.971,93 € frente a un gasto habitual de 76,74 € por operación",69,Media,Abierta,,
+AL-00948,TX-0160696,TJ-000839,CL-00607,2026-11-24 10:12:26,Importe inusual,"Importe de 748,64 € frente a un gasto habitual de 60,62 € por operación",59,Baja,Abierta,,
+AL-00949,TX-0160794,TJ-000301,CL-00210,2026-11-24 11:46:08,País inusual,"Primera compra en Portugal en los últimos 60 días: 84,11 € en Valença",48,Baja,Abierta,,

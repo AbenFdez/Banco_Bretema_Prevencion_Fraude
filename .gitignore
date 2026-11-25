@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Spark local
+spark-warehouse/
+metastore_db/
+derby.log
+
+# La app tiene su propio .gitignore en app/

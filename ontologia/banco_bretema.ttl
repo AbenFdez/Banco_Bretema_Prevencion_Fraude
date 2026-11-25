@@ -1,0 +1,134 @@
+@prefix :     <https://github.com/AbenFdez/Banco_Bretema_Prevencion_Fraude/ontologia#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# ---------------------------------------------------------------------------
+# Ontología de prevención del fraude de Banco Brétema (banco ficticio)
+#
+# Se importa en un elemento Ontology (preview) VACÍO de Microsoft Fabric:
+#   Ontology > Import ontology > banco_bretema.ttl
+#
+# Crea 9 tipos de entidad y 12 tipos de relación, con descripciones y sinónimos.
+# Las propiedades NO van en este archivo: aparecen al enlazar cada tipo de
+# entidad con su tabla del Lakehouse (Bind data), con los nombres y tipos de las
+# columnas. Después se elige la clave de cada entidad y se configuran las
+# relaciones. Los pasos están en ontologia/README.md.
+#
+# Los nombres de entidades y relaciones van sin tildes para evitar problemas de
+# validación en la importación. Las formas con tilde están como sinónimos.
+# ---------------------------------------------------------------------------
+
+<https://github.com/AbenFdez/Banco_Bretema_Prevencion_Fraude/ontologia>
+    a owl:Ontology ;
+    rdfs:label "BancoBretemaFraude" ;
+    rdfs:comment "Clientes, productos y operaciones con tarjeta de Banco Brétema, con las alertas del motor antifraude y las revisiones de los analistas." .
+
+# --- Tipos de entidad ------------------------------------------------------
+
+:Oficina a owl:Class ;
+    rdfs:label "Oficina" ;
+    rdfs:comment "Sucursal de Banco Brétema en Galicia. La sede central está en Santiago de Compostela. Clave: oficina_id (por ejemplo OF-18)." ;
+    skos:altLabel "sucursal", "agencia", "oficina bancaria" .
+
+:Gestor a owl:Class ;
+    rdfs:label "Gestor" ;
+    rdfs:comment "Empleado de una oficina que atiende a una cartera de clientes. Su rol es director/a de oficina o gestor/a de clientes. Clave: gestor_id." ;
+    skos:altLabel "gestora", "gestor comercial", "director de oficina", "empleado" .
+
+:Cliente a owl:Class ;
+    rdfs:label "Cliente" ;
+    rdfs:comment "Persona o empresa con productos en el banco. El segmento es Joven, Estándar, Premium, Sénior, Autónomo o Empresa. Clave: cliente_id." ;
+    skos:altLabel "titular", "cliente particular", "empresa cliente" .
+
+:Cuenta a owl:Class ;
+    rdfs:label "Cuenta" ;
+    rdfs:comment "Cuenta bancaria de un cliente: corriente, nómina, ahorro o negocios. Clave: cuenta_id." ;
+    skos:altLabel "cuenta bancaria", "cuenta corriente", "depósito a la vista" .
+
+:Tarjeta a owl:Class ;
+    rdfs:label "Tarjeta" ;
+    rdfs:comment "Tarjeta de débito o crédito vinculada a una cuenta. Solo se guardan los cuatro últimos dígitos. Estado Activa o Bloqueada; se bloquea cuando se confirma un fraude. Clave: tarjeta_id." ;
+    skos:altLabel "tarjeta de crédito", "tarjeta de débito", "medio de pago", "plástico" .
+
+:Comercio a owl:Class ;
+    rdfs:label "Comercio" ;
+    rdfs:comment "Establecimiento o tienda online donde se paga con tarjeta, incluidos los cajeros del banco. nivel_riesgo indica si es un comercio de alto riesgo (tarjetas regalo, criptoactivos). Clave: comercio_id." ;
+    skos:altLabel "establecimiento", "tienda", "comerciante", "punto de venta" .
+
+:Transaccion a owl:Class ;
+    rdfs:label "Transaccion" ;
+    rdfs:comment "Operación con tarjeta: compra presencial, compra online o retirada en cajero. Importe en euros. resultado indica si se aprobó o se denegó. Clave: transaccion_id." ;
+    skos:altLabel "Transacción", "operación", "movimiento", "pago con tarjeta", "compra" .
+
+:Alerta a owl:Class ;
+    rdfs:label "Alerta" ;
+    rdfs:comment "Aviso del motor antifraude sobre una transacción sospechosa. Tipos: Ráfaga de operaciones, Comercio de alto riesgo, Operación nocturna online, País inusual e Importe inusual. puntuacion_riesgo va de 0 a 100 y la prioridad es Alta (80 o más), Media (60 a 79) o Baja. Una alerta Abierta está pendiente de revisar; una Cerrada tiene resolución Fraude confirmado o Falso positivo. Clave: alerta_id." ;
+    skos:altLabel "alerta de fraude", "aviso", "caso sospechoso", "alarma" .
+
+:Revision a owl:Class ;
+    rdfs:label "Revision" ;
+    rdfs:comment "Decisión que registra una analista de fraude en la consola de alertas (Fabric App): Fraude confirmado, Falso positivo o Escalada al gestor. Incluye si pide bloquear la tarjeta, el comentario, quién decidió y cuándo. Clave: revision_id." ;
+    skos:altLabel "Revisión", "decisión", "resolución del analista", "revisión de alerta" .
+
+# --- Tipos de relación -----------------------------------------------------
+
+:trabaja_en a owl:ObjectProperty ;
+    rdfs:label "trabaja_en" ;
+    rdfs:domain :Gestor ; rdfs:range :Oficina ;
+    rdfs:comment "Oficina en la que trabaja el gestor (Gestor.oficina_id = Oficina.oficina_id)." .
+
+:asignado_a_oficina a owl:ObjectProperty ;
+    rdfs:label "asignado_a_oficina" ;
+    rdfs:domain :Cliente ; rdfs:range :Oficina ;
+    rdfs:comment "Oficina a la que pertenece el cliente (Cliente.oficina_id = Oficina.oficina_id)." .
+
+:gestionado_por a owl:ObjectProperty ;
+    rdfs:label "gestionado_por" ;
+    rdfs:domain :Cliente ; rdfs:range :Gestor ;
+    rdfs:comment "Gestor que lleva la relación con el cliente (Cliente.gestor_id = Gestor.gestor_id)." .
+
+:pertenece_a a owl:ObjectProperty ;
+    rdfs:label "pertenece_a" ;
+    rdfs:domain :Cuenta ; rdfs:range :Cliente ;
+    rdfs:comment "Titular de la cuenta (Cuenta.cliente_id = Cliente.cliente_id)." .
+
+:vinculada_a a owl:ObjectProperty ;
+    rdfs:label "vinculada_a" ;
+    rdfs:domain :Tarjeta ; rdfs:range :Cuenta ;
+    rdfs:comment "Cuenta en la que se cargan los pagos de la tarjeta (Tarjeta.cuenta_id = Cuenta.cuenta_id)." .
+
+:del_titular a owl:ObjectProperty ;
+    rdfs:label "del_titular" ;
+    rdfs:domain :Tarjeta ; rdfs:range :Cliente ;
+    rdfs:comment "Cliente titular de la tarjeta (Tarjeta.cliente_id = Cliente.cliente_id)." .
+
+:pagada_con a owl:ObjectProperty ;
+    rdfs:label "pagada_con" ;
+    rdfs:domain :Transaccion ; rdfs:range :Tarjeta ;
+    rdfs:comment "Tarjeta con la que se hizo la operación (Transaccion.tarjeta_id = Tarjeta.tarjeta_id)." .
+
+:realizada_en a owl:ObjectProperty ;
+    rdfs:label "realizada_en" ;
+    rdfs:domain :Transaccion ; rdfs:range :Comercio ;
+    rdfs:comment "Comercio donde se hizo la operación (Transaccion.comercio_id = Comercio.comercio_id)." .
+
+:generada_por a owl:ObjectProperty ;
+    rdfs:label "generada_por" ;
+    rdfs:domain :Alerta ; rdfs:range :Transaccion ;
+    rdfs:comment "Transacción que disparó la alerta (Alerta.transaccion_id = Transaccion.transaccion_id)." .
+
+:sobre_tarjeta a owl:ObjectProperty ;
+    rdfs:label "sobre_tarjeta" ;
+    rdfs:domain :Alerta ; rdfs:range :Tarjeta ;
+    rdfs:comment "Tarjeta afectada por la alerta (Alerta.tarjeta_id = Tarjeta.tarjeta_id)." .
+
+:afecta_a a owl:ObjectProperty ;
+    rdfs:label "afecta_a" ;
+    rdfs:domain :Alerta ; rdfs:range :Cliente ;
+    rdfs:comment "Cliente afectado por la alerta (Alerta.cliente_id = Cliente.cliente_id)." .
+
+:revisa a owl:ObjectProperty ;
+    rdfs:label "revisa" ;
+    rdfs:domain :Revision ; rdfs:range :Alerta ;
+    rdfs:comment "Alerta a la que corresponde la decisión de la analista (Revision.alerta_id = Alerta.alerta_id)." .

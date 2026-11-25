@@ -1,0 +1,295 @@
+comercio_id,nombre,categoria,municipio,pais,canal,nivel_riesgo
+CO-0001,Cajero Banco Brétema · Santiago Centro,Cajero,Santiago de Compostela,España,Cajero,Bajo
+CO-0002,Cajero Banco Brétema · Santiago Fontiñas,Cajero,Santiago de Compostela,España,Cajero,Bajo
+CO-0003,Cajero Banco Brétema · A Coruña Cantón,Cajero,A Coruña,España,Cajero,Bajo
+CO-0004,Cajero Banco Brétema · A Coruña Matogrande,Cajero,A Coruña,España,Cajero,Bajo
+CO-0005,Cajero Banco Brétema · Ferrol,Cajero,Ferrol,España,Cajero,Bajo
+CO-0006,Cajero Banco Brétema · Carballo,Cajero,Carballo,España,Cajero,Bajo
+CO-0007,Cajero Banco Brétema · Ribeira,Cajero,Ribeira,España,Cajero,Bajo
+CO-0008,Cajero Banco Brétema · Arteixo,Cajero,Arteixo,España,Cajero,Bajo
+CO-0009,Cajero Banco Brétema · Lugo Centro,Cajero,Lugo,España,Cajero,Bajo
+CO-0010,Cajero Banco Brétema · Monforte de Lemos,Cajero,Monforte de Lemos,España,Cajero,Bajo
+CO-0011,Cajero Banco Brétema · Viveiro,Cajero,Viveiro,España,Cajero,Bajo
+CO-0012,Cajero Banco Brétema · Vilalba,Cajero,Vilalba,España,Cajero,Bajo
+CO-0013,Cajero Banco Brétema · Ourense Centro,Cajero,Ourense,España,Cajero,Bajo
+CO-0014,Cajero Banco Brétema · Ourense O Couto,Cajero,Ourense,España,Cajero,Bajo
+CO-0015,Cajero Banco Brétema · Verín,Cajero,Verín,España,Cajero,Bajo
+CO-0016,Cajero Banco Brétema · O Barco de Valdeorras,Cajero,O Barco de Valdeorras,España,Cajero,Bajo
+CO-0017,Cajero Banco Brétema · Pontevedra Centro,Cajero,Pontevedra,España,Cajero,Bajo
+CO-0018,Cajero Banco Brétema · Vigo Centro,Cajero,Vigo,España,Cajero,Bajo
+CO-0019,Cajero Banco Brétema · Vigo Bouzas,Cajero,Vigo,España,Cajero,Bajo
+CO-0020,Cajero Banco Brétema · Vigo Teis,Cajero,Vigo,España,Cajero,Bajo
+CO-0021,Cajero Banco Brétema · Vilagarcía de Arousa,Cajero,Vilagarcía de Arousa,España,Cajero,Bajo
+CO-0022,Cajero Banco Brétema · Cangas,Cajero,Cangas,España,Cajero,Bajo
+CO-0023,Cajero Banco Brétema · Lalín,Cajero,Lalín,España,Cajero,Bajo
+CO-0024,Cajero Banco Brétema · Tui,Cajero,Tui,España,Cajero,Bajo
+CO-0025,Supermercado Atlántico,Supermercado,A Coruña,España,Presencial,Bajo
+CO-0026,Ultramarinos Cortegada,Supermercado,A Coruña,España,Presencial,Bajo
+CO-0027,Autoservizo Eume,Supermercado,A Coruña,España,Presencial,Bajo
+CO-0028,Gasolineira Sil,Gasolinera,A Coruña,España,Presencial,Bajo
+CO-0029,Estación de Servicio Verdugo,Gasolinera,A Coruña,España,Presencial,Bajo
+CO-0030,Taberna Monte Pindo,Restaurante,A Coruña,España,Presencial,Bajo
+CO-0031,Taberna Salnés,Restaurante,A Coruña,España,Presencial,Bajo
+CO-0032,Taberna Bergantiños,Restaurante,A Coruña,España,Presencial,Bajo
+CO-0033,Moda Fisterra,Moda,A Coruña,España,Presencial,Bajo
+CO-0034,Boutique Tambre,Moda,A Coruña,España,Presencial,Bajo
+CO-0035,Farmacia Monte Pindo,Farmacia,A Coruña,España,Presencial,Bajo
+CO-0036,Informática Atlántico,Electrónica,A Coruña,España,Presencial,Medio
+CO-0037,Joyería O Castro,Joyería,A Coruña,España,Presencial,Medio
+CO-0038,Ultramarinos Caldas,Supermercado,Arteixo,España,Presencial,Bajo
+CO-0039,Supermercado Sil,Supermercado,Arteixo,España,Presencial,Bajo
+CO-0040,Estación de Servicio Terra Chá,Gasolinera,Arteixo,España,Presencial,Bajo
+CO-0041,Restaurante Ancares,Restaurante,Arteixo,España,Presencial,Bajo
+CO-0042,Taberna Mandeo,Restaurante,Arteixo,España,Presencial,Bajo
+CO-0043,Boutique Ons,Moda,Arteixo,España,Presencial,Bajo
+CO-0044,Farmacia Fisterra,Farmacia,Arteixo,España,Presencial,Bajo
+CO-0045,Electrónica Caldas,Electrónica,Arteixo,España,Presencial,Medio
+CO-0046,Joyería Seixo,Joyería,Arteixo,España,Presencial,Medio
+CO-0047,Autoservizo Barbanza,Supermercado,Cangas,España,Presencial,Bajo
+CO-0048,Autoservizo Carnota,Supermercado,Cangas,España,Presencial,Bajo
+CO-0049,Gasolineira Lemos,Gasolinera,Cangas,España,Presencial,Bajo
+CO-0050,Restaurante Valdeorras,Restaurante,Cangas,España,Presencial,Bajo
+CO-0051,Casa de Comidas Cortegada,Restaurante,Cangas,España,Presencial,Bajo
+CO-0052,Boutique O Castro,Moda,Cangas,España,Presencial,Bajo
+CO-0053,Farmacia Barbanza,Farmacia,Cangas,España,Presencial,Bajo
+CO-0054,Electrónica Carnota,Electrónica,Cangas,España,Presencial,Medio
+CO-0055,Joyería Xallas,Joyería,Cangas,España,Presencial,Medio
+CO-0056,Ultramarinos Miño,Supermercado,Carballo,España,Presencial,Bajo
+CO-0057,Autoservizo Monte Pindo,Supermercado,Carballo,España,Presencial,Bajo
+CO-0058,Gasolineira Ortegal,Gasolinera,Carballo,España,Presencial,Bajo
+CO-0059,Restaurante Tambre,Restaurante,Carballo,España,Presencial,Bajo
+CO-0060,Restaurante Salnés,Restaurante,Carballo,España,Presencial,Bajo
+CO-0061,Moda Miño,Moda,Carballo,España,Presencial,Bajo
+CO-0062,Farmacia Seixo,Farmacia,Carballo,España,Presencial,Bajo
+CO-0063,Informática Ortegal,Electrónica,Carballo,España,Presencial,Medio
+CO-0064,Joyería Baixo Miño,Joyería,Carballo,España,Presencial,Medio
+CO-0065,Autoservizo Verdugo,Supermercado,Ferrol,España,Presencial,Bajo
+CO-0066,Autoservizo Mandeo,Supermercado,Ferrol,España,Presencial,Bajo
+CO-0067,Supermercado Baixo Miño,Supermercado,Ferrol,España,Presencial,Bajo
+CO-0068,Estación de Servicio Miño,Gasolinera,Ferrol,España,Presencial,Bajo
+CO-0069,Gasolineira Salnés,Gasolinera,Ferrol,España,Presencial,Bajo
+CO-0070,Restaurante Trives,Restaurante,Ferrol,España,Presencial,Bajo
+CO-0071,Restaurante Ribeiro,Restaurante,Ferrol,España,Presencial,Bajo
+CO-0072,Restaurante Avia,Restaurante,Ferrol,España,Presencial,Bajo
+CO-0073,Moda Ribeiro,Moda,Ferrol,España,Presencial,Bajo
+CO-0074,Moda A Mariña,Moda,Ferrol,España,Presencial,Bajo
+CO-0075,Farmacia Arnoia,Farmacia,Ferrol,España,Presencial,Bajo
+CO-0076,Informática Lérez,Electrónica,Ferrol,España,Presencial,Medio
+CO-0077,Joyería A Mariña,Joyería,Ferrol,España,Presencial,Medio
+CO-0078,Supermercado Mandeo,Supermercado,Lalín,España,Presencial,Bajo
+CO-0079,Ultramarinos Atlántico,Supermercado,Lalín,España,Presencial,Bajo
+CO-0080,Estación de Servicio Sil,Gasolinera,Lalín,España,Presencial,Bajo
+CO-0081,Taberna Arousa,Restaurante,Lalín,España,Presencial,Bajo
+CO-0082,Restaurante Barbanza,Restaurante,Lalín,España,Presencial,Bajo
+CO-0083,Moda Arnoia,Moda,Lalín,España,Presencial,Bajo
+CO-0084,Farmacia Miño,Farmacia,Lalín,España,Presencial,Bajo
+CO-0085,Electrónica Mandeo,Electrónica,Lalín,España,Presencial,Medio
+CO-0086,Joyería Miño,Joyería,Lalín,España,Presencial,Medio
+CO-0087,Autoservizo Valdeorras,Supermercado,Lugo,España,Presencial,Bajo
+CO-0088,Autoservizo Sil,Supermercado,Lugo,España,Presencial,Bajo
+CO-0089,Ultramarinos A Mariña,Supermercado,Lugo,España,Presencial,Bajo
+CO-0090,Estación de Servicio Ancares,Gasolinera,Lugo,España,Presencial,Bajo
+CO-0091,Gasolineira Eume,Gasolinera,Lugo,España,Presencial,Bajo
+CO-0092,Restaurante Courel,Restaurante,Lugo,España,Presencial,Bajo
+CO-0093,Taberna Lérez,Restaurante,Lugo,España,Presencial,Bajo
+CO-0094,Taberna Ancares,Restaurante,Lugo,España,Presencial,Bajo
+CO-0095,Moda Courel,Moda,Lugo,España,Presencial,Bajo
+CO-0096,Boutique Xallas,Moda,Lugo,España,Presencial,Bajo
+CO-0097,Farmacia Ribeiro,Farmacia,Lugo,España,Presencial,Bajo
+CO-0098,Electrónica Lemos,Electrónica,Lugo,España,Presencial,Medio
+CO-0099,Joyería Barbanza,Joyería,Lugo,España,Presencial,Medio
+CO-0100,Autoservizo Fisterra,Supermercado,Monforte de Lemos,España,Presencial,Bajo
+CO-0101,Autoservizo Miño,Supermercado,Monforte de Lemos,España,Presencial,Bajo
+CO-0102,Gasolineira Carnota,Gasolinera,Monforte de Lemos,España,Presencial,Bajo
+CO-0103,Casa de Comidas Terra Chá,Restaurante,Monforte de Lemos,España,Presencial,Bajo
+CO-0104,Taberna Verdugo,Restaurante,Monforte de Lemos,España,Presencial,Bajo
+CO-0105,Boutique A Mariña,Moda,Monforte de Lemos,España,Presencial,Bajo
+CO-0106,Farmacia Deza,Farmacia,Monforte de Lemos,España,Presencial,Bajo
+CO-0107,Informática Seixo,Electrónica,Monforte de Lemos,España,Presencial,Medio
+CO-0108,Joyería Trives,Joyería,Monforte de Lemos,España,Presencial,Medio
+CO-0109,Ultramarinos Baixo Miño,Supermercado,O Barco de Valdeorras,España,Presencial,Bajo
+CO-0110,Supermercado Valdeorras,Supermercado,O Barco de Valdeorras,España,Presencial,Bajo
+CO-0111,Gasolineira Bergantiños,Gasolinera,O Barco de Valdeorras,España,Presencial,Bajo
+CO-0112,Restaurante Verdugo,Restaurante,O Barco de Valdeorras,España,Presencial,Bajo
+CO-0113,Casa de Comidas Avia,Restaurante,O Barco de Valdeorras,España,Presencial,Bajo
+CO-0114,Moda Salnés,Moda,O Barco de Valdeorras,España,Presencial,Bajo
+CO-0115,Farmacia Lemos,Farmacia,O Barco de Valdeorras,España,Presencial,Bajo
+CO-0116,Electrónica Xallas,Electrónica,O Barco de Valdeorras,España,Presencial,Medio
+CO-0117,Joyería Mandeo,Joyería,O Barco de Valdeorras,España,Presencial,Medio
+CO-0118,Ultramarinos Ría,Supermercado,Ourense,España,Presencial,Bajo
+CO-0119,Ultramarinos Verdugo,Supermercado,Ourense,España,Presencial,Bajo
+CO-0120,Autoservizo Limia,Supermercado,Ourense,España,Presencial,Bajo
+CO-0121,Estación de Servicio Caldas,Gasolinera,Ourense,España,Presencial,Bajo
+CO-0122,Gasolineira Terra Chá,Gasolinera,Ourense,España,Presencial,Bajo
+CO-0123,Casa de Comidas Ancares,Restaurante,Ourense,España,Presencial,Bajo
+CO-0124,Casa de Comidas Ribeiro,Restaurante,Ourense,España,Presencial,Bajo
+CO-0125,Taberna Deza,Restaurante,Ourense,España,Presencial,Bajo
+CO-0126,Boutique Baixo Miño,Moda,Ourense,España,Presencial,Bajo
+CO-0127,Boutique Sil,Moda,Ourense,España,Presencial,Bajo
+CO-0128,Farmacia Sil,Farmacia,Ourense,España,Presencial,Bajo
+CO-0129,Electrónica Sálvora,Electrónica,Ourense,España,Presencial,Medio
+CO-0130,Joyería Tambre,Joyería,Ourense,España,Presencial,Medio
+CO-0131,Ultramarinos Ancares,Supermercado,Pontevedra,España,Presencial,Bajo
+CO-0132,Ultramarinos Arnoia,Supermercado,Pontevedra,España,Presencial,Bajo
+CO-0133,Autoservizo Sálvora,Supermercado,Pontevedra,España,Presencial,Bajo
+CO-0134,Gasolineira Deza,Gasolinera,Pontevedra,España,Presencial,Bajo
+CO-0135,Gasolineira Avia,Gasolinera,Pontevedra,España,Presencial,Bajo
+CO-0136,Restaurante Limia,Restaurante,Pontevedra,España,Presencial,Bajo
+CO-0137,Casa de Comidas Mandeo,Restaurante,Pontevedra,España,Presencial,Bajo
+CO-0138,Taberna Sil,Restaurante,Pontevedra,España,Presencial,Bajo
+CO-0139,Boutique Mandeo,Moda,Pontevedra,España,Presencial,Bajo
+CO-0140,Moda Arousa,Moda,Pontevedra,España,Presencial,Bajo
+CO-0141,Farmacia Ancares,Farmacia,Pontevedra,España,Presencial,Bajo
+CO-0142,Electrónica Salnés,Electrónica,Pontevedra,España,Presencial,Medio
+CO-0143,Joyería O Condado,Joyería,Pontevedra,España,Presencial,Medio
+CO-0144,Supermercado Terra Chá,Supermercado,Ribeira,España,Presencial,Bajo
+CO-0145,Supermercado O Castro,Supermercado,Ribeira,España,Presencial,Bajo
+CO-0146,Estación de Servicio Morrazo,Gasolinera,Ribeira,España,Presencial,Bajo
+CO-0147,Taberna Seixo,Restaurante,Ribeira,España,Presencial,Bajo
+CO-0148,Taberna Arnoia,Restaurante,Ribeira,España,Presencial,Bajo
+CO-0149,Boutique Deza,Moda,Ribeira,España,Presencial,Bajo
+CO-0150,Farmacia Trives,Farmacia,Ribeira,España,Presencial,Bajo
+CO-0151,Electrónica Deza,Electrónica,Ribeira,España,Presencial,Medio
+CO-0152,Joyería Sil,Joyería,Ribeira,España,Presencial,Medio
+CO-0153,Ultramarinos Terra Chá,Supermercado,Santiago de Compostela,España,Presencial,Bajo
+CO-0154,Autoservizo Baixo Miño,Supermercado,Santiago de Compostela,España,Presencial,Bajo
+CO-0155,Autoservizo Arousa,Supermercado,Santiago de Compostela,España,Presencial,Bajo
+CO-0156,Estación de Servicio Bergantiños,Gasolinera,Santiago de Compostela,España,Presencial,Bajo
+CO-0157,Gasolineira Seixo,Gasolinera,Santiago de Compostela,España,Presencial,Bajo
+CO-0158,Taberna Caldas,Restaurante,Santiago de Compostela,España,Presencial,Bajo
+CO-0159,Restaurante Lemos,Restaurante,Santiago de Compostela,España,Presencial,Bajo
+CO-0160,Taberna Xallas,Restaurante,Santiago de Compostela,España,Presencial,Bajo
+CO-0161,Moda Eume,Moda,Santiago de Compostela,España,Presencial,Bajo
+CO-0162,Moda Caldas,Moda,Santiago de Compostela,España,Presencial,Bajo
+CO-0163,Farmacia Ulla,Farmacia,Santiago de Compostela,España,Presencial,Bajo
+CO-0164,Electrónica Arnoia,Electrónica,Santiago de Compostela,España,Presencial,Medio
+CO-0165,Joyería Atlántico,Joyería,Santiago de Compostela,España,Presencial,Medio
+CO-0166,Supermercado Tambre,Supermercado,Tui,España,Presencial,Bajo
+CO-0167,Autoservizo A Mariña,Supermercado,Tui,España,Presencial,Bajo
+CO-0168,Estación de Servicio Courel,Gasolinera,Tui,España,Presencial,Bajo
+CO-0169,Restaurante Sil,Restaurante,Tui,España,Presencial,Bajo
+CO-0170,Taberna Fisterra,Restaurante,Tui,España,Presencial,Bajo
+CO-0171,Boutique Salnés,Moda,Tui,España,Presencial,Bajo
+CO-0172,Farmacia Baixo Miño,Farmacia,Tui,España,Presencial,Bajo
+CO-0173,Electrónica Miño,Electrónica,Tui,España,Presencial,Medio
+CO-0174,Joyería Cortegada,Joyería,Tui,España,Presencial,Medio
+CO-0175,Autoservizo Ons,Supermercado,Verín,España,Presencial,Bajo
+CO-0176,Autoservizo Bergantiños,Supermercado,Verín,España,Presencial,Bajo
+CO-0177,Estación de Servicio Ría,Gasolinera,Verín,España,Presencial,Bajo
+CO-0178,Taberna O Condado,Restaurante,Verín,España,Presencial,Bajo
+CO-0179,Restaurante Miño,Restaurante,Verín,España,Presencial,Bajo
+CO-0180,Boutique Limia,Moda,Verín,España,Presencial,Bajo
+CO-0181,Farmacia Cortegada,Farmacia,Verín,España,Presencial,Bajo
+CO-0182,Informática Monte Pindo,Electrónica,Verín,España,Presencial,Medio
+CO-0183,Joyería Caldas,Joyería,Verín,España,Presencial,Medio
+CO-0184,Supermercado Ría,Supermercado,Vigo,España,Presencial,Bajo
+CO-0185,Ultramarinos Valdeorras,Supermercado,Vigo,España,Presencial,Bajo
+CO-0186,Autoservizo Trives,Supermercado,Vigo,España,Presencial,Bajo
+CO-0187,Supermercado Trives,Supermercado,Vigo,España,Presencial,Bajo
+CO-0188,Gasolineira Ponte Alta,Gasolinera,Vigo,España,Presencial,Bajo
+CO-0189,Estación de Servicio Barbanza,Gasolinera,Vigo,España,Presencial,Bajo
+CO-0190,Gasolineira Miño,Gasolinera,Vigo,España,Presencial,Bajo
+CO-0191,Restaurante Arnoia,Restaurante,Vigo,España,Presencial,Bajo
+CO-0192,Casa de Comidas Verdugo,Restaurante,Vigo,España,Presencial,Bajo
+CO-0193,Casa de Comidas Seixo,Restaurante,Vigo,España,Presencial,Bajo
+CO-0194,Casa de Comidas Salnés,Restaurante,Vigo,España,Presencial,Bajo
+CO-0195,Boutique Barbanza,Moda,Vigo,España,Presencial,Bajo
+CO-0196,Boutique Valdeorras,Moda,Vigo,España,Presencial,Bajo
+CO-0197,Moda Carnota,Moda,Vigo,España,Presencial,Bajo
+CO-0198,Farmacia Xallas,Farmacia,Vigo,España,Presencial,Bajo
+CO-0199,Farmacia Atlántico,Farmacia,Vigo,España,Presencial,Bajo
+CO-0200,Electrónica Baixo Miño,Electrónica,Vigo,España,Presencial,Medio
+CO-0201,Informática Terra Chá,Electrónica,Vigo,España,Presencial,Medio
+CO-0202,Joyería Limia,Joyería,Vigo,España,Presencial,Medio
+CO-0203,Joyería Eume,Joyería,Vigo,España,Presencial,Medio
+CO-0204,Supermercado Lemos,Supermercado,Vilagarcía de Arousa,España,Presencial,Bajo
+CO-0205,Autoservizo Seixo,Supermercado,Vilagarcía de Arousa,España,Presencial,Bajo
+CO-0206,Estación de Servicio Ulla,Gasolinera,Vilagarcía de Arousa,España,Presencial,Bajo
+CO-0207,Casa de Comidas Fisterra,Restaurante,Vilagarcía de Arousa,España,Presencial,Bajo
+CO-0208,Casa de Comidas Morrazo,Restaurante,Vilagarcía de Arousa,España,Presencial,Bajo
+CO-0209,Moda Xallas,Moda,Vilagarcía de Arousa,España,Presencial,Bajo
+CO-0210,Farmacia Terra Chá,Farmacia,Vilagarcía de Arousa,España,Presencial,Bajo
+CO-0211,Informática Cortegada,Electrónica,Vilagarcía de Arousa,España,Presencial,Medio
+CO-0212,Joyería Deza,Joyería,Vilagarcía de Arousa,España,Presencial,Medio
+CO-0213,Supermercado Morrazo,Supermercado,Vilalba,España,Presencial,Bajo
+CO-0214,Ultramarinos Fisterra,Supermercado,Vilalba,España,Presencial,Bajo
+CO-0215,Estación de Servicio O Castro,Gasolinera,Vilalba,España,Presencial,Bajo
+CO-0216,Restaurante Arousa,Restaurante,Vilalba,España,Presencial,Bajo
+CO-0217,Casa de Comidas Valdeorras,Restaurante,Vilalba,España,Presencial,Bajo
+CO-0218,Moda Mandeo,Moda,Vilalba,España,Presencial,Bajo
+CO-0219,Farmacia Caldas,Farmacia,Vilalba,España,Presencial,Bajo
+CO-0220,Electrónica Ancares,Electrónica,Vilalba,España,Presencial,Medio
+CO-0221,Joyería Terra Chá,Joyería,Vilalba,España,Presencial,Medio
+CO-0222,Autoservizo Morrazo,Supermercado,Viveiro,España,Presencial,Bajo
+CO-0223,Supermercado A Mariña,Supermercado,Viveiro,España,Presencial,Bajo
+CO-0224,Gasolineira Atlántico,Gasolinera,Viveiro,España,Presencial,Bajo
+CO-0225,Taberna Ría,Restaurante,Viveiro,España,Presencial,Bajo
+CO-0226,Restaurante Bergantiños,Restaurante,Viveiro,España,Presencial,Bajo
+CO-0227,Moda Ulla,Moda,Viveiro,España,Presencial,Bajo
+CO-0228,Farmacia Morrazo,Farmacia,Viveiro,España,Presencial,Bajo
+CO-0229,Informática Baixo Miño,Electrónica,Viveiro,España,Presencial,Medio
+CO-0230,Joyería Fisterra,Joyería,Viveiro,España,Presencial,Medio
+CO-0231,Supermercado Ribeira,Supermercado,Valença,Portugal,Presencial,Bajo
+CO-0232,Loja Santa Luzia,Moda,Valença,Portugal,Presencial,Bajo
+CO-0233,Restaurante Minho,Restaurante,Valença,Portugal,Presencial,Bajo
+CO-0234,Posto de Combustível Foz,Gasolinera,Valença,Portugal,Presencial,Bajo
+CO-0235,Supermercado Barroso,Supermercado,Braga,Portugal,Presencial,Bajo
+CO-0236,Tasca Minho,Restaurante,Braga,Portugal,Presencial,Bajo
+CO-0237,Moda Monção,Moda,Braga,Portugal,Presencial,Bajo
+CO-0238,Pousada Gerês,Hotel,Braga,Portugal,Presencial,Bajo
+CO-0239,Tasca Bragança Velha,Restaurante,Porto,Portugal,Presencial,Bajo
+CO-0240,Moda Barroso,Moda,Porto,Portugal,Presencial,Bajo
+CO-0241,Pousada Cávado,Hotel,Porto,Portugal,Presencial,Bajo
+CO-0242,Electrónica Lima,Electrónica,Porto,Portugal,Presencial,Bajo
+CO-0243,Restaurante Monção,Restaurante,Viana do Castelo,Portugal,Presencial,Bajo
+CO-0244,Mercearia Santa Luzia,Supermercado,Viana do Castelo,Portugal,Presencial,Bajo
+CO-0245,Hotel Minho,Hotel,Viana do Castelo,Portugal,Presencial,Bajo
+CO-0246,Supermercado Douro,Supermercado,Chaves,Portugal,Presencial,Bajo
+CO-0247,Tasca Alto Minho,Restaurante,Chaves,Portugal,Presencial,Bajo
+CO-0248,Posto de Combustível Douro,Gasolinera,Chaves,Portugal,Presencial,Bajo
+CO-0249,Hotel Gran Vía Plaza,Hotel,Madrid,España,Presencial,Bajo
+CO-0250,Restaurante Castellana 12,Restaurante,Madrid,España,Presencial,Bajo
+CO-0251,Hotel Diagonal Mar,Hotel,Barcelona,España,Presencial,Bajo
+CO-0252,Sidrería El Llagar,Restaurante,Oviedo,España,Presencial,Bajo
+CO-0253,Hotel Catedral de León,Hotel,León,España,Presencial,Bajo
+CO-0254,Estación de Servicio A-6 Bierzo,Gasolinera,Ponferrada,España,Presencial,Bajo
+CO-0255,Parador Ficticio de Cantabria,Hotel,Santander,España,Presencial,Bajo
+CO-0256,Moda Serrano 40,Moda,Madrid,España,Presencial,Bajo
+CO-0257,Viajes Ruta Xacobea Online,Viajes,,España,Online,Bajo
+CO-0258,Trenes y Buses Atlántico,Viajes,,España,Online,Bajo
+CO-0259,Moda Online Lérez,Moda,,España,Online,Bajo
+CO-0260,Libros e Cultura Online,Ocio,,España,Online,Bajo
+CO-0261,Entradas Galicia Live,Ocio,,España,Online,Bajo
+CO-0262,Supermercado Online Ría,Supermercado,,España,Online,Bajo
+CO-0263,Farmacia Online Saúde,Farmacia,,España,Online,Bajo
+CO-0264,Telefonía Móvil Norte,Suscripciones,,España,Online,Bajo
+CO-0265,Plataforma Series Atlántica,Suscripciones,,España,Online,Bajo
+CO-0266,Música en Streaming Ons,Suscripciones,,España,Online,Bajo
+CO-0267,Electrodomésticos Online Miño,Electrónica,,España,Online,Bajo
+CO-0268,Deportes Online Fisterra,Moda,,España,Online,Bajo
+CO-0269,Mascotas Online Courel,Hogar,,España,Online,Bajo
+CO-0270,Hogar e Decoración Online,Hogar,,España,Online,Bajo
+CO-0271,Seguros del Hogar Directo,Seguros,,España,Online,Bajo
+CO-0272,Comida a Domicilio Rías,Restaurante,,España,Online,Bajo
+CO-0273,Parking Aeropuertos Galicia,Viajes,,España,Online,Bajo
+CO-0274,Gimnasios Rede Activa,Suscripciones,,España,Online,Bajo
+CO-0275,Juguetería Online Sálvora,Hogar,,España,Online,Bajo
+CO-0276,Óptica Online Lentes,Farmacia,,España,Online,Bajo
+CO-0277,Northwind Marketplace,Marketplace,,Irlanda,Online,Medio
+CO-0278,Contoso Travel,Viajes,,Países Bajos,Online,Medio
+CO-0279,Fabrikam Software,Suscripciones,,Irlanda,Online,Medio
+CO-0280,Tailspin Airlines,Viajes,,Reino Unido,Online,Medio
+CO-0281,Woodgrove Books,Ocio,,Luxemburgo,Online,Medio
+CO-0282,Litware Games Store,Ocio,,Estados Unidos,Online,Medio
+CO-0283,Proseware Cloud,Suscripciones,,Estados Unidos,Online,Medio
+CO-0284,Adventure Works Outdoor,Moda,,Alemania,Online,Medio
+CO-0285,Wingtip Fashion,Moda,,Países Bajos,Online,Medio
+CO-0286,Alpine Ski Rentals,Viajes,,Francia,Online,Medio
+CO-0287,Quillmore Gift Cards,Tarjetas regalo,,Reino Unido,Online,Alto
+CO-0288,Vandertek Electronics,Electrónica,,Países Bajos,Online,Alto
+CO-0289,Brightharbor Digital,Tarjetas regalo,,Estados Unidos,Online,Alto
+CO-0290,Lumacoin Exchange,Criptoactivos,,Malta,Online,Alto
+CO-0291,Orbis Prepaid Store,Tarjetas regalo,,Chipre,Online,Alto
+CO-0292,Kestrel Crypto Desk,Criptoactivos,,Estonia,Online,Alto
+CO-0293,Mirage Luxury Outlet,Joyería,,Emiratos Árabes Unidos,Online,Alto
+CO-0294,Pixelvault Keys,Tarjetas regalo,,Lituania,Online,Alto
