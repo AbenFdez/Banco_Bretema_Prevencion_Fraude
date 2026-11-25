@@ -22,7 +22,7 @@ export interface Alerta {
   transaccionId: string;
   tarjetaId: string;
   tipoTarjeta: string;
-  ultimosDigitos: string;
+  tarjetaEnmascarada: string;
   estadoTarjeta: string;
   clienteId: string;
   cliente: string;
@@ -69,7 +69,7 @@ const CAMPOS_ALERTA = [
   'transaccionId',
   'tarjetaId',
   'tipoTarjeta',
-  'ultimosDigitos',
+  'tarjetaEnmascarada',
   'estadoTarjeta',
   'clienteId',
   'cliente',
@@ -206,7 +206,7 @@ async function leerConsola(): Promise<DatosConsola> {
     transaccionId: f.transaccionId ?? '',
     tarjetaId: f.tarjetaId,
     tipoTarjeta: f.tipoTarjeta ?? '',
-    ultimosDigitos: f.ultimosDigitos ?? '',
+    tarjetaEnmascarada: f.tarjetaEnmascarada ?? '',
     estadoTarjeta: f.estadoTarjeta ?? '',
     clienteId: f.clienteId ?? '',
     cliente: f.cliente ?? '',

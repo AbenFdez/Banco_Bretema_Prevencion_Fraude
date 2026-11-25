@@ -13,3 +13,6 @@ metastore_db/
 derby.log
 
 # La app tiene su propio .gitignore en app/
+
+# Salidas del simulador
+transacciones_tiempo_real.jsonl

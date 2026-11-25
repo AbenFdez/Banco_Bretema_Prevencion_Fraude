@@ -1,25 +1,25 @@
-oficina_id,nombre,municipio,provincia,tipo
-OF-01,Santiago Centro,Santiago de Compostela,A Coruña,Sede central
-OF-02,Santiago Fontiñas,Santiago de Compostela,A Coruña,Urbana
-OF-03,A Coruña Cantón,A Coruña,A Coruña,Urbana
-OF-04,A Coruña Matogrande,A Coruña,A Coruña,Urbana
-OF-05,Ferrol,Ferrol,A Coruña,Urbana
-OF-06,Carballo,Carballo,A Coruña,Comarcal
-OF-07,Ribeira,Ribeira,A Coruña,Comarcal
-OF-08,Arteixo,Arteixo,A Coruña,Comarcal
-OF-09,Lugo Centro,Lugo,Lugo,Urbana
-OF-10,Monforte de Lemos,Monforte de Lemos,Lugo,Comarcal
-OF-11,Viveiro,Viveiro,Lugo,Comarcal
-OF-12,Vilalba,Vilalba,Lugo,Comarcal
-OF-13,Ourense Centro,Ourense,Ourense,Urbana
-OF-14,Ourense O Couto,Ourense,Ourense,Urbana
-OF-15,Verín,Verín,Ourense,Comarcal
-OF-16,O Barco de Valdeorras,O Barco de Valdeorras,Ourense,Comarcal
-OF-17,Pontevedra Centro,Pontevedra,Pontevedra,Urbana
-OF-18,Vigo Centro,Vigo,Pontevedra,Urbana
-OF-19,Vigo Bouzas,Vigo,Pontevedra,Urbana
-OF-20,Vigo Teis,Vigo,Pontevedra,Urbana
-OF-21,Vilagarcía de Arousa,Vilagarcía de Arousa,Pontevedra,Comarcal
-OF-22,Cangas,Cangas,Pontevedra,Comarcal
-OF-23,Lalín,Lalín,Pontevedra,Comarcal
-OF-24,Tui,Tui,Pontevedra,Comarcal
+oficina_id,nombre,municipio,provincia,tipo,latitud,longitud
+OF-01,Santiago Centro,Santiago de Compostela,A Coruña,Sede central,42.87829,-8.54761
+OF-02,Santiago Fontiñas,Santiago de Compostela,A Coruña,Urbana,42.87996,-8.54209
+OF-03,A Coruña Cantón,A Coruña,A Coruña,Urbana,43.36543,-8.40903
+OF-04,A Coruña Matogrande,A Coruña,A Coruña,Urbana,43.36115,-8.41073
+OF-05,Ferrol,Ferrol,A Coruña,Urbana,43.48474,-8.23982
+OF-06,Carballo,Carballo,A Coruña,Comarcal,43.21498,-8.69218
+OF-07,Ribeira,Ribeira,A Coruña,Comarcal,42.55795,-8.98888
+OF-08,Arteixo,Arteixo,A Coruña,Comarcal,43.30189,-8.5077
+OF-09,Lugo Centro,Lugo,Lugo,Urbana,43.00631,-7.55696
+OF-10,Monforte de Lemos,Monforte de Lemos,Lugo,Comarcal,42.52153,-7.51641
+OF-11,Viveiro,Viveiro,Lugo,Comarcal,43.66542,-7.59812
+OF-12,Vilalba,Vilalba,Lugo,Comarcal,43.3012,-7.67962
+OF-13,Ourense Centro,Ourense,Ourense,Urbana,42.33383,-7.8644
+OF-14,Ourense O Couto,Ourense,Ourense,Urbana,42.33246,-7.86143
+OF-15,Verín,Verín,Ourense,Comarcal,41.9387,-7.4367
+OF-16,O Barco de Valdeorras,O Barco de Valdeorras,Ourense,Comarcal,42.41355,-6.98107
+OF-17,Pontevedra Centro,Pontevedra,Pontevedra,Urbana,42.42869,-8.64625
+OF-18,Vigo Centro,Vigo,Pontevedra,Urbana,42.23846,-8.72348
+OF-19,Vigo Bouzas,Vigo,Pontevedra,Urbana,42.24312,-8.71762
+OF-20,Vigo Teis,Vigo,Pontevedra,Urbana,42.23967,-8.72103
+OF-21,Vilagarcía de Arousa,Vilagarcía de Arousa,Pontevedra,Comarcal,42.59296,-8.76461
+OF-22,Cangas,Cangas,Pontevedra,Comarcal,42.26194,-8.78632
+OF-23,Lalín,Lalín,Pontevedra,Comarcal,42.6582,-8.11033
+OF-24,Tui,Tui,Pontevedra,Comarcal,42.04485,-8.64254

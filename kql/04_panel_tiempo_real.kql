@@ -1,0 +1,54 @@
+// ============================================================================
+// Banco Brétema · 04 · Real-Time Dashboard «Fraude en directo»
+//
+// Una consulta por mosaico. En el panel, crea el mosaico con «Agregar mosaico»,
+// elige la base de datos EH_Bretema, pega la consulta y elige el visual indicado.
+// _startTime y _endTime son los parámetros de intervalo de tiempo del panel:
+// ponlo en «Últimos 30 minutos» y la actualización automática cada 10 segundos.
+// ============================================================================
+
+// Mosaico 1 · Operaciones en el intervalo · visual: Tarjeta (Stat)
+transacciones
+| where fecha_hora between (_startTime .. _endTime)
+| count
+
+// Mosaico 2 · Importe total · visual: Tarjeta (Stat)
+transacciones
+| where fecha_hora between (_startTime .. _endTime) and resultado == "Aprobada"
+| summarize importe = round(sum(importe_eur), 2)
+
+// Mosaico 3 · Alertas de prioridad alta · visual: Tarjeta (Stat), con regla de color si > 0
+fn_alertas_tiempo_real(_endTime - _startTime)
+| where prioridad == "Alta"
+| count
+
+// Mosaico 4 · Operaciones por minuto y canal · visual: Gráfico de áreas apiladas
+transacciones
+| where fecha_hora between (_startTime .. _endTime)
+| summarize operaciones = count() by bin(fecha_hora, 1m), canal
+
+// Mosaico 5 · Mapa de operaciones presenciales · visual: Mapa
+//   Ubicación: latitud y longitud · Tamaño: operaciones · Etiqueta: municipio_comercio
+fn_transacciones(_startTime, _endTime)
+| where canal != "Online" and isnotnull(latitud)
+| summarize operaciones = count() by municipio_comercio, latitud, longitud
+
+// Mosaico 6 · Alertas por tipo · visual: Gráfico de columnas
+fn_alertas_tiempo_real(_endTime - _startTime)
+| summarize alertas = count() by tipo_alerta
+
+// Mosaico 7 · Cola de alertas en tiempo real · visual: Tabla
+//   Regla de formato condicional en «prioridad»: Alta en rojo, Media en ámbar
+fn_alertas_tiempo_real(_endTime - _startTime)
+| project fecha_hora, prioridad, puntuacion_riesgo, tipo_alerta, motivo, cliente, oficina, tarjeta_enmascarada
+
+// Mosaico 8 · Ráfagas detectadas · visual: Tabla
+fn_rafagas(_endTime - _startTime)
+| join kind = leftouter fn_tarjetas_expuestas() on tarjeta_id
+| project inicio, cliente, oficina, tarjeta_enmascarada, operaciones, importe_total,
+          paso_por_ponte_alta = iff(isnotnull(visita), "Sí", "No")
+
+// Mosaico 9 · Países de las compras online · visual: Gráfico circular
+transacciones
+| where fecha_hora between (_startTime .. _endTime) and canal == "Online"
+| summarize operaciones = count() by pais

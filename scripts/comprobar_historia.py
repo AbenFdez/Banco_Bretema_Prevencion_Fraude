@@ -25,7 +25,7 @@ def cargar(carpeta: Path) -> dict[str, pd.DataFrame]:
     fechas = {"transacciones": ["fecha_hora"], "alertas": ["fecha_hora", "fecha_resolucion"]}
     return {
         nombre: pd.read_csv(carpeta / f"{nombre}.csv", parse_dates=fechas.get(nombre, False),
-                            dtype={"ultimos_digitos": str})
+                            dtype={"tarjeta_enmascarada": str})
         for nombre in ["oficinas", "gestores", "clientes", "cuentas", "tarjetas", "comercios", "transacciones", "alertas"]
     }
 

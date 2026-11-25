@@ -1,0 +1,125 @@
+// ============================================================================
+// Banco Brétema · 01 · Tablas del Eventhouse
+//
+// Dónde: Eventhouse EH_Bretema › base de datos KQL EH_Bretema › Explorar los datos
+//        (o un conjunto de consultas KQL conectado a esa base de datos).
+// Cómo:  ejecuta cada comando por separado: coloca el cursor en él y pulsa Ejecutar.
+//
+// Crear las tablas antes de cargar los CSV fija los tipos de cada columna. Si
+// dejas que el asistente «Obtener datos» las cree, puede convertir columnas de
+// texto en números o fechas sin hora.
+// ============================================================================
+
+// Operaciones con tarjeta: histórico (CSV) y tiempo real (Eventstream)
+.create-merge table transacciones (
+    transaccion_id: string,
+    tarjeta_id: string,
+    comercio_id: string,
+    fecha_hora: datetime,
+    importe_eur: real,
+    canal: string,
+    pais: string,
+    resultado: string
+) with (folder = "Banco", docstring = "Operaciones con tarjeta. Las de tiempo real tienen transaccion_id con prefijo TX-RT-")
+
+// Alertas del motor antifraude (histórico)
+.create-merge table alertas (
+    alerta_id: string,
+    transaccion_id: string,
+    tarjeta_id: string,
+    cliente_id: string,
+    fecha_hora: datetime,
+    tipo_alerta: string,
+    motivo: string,
+    puntuacion_riesgo: int,
+    prioridad: string,
+    estado: string,
+    resolucion: string,
+    fecha_resolucion: datetime
+) with (folder = "Banco", docstring = "Alertas históricas del motor antifraude, abiertas o cerradas con su resolución")
+
+// Tablas de referencia para cruzar en KQL (las mismas que van al Lakehouse)
+.create-merge table comercios (
+    comercio_id: string,
+    nombre: string,
+    categoria: string,
+    municipio: string,
+    pais: string,
+    canal: string,
+    nivel_riesgo: string,
+    latitud: real,
+    longitud: real
+) with (folder = "Referencia")
+
+.create-merge table tarjetas (
+    tarjeta_id: string,
+    cuenta_id: string,
+    cliente_id: string,
+    tipo_tarjeta: string,
+    tarjeta_enmascarada: string,
+    fecha_emision: datetime,
+    fecha_caducidad: datetime,
+    limite_eur: real,
+    estado: string,
+    fecha_bloqueo: datetime
+) with (folder = "Referencia")
+
+.create-merge table clientes (
+    cliente_id: string,
+    nombre: string,
+    tipo_cliente: string,
+    segmento: string,
+    edad: int,
+    municipio: string,
+    provincia: string,
+    fecha_alta: datetime,
+    oficina_id: string,
+    gestor_id: string,
+    riesgo_kyc: string
+) with (folder = "Referencia")
+
+.create-merge table oficinas (
+    oficina_id: string,
+    nombre: string,
+    municipio: string,
+    provincia: string,
+    tipo: string,
+    latitud: real,
+    longitud: real
+) with (folder = "Referencia")
+
+// Mapeo JSON para los eventos del simulador. El asistente del Eventstream crea
+// uno equivalente; este sirve si configuras la ingesta a mano.
+.create-or-alter table transacciones ingestion json mapping "transacciones_json"
+```
+[
+    {"column": "transaccion_id", "path": "$.transaccion_id", "datatype": "string"},
+    {"column": "tarjeta_id",     "path": "$.tarjeta_id",     "datatype": "string"},
+    {"column": "comercio_id",    "path": "$.comercio_id",    "datatype": "string"},
+    {"column": "fecha_hora",     "path": "$.fecha_hora",     "datatype": "datetime"},
+    {"column": "importe_eur",    "path": "$.importe_eur",    "datatype": "real"},
+    {"column": "canal",          "path": "$.canal",          "datatype": "string"},
+    {"column": "pais",           "path": "$.pais",           "datatype": "string"},
+    {"column": "resultado",      "path": "$.resultado",      "datatype": "string"}
+]
+```
+
+// ----------------------------------------------------------------------------
+// Después de cargar los CSV (Obtener datos › Archivo local › tabla existente)
+// ----------------------------------------------------------------------------
+
+// Comprobación: tienen que salir 161462, 949, 294, 3236, 2400 y 24 filas
+union withsource = tabla transacciones, alertas, comercios, tarjetas, clientes, oficinas
+| summarize filas = count() by tabla
+| order by tabla asc
+
+// Perfil de gasto de cada tarjeta, calculado sobre el histórico. Lo usan las
+// reglas de importe inusual y país inusual de 02_funciones.kql. Ejecútalo cuando
+// el histórico esté cargado y antes de arrancar el simulador.
+.set-or-replace perfil_tarjetas with (folder = "Fraude", docstring = "Gasto mediano y última compra en el extranjero de cada tarjeta, según el histórico") <|
+    transacciones
+    | where resultado == "Aprobada" and not(transaccion_id startswith "TX-RT-")
+    | summarize gasto_mediano = percentile(importe_eur, 50),
+                operaciones = count(),
+                ultima_compra_extranjero = maxif(fecha_hora, pais != "España")
+        by tarjeta_id

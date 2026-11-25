@@ -99,7 +99,7 @@ export function FormularioDecision({ alerta, alRegistrar }: FormularioProps) {
           onChange={(e) => setBloquear(e.target.checked)}
           className="size-4 accent-[var(--color-riesgo-alto)]"
         />
-        Pedir el bloqueo de la tarjeta •••• {alerta.ultimosDigitos}
+        Pedir el bloqueo de la tarjeta {alerta.tarjetaEnmascarada}
       </label>
 
       <div className="space-y-100">

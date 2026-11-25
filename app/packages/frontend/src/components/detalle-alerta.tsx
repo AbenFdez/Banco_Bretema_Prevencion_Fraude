@@ -67,7 +67,7 @@ export function DetalleAlerta({ alerta, alRegistrar }: DetalleProps) {
         </Bloque>
         <Bloque icono={<CreditCard aria-hidden="true" className="icon-size-200" />} titulo="Tarjeta">
           <p className="font-[family-name:var(--font-monospace)] text-300 font-semibold text-foreground">
-            {alerta.tipoTarjeta} •••• {alerta.ultimosDigitos}
+            {alerta.tipoTarjeta} {alerta.tarjetaEnmascarada}
           </p>
           <p className="text-200 text-muted-foreground">Estado: {alerta.estadoTarjeta}</p>
           <p className="text-200 text-muted-foreground">

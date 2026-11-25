@@ -20,6 +20,17 @@ Las respuestas esperadas salen de `scripts/comprobar_historia.py` sobre los CSV 
 
 Enseña el Lakehouse: 8 tablas, 161.462 transacciones con tarjeta en seis meses y 949 alertas.
 
+## 1 bis. El fraude en directo con KQL (5 min)
+
+Con el simulador enviando desde antes de empezar (fase 3 de la [guía](paso-a-paso/03-eventstream-simulador.md)):
+
+1. Abre el Real-Time Dashboard **Fraude en directo**: operaciones por minuto, mapa de Galicia y cola de alertas.
+   > Esto son operaciones con tarjeta llegando ahora mismo al Eventhouse, segundo a segundo, a través de un Eventstream.
+2. Espera a que el simulador anuncie una ráfaga (sale cada 3 minutos) y enséñala en el mosaico de ráfagas.
+3. En `KQL_Fraude`, ejecuta **B6**: la tarjeta de la ráfaga pasó por la Gasolineira Ponte Alta en octubre.
+4. Ejecuta **C2**: el histórico ya lo decía, 23 de las 27 tarjetas con fraude confirmado pasaron por allí.
+   > El motor de reglas ve operaciones sueltas. Con KQL vemos el patrón; con la ontología, a continuación, cualquiera podrá preguntarlo en lenguaje natural.
+
 ## 2. La ontología (4 min)
 
 1. Abre `BancoBretemaFraude`. Enseña el lienzo con las entidades y relaciones.

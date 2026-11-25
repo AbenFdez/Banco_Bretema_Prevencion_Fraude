@@ -1,0 +1,92 @@
+// ============================================================================
+// Banco Brétema · 05 · OPCIONAL · Guardar las alertas al ingerir (política de actualización)
+//
+// Las funciones de 02_funciones.kql calculan las alertas al consultar. Si
+// quieres que cada operación nueva genere su alerta en una tabla en el mismo
+// momento de la ingesta (para enlazarla en la ontología, por ejemplo), usa una
+// política de actualización.
+//
+// Contrapartida: el Eventhouse tiene activada por defecto la ingesta en
+// streaming, y una política de actualización que cruza tablas (lookup/join)
+// exige desactivarla en la tabla de origen. La ingesta pasa a ir por lotes: con
+// la política de lotes de abajo, las operaciones tardan unos 10 segundos en
+// aparecer en lugar de 1 o 2.
+//
+// Ejecuta los comandos en orden y DESPUÉS de cargar el histórico y crear
+// perfil_tarjetas; si no, la política también procesaría las 161.462
+// operaciones históricas.
+// ============================================================================
+
+// 1. Tabla destino
+.create-merge table alertas_tiempo_real (
+    alerta_id: string,
+    transaccion_id: string,
+    tarjeta_id: string,
+    cliente_id: string,
+    fecha_hora: datetime,
+    tipo_alerta: string,
+    motivo: string,
+    puntuacion_riesgo: int,
+    prioridad: string,
+    comercio: string,
+    importe_eur: real,
+    pais: string
+) with (folder = "Fraude", docstring = "Alertas generadas al ingerir cada operación en tiempo real")
+
+// 2. Función de la política. Dentro de una política de actualización,
+//    «transacciones» se refiere solo a las filas recién ingeridas.
+.create-or-alter function with (folder = "Fraude", docstring = "Consulta de la política de actualización de alertas_tiempo_real")
+fn_politica_alertas() {
+    transacciones
+    | where transaccion_id startswith "TX-RT-"
+    | lookup kind = leftouter (comercios | project comercio_id, comercio = nombre, categoria, nivel_riesgo, municipio_comercio = municipio) on comercio_id
+    | lookup kind = leftouter (tarjetas | project tarjeta_id, cliente_id, estado_tarjeta = estado) on tarjeta_id
+    | lookup kind = leftouter perfil_tarjetas on tarjeta_id
+    | extend gasto_mediano = coalesce(gasto_mediano, 40.0)
+    | extend tipo_alerta = case(
+        estado_tarjeta == "Bloqueada", "Tarjeta bloqueada",
+        nivel_riesgo == "Alto", "Comercio de alto riesgo",
+        canal == "Presencial" and pais != "España"
+            and (isnull(ultima_compra_extranjero) or fecha_hora - ultima_compra_extranjero > 60d), "País inusual",
+        canal != "Cajero" and importe_eur > max_of(350.0, 6 * gasto_mediano), "Importe inusual",
+        "")
+    | where isnotempty(tipo_alerta)
+    | extend variacion = toint(hash(transaccion_id, 10))
+    | extend puntuacion_riesgo = case(
+        tipo_alerta == "Tarjeta bloqueada", 95,
+        tipo_alerta == "Comercio de alto riesgo", 78 + variacion,
+        tipo_alerta == "Importe inusual", 62 + 2 * variacion,
+        45 + variacion)
+    | extend prioridad = case(puntuacion_riesgo >= 80, "Alta", puntuacion_riesgo >= 60, "Media", "Baja")
+    | extend motivo = case(
+        tipo_alerta == "Tarjeta bloqueada", strcat("Intento de pago con una tarjeta bloqueada en ", comercio, " (", pais, ")"),
+        tipo_alerta == "Comercio de alto riesgo", strcat("Compra de ", round(importe_eur, 2), " € en ", comercio, ", comercio de ", tolower(categoria), " (", pais, ")"),
+        tipo_alerta == "País inusual", strcat("Compra presencial en ", municipio_comercio, " (", pais, ") sin compras en el extranjero en los 60 días anteriores"),
+        strcat("Importe de ", round(importe_eur, 2), " € frente a un gasto mediano de ", round(gasto_mediano, 2), " € por operación"))
+    | project alerta_id = strcat("AL-", transaccion_id), transaccion_id, tarjeta_id, cliente_id, fecha_hora,
+              tipo_alerta, motivo, puntuacion_riesgo, prioridad, comercio, importe_eur, pais
+}
+
+// 3. Desactivar la ingesta en streaming en la tabla de origen (necesario por los lookups)
+.alter table transacciones policy streamingingestion disable
+
+// 4. Lotes pequeños para que la latencia sea de unos 10 segundos
+.alter table transacciones policy ingestionbatching
+```
+{"MaximumBatchingTimeSpan": "00:00:10", "MaximumNumberOfItems": 500, "MaximumRawDataSizeMB": 100}
+```
+
+// 5. La política de actualización
+.alter table alertas_tiempo_real policy update
+```
+[{"IsEnabled": true, "Source": "transacciones", "Query": "fn_politica_alertas()", "IsTransactional": false, "PropagateIngestionProperties": false}]
+```
+
+// 6. Comprobación, con el simulador en marcha
+alertas_tiempo_real
+| where fecha_hora > ago(15m)
+| summarize alertas = count() by tipo_alerta
+
+// Para volver atrás: quitar la política y reactivar el streaming
+// .delete table alertas_tiempo_real policy update
+// .alter table transacciones policy streamingingestion enable

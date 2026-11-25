@@ -18,7 +18,7 @@ flowchart LR
     Revision -- revisa --> Alerta
 ```
 
-Antes de empezar, el notebook `01_cargar_lakehouse` tiene que haber creado las tablas en `LH_Bretema`, incluida `revisiones`, que está vacía.
+Antes de empezar tienen que estar hechas las fases 1 y 2 de la [guía paso a paso](../docs/paso-a-paso/README.md): las tablas estáticas en el Lakehouse `LH_Bretema` y el histórico en el Eventhouse `EH_Bretema`. Se sigue el patrón del tutorial de Microsoft: entidades estáticas desde el Lakehouse y las que llegan en tiempo real desde el Eventhouse.
 
 ## 1. Crear el elemento
 
@@ -39,23 +39,25 @@ El archivo no trae propiedades: aparecen en el paso siguiente, con el nombre y e
 Para cada fila de la tabla:
 
 1. En el **Explorador**, selecciona la entidad, pulsa **…** y **Bind data**. Si la entidad no tiene propiedades, la opción se llama **Add properties from data**.
-2. En **Data sources**, pulsa **+ › OneLake catalog**, abre `LH_Bretema › Schemas › dbo` y elige la tabla.
+2. En **Data sources**, pulsa **+ › OneLake catalog** y abre el origen de la tabla siguiente: `LH_Bretema › Schemas › dbo` para el Lakehouse o la base de datos KQL `EH_Bretema` para el Eventhouse. Si al enlazar una tabla del Eventhouse te pide una columna de marca de tiempo, elige `fecha_hora`.
 3. En **Entity type › Properties** aparecen las columnas como propiedades propuestas. Déjalas todas con su nombre y pulsa **Create**.
 4. En **Configure**, elige la **clave de la entidad** (entity type key): la propiedad que indica la columna «Clave» de la tabla siguiente. Todas son de texto.
 
-| Entidad | Tabla | Clave |
-| --- | --- | --- |
-| Oficina | `oficinas` | `oficina_id` |
-| Gestor | `gestores` | `gestor_id` |
-| Cliente | `clientes` | `cliente_id` |
-| Cuenta | `cuentas` | `cuenta_id` |
-| Tarjeta | `tarjetas` | `tarjeta_id` |
-| Comercio | `comercios` | `comercio_id` |
-| Transaccion | `transacciones` | `transaccion_id` |
-| Alerta | `alertas` | `alerta_id` |
-| Revision | `revisiones` | `revision_id` |
+| Entidad | Origen | Tabla | Clave |
+| --- | --- | --- | --- |
+| Oficina | Lakehouse | `oficinas` | `oficina_id` |
+| Gestor | Lakehouse | `gestores` | `gestor_id` |
+| Cliente | Lakehouse | `clientes` | `cliente_id` |
+| Cuenta | Lakehouse | `cuentas` | `cuenta_id` |
+| Tarjeta | Lakehouse | `tarjetas` | `tarjeta_id` |
+| Comercio | Lakehouse | `comercios` | `comercio_id` |
+| Transaccion | **Eventhouse** | `transacciones` (histórico y tiempo real) | `transaccion_id` |
+| Alerta | **Eventhouse** | `alertas` | `alerta_id` |
+| Revision | Lakehouse | `revisiones` (solo con la Fabric App) | `revision_id` |
 
-No enlaces `app_alertas` ni `app_movimientos`: son tablas cruzadas para la app y duplicarían conceptos.
+No enlaces `app_alertas` ni `app_movimientos`: son tablas cruzadas para la app y duplicarían conceptos. Revision se enlaza cuando existe la tabla `revisiones`, que crea el notebook `01_cargar_lakehouse` (fase 7 de la guía).
+
+**Alternativa con todo en el Lakehouse:** si ejecutaste el notebook 01, el Lakehouse también tiene `transacciones` y `alertas`. Enlazarlas allí permite meterlas en el grafo, pero sin las operaciones en tiempo real.
 
 Las propiedades que se repiten entre entidades (`nombre`, `estado`, `municipio`, `fecha_hora`…) tienen siempre el mismo tipo, así que no hay conflictos.
 
@@ -119,8 +121,8 @@ Las reglas son definiciones en lenguaje natural que se enlazan a entidades y rel
 
 El grafo es opcional en la ontología, pero lo necesitan las preguntas que recorren varias relaciones (cliente → tarjeta → transacción → comercio).
 
-1. **Inicio › Administrar › Graph**. Espera a que termine **Review validation**; todas las entidades deben salir como aptas.
-2. **Select entities**: marca todas las entidades y relaciones, **Continue** y **Materialize**. Con estos datos tarda pocos minutos.
+1. **Inicio › Administrar › Graph**. Espera a que termine **Review validation**. Las entidades del Lakehouse deben salir como aptas; Transaccion y Alerta, enlazadas al Eventhouse, salen como no aptas porque el grafo solo admite tablas Delta de Lakehouse o de bases de datos reflejadas. Es lo esperado.
+2. **Select entities**: marca las entidades aptas y sus relaciones, **Continue** y **Materialize**. Con estos datos tarda pocos minutos.
 3. Espera a **Graph materialized** y a que la actualización esté **Complete**.
 
 **Después de cada cambio en los datos** (por ejemplo, tras ejecutar el notebook 02) hay que actualizar el grafo: en **Inicio › Administrar › Graph**, icono de actualizar de **Last refresh › Continue**. También se puede programar desde el área de trabajo, en el elemento de grafo: **… › Schedule**. No programes refrescos muy frecuentes: consumen capacidad.

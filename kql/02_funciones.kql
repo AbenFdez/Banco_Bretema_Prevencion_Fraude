@@ -1,0 +1,131 @@
+// ============================================================================
+// Banco Brétema · 02 · Funciones de detección
+//
+// Ejecuta cada comando .create-or-alter por separado. Las funciones quedan
+// guardadas en la base de datos (carpeta «Fraude») y se pueden usar desde
+// consultas, el Real-Time Dashboard y Activator.
+//
+// Las alertas en tiempo real se calculan en el momento de la consulta. Así la
+// tabla transacciones conserva la ingesta en streaming (latencia de segundos).
+// Si prefieres guardarlas en una tabla al ingerir, mira 05_opcional_politica_actualizacion.kql.
+// ============================================================================
+
+// Transacciones con los datos del comercio, la tarjeta, el cliente y la oficina
+.create-or-alter function with (folder = "Fraude", docstring = "Transacciones enriquecidas con comercio, tarjeta, cliente y oficina")
+fn_transacciones(desde: datetime = datetime(2026-06-01), hasta: datetime = datetime(2100-01-01)) {
+    transacciones
+    | where fecha_hora between (desde .. hasta)
+    | lookup kind = leftouter (comercios | project comercio_id, comercio = nombre, categoria, municipio_comercio = municipio, nivel_riesgo, latitud, longitud) on comercio_id
+    | lookup kind = leftouter (tarjetas | project tarjeta_id, cliente_id, tarjeta_enmascarada, tipo_tarjeta, estado_tarjeta = estado) on tarjeta_id
+    | lookup kind = leftouter (clientes | project cliente_id, cliente = nombre, segmento, provincia_cliente = provincia, oficina_id) on cliente_id
+    | lookup kind = leftouter (oficinas | project oficina_id, oficina = nombre) on oficina_id
+    | extend origen = iff(transaccion_id startswith "TX-RT-", "Tiempo real", "Histórico")
+}
+
+// Ráfagas: varias compras online de la misma tarjeta separadas por menos de 15 minutos
+.create-or-alter function with (folder = "Fraude", docstring = "Ráfagas de compras online de una misma tarjeta (sesiones con huecos de menos de 15 minutos)")
+fn_rafagas(ventana: timespan = 1h, minimo: int = 3) {
+    transacciones
+    | where fecha_hora > ago(ventana) and canal == "Online"
+    | lookup kind = leftouter (comercios | project comercio_id, comercio = nombre) on comercio_id
+    | order by tarjeta_id asc, fecha_hora asc
+    | extend sesion = row_window_session(fecha_hora, 1h, 15m, tarjeta_id != prev(tarjeta_id))
+    | summarize operaciones = count(),
+                importe_total = round(sum(importe_eur), 2),
+                inicio = min(fecha_hora),
+                fin = max(fecha_hora),
+                comercios = make_set(comercio),
+                paises = make_set(pais)
+        by tarjeta_id, sesion
+    | where operaciones >= minimo
+    | lookup kind = leftouter (tarjetas | project tarjeta_id, cliente_id, tarjeta_enmascarada, estado_tarjeta = estado) on tarjeta_id
+    | lookup kind = leftouter (clientes | project cliente_id, cliente = nombre, oficina_id) on cliente_id
+    | lookup kind = leftouter (oficinas | project oficina_id, oficina = nombre) on oficina_id
+    | extend minutos = round((fin - inicio) / 1m, 1)
+    | project inicio, fin, minutos, tarjeta_id, tarjeta_enmascarada, cliente_id, cliente, oficina,
+              operaciones, importe_total, comercios, paises, estado_tarjeta
+    | order by inicio desc
+}
+
+// Alertas en tiempo real: reglas por operación + ráfagas, sobre las últimas operaciones
+.create-or-alter function with (folder = "Fraude", docstring = "Alertas calculadas al vuelo sobre las operaciones de la ventana indicada")
+fn_alertas_tiempo_real(ventana: timespan = 1h) {
+    let por_operacion =
+        transacciones
+        | where fecha_hora > ago(ventana)
+        | lookup kind = leftouter (comercios | project comercio_id, comercio = nombre, categoria, nivel_riesgo, municipio_comercio = municipio) on comercio_id
+        | lookup kind = leftouter (tarjetas | project tarjeta_id, cliente_id, tarjeta_enmascarada, estado_tarjeta = estado) on tarjeta_id
+        | lookup kind = leftouter perfil_tarjetas on tarjeta_id
+        | extend gasto_mediano = coalesce(gasto_mediano, 40.0)
+        | extend tipo_alerta = case(
+            estado_tarjeta == "Bloqueada", "Tarjeta bloqueada",
+            nivel_riesgo == "Alto", "Comercio de alto riesgo",
+            canal == "Presencial" and pais != "España"
+                and (isnull(ultima_compra_extranjero) or fecha_hora - ultima_compra_extranjero > 60d), "País inusual",
+            canal != "Cajero" and importe_eur > max_of(350.0, 6 * gasto_mediano), "Importe inusual",
+            "")
+        | where isnotempty(tipo_alerta)
+        | extend variacion = toint(hash(transaccion_id, 10))
+        | extend puntuacion_riesgo = case(
+            tipo_alerta == "Tarjeta bloqueada", 95,
+            tipo_alerta == "Comercio de alto riesgo", 78 + variacion,
+            tipo_alerta == "Importe inusual", 62 + 2 * variacion,
+            45 + variacion)
+        | extend motivo = case(
+            tipo_alerta == "Tarjeta bloqueada", strcat("Intento de pago con una tarjeta bloqueada en ", comercio, " (", pais, ")"),
+            tipo_alerta == "Comercio de alto riesgo", strcat("Compra de ", round(importe_eur, 2), " € en ", comercio, ", comercio de ", tolower(categoria), " (", pais, ")"),
+            tipo_alerta == "País inusual", strcat("Compra presencial en ", municipio_comercio, " (", pais, ") sin compras en el extranjero en los 60 días anteriores"),
+            strcat("Importe de ", round(importe_eur, 2), " € frente a un gasto mediano de ", round(gasto_mediano, 2), " € por operación"))
+        | project fecha_hora, tipo_alerta, puntuacion_riesgo, motivo, tarjeta_id, tarjeta_enmascarada, cliente_id,
+                  comercio, importe_eur, pais, transaccion_id;
+    let rafagas =
+        fn_rafagas(ventana, 3)
+        | project fecha_hora = inicio,
+                  tipo_alerta = "Ráfaga de operaciones",
+                  puntuacion_riesgo = toint(min_of(99, 80 + 3 * operaciones)),
+                  motivo = strcat(operaciones, " compras online en ", minutos, " minutos por ", importe_total, " € en ", strcat_array(comercios, ", ")),
+                  tarjeta_id, tarjeta_enmascarada, cliente_id,
+                  comercio = "",
+                  importe_eur = importe_total,
+                  pais = strcat_array(paises, ", "),
+                  transaccion_id = "";
+    union por_operacion, rafagas
+    | lookup kind = leftouter (clientes | project cliente_id, cliente = nombre, oficina_id) on cliente_id
+    | lookup kind = leftouter (oficinas | project oficina_id, oficina = nombre) on oficina_id
+    | extend prioridad = case(puntuacion_riesgo >= 80, "Alta", puntuacion_riesgo >= 60, "Media", "Baja")
+    | project fecha_hora, tipo_alerta, prioridad, puntuacion_riesgo, motivo, cliente, oficina, tarjeta_enmascarada,
+              comercio, importe_eur, pais, tarjeta_id, cliente_id, transaccion_id
+    | order by fecha_hora desc
+}
+
+// Punto de compromiso: comercios presenciales donde coinciden las tarjetas con
+// fraude confirmado en los días previos a su primera alerta
+.create-or-alter function with (folder = "Fraude", docstring = "Comercios presenciales comunes a las tarjetas con fraude confirmado entre desde y hasta")
+fn_punto_compromiso(desde: datetime, hasta: datetime, dias: int = 60) {
+    let fraudes =
+        alertas
+        | where resolucion == "Fraude confirmado" and fecha_hora between (desde .. hasta)
+        | summarize primera_alerta = min(fecha_hora) by tarjeta_id;
+    let total = toscalar(fraudes | count);
+    transacciones
+    | where canal == "Presencial"
+    | join kind = inner fraudes on tarjeta_id
+    | where fecha_hora < primera_alerta and fecha_hora >= primera_alerta - dias * 1d
+    | summarize primera_visita = min(fecha_hora), ultima_visita = max(fecha_hora) by comercio_id, tarjeta_id
+    | summarize tarjetas_con_fraude = count(), primera_visita = min(primera_visita), ultima_visita = max(ultima_visita) by comercio_id
+    | lookup kind = leftouter (comercios | project comercio_id, comercio = nombre, categoria, municipio, latitud, longitud) on comercio_id
+    | extend total_tarjetas = total, porcentaje = round(100.0 * tarjetas_con_fraude / total, 1)
+    | project comercio, categoria, municipio, tarjetas_con_fraude, total_tarjetas, porcentaje, primera_visita, ultima_visita, longitud, latitud
+    | order by tarjetas_con_fraude desc
+}
+
+// Tarjetas que pasaron por un comercio en unas fechas (por defecto, Ponte Alta durante el skimming)
+.create-or-alter function with (folder = "Fraude", docstring = "Tarjetas con alguna operación en el comercio indicado entre desde y hasta")
+fn_tarjetas_expuestas(nombre_comercio: string = "Gasolineira Ponte Alta",
+                      desde: datetime = datetime(2026-10-03), hasta: datetime = datetime(2026-10-11 23:59:59)) {
+    let comercio = toscalar(comercios | where nombre == nombre_comercio | project comercio_id);
+    transacciones
+    | where comercio_id == comercio and fecha_hora between (desde .. hasta)
+    | summarize visita = min(fecha_hora) by tarjeta_id
+    | lookup kind = leftouter (tarjetas | project tarjeta_id, cliente_id, tarjeta_enmascarada, estado_tarjeta = estado) on tarjeta_id
+}

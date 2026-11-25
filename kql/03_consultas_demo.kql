@@ -1,0 +1,124 @@
+// ============================================================================
+// Banco Brétema · 03 · Consultas de la demo
+//
+// Ejecuta cada consulta por separado. Requiere 01_tablas.kql y 02_funciones.kql.
+// Las cifras de los comentarios son las que salen con los CSV del repositorio.
+// ============================================================================
+
+// ---------------------------------------------------------------------------
+// A. ¿Está llegando el simulador?
+// ---------------------------------------------------------------------------
+
+// A1 · Operaciones en tiempo real del último minuto y hora de la última
+transacciones
+| where transaccion_id startswith "TX-RT-"
+| summarize ultimo_minuto = countif(ingestion_time() > ago(1m)),
+            total_tiempo_real = count(),
+            ultima_operacion = max(fecha_hora),
+            ultima_ingesta = max(ingestion_time())
+| extend retraso_segundos = round((now() - ultima_ingesta) / 1s, 0)
+
+// A2 · Histórico frente a tiempo real
+transacciones
+| summarize operaciones = count(), desde = min(fecha_hora), hasta = max(fecha_hora)
+    by origen = iff(transaccion_id startswith "TX-RT-", "Tiempo real", "Histórico")
+
+// A3 · Lo último que ha entrado, legible
+fn_transacciones(ago(10m))
+| top 20 by fecha_hora desc
+| project fecha_hora, cliente, oficina, tarjeta_enmascarada, comercio, categoria, canal, pais, importe_eur, resultado
+
+// ---------------------------------------------------------------------------
+// B. El directo
+// ---------------------------------------------------------------------------
+
+// B1 · Operaciones por minuto y canal en la última media hora
+transacciones
+| where fecha_hora > ago(30m)
+| summarize operaciones = count() by bin(fecha_hora, 1m), canal
+| render timechart
+
+// B2 · Mapa de las operaciones presenciales y en cajero de la última media hora
+fn_transacciones(ago(30m))
+| where canal != "Online" and isnotnull(latitud)
+| summarize operaciones = count(), importe = round(sum(importe_eur), 2) by longitud, latitud, municipio_comercio
+| render scatterchart with (kind = map)
+
+// B3 · Alertas en tiempo real por tipo
+fn_alertas_tiempo_real(30m)
+| summarize alertas = count() by tipo_alerta
+| render columnchart
+
+// B4 · Cola de alertas en tiempo real, de la más reciente a la más antigua
+fn_alertas_tiempo_real(30m)
+| project fecha_hora, prioridad, puntuacion_riesgo, tipo_alerta, motivo, cliente, oficina, tarjeta_enmascarada
+
+// B5 · Ráfagas de la última hora
+fn_rafagas(1h)
+
+// B6 · ¿Pasaron por Ponte Alta las tarjetas de esas ráfagas?
+// Con el simulador, todas: las ráfagas se generan sobre tarjetas expuestas en octubre.
+fn_rafagas(1h)
+| join kind = leftouter fn_tarjetas_expuestas() on tarjeta_id
+| project inicio, cliente, oficina, tarjeta_enmascarada, operaciones, importe_total,
+          paso_por_ponte_alta = isnotnull(visita), visita_ponte_alta = visita
+
+// B7 · Intentos con tarjetas bloqueadas
+fn_transacciones(ago(1h))
+| where estado_tarjeta == "Bloqueada"
+| project fecha_hora, cliente, tarjeta_enmascarada, comercio, pais, importe_eur, resultado
+
+// ---------------------------------------------------------------------------
+// C. El histórico: lo que el motor de reglas no veía
+// ---------------------------------------------------------------------------
+
+// C1 · Alertas por tipo y resolución (949 alertas: 53 abiertas, 859 falsos positivos, 37 fraudes confirmados)
+alertas
+| summarize alertas = count() by tipo_alerta, estado, resolucion
+| order by alertas desc
+
+// C2 · Punto de compromiso: de las 27 tarjetas con fraude confirmado desde el 15 de octubre,
+//      23 (85,2 %) pasaron por la Gasolineira Ponte Alta en los 60 días anteriores.
+//      Los siguientes comercios coinciden con 11 (40,7 %).
+fn_punto_compromiso(datetime(2026-10-15), datetime(2026-11-30))
+| take 10
+
+// C3 · Alcance: 93 tarjetas pasaron por Ponte Alta entre el 3 y el 11 de octubre
+fn_tarjetas_expuestas()
+| summarize tarjetas = count(), activas = countif(estado_tarjeta == "Activa"), bloqueadas = countif(estado_tarjeta == "Bloqueada")
+
+// C4 · Fraude sin alerta: tarjetas de Ponte Alta con compras de madrugada en comercios de
+//      riesgo alto y ninguna alerta. Resultado: 3 tarjetas, 5.217,18 €.
+let expuestas = fn_tarjetas_expuestas() | project tarjeta_id;
+let con_alerta = alertas | distinct tarjeta_id;
+fn_transacciones(datetime(2026-10-12), datetime(2026-11-30))
+| where tarjeta_id in (expuestas) and tarjeta_id !in (con_alerta)
+| where nivel_riesgo == "Alto" and hourofday(fecha_hora) < 6
+| summarize operaciones = count(), importe = round(sum(importe_eur), 2), desde = min(fecha_hora), hasta = max(fecha_hora)
+    by cliente, oficina, tarjeta_enmascarada
+
+// C5 · Compras en comercios de riesgo alto por día: media de 1,6 al día de junio a septiembre,
+//      5,3 al día desde el 19 de octubre y un pico de 17 el 7 de noviembre
+transacciones
+| where fecha_hora between (datetime(2026-06-01) .. datetime(2026-11-25))
+| lookup kind = leftouter (comercios | project comercio_id, nivel_riesgo) on comercio_id
+| where nivel_riesgo == "Alto"
+| make-series operaciones = count() default = 0 on fecha_hora from datetime(2026-06-01) to datetime(2026-11-25) step 1d
+| extend anomalias = series_decompose_anomalies(operaciones, 2.5)
+| render anomalychart with (anomalycolumns = anomalias)
+
+// C6 · Falsos positivos en Portugal: 448 alertas de País inusual cerradas, todas falso positivo
+alertas
+| where tipo_alerta == "País inusual"
+| lookup kind = leftouter (clientes | project cliente_id, provincia) on cliente_id
+| summarize alertas = count(), falsos_positivos = countif(resolucion == "Falso positivo"), abiertas = countif(estado == "Abierta")
+    by provincia
+| order by alertas desc
+
+// C7 · Oficinas con más alertas abiertas: Vigo Centro 12, Vigo Bouzas 5, Ourense Centro 4
+alertas
+| where estado == "Abierta"
+| lookup kind = leftouter (clientes | project cliente_id, oficina_id) on cliente_id
+| lookup kind = leftouter (oficinas | project oficina_id, oficina = nombre) on oficina_id
+| summarize alertas_abiertas = count() by oficina
+| top 5 by alertas_abiertas

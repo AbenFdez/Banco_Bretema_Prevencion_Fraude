@@ -1,0 +1,9 @@
+Cargando datos de referencia desde datos…
+  3199 tarjetas activas, 294 comercios, 70 tarjetas activas que pasaron por Ponte Alta
+Simulador en marcha: 2.0 operaciones por segundo durante 1.0 min. Ctrl+C para parar.
+[19:33:22] RÁFAGA DE FRAUDE · 4 compras online por 2.074,41 € con la tarjeta TJ-000046 (**** 0313) de Talleres Mosquera, S.L., oficina Vigo Centro. Pasó por Ponte Alta en octubre.
+[19:33:32] Compra en Portugal · 21,14 € en Tasca Bragança Velha (Porto) con la tarjeta TJ-001739 (**** 7798) de Eva Teijeiro Dopico, oficina Ourense O Couto
+[19:33:42] Importe inusual · 2.098,57 € en Joyería Sil con la tarjeta TJ-001901 (**** 3391) de Icía Paz Insua, oficina A Coruña Matogrande
+[19:33:52] Intento con tarjeta bloqueada · TJ-000178 (**** 3506) de Carme Vidal López, oficina Vigo Teis · denegada
+Enviando los 3 eventos pendientes de los escenarios anunciados…
+Fin: 133 operaciones enviadas.

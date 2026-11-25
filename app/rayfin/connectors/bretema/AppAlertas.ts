@@ -32,7 +32,7 @@ export class AppAlertas extends Source({ schema: 'dbo', table: 'app_alertas', pr
   @text({ optional: true, column: 'municipio_comercio', max: 8000 }) municipioComercio?: string;
   @text({ column: 'tarjeta_id', max: 8000 }) tarjetaId!: string;
   @text({ optional: true, column: 'tipo_tarjeta', max: 8000 }) tipoTarjeta?: string;
-  @text({ optional: true, column: 'ultimos_digitos', max: 8000 }) ultimosDigitos?: string;
+  @text({ optional: true, column: 'tarjeta_enmascarada', max: 8000 }) tarjetaEnmascarada?: string;
   @text({ optional: true, column: 'estado_tarjeta', max: 8000 }) estadoTarjeta?: string;
   @text({ optional: true, column: 'cliente_id', max: 8000 }) clienteId?: string;
   @text({ optional: true, max: 8000 }) cliente?: string;

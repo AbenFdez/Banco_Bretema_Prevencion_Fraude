@@ -361,10 +361,10 @@ for c in clientes.itertuples(index=False):
             limite = (float(rng.choice([1000, 1500, 2000, 3000])) if tipo_tarjeta == "Débito"
                       else float(rng.choice([1500, 3000, 4500, 6000, 9000, 12000])))
             tarjetas_rows.append([f"TJ-{n_tarjeta:06d}", cuenta_id, c.cliente_id, tipo_tarjeta,
-                                  f"{int(rng.integers(0, 10000)):04d}", emision, caducidad, limite,
+                                  f"**** {int(rng.integers(0, 10000)):04d}", emision, caducidad, limite,
                                   "Activa", None])
 cuentas = pd.DataFrame(cuentas_rows, columns=["cuenta_id", "cliente_id", "tipo_cuenta", "fecha_apertura", "saldo_eur", "estado"])
-tarjetas = pd.DataFrame(tarjetas_rows, columns=["tarjeta_id", "cuenta_id", "cliente_id", "tipo_tarjeta", "ultimos_digitos",
+tarjetas = pd.DataFrame(tarjetas_rows, columns=["tarjeta_id", "cuenta_id", "cliente_id", "tipo_tarjeta", "tarjeta_enmascarada",
                                                 "fecha_emision", "fecha_caducidad", "limite_eur", "estado", "fecha_bloqueo"])
 
 # ---------------------------------------------------------------------------
@@ -655,7 +655,39 @@ verdad = pd.DataFrame({
 })
 
 # ---------------------------------------------------------------------------
-# 8. Escritura
+# 8. Coordenadas para mapas (generador aparte: no altera el resto de los datos)
+# ---------------------------------------------------------------------------
+
+COORDENADAS = {
+    "Santiago de Compostela": (42.8782, -8.5448), "A Coruña": (43.3623, -8.4115), "Ferrol": (43.4832, -8.2369),
+    "Carballo": (43.2131, -8.6911), "Ribeira": (42.5545, -8.9915), "Arteixo": (43.3046, -8.5078),
+    "Lugo": (43.0097, -7.5560), "Monforte de Lemos": (42.5218, -7.5141), "Viveiro": (43.6618, -7.5947),
+    "Vilalba": (43.2977, -7.6800), "Ourense": (42.3358, -7.8639), "Verín": (41.9411, -7.4370),
+    "O Barco de Valdeorras": (42.4160, -6.9830), "Pontevedra": (42.4310, -8.6444), "Vigo": (42.2406, -8.7207),
+    "Vilagarcía de Arousa": (42.5960, -8.7650), "Cangas": (42.2643, -8.7828), "Lalín": (42.6610, -8.1110),
+    "Tui": (42.0470, -8.6440), "Valença": (42.0280, -8.6440), "Braga": (41.5454, -8.4265),
+    "Porto": (41.1579, -8.6291), "Viana do Castelo": (41.6932, -8.8329), "Chaves": (41.7400, -7.4700),
+    "Madrid": (40.4168, -3.7038), "Barcelona": (41.3874, 2.1686), "Oviedo": (43.3614, -5.8494),
+    "León": (42.5987, -5.5671), "Ponferrada": (42.5466, -6.5962), "Santander": (43.4623, -3.8100),
+}
+rng_geo = np.random.default_rng(SEMILLA + 1)
+
+
+def coordenada(municipio: str, dispersion: float) -> tuple[float | None, float | None]:
+    if municipio not in COORDENADAS:
+        return None, None  # comercios online
+    lat, lon = COORDENADAS[municipio]
+    return (round(lat + rng_geo.uniform(-dispersion, dispersion), 5),
+            round(lon + rng_geo.uniform(-dispersion, dispersion), 5))
+
+
+oficinas[["latitud", "longitud"]] = [coordenada(m, 0.004) for m in oficinas.municipio]
+comercios[["latitud", "longitud"]] = [coordenada(m, 0.012) for m in comercios.municipio]
+# Ponte Alta, en la entrada de Vigo por la autopista
+comercios.loc[comercios.nombre == "Gasolineira Ponte Alta", ["latitud", "longitud"]] = [42.2213, -8.6884]
+
+# ---------------------------------------------------------------------------
+# 9. Escritura
 # ---------------------------------------------------------------------------
 
 
