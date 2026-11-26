@@ -36,6 +36,7 @@ Para cada sesión nueva, copia la plantilla del final.
 17. Comprobación de tipos: las dos columnas `int`, `clientes.edad` y `alertas.puntuacion_riesgo`, estaban vacías. El asistente había creado `edad_1` y `puntuacion_riesgo_1`, de tipo `long`, y había cargado ahí los valores.
 18. Arreglo sin recargar: `.drop column` de la columna vacía y `.rename column` de la que tenía los datos, en las dos tablas; y `.set-or-replace comercios <| comercios | distinct *` para quitar las filas repetidas.
 19. Comprobación final, a las 16:22: las seis tablas con sus filas (949, 2.400, 294, 24, 3.236 y 161.462) y todas las columnas de número y de fecha con valor. **Carga del Eventhouse terminada.**
+20. Creada la tabla `perfil_tarjetas` con `.set-or-replace`: 3.236 filas, una por tarjeta, en menos de un segundo. Aparece la carpeta **Fraude**.
 
 Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema` (área de trabajo), `Bretema_LH` (antes `LH_Bretema`) y `Bretema_EH` (antes `EH_Bretema`).
 
@@ -71,6 +72,7 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - `assets/capturas/29-eventhouse-mapeo-edad_1.png`: el mapeo del asistente para `clientes`, con la posición 4 del CSV dirigida a `edad_1`.
 - `assets/capturas/30-eventhouse-columnas-corregidas.png`: el esquema después del arreglo, con `edad` y `puntuacion_riesgo` como `long`.
 - `assets/capturas/31-eventhouse-comprobacion-final.png`: la comprobación de tipos con las seis tablas correctas. Las cuatro están en la [fase 2](paso-a-paso/02-eventhouse.md#4-comprobar-la-carga); todavía no están en la presentación.
+- `assets/capturas/32-eventhouse-perfil-tarjetas.png`: la tabla `perfil_tarjetas` recién creada, con 3.236 filas. En la [fase 2](paso-a-paso/02-eventhouse.md#5-preparar-la-detección); todavía no está en la presentación.
 - `assets/capturas/20-eventhouse-creado.png`: el Eventhouse `Bretema_EH` recién creado, vacío, con su base de datos KQL. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/00-capacidad-f2-azure.png`: la capacidad F2 en el portal de Azure, activa y en Spain Central. Está recortada y con el identificador de la suscripción tapado. En la [fase 0](paso-a-paso/00-preparacion.md); todavía no está en la presentación.
 
@@ -93,6 +95,7 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - *El asistente lee los enteros de un CSV como `long`.* Si la columna de la tabla es `int`, no da error: crea otra columna con el sufijo `_1`, carga ahí los valores y deja la original vacía. Las filas cuadran, así que solo se ve si se cuentan los valores de cada columna. Se descubre con `.show table … ingestion csv mappings`, que enseña a qué columna va cada posición del archivo. Corregido en `kql/01_tablas.kql`: `edad` y `puntuacion_riesgo` son ahora `long`.
 - *Contar filas no basta para dar una carga por buena.* El script tiene ahora dos comprobaciones: filas por tabla y valores por columna de número o de fecha.
 - *Se puede arreglar sin recargar*: `.drop column`, `.rename column` y `.set-or-replace … | distinct *` funcionaron a la primera en el Eventhouse.
+- *En KQL, mejor `long` que `int` en todas partes.* Al revisar `kql/02_funciones.kql` antes de ejecutarlo apareció el mismo riesgo: `fn_alertas_tiempo_real` une dos ramas con la columna `puntuacion_riesgo`, una `long` y otra `int`, y `union` las habría separado en dos columnas. Corregido antes de ejecutarlo: `tolong` en lugar de `toint` y parámetros `long`, también en el script opcional 05.
 - *El asistente de carga llama **First row header** a la opción del encabezado*, y propone un mapeo con el nombre de la tabla (`comercios_mapping`). Si la tabla ya existe con sus tipos, los respeta.
 - *OneLake availability viene desactivado en las tablas del Eventhouse.* Para consultar con KQL no hace falta. La documentación de la ontología pide orígenes respaldados por OneLake para los datos estáticos, y el tutorial de Microsoft lo activa nada más crear el Eventhouse, así que la variante B de la ontología puede necesitarlo en `transacciones` y `alertas`. Ojo: mientras está activado no se pueden borrar ni truncar datos de la tabla, ni cambiar el tipo de una columna.
 
@@ -113,7 +116,8 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - [ ] Actualizar la presentación: todavía dice `LH_Bretema` y `EH_Bretema`, y le faltan las capturas de la capacidad, del Lakehouse, de las once tablas y de las comprobaciones del notebook.
 - [ ] Decidir si la fase 4 usa `Bretema_EH_queryset` o un conjunto de consultas nuevo (`KQL_Fraude`), y unificar la guía y el guion.
 - [x] Fase 2: confirmar las seis cargas con las consultas de comprobación.
-- [ ] Fase 2: crear `perfil_tarjetas` y las cinco funciones de `kql/02_funciones.kql`, y probar las consultas C del histórico.
+- [x] Fase 2: crear `perfil_tarjetas`.
+- [ ] Fase 2: crear las cinco funciones de `kql/02_funciones.kql` y probar las consultas C del histórico.
 - [ ] Probar una carga con el asistente sobre una tabla creada con el script nuevo (`long`), para confirmar que ya no aparece la columna `_1`.
 - [ ] Decidir cuándo y dónde activar **OneLake availability** (previsiblemente en `transacciones` y `alertas`, para la variante B de la ontología) y comprobar si incluye los datos ya cargados.
 - [ ] Pausar la capacidad al terminar cada sesión.

@@ -26,7 +26,7 @@
     fecha_hora: datetime,
     tipo_alerta: string,
     motivo: string,
-    puntuacion_riesgo: int,
+    puntuacion_riesgo: long,
     prioridad: string,
     comercio: string,
     importe_eur: real,
@@ -51,7 +51,7 @@ fn_politica_alertas() {
         canal != "Cajero" and importe_eur > max_of(350.0, 6 * gasto_mediano), "Importe inusual",
         "")
     | where isnotempty(tipo_alerta)
-    | extend variacion = toint(hash(transaccion_id, 10))
+    | extend variacion = tolong(hash(transaccion_id, 10))
     | extend puntuacion_riesgo = case(
         tipo_alerta == "Tarjeta bloqueada", 95,
         tipo_alerta == "Comercio de alto riesgo", 78 + variacion,

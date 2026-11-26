@@ -8,6 +8,10 @@
 // Las alertas en tiempo real se calculan en el momento de la consulta. Así la
 // tabla transacciones conserva la ingesta en streaming (latencia de segundos).
 // Si prefieres guardarlas en una tabla al ingerir, mira 05_opcional_politica_actualizacion.kql.
+//
+// Los enteros son siempre long. En fn_alertas_tiempo_real se unen dos ramas con
+// la columna puntuacion_riesgo: si una fuese int y la otra long, union crearía
+// dos columnas distintas en lugar de una.
 // ============================================================================
 
 // Transacciones con los datos del comercio, la tarjeta, el cliente y la oficina
@@ -24,7 +28,7 @@ fn_transacciones(desde: datetime = datetime(2026-06-01), hasta: datetime = datet
 
 // Ráfagas: varias compras online de la misma tarjeta separadas por menos de 15 minutos
 .create-or-alter function with (folder = "Fraude", docstring = "Ráfagas de compras online de una misma tarjeta (sesiones con huecos de menos de 15 minutos)")
-fn_rafagas(ventana: timespan = 1h, minimo: int = 3) {
+fn_rafagas(ventana: timespan = 1h, minimo: long = 3) {
     transacciones
     | where fecha_hora > ago(ventana) and canal == "Online"
     | lookup kind = leftouter (comercios | project comercio_id, comercio = nombre) on comercio_id
@@ -65,7 +69,7 @@ fn_alertas_tiempo_real(ventana: timespan = 1h) {
             canal != "Cajero" and importe_eur > max_of(350.0, 6 * gasto_mediano), "Importe inusual",
             "")
         | where isnotempty(tipo_alerta)
-        | extend variacion = toint(hash(transaccion_id, 10))
+        | extend variacion = tolong(hash(transaccion_id, 10))
         | extend puntuacion_riesgo = case(
             tipo_alerta == "Tarjeta bloqueada", 95,
             tipo_alerta == "Comercio de alto riesgo", 78 + variacion,
@@ -82,7 +86,7 @@ fn_alertas_tiempo_real(ventana: timespan = 1h) {
         fn_rafagas(ventana, 3)
         | project fecha_hora = inicio,
                   tipo_alerta = "Ráfaga de operaciones",
-                  puntuacion_riesgo = toint(min_of(99, 80 + 3 * operaciones)),
+                  puntuacion_riesgo = tolong(min_of(99, 80 + 3 * operaciones)),
                   motivo = strcat(operaciones, " compras online en ", minutos, " minutos por ", importe_total, " € en ", strcat_array(comercios, ", ")),
                   tarjeta_id, tarjeta_enmascarada, cliente_id,
                   comercio = "",
@@ -101,7 +105,7 @@ fn_alertas_tiempo_real(ventana: timespan = 1h) {
 // Punto de compromiso: comercios presenciales donde coinciden las tarjetas con
 // fraude confirmado en los días previos a su primera alerta
 .create-or-alter function with (folder = "Fraude", docstring = "Comercios presenciales comunes a las tarjetas con fraude confirmado entre desde y hasta")
-fn_punto_compromiso(desde: datetime, hasta: datetime, dias: int = 60) {
+fn_punto_compromiso(desde: datetime, hasta: datetime, dias: long = 60) {
     let fraudes =
         alertas
         | where resolucion == "Fraude confirmado" and fecha_hora between (desde .. hasta)

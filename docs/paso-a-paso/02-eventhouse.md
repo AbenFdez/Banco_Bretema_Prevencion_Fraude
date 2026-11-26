@@ -200,8 +200,21 @@ El script actual define ya esas columnas como `long`, que es el tipo que usa el 
 
 ## 5. Preparar la detección
 
-1. Ejecuta el comando `.set-or-replace perfil_tarjetas` de `kql/01_tablas.kql`: calcula el gasto mediano de cada tarjeta y su última compra en el extranjero, que usan las reglas de importe y país inusual.
-2. Copia [`kql/02_funciones.kql`](../../kql/02_funciones.kql) y ejecuta uno a uno los cinco `.create-or-alter function`. Aparecerán en la carpeta **Functions › Fraude** de la base de datos.
+1. **El perfil de cada tarjeta.** Ejecuta el comando `.set-or-replace perfil_tarjetas` del final de `kql/01_tablas.kql`. Recorre las transacciones aprobadas del histórico y guarda, para cada tarjeta, su gasto mediano, cuántas operaciones tiene y su última compra en el extranjero. Lo usan las reglas de importe inusual y de país inusual.
+
+   ![El comando .set-or-replace perfil_tarjetas ejecutado: una fila de resultado con RowCount 3.236 y la carpeta Fraude en el panel](../../assets/capturas/32-eventhouse-perfil-tarjetas.png)
+
+   El resultado no son los datos, sino el resumen de lo que se ha escrito: **RowCount 3.236**, una fila por tarjeta. En el panel aparece una carpeta nueva, **Fraude**, con la tabla. Tardó menos de un segundo. `.set-or-replace` sustituye el contenido, así que se puede repetir sin duplicar.
+
+2. **Las funciones.** Copia [`kql/02_funciones.kql`](../../kql/02_funciones.kql) (`pbcopy < kql/02_funciones.kql`), pégalo en una pestaña nueva y ejecuta uno a uno los cinco `.create-or-alter function`. Aparecerán en **Functions › Fraude**:
+
+   | Función | Qué devuelve |
+   | --- | --- |
+   | `fn_transacciones` | Las transacciones con el comercio, la tarjeta, el cliente y la oficina |
+   | `fn_rafagas` | Varias compras online de una misma tarjeta separadas por menos de 15 minutos |
+   | `fn_alertas_tiempo_real` | Las alertas calculadas al vuelo sobre las últimas operaciones |
+   | `fn_punto_compromiso` | Los comercios donde coincidieron las tarjetas con fraude confirmado |
+   | `fn_tarjetas_expuestas` | Las tarjetas que pasaron por un comercio en unas fechas |
 
 ## 6. Primeras consultas sobre el histórico
 
