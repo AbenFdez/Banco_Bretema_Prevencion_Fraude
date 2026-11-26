@@ -76,6 +76,7 @@ Las capturas se guardan en [`assets/capturas/`](../../assets/capturas/) con esto
 | `30-eventhouse-columnas-corregidas.png` | Esquema corregido: `edad` y `puntuacion_riesgo` como `long` | Sin diapositiva todavía | ✅ |
 | `31-eventhouse-comprobacion-final.png` | Comprobación final de la carga del Eventhouse, todo correcto | Sin diapositiva todavía | ✅ |
 | `32-eventhouse-perfil-tarjetas.png` | Tabla `perfil_tarjetas` creada con `.set-or-replace`: 3.236 filas | Sin diapositiva todavía | ✅ |
+| `33-eventhouse-funciones.png` | Las cinco funciones de detección en **Functions › Fraude** | Sin diapositiva todavía | ✅ |
 | `01-eventstream-vista-previa.png` | Eventstream `ES_Transacciones` con la vista previa de datos | 17 | Pendiente |
 | `02-kql-rafagas.png` | Consultas B5 y B6 con una ráfaga | 21 (opcional, sin hueco) | Pendiente |
 | `03-panel-fraude-en-directo.png` | Real-Time Dashboard con una ráfaga recién detectada | 23 | Pendiente |

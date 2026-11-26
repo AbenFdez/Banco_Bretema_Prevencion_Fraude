@@ -216,6 +216,14 @@ El script actual define ya esas columnas como `long`, que es el tipo que usa el 
    | `fn_punto_compromiso` | Los comercios donde coincidieron las tarjetas con fraude confirmado |
    | `fn_tarjetas_expuestas` | Las tarjetas que pasaron por un comercio en unas fechas |
 
+   Ejecútalas en el orden del archivo: `fn_alertas_tiempo_real` usa `fn_rafagas`, así que esta tiene que existir antes.
+
+   <img src="../../assets/capturas/33-eventhouse-funciones.png" alt="Panel del Eventhouse con la carpeta Functions › Fraude desplegada y las cinco funciones" width="320">
+
+   Una función guarda una consulta con nombre dentro de la base de datos. Desde ese momento se usa como si fuera una tabla: `fn_rafagas()` o `fn_punto_compromiso(datetime(2026-10-15), datetime(2026-11-30))`. Las usarán las consultas de la demo, el panel en tiempo real y Activator.
+
+   Si **Cmd + V** no pega nada en el editor, el portapapeles ya no tiene el script: una captura de pantalla o cualquier otra copia posterior lo sustituye. Repite el `pbcopy` y comprueba con `pbpaste | head -3` que muestra las primeras líneas del archivo.
+
 ## 6. Primeras consultas sobre el histórico
 
 Prueba el bloque C de [`kql/03_consultas_demo.kql`](../../kql/03_consultas_demo.kql). Resultados esperados:
