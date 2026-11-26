@@ -28,7 +28,9 @@ Las tablas se crean con un notebook, porque así se fijan los tipos de cada colu
 
 1. Abre la página del área de trabajo: pulsa **Bretema** en la barra de la izquierda y, en el panel que se despliega, el nombre **Bretema**. **Import** está en esa página, no dentro del Lakehouse.
 2. **Import › Notebook › From this computer › Upload** y elige uno de los dos notebooks de la carpeta `notebooks/` del repositorio.
-3. Abre el notebook y, en el panel **Explorer**, añade `Bretema_LH` como Lakehouse predeterminado.
+3. Abre el notebook y, en el panel **Explorer**, pulsa **Add data items**, elige el Lakehouse existente y marca `Bretema_LH` (el de tipo *Lakehouse*, no el punto de conexión SQL). Queda como Lakehouse predeterminado: lo indica la chincheta junto al nombre.
+
+![El notebook 01_cargar_lakehouse abierto en Fabric, con Bretema_LH como Lakehouse predeterminado y la celda de parámetros](../../assets/capturas/12-notebook-con-lakehouse.png)
 
 ### 3. Crear las tablas
 
@@ -84,6 +86,10 @@ Si no has subido los CSV, deja los valores por defecto (`ORIGEN = "github"`): el
 
 Pulsa **Stop session** para no consumir la F2. Con cualquiera de las dos opciones, en **Tables › dbo** tienen que aparecer once tablas: las ocho del banco, `app_alertas`, `app_movimientos` y `revisiones` (vacía). La última parte del notebook muestra las comprobaciones, que deben salir todas en `OK`.
 
+![El notebook 01_cargar_lakehouse ejecutado en Fabric: las cinco comprobaciones en OK y las oficinas con más alertas abiertas](../../assets/capturas/13-notebook-comprobaciones-ok.png)
+
+Así terminó `01_cargar_lakehouse` en la F2 el 26 de noviembre: las cinco comprobaciones en `OK` y, debajo, las oficinas con más alertas abiertas (Vigo Centro 12, Vigo Bouzas 5, Ourense Centro 4, Tui 3 y A Coruña Centro 3).
+
 ### Alternativa sin notebook
 
 Para cada CSV de `Files`: **… › Load to Tables › New table**. Deja el nombre propuesto, marca el encabezado como nombres de columna y el separador **coma**. Fabric infiere los tipos, así que revisa los que se indican en la comprobación. Con este camino no se crean las tablas de la app.
@@ -115,7 +121,7 @@ Comprueba también los tipos: `tarjeta_enmascarada` debe ser texto (`**** 0120`)
 ## Qué apuntar en la bitácora
 
 - Si **Cargar en tablas** infirió algún tipo distinto del esperado.
-- Una captura de las tablas en el explorador y otra de las cinco comprobaciones del notebook, para la presentación.
+- Una captura de las tablas en el explorador, para la presentación. La de las cinco comprobaciones ya está.
 - Cuánto tardó el notebook en la F2.
 
 Siguiente: [Fase 2 · Histórico en el Eventhouse](02-eventhouse.md)
