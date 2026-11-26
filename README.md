@@ -15,11 +15,36 @@ Datos, simulador y guía para construir **paso a paso** una demo de Microsoft Fa
 
 **Banco Brétema** es un banco ficticio con sede histórica en Santiago de Compostela y oficinas en las cuatro provincias gallegas. Todos los datos son sintéticos: clientes, importes, comercios y operaciones son inventados.
 
+## Estado de la demo
+
+La demo se está montando en Fabric fase a fase, y este repositorio se actualiza a la vez. Última actualización: **26 de noviembre de 2026**.
+
+| Fase | Qué se monta en Fabric | Estado | Guía con capturas | Material en el repositorio |
+| --- | --- | --- | --- | --- |
+| 0 | Capacidad F2 y área de trabajo `Bretema` | ✅ Hecha | [Preparación](docs/paso-a-paso/00-preparacion.md) | [Ajustes de Fabric](docs/configuracion-fabric.md) |
+| 1 | Lakehouse `Bretema_LH`, 11 tablas Delta | ✅ Hecha | [Lakehouse](docs/paso-a-paso/01-lakehouse.md) | [`datos/`](datos), [`notebooks/`](notebooks) |
+| 2 | Eventhouse `Bretema_EH`: 7 tablas, 5 funciones y las primeras consultas | ✅ Hecha | [Eventhouse](docs/paso-a-paso/02-eventhouse.md) | [`kql/`](kql) |
+| 3 | Eventstream `Bretema_ES` y simulador en directo | 🔧 En curso | [Eventstream y simulador](docs/paso-a-paso/03-eventstream-simulador.md) | [`simulador/`](simulador) |
+| 4 | Consultas KQL en directo y Real-Time Dashboard | ⏳ Pendiente | [KQL y panel](docs/paso-a-paso/04-kql-panel.md) | [`kql/03` y `kql/04`](kql) |
+| 5 | Activator: aviso cuando hay una ráfaga | ⏳ Pendiente | [Activator](docs/paso-a-paso/05-activator.md) | |
+| 6 | **Ontología** (Fabric IQ) en dos variantes y **agente de datos** | ⏳ Pendiente | [Ontología y agente](docs/paso-a-paso/06-ontologia.md) | [`ontologia/`](ontologia): definición en Turtle y guía |
+| 7 | **Fabric App**: consola de alertas | ⏳ Pendiente | [Fabric App](docs/paso-a-paso/07-fabric-app.md) | [`app/`](app): código completo de la app |
+
+**Hecha** significa montada en Fabric y comprobada, con sus capturas y con los errores que aparecieron y cómo se resolvieron. **Pendiente** significa que la guía, los scripts y el código están en el repositorio, pero todavía no se han ejecutado en Fabric: pueden necesitar ajustes, como los necesitaron las fases 1 y 2.
+
+Lo que ya está comprobado en Fabric:
+
+- Las once tablas del Lakehouse y las cinco cifras de control del notebook.
+- Las seis tablas del Eventhouse, con filas y tipos verificados.
+- La cifra central de la historia: **23 de las 27 tarjetas con fraude confirmado pasaron por la Gasolineira Ponte Alta (85,2 %)**, con 93 tarjetas expuestas y el pico de 17 compras de riesgo del 7 de noviembre.
+
 ## Empieza aquí
 
-👉 **[Guía paso a paso](docs/paso-a-paso/README.md)**, de la preparación de la capacidad F2 a la Fabric App.
+👉 **[Guía paso a paso](docs/paso-a-paso/README.md)**, de la preparación de la capacidad F2 a la Fabric App. Cada fase hecha lleva sus capturas de pantalla y un apartado con los errores encontrados.
 
-👉 **[Bitácora](docs/bitacora.md)** con lo que se ha hecho, las decisiones y lo pendiente.
+👉 **[Bitácora](docs/bitacora.md)**: todo lo que se ha hecho, en orden, con las decisiones, lo aprendido y lo pendiente.
+
+👉 **[Presentación](docs/presentacion/README.md)** de la formación, con el branding de NTT DATA.
 
 ## La historia que cuentan los datos
 
@@ -33,7 +58,7 @@ Datos, simulador y guía para construir **paso a paso** una demo de Microsoft Fa
 flowchart LR
     CSV1[CSV estáticos] --> LH[(Lakehouse<br/>Bretema_LH)]
     CSV2[CSV histórico] --> EH[(Eventhouse<br/>Bretema_EH)]
-    SIM[Simulador Python] -->|Event Hubs| ES[Eventstream<br/>ES_Transacciones] --> EH
+    SIM[Simulador Python] -->|Event Hubs| ES[Eventstream<br/>Bretema_ES] --> EH
     EH --> KQL[Funciones KQL<br/>de detección]
     KQL --> RTD[Real-Time Dashboard]
     KQL --> ACT[Activator]

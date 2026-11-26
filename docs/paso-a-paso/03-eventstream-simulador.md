@@ -5,7 +5,7 @@ Un **Eventstream** recibe las operaciones que envía el simulador y las deja, se
 ```mermaid
 flowchart LR
     SIM["simulador_transacciones.py<br/>(tu ordenador)"] -->|"Event Hubs (AMQP)"| EP[Endpoint personalizado]
-    subgraph ES_Transacciones
+    subgraph Bretema_ES
         EP --> DST[Destino Eventhouse]
     end
     DST --> T[("Bretema_EH<br/>transacciones")]
@@ -13,14 +13,23 @@ flowchart LR
 
 ## 1. Crear el Eventstream
 
-1. **Nuevo elemento › Eventstream**, con el nombre `ES_Transacciones`.
-2. **Agregar origen › Endpoint personalizado** (Custom endpoint). Nombre del origen: `simulador`. Pulsa **Agregar**.
-3. **Agregar destino › Eventhouse**:
-   - Modo de ingesta: **Ingesta directa** (Direct ingestion).
-   - Área de trabajo `Bretema`, Eventhouse `Bretema_EH`, base de datos `Bretema_EH`.
-   - Nombre del destino: `transacciones`.
-4. Pulsa **Publicar**.
-5. Con el Eventstream publicado, en el nodo del destino, pulsa **Configurar**: elige la **tabla existente** `transacciones` y, como formato, **JSON**. El asistente propone el mapeo con las ocho columnas; comprueba que `fecha_hora` es `datetime` e `importe_eur` es `real`. Si prefieres, elige el mapeo `transacciones_json` creado en la fase 2.
+1. **New item › Eventstream**, con el nombre `Bretema_ES`.
+2. En el lienzo, elige **Use custom endpoint** (o **Add source › Custom endpoint**) y pulsa **Add**. Puedes dejar el nombre que propone.
+
+   ![El lienzo del Eventstream Bretema_ES en modo edición: el origen Custom endpoint unido al flujo Bretema_ES-stream](../../assets/capturas/40-eventstream-origen.png)
+
+   Quedan dos cajas unidas: el **origen** (el punto de entrada al que enviará el simulador) y el **flujo** `Bretema_ES-stream`. Arriba dice **Edit mode**: nada funciona todavía hasta pulsar **Publish**.
+3. **Añade el destino.** Pulsa el **+** que hay a la derecha de `Bretema_ES-stream` y elige **Eventhouse**. Creada desde ahí, la caja del destino nace conectada al flujo. En el panel de la derecha:
+   - **Data ingestion mode:** **Direct ingestion**.
+   - **Destination name:** `transacciones`
+   - **Workspace:** `Bretema` · **Eventhouse:** `Bretema_EH` · **KQL Database:** `Bretema_EH`
+
+   Si usas **Add destination** de la barra superior, la caja queda suelta: el panel avisa con *«This operation is missing an input to work»* y **Save** no se activa. Se arregla arrastrando una línea desde el punto de la derecha de `Bretema_ES-stream` hasta el punto rojo de la izquierda del destino.
+4. Pulsa **Save** y después **Publish**.
+
+   ![El Eventstream publicado, en modo Live: origen, flujo y destino transacciones unidos; el destino tiene un triángulo de aviso](../../assets/capturas/41-eventstream-publicado.png)
+
+   Arriba a la derecha pasa de **Edit** a **Live**. El triángulo del destino indica que falta decirle a qué tabla van los eventos: se hace en el paso 4 de esta fase, cuando ya estén llegando, porque el asistente necesita verlos para proponer las columnas.
 
 ## 2. Copiar la cadena de conexión
 

@@ -42,6 +42,11 @@ Para cada sesión nueva, copia la plantilla del final.
 23. C3 (`fn_tarjetas_expuestas`): **93 tarjetas** pasaron por Ponte Alta del 3 al 11 de octubre; 70 activas y 23 bloqueadas.
 24. C5, el gráfico de anomalías: las compras diarias en comercios de riesgo alto, estables hasta mediados de octubre y disparadas después, con el pico de 17 del 7 de noviembre marcado como anomalía. **Fase 2 terminada.**
 
+*Fase 3 · Eventstream y simulador*
+
+25. Creado el Eventstream **`Bretema_ES`** con un origen **Custom endpoint**. La guía y el resto del repositorio usan ya ese nombre (antes `ES_Transacciones`).
+26. Añadido el destino Eventhouse `transacciones` en modo **Direct ingestion** y publicado el Eventstream (modo **Live**). El destino queda con aviso hasta configurar la tabla.
+
 Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema` (área de trabajo), `Bretema_LH` (antes `LH_Bretema`) y `Bretema_EH` (antes `EH_Bretema`).
 
 **Notebooks**
@@ -81,6 +86,8 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - `assets/capturas/34-eventhouse-punto-compromiso.png`: el resultado de C2, con Ponte Alta en cabeza. En la [fase 2](paso-a-paso/02-eventhouse.md#6-primeras-consultas-sobre-el-histórico); es la captura prevista para la diapositiva 22.
 - `assets/capturas/35-eventhouse-tarjetas-expuestas.png`: el resultado de C3, 93 tarjetas expuestas.
 - `assets/capturas/36-eventhouse-grafico-anomalias.png`: el gráfico de anomalías de C5. Las dos están en la [fase 2](paso-a-paso/02-eventhouse.md#6-primeras-consultas-sobre-el-histórico); la 36 es la otra captura que la presentación tenía reservada.
+- `assets/capturas/40-eventstream-origen.png`: el lienzo del Eventstream con el origen y el flujo, en modo edición. En la [fase 3](paso-a-paso/03-eventstream-simulador.md); todavía no está en la presentación.
+- `assets/capturas/41-eventstream-publicado.png`: el Eventstream publicado, con origen, flujo y destino. En la [fase 3](paso-a-paso/03-eventstream-simulador.md); todavía no está en la presentación.
 - `assets/capturas/20-eventhouse-creado.png`: el Eventhouse `Bretema_EH` recién creado, vacío, con su base de datos KQL. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/00-capacidad-f2-azure.png`: la capacidad F2 en el portal de Azure, activa y en Spain Central. Está recortada y con el identificador de la suscripción tapado. En la [fase 0](paso-a-paso/00-preparacion.md); todavía no está en la presentación.
 
@@ -105,6 +112,7 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - *Se puede arreglar sin recargar*: `.drop column`, `.rename column` y `.set-or-replace … | distinct *` funcionaron a la primera en el Eventhouse.
 - *En KQL, mejor `long` que `int` en todas partes.* Al revisar `kql/02_funciones.kql` antes de ejecutarlo apareció el mismo riesgo: `fn_alertas_tiempo_real` une dos ramas con la columna `puntuacion_riesgo`, una `long` y otra `int`, y `union` las habría separado en dos columnas. Corregido antes de ejecutarlo: `tolong` en lugar de `toint` y parámetros `long`, también en el script opcional 05.
 - *El portapapeles solo guarda lo último.* Después de `pbcopy`, una captura de pantalla lo sustituyó por una imagen y **Cmd + V** no pegaba nada en el editor. `pbpaste | head -3` enseña qué hay copiado.
+- *En el Eventstream, **Add destination** de la barra crea la caja suelta.* El panel dice «This operation is missing an input to work» y no deja guardar; parece un problema con el nombre, pero falta la línea que la une al flujo. Con el **+** del flujo nace conectada.
 - *El asistente de carga llama **First row header** a la opción del encabezado*, y propone un mapeo con el nombre de la tabla (`comercios_mapping`). Si la tabla ya existe con sus tipos, los respeta.
 - *OneLake availability viene desactivado en las tablas del Eventhouse.* Para consultar con KQL no hace falta. La documentación de la ontología pide orígenes respaldados por OneLake para los datos estáticos, y el tutorial de Microsoft lo activa nada más crear el Eventhouse, así que la variante B de la ontología puede necesitarlo en `transacciones` y `alertas`. Ojo: mientras está activado no se pueden borrar ni truncar datos de la tabla, ni cambiar el tipo de una columna.
 
@@ -177,7 +185,7 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - Fabric App: tipos, lint y 53 tests en verde tras renombrar la columna de la tarjeta.
 
 **Pendiente**
-- [ ] Probar el envío real al Eventstream con la cadena de conexión de `ES_Transacciones` (fase 3) y anotar la latencia.
+- [ ] Probar el envío real al Eventstream con la cadena de conexión de `Bretema_ES` (fase 3) y anotar la latencia.
 - [ ] Ejecutar los scripts KQL en `Bretema_EH` y confirmar las cifras del bloque C. Los scripts no se han podido ejecutar en un Eventhouse real todavía.
 - [ ] Importar `banco_bretema.ttl` y anotar el resumen de la importación.
 - [x] Decidir dónde se enlazan Transaccion y Alerta para la demo del agente: se hacen las dos variantes (decisión del 26 de noviembre).

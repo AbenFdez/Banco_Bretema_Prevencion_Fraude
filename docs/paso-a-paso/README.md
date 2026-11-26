@@ -7,7 +7,7 @@ La demo se construye en fases. Cada fase tiene su archivo con lo que hay que hac
 | [0 · Preparación](00-preparacion.md) | Área de trabajo y ajustes del tenant en la F2 | Área de trabajo | 15 min |
 | [1 · Datos estáticos](01-lakehouse.md) | Clientes, tarjetas, comercios… en tablas Delta | Lakehouse `Bretema_LH` | 15 min |
 | [2 · Histórico en tiempo real](02-eventhouse.md) | Seis meses de transacciones y alertas, con KQL | Eventhouse `Bretema_EH` | 20 min |
-| [3 · Simulador en directo](03-eventstream-simulador.md) | Operaciones nuevas cada segundo | Eventstream `ES_Transacciones` | 20 min |
+| [3 · Simulador en directo](03-eventstream-simulador.md) | Operaciones nuevas cada segundo | Eventstream `Bretema_ES` | 20 min |
 | [4 · KQL y panel en directo](04-kql-panel.md) | Detección de ráfagas y panel que se actualiza solo | Conjunto de consultas KQL, Real-Time Dashboard | 30 min |
 | [5 · Alertas automáticas](05-activator.md) | Aviso cuando aparece una ráfaga | Activator | 15 min |
 | [6 · Ontología y agente](06-ontologia.md) | Significado de negocio y preguntas en lenguaje natural | Ontology, Graph, agente de datos | 45 min |
@@ -17,7 +17,7 @@ La demo se construye en fases. Cada fase tiene su archivo con lo que hay que hac
 flowchart LR
     CSV1[CSV estáticos] --> LH[(Lakehouse<br/>Bretema_LH)]
     CSV2[CSV histórico] --> EH[(Eventhouse<br/>Bretema_EH)]
-    SIM[Simulador Python] -->|Event Hubs| ES[Eventstream<br/>ES_Transacciones] --> EH
+    SIM[Simulador Python] -->|Event Hubs| ES[Eventstream<br/>Bretema_ES] --> EH
     EH --> KQL[KQL · funciones<br/>de detección]
     KQL --> RTD[Real-Time Dashboard]
     KQL --> ACT[Activator]
@@ -36,7 +36,7 @@ Las fases 0 a 4 son el núcleo de tiempo real. Las fases 5 a 7 se apoyan en ella
 | Área de trabajo | `Bretema` |
 | Lakehouse | `Bretema_LH` |
 | Eventhouse y su base de datos KQL | `Bretema_EH` |
-| Eventstream | `ES_Transacciones` |
+| Eventstream | `Bretema_ES` |
 | Conjunto de consultas KQL | `KQL_Fraude` |
 | Real-Time Dashboard | `Fraude en directo` |
 | Activator | `ACT_Rafagas` |

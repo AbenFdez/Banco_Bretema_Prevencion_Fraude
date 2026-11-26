@@ -80,7 +80,9 @@ Las capturas se guardan en [`assets/capturas/`](../../assets/capturas/) con esto
 | `34-eventhouse-punto-compromiso.png` | Resultado de C2: Ponte Alta, 23 de 27 tarjetas (85,2 %) | Prevista para la 22; todavía sin poner | ✅ |
 | `35-eventhouse-tarjetas-expuestas.png` | Resultado de C3: 93 tarjetas expuestas, 70 activas y 23 bloqueadas | Sin diapositiva todavía | ✅ |
 | `36-eventhouse-grafico-anomalias.png` | Gráfico de anomalías de C5, con el pico de 17 del 7 de noviembre | Sin diapositiva todavía | ✅ |
-| `01-eventstream-vista-previa.png` | Eventstream `ES_Transacciones` con la vista previa de datos | 17 | Pendiente |
+| `40-eventstream-origen.png` | Lienzo del Eventstream `Bretema_ES` con el origen Custom endpoint | Sin diapositiva todavía | ✅ |
+| `41-eventstream-publicado.png` | Eventstream `Bretema_ES` publicado: origen, flujo y destino | Candidata para la 17; todavía sin poner | ✅ |
+| `01-eventstream-vista-previa.png` | Eventstream `Bretema_ES` con la vista previa de datos | 17 | Pendiente |
 | `02-kql-rafagas.png` | Consultas B5 y B6 con una ráfaga | 21 (opcional, sin hueco) | Pendiente |
 | `03-panel-fraude-en-directo.png` | Real-Time Dashboard con una ráfaga recién detectada | 23 | Pendiente |
 | `04-activator-aviso.png` | Aviso de `ACT_Rafagas` por correo o Teams | 24 | Pendiente |
