@@ -52,7 +52,54 @@ Crear antes las tablas evita que el asistente de carga cambie tipos; por ejemplo
 
 ## 3. Cargar los CSV
 
-Para cada fila de la tabla: en la base de datos, **Obtener datos › Archivo local**, elige **Tabla existente** y la tabla, sube el CSV y, en **Inspeccionar**, comprueba que el formato es **CSV** con **La primera fila es el encabezado de columna**. Pulsa **Finalizar**.
+Empieza por `oficinas`, la más pequeña, para comprobar el asistente; después repite con las demás.
+
+1. En el panel de la izquierda, pasa el ratón por la tabla, pulsa los tres puntos **…** y elige **Get data › Local file**.
+2. El asistente tiene cuatro pasos, que se ven a la izquierda: **Source**, **Configure**, **Inspect** y **Summary**.
+   - **Source / Configure:** comprueba que la tabla de destino es la correcta y sube el CSV de la carpeta `datos/` del repositorio.
+   - **Inspect:** es la pantalla que hay que revisar antes de cargar. Comprueba cuatro cosas:
+     - arriba, el destino: `Bretema_EH/` y el nombre de la tabla;
+     - junto al nombre del archivo, el formato **CSV**;
+     - el interruptor **First row header**, activado (en verde);
+     - en la vista previa, que los nombres de las columnas son los de la tabla y que la primera fila es un dato (`CO-0001`), no los nombres de las columnas.
+
+     ![Pantalla Inspect del asistente Get data con comercios.csv: formato CSV, First row header activado y la vista previa con las columnas de la tabla](../../assets/capturas/26-eventhouse-inspect-comercios.png)
+
+     Fabric propone un mapeo con el nombre de la tabla (`comercios_mapping`): déjalo como está.
+   - **Summary:** al pulsar **Finish**, Fabric usa la tabla existente, crea un mapeo (`oficinas_mapping`) y carga el archivo. Tiene que acabar en **Successfully ingested**.
+
+   ![Resumen del asistente Get data: oficinas.csv cargado en Bretema_EH/oficinas, con el estado Successfully ingested](../../assets/capturas/24-eventhouse-carga-oficinas.png)
+
+3. Pulsa **Close** y comprueba la carga en el conjunto de consultas, en una pestaña nueva:
+
+   ```kql
+   oficinas
+   | summarize filas = count(), cabeceras = countif(oficina_id == "oficina_id")
+   ```
+
+   ![La consulta de comprobación sobre oficinas en el conjunto de consultas: filas 24 y cabeceras 0](../../assets/capturas/25-eventhouse-comprobacion-oficinas.png)
+
+   Qué hace la consulta:
+   - `oficinas` es la tabla de partida y `|` pasa su contenido al operador siguiente, como una tubería.
+   - `summarize` resume todas las filas en una sola.
+   - `filas = count()` cuenta las filas: tienen que ser las mismas que líneas de datos tiene el CSV, **24**.
+   - `cabeceras = countif(oficina_id == "oficina_id")` cuenta las filas cuyo identificador es literalmente el texto `oficina_id`. Solo puede pasar si la primera línea del CSV, la de los nombres de columna, se ha cargado como un dato más. Tiene que ser **0**.
+
+   Si sale `25` y `1`, el encabezado se ha cargado como una fila: en **Inspect** faltaba activar **First row header**. Vacía la tabla con `.clear table oficinas data` y repite la carga. Si sale `0` filas, la carga sigue en cola: espera un minuto y vuelve a ejecutar.
+
+4. Repite los pasos 1 y 2 con las otras cinco tablas. `transacciones.csv` pesa 13 MB y tarda más.
+
+### Ver una tabla cargada
+
+Pulsa una tabla en el panel de la izquierda para abrir su página (**Database / Tables / comercios**). Sirve para comprobar una carga de un vistazo, sin escribir una consulta:
+
+![Página de la tabla comercios en el Eventhouse: 294 filas ingeridas, vista previa de los datos y panel de detalles](../../assets/capturas/27-eventhouse-tabla-comercios.png)
+
+- **Data Activity Tracker:** las filas que han entrado y cuándo. Aquí, 294 de una vez.
+- **Data preview:** las primeras filas. Los nombres completos y las tildes confirman que el CSV se ha leído bien.
+- **Table details**, a la derecha: **Row count** (294, las del CSV), el tamaño y las políticas de caché y de retención.
+- **OneLake › Availability:** aparece **Disabled**. Es el interruptor que publica la tabla en OneLake en formato Delta. No hace falta para consultar con KQL; se verá en la [fase 6](06-ontologia.md), porque la variante de la ontología que enlaza con el Eventhouse puede necesitarlo.
+- En el panel de la izquierda, bajo la tabla: **Ingestion Mappings** (el mapeo que creó el asistente), **Update Policy** y las columnas con su tipo.
 
 | Tabla | CSV | Filas |
 | --- | --- | ---: |

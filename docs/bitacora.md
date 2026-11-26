@@ -6,19 +6,34 @@ Para cada sesión nueva, copia la plantilla del final.
 
 ---
 
-## 26 de noviembre de 2026 · Fase 0: capacidad F2 y área de trabajo
+## 26 de noviembre de 2026 · Fases 0, 1 y 2: capacidad, Lakehouse y Eventhouse
 
-**Hecho**
-- Localizada la suscripción de Azure de las demos y su capacidad de Fabric: **F2**, región **Spain Central**, estado activo.
-- Comprobado en **Portal de administración › Capacity settings › Fabric Capacity** que la capacidad aparece y que la cuenta es administradora del inquilino (se ve **Tenant settings**).
-- Creada el área de trabajo **`Bretema`** sobre la F2, con el logo del banco. La guía y los comandos usan ya ese nombre.
-- Fase 1 en marcha: creado el Lakehouse **`Bretema_LH`**, con esquemas, subidos los ocho CSV a `Files/` e importado el notebook `01_cargar_lakehouse`. La guía y el resto del repositorio usan ya ese nombre (antes `LH_Bretema`).
+**Hecho, en orden**
 
-- **Ejecutado en Fabric el notebook `01_cargar_lakehouse`** sobre `Bretema_LH`, con `ORIGEN = "files"` y `CARPETA = "Files"` (los CSV subidos a mano): terminó sin errores y sin tocar el código. Es la primera ejecución real con Delta.
-- **Fase 1 terminada**: en **Tables › dbo** están las once tablas (las ocho del banco, `app_alertas`, `app_movimientos` y `revisiones`) y la sesión de Spark quedó parada.
+*Fase 0 · Preparación*
+1. Localizada la suscripción de Azure de las demos y su capacidad de Fabric: **F2**, región **Spain Central**, estado activo.
+2. Comprobado en **Portal de administración › Capacity settings › Fabric Capacity** que la capacidad aparece y que la cuenta es administradora del inquilino (se ve **Tenant settings**).
+3. Creada el área de trabajo **`Bretema`** sobre la F2, con el logo del banco.
 
-- Fase 2: creadas en `Bretema_EH` las seis tablas con `kql/01_tablas.kql` (carpetas **Banco** y **Referencia**) y el mapeo JSON `transacciones_json`. Todavía vacías: falta cargar los CSV. Es la primera vez que el script se ejecuta en un Eventhouse real.
-- Fase 2 en marcha: creado el Eventhouse **`Bretema_EH`**, con su base de datos KQL del mismo nombre, en Spain Central. La guía, los scripts KQL y el resto del repositorio usan ya ese nombre (antes `EH_Bretema`).
+*Fase 1 · Lakehouse*
+
+4. Creado el Lakehouse **`Bretema_LH`**, con esquemas. Fabric crea con él su punto de conexión de análisis SQL.
+5. Subidos los ocho CSV de `datos/` a `Files/`.
+6. Importado el notebook `01_cargar_lakehouse` desde la página del área de trabajo (**Import › Notebook**) y conectado a `Bretema_LH` como Lakehouse predeterminado.
+7. Ejecutado el notebook con `ORIGEN = "files"` y `CARPETA = "Files"`: terminó sin errores y sin tocar el código. Es la primera ejecución real con Delta.
+8. Comprobado: once tablas en **Tables › dbo** (las ocho del banco, `app_alertas`, `app_movimientos` y `revisiones`) y las cinco comprobaciones en `OK`. Sesión de Spark parada. **Fase 1 terminada.**
+
+*Fase 2 · Eventhouse*
+
+9. Creado el Eventhouse **`Bretema_EH`**, con su base de datos KQL del mismo nombre, en Spain Central.
+10. Abierto el conjunto de consultas que Fabric crea con la base de datos, `Bretema_EH_queryset`, y pegado `kql/01_tablas.kql` (copiado con `pbcopy`).
+11. Creadas las seis tablas, ejecutando los comandos `.create-merge table` uno a uno: `alertas` y `transacciones` en la carpeta **Banco**; `clientes`, `comercios`, `oficinas` y `tarjetas` en **Referencia**. Es la primera vez que el script se ejecuta en un Eventhouse real.
+12. Creado el mapeo JSON `transacciones_json`, después de corregir el comando (ver «Lo que aprendimos»).
+13. Cargado `oficinas.csv` con **Get data › Local file** (pasos Source, Configure, Inspect y Summary): «Successfully ingested». Comprobado con una consulta: 24 filas y 0 cabeceras.
+14. Cargado `comercios.csv`, revisando antes la pantalla **Inspect**: 294 filas, las del CSV.
+15. Pendiente de confirmar con la consulta de comprobación: las cargas de `tarjetas`, `clientes`, `alertas` y `transacciones`.
+
+Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema` (área de trabajo), `Bretema_LH` (antes `LH_Bretema`) y `Bretema_EH` (antes `EH_Bretema`).
 
 **Notebooks**
 - Nuevo `notebooks/01_crear_tablas_sql.ipynb`: crea las mismas tablas que `01_cargar_lakehouse`, pero con `CREATE TABLE` e `INSERT … SELECT` en Spark SQL, una sentencia por celda. Lee los CSV de `Files/`.
@@ -27,6 +42,10 @@ Para cada sesión nueva, copia la plantilla del final.
 - `01_crear_tablas_sql` en local con Spark 3.5: las 32 sentencias se ejecutan y las 13 comprobaciones salen en `OK`. En local las tablas se guardaron en Parquet, porque no hay Delta instalado; falta ejecutarlo en Fabric.
 
 - `01_cargar_lakehouse` **en Fabric (F2)**: las cinco comprobaciones salen en `OK` con las cifras esperadas: 53 alertas abiertas, 37 tarjetas bloqueadas por fraude, 949 alertas en `app_alertas`, 161.462 transacciones y 93 tarjetas en Ponte Alta del 3 al 11 de octubre. La consulta final devuelve Vigo Centro 12, Vigo Bouzas 5, Ourense Centro 4, Tui 3 y A Coruña Centro 3. Son las mismas cifras que da `scripts/comprobar_historia.py` sobre los CSV: esas cinco quedan confirmadas en Fabric. Las demás de la presentación (por ejemplo, 23 de 27 tarjetas en Ponte Alta) se confirmarán en el Eventhouse. La celda de comprobaciones tardó unos 3 segundos y la consulta final 2. Entre la primera celda (14:02:07) y la última (14:03:34) pasó cerca de minuto y medio; el arranque de la sesión no está medido.
+
+- Carga de `oficinas.csv` **en el Eventhouse**: la consulta de comprobación devuelve 24 filas y 0 cabeceras, en 0,05 s. El asistente respetó los tipos de la tabla creada antes y no cargó el encabezado como dato.
+
+- Carga de `comercios.csv` **en el Eventhouse**: la página de la tabla muestra 294 filas, las mismas que el CSV, y la vista previa con las tildes correctas.
 
 **Capturas**
 - `assets/capturas/00-area-de-trabajo-fabric.png`: el área de trabajo recién creada, vacía y con el rombo de capacidad. Está en la [fase 0](paso-a-paso/00-preparacion.md) y en la diapositiva 19 de la presentación.
@@ -38,6 +57,10 @@ Para cada sesión nueva, copia la plantilla del final.
 - `assets/capturas/21-eventhouse-queryset-vacio.png`: el conjunto de consultas `Bretema_EH_queryset` abierto y vacío, antes de crear las tablas. Recortada para dejar fuera las pestañas del navegador. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/22-eventhouse-mapeo-json.png`: el mapeo JSON creado, con el comando corregido en una pestaña nueva del conjunto de consultas. Recortada y con el identificador de la base de datos tapado. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/23-eventhouse-seis-tablas.png`: el panel del Eventhouse con las carpetas **Banco** y **Referencia** desplegadas y las seis tablas. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
+- `assets/capturas/24-eventhouse-carga-oficinas.png`: el resumen del asistente **Get data** tras cargar `oficinas.csv`. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
+- `assets/capturas/25-eventhouse-comprobacion-oficinas.png`: la consulta de comprobación sobre `oficinas`, con 24 filas y 0 cabeceras; en el panel, las seis tablas. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
+- `assets/capturas/26-eventhouse-inspect-comercios.png`: la pantalla **Inspect** del asistente con `comercios.csv`: formato CSV, **First row header** activado y la vista previa. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
+- `assets/capturas/27-eventhouse-tabla-comercios.png`: la página de la tabla `comercios` con 294 filas, la vista previa y el panel de detalles. Con la cuenta de usuario tapada. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/20-eventhouse-creado.png`: el Eventhouse `Bretema_EH` recién creado, vacío, con su base de datos KQL. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/00-capacidad-f2-azure.png`: la capacidad F2 en el portal de Azure, activa y en Spain Central. Está recortada y con el identificador de la suscripción tapado. En la [fase 0](paso-a-paso/00-preparacion.md); todavía no está en la presentación.
 
@@ -56,9 +79,12 @@ Para cada sesión nueva, copia la plantilla del final.
 - *El mapeo JSON del script estaba mal.* Con `"path"` y `"datatype"` junto a `"column"`, Fabric devolvió `BadRequest_InvalidMapping`. Corregido en `kql/01_tablas.kql`: la ruta va dentro de `"Properties": {"Path": …}`, como en la documentación actual. Con ese formato se creó a la primera (0,2 s).
 - *Para copiar un script del repositorio sin abrirlo*: `pbcopy < kql/01_tablas.kql` desde la terminal, o el botón **Copy raw file** del archivo en GitHub.
 
+- *El asistente de carga llama **First row header** a la opción del encabezado*, y propone un mapeo con el nombre de la tabla (`comercios_mapping`). Si la tabla ya existe con sus tipos, los respeta.
+- *OneLake availability viene desactivado en las tablas del Eventhouse.* Para consultar con KQL no hace falta. La documentación de la ontología pide orígenes respaldados por OneLake para los datos estáticos, y el tutorial de Microsoft lo activa nada más crear el Eventhouse, así que la variante B de la ontología puede necesitarlo en `transacciones` y `alertas`. Ojo: mientras está activado no se pueden borrar ni truncar datos de la tabla, ni cambiar el tipo de una columna.
+
 **Decisiones**
 - *Haremos las dos variantes de la ontología*, cada una en su elemento: `BancoBretemaFraude`, con todo enlazado al Lakehouse, y `BancoBretemaFraude_RT`, con Transaccion y Alerta enlazadas al Eventhouse. Así la demo enseña el compromiso entre recorridos por el grafo y tiempo real, y queda resuelta la duda de dónde enlazar las transacciones. Detalle en la [fase 6](paso-a-paso/06-ontologia.md#dos-variantes-dos-ontologías).
-- Orden de montaje: primero el Eventhouse (fase 2) y después el Lakehouse con el notebook 01, que hace falta para la variante A.
+- Orden de montaje: primero el Lakehouse con el notebook 01 (fase 1), que hace falta para la variante A, y después el Eventhouse (fase 2).
 
 **Estado de los ajustes del inquilino**
 - «Users can create Fabric items»: activado.
@@ -72,7 +98,8 @@ Para cada sesión nueva, copia la plantilla del final.
 - [ ] Fase 1: ejecutar en Fabric `01_crear_tablas_sql`, que solo se ha probado en local. Recrea las mismas tablas, así que se puede lanzar sobre el mismo Lakehouse.
 - [ ] Actualizar la presentación: todavía dice `LH_Bretema` y `EH_Bretema`, y le faltan las capturas de la capacidad, del Lakehouse, de las once tablas y de las comprobaciones del notebook.
 - [ ] Decidir si la fase 4 usa `Bretema_EH_queryset` o un conjunto de consultas nuevo (`KQL_Fraude`), y unificar la guía y el guion.
-- [ ] Fase 2: cargar los seis CSV en el Eventhouse, ejecutar la comprobación de filas, `perfil_tarjetas` y las funciones de `kql/02_funciones.kql`.
+- [ ] Fase 2: confirmar las seis cargas con la consulta de comprobación de filas; después, `perfil_tarjetas` y las funciones de `kql/02_funciones.kql`.
+- [ ] Decidir cuándo y dónde activar **OneLake availability** (previsiblemente en `transacciones` y `alertas`, para la variante B de la ontología) y comprobar si incluye los datos ya cargados.
 - [ ] Pausar la capacidad al terminar cada sesión.
 
 ---

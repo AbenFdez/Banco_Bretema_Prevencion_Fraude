@@ -67,6 +67,10 @@ Las capturas se guardan en [`assets/capturas/`](../../assets/capturas/) con esto
 | `21-eventhouse-queryset-vacio.png` | Conjunto de consultas `Bretema_EH_queryset` abierto y vacío, antes de crear las tablas | Sin diapositiva todavía | ✅ |
 | `22-eventhouse-mapeo-json.png` | Mapeo JSON `transacciones_json` creado en el conjunto de consultas | Sin diapositiva todavía | ✅ |
 | `23-eventhouse-seis-tablas.png` | Panel del Eventhouse con las seis tablas en las carpetas **Banco** y **Referencia** | Sin diapositiva todavía | ✅ |
+| `24-eventhouse-carga-oficinas.png` | Resumen del asistente **Get data** tras cargar `oficinas.csv` en el Eventhouse | Sin diapositiva todavía | ✅ |
+| `25-eventhouse-comprobacion-oficinas.png` | Consulta KQL de comprobación sobre `oficinas`: 24 filas y 0 cabeceras | Sin diapositiva todavía | ✅ |
+| `26-eventhouse-inspect-comercios.png` | Pantalla **Inspect** del asistente **Get data** con `comercios.csv` | Sin diapositiva todavía | ✅ |
+| `27-eventhouse-tabla-comercios.png` | Página de la tabla `comercios` en el Eventhouse: 294 filas, vista previa y detalles | Sin diapositiva todavía | ✅ |
 | `01-eventstream-vista-previa.png` | Eventstream `ES_Transacciones` con la vista previa de datos | 17 | Pendiente |
 | `02-kql-rafagas.png` | Consultas B5 y B6 con una ráfaga | 21 (opcional, sin hueco) | Pendiente |
 | `03-panel-fraude-en-directo.png` | Real-Time Dashboard con una ráfaga recién detectada | 23 | Pendiente |
