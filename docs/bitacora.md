@@ -31,7 +31,11 @@ Para cada sesión nueva, copia la plantilla del final.
 12. Creado el mapeo JSON `transacciones_json`, después de corregir el comando (ver «Lo que aprendimos»).
 13. Cargado `oficinas.csv` con **Get data › Local file** (pasos Source, Configure, Inspect y Summary): «Successfully ingested». Comprobado con una consulta: 24 filas y 0 cabeceras.
 14. Cargado `comercios.csv`, revisando antes la pantalla **Inspect**: 294 filas, las del CSV.
-15. Pendiente de confirmar con la consulta de comprobación: las cargas de `tarjetas`, `clientes`, `alertas` y `transacciones`.
+15. Cargados `tarjetas.csv`, `clientes.csv`, `alertas.csv` y `transacciones.csv` con el mismo asistente.
+16. Primera comprobación de filas: `comercios` y `oficinas` tenían el doble (cargadas dos veces) y, más tarde, `comercios` el triple. `oficinas` se vació con `.clear table oficinas data` y se recargó una vez.
+17. Comprobación de tipos: las dos columnas `int`, `clientes.edad` y `alertas.puntuacion_riesgo`, estaban vacías. El asistente había creado `edad_1` y `puntuacion_riesgo_1`, de tipo `long`, y había cargado ahí los valores.
+18. Arreglo sin recargar: `.drop column` de la columna vacía y `.rename column` de la que tenía los datos, en las dos tablas; y `.set-or-replace comercios <| comercios | distinct *` para quitar las filas repetidas.
+19. Comprobación final, a las 16:22: las seis tablas con sus filas (949, 2.400, 294, 24, 3.236 y 161.462) y todas las columnas de número y de fecha con valor. **Carga del Eventhouse terminada.**
 
 Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema` (área de trabajo), `Bretema_LH` (antes `LH_Bretema`) y `Bretema_EH` (antes `EH_Bretema`).
 
@@ -47,6 +51,8 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 
 - Carga de `comercios.csv` **en el Eventhouse**: la página de la tabla muestra 294 filas, las mismas que el CSV, y la vista previa con las tildes correctas.
 
+- Carga completa del Eventhouse, comprobada con las dos consultas de `kql/01_tablas.kql`: filas y valores coinciden con los CSV en las seis tablas.
+
 **Capturas**
 - `assets/capturas/00-area-de-trabajo-fabric.png`: el área de trabajo recién creada, vacía y con el rombo de capacidad. Está en la [fase 0](paso-a-paso/00-preparacion.md) y en la diapositiva 19 de la presentación.
 - `assets/capturas/10-lakehouse-csv-subidos.png`: el Lakehouse con los ocho CSV subidos. En la [fase 1](paso-a-paso/01-lakehouse.md); todavía no está en la presentación.
@@ -61,6 +67,10 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - `assets/capturas/25-eventhouse-comprobacion-oficinas.png`: la consulta de comprobación sobre `oficinas`, con 24 filas y 0 cabeceras; en el panel, las seis tablas. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/26-eventhouse-inspect-comercios.png`: la pantalla **Inspect** del asistente con `comercios.csv`: formato CSV, **First row header** activado y la vista previa. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/27-eventhouse-tabla-comercios.png`: la página de la tabla `comercios` con 294 filas, la vista previa y el panel de detalles. Con la cuenta de usuario tapada. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
+- `assets/capturas/28-eventhouse-columnas-int-vacias.png`: la comprobación de tipos tras la primera carga, con las dos columnas `int` a 0 y `comercios` triplicada.
+- `assets/capturas/29-eventhouse-mapeo-edad_1.png`: el mapeo del asistente para `clientes`, con la posición 4 del CSV dirigida a `edad_1`.
+- `assets/capturas/30-eventhouse-columnas-corregidas.png`: el esquema después del arreglo, con `edad` y `puntuacion_riesgo` como `long`.
+- `assets/capturas/31-eventhouse-comprobacion-final.png`: la comprobación de tipos con las seis tablas correctas. Las cuatro están en la [fase 2](paso-a-paso/02-eventhouse.md#4-comprobar-la-carga); todavía no están en la presentación.
 - `assets/capturas/20-eventhouse-creado.png`: el Eventhouse `Bretema_EH` recién creado, vacío, con su base de datos KQL. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/00-capacidad-f2-azure.png`: la capacidad F2 en el portal de Azure, activa y en Spain Central. Está recortada y con el identificador de la suscripción tapado. En la [fase 0](paso-a-paso/00-preparacion.md); todavía no está en la presentación.
 
@@ -79,6 +89,10 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - *El mapeo JSON del script estaba mal.* Con `"path"` y `"datatype"` junto a `"column"`, Fabric devolvió `BadRequest_InvalidMapping`. Corregido en `kql/01_tablas.kql`: la ruta va dentro de `"Properties": {"Path": …}`, como en la documentación actual. Con ese formato se creó a la primera (0,2 s).
 - *Para copiar un script del repositorio sin abrirlo*: `pbcopy < kql/01_tablas.kql` desde la terminal, o el botón **Copy raw file** del archivo en GitHub.
 
+- *El asistente **Get data** añade, no sustituye.* Cargar dos veces el mismo CSV deja la tabla con el doble de filas y no avisa. Una carga por tabla, y la comprobación de filas al terminar.
+- *El asistente lee los enteros de un CSV como `long`.* Si la columna de la tabla es `int`, no da error: crea otra columna con el sufijo `_1`, carga ahí los valores y deja la original vacía. Las filas cuadran, así que solo se ve si se cuentan los valores de cada columna. Se descubre con `.show table … ingestion csv mappings`, que enseña a qué columna va cada posición del archivo. Corregido en `kql/01_tablas.kql`: `edad` y `puntuacion_riesgo` son ahora `long`.
+- *Contar filas no basta para dar una carga por buena.* El script tiene ahora dos comprobaciones: filas por tabla y valores por columna de número o de fecha.
+- *Se puede arreglar sin recargar*: `.drop column`, `.rename column` y `.set-or-replace … | distinct *` funcionaron a la primera en el Eventhouse.
 - *El asistente de carga llama **First row header** a la opción del encabezado*, y propone un mapeo con el nombre de la tabla (`comercios_mapping`). Si la tabla ya existe con sus tipos, los respeta.
 - *OneLake availability viene desactivado en las tablas del Eventhouse.* Para consultar con KQL no hace falta. La documentación de la ontología pide orígenes respaldados por OneLake para los datos estáticos, y el tutorial de Microsoft lo activa nada más crear el Eventhouse, así que la variante B de la ontología puede necesitarlo en `transacciones` y `alertas`. Ojo: mientras está activado no se pueden borrar ni truncar datos de la tabla, ni cambiar el tipo de una columna.
 
@@ -98,7 +112,9 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - [ ] Fase 1: ejecutar en Fabric `01_crear_tablas_sql`, que solo se ha probado en local. Recrea las mismas tablas, así que se puede lanzar sobre el mismo Lakehouse.
 - [ ] Actualizar la presentación: todavía dice `LH_Bretema` y `EH_Bretema`, y le faltan las capturas de la capacidad, del Lakehouse, de las once tablas y de las comprobaciones del notebook.
 - [ ] Decidir si la fase 4 usa `Bretema_EH_queryset` o un conjunto de consultas nuevo (`KQL_Fraude`), y unificar la guía y el guion.
-- [ ] Fase 2: confirmar las seis cargas con la consulta de comprobación de filas; después, `perfil_tarjetas` y las funciones de `kql/02_funciones.kql`.
+- [x] Fase 2: confirmar las seis cargas con las consultas de comprobación.
+- [ ] Fase 2: crear `perfil_tarjetas` y las cinco funciones de `kql/02_funciones.kql`, y probar las consultas C del histórico.
+- [ ] Probar una carga con el asistente sobre una tabla creada con el script nuevo (`long`), para confirmar que ya no aparece la columna `_1`.
 - [ ] Decidir cuándo y dónde activar **OneLake availability** (previsiblemente en `transacciones` y `alertas`, para la variante B de la ontología) y comprobar si incluye los datos ya cargados.
 - [ ] Pausar la capacidad al terminar cada sesión.
 

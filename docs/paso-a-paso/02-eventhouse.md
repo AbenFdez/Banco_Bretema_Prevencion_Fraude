@@ -45,10 +45,13 @@ Los comandos se ejecutan en el conjunto de consultas que Fabric crea junto con l
 | `Syntax error: A recognition error occurred` | Había texto seleccionado y **Run** intentó ejecutar todo el archivo como una sola consulta | Haz clic en una zona vacía para quitar la selección y ejecuta los comandos uno a uno |
 | `Semantic error: 'union' operator: Failed to resolve table expression named '…'` | Se ha ejecutado la consulta de comprobación antes de crear todas las tablas | Nada: no cambia nada. Sigue con los comandos que falten |
 | `BadRequest_InvalidMapping` | El mapeo JSON estaba escrito en un formato que Fabric no acepta | Usa la versión actual de `kql/01_tablas.kql`, con la ruta dentro de `"Properties"` |
+| No hay error, pero una tabla tiene filas de más o una columna vacía | Carga repetida, o columna `int` que el asistente desvía a otra con sufijo `_1` | [Comprobar la carga](#4-comprobar-la-carga) |
 
 Repetir un `.create-merge table` ya ejecutado no duplica ni borra nada.
 
-Crear antes las tablas evita que el asistente de carga cambie tipos; por ejemplo, que convierta `edad` en texto o `fecha_hora` en una fecha sin hora.
+Crear antes las tablas evita que el asistente de carga cambie tipos; por ejemplo, que guarde `fecha_hora` como una fecha sin hora.
+
+Los números enteros (`edad`, `puntuacion_riesgo`) se definen como `long`, no como `int`. El asistente lee los enteros de un CSV como `long` y, si la columna de la tabla es `int`, no avisa: crea otra columna con el sufijo `_1` y deja la original vacía. Nos pasó en la primera carga; está explicado en [Si una columna se carga vacía](#si-una-columna-se-carga-vacía).
 
 ## 3. Cargar los CSV
 
@@ -87,7 +90,7 @@ Empieza por `oficinas`, la más pequeña, para comprobar el asistente; después 
 
    Si sale `25` y `1`, el encabezado se ha cargado como una fila: en **Inspect** faltaba activar **First row header**. Vacía la tabla con `.clear table oficinas data` y repite la carga. Si sale `0` filas, la carga sigue en cola: espera un minuto y vuelve a ejecutar.
 
-4. Repite los pasos 1 y 2 con las otras cinco tablas. `transacciones.csv` pesa 13 MB y tarda más.
+4. Repite los pasos 1 y 2 con las otras cinco tablas. `transacciones.csv` pesa 13 MB y tarda más. **Una carga por tabla**: el asistente no sustituye, añade. Si cargas dos veces el mismo CSV, la tabla queda con el doble de filas.
 
 ### Ver una tabla cargada
 
@@ -110,13 +113,97 @@ Pulsa una tabla en el panel de la izquierda para abrir su página (**Database / 
 | `clientes` | `clientes.csv` | 2.400 |
 | `oficinas` | `oficinas.csv` | 24 |
 
-## 4. Comprobar y preparar la detección
+## 4. Comprobar la carga
 
-1. Ejecuta la consulta de comprobación del final de `kql/01_tablas.kql`: las filas deben coincidir con la tabla de arriba.
-2. Ejecuta el comando `.set-or-replace perfil_tarjetas`: calcula el gasto mediano de cada tarjeta y su última compra en el extranjero, que usan las reglas de importe y país inusual.
-3. Copia [`kql/02_funciones.kql`](../../kql/02_funciones.kql) y ejecuta uno a uno los cinco `.create-or-alter function`. Aparecerán en la carpeta **Funciones › Fraude** de la base de datos.
+Las dos consultas están al final de [`kql/01_tablas.kql`](../../kql/01_tablas.kql). Ejecútalas en el conjunto de consultas.
 
-## 5. Primeras consultas sobre el histórico
+**Comprobación 1 · Filas.** Cuenta las filas de cada tabla; tienen que coincidir con la tabla de arriba.
+
+```kql
+union withsource = tabla transacciones, alertas, comercios, tarjetas, clientes, oficinas
+| summarize filas = count() by tabla
+| order by tabla asc
+```
+
+- Si una tabla **no aparece**, está vacía: falta cargar su CSV.
+- Si tiene **el doble o el triple**, el CSV se ha cargado más de una vez.
+- Si tiene **una fila de más**, el encabezado se ha cargado como dato.
+
+**Comprobación 2 · Tipos.** Que estén las filas no basta: una columna puede haberse cargado vacía. Esta consulta cuenta, para una columna de número o de fecha de cada tabla, cuántas filas tienen valor.
+
+| columna | filas | con_valor |
+| --- | ---: | ---: |
+| alertas.puntuacion_riesgo (long) | 949 | 949 |
+| clientes.edad (long) | 2.400 | 2.287 |
+| comercios.latitud (real) | 294 | 256 |
+| oficinas.latitud (real) | 24 | 24 |
+| tarjetas.limite_eur (real) | 3.236 | 3.236 |
+| transacciones.fecha_hora (datetime) | 161.462 | 161.462 |
+| transacciones.importe_eur (real) | 161.462 | 161.462 |
+
+Las 113 empresas no tienen edad y los 38 comercios online no tienen coordenadas. Un `0` en `con_valor` significa que la columna está vacía.
+
+![La comprobación de tipos con las seis tablas correctas: 949, 2.287, 256, 24, 3.236 y 161.462 valores](../../assets/capturas/31-eventhouse-comprobacion-final.png)
+
+Así quedó el 26 de noviembre, después de los arreglos de abajo. En la captura las etiquetas dicen todavía `(int)`: son un texto fijo de la consulta de ese día; las dos columnas son ya `long`.
+
+### Si una tabla tiene filas repetidas
+
+Pasó con `comercios`, que llegó a tener 882 filas (tres cargas) en lugar de 294. Un comando sustituye el contenido de la tabla por sus filas sin repetir, sin volver al asistente:
+
+```kql
+.set-or-replace comercios <| comercios | distinct *
+```
+
+La otra opción es vaciar la tabla con `.clear table comercios data` y cargar el CSV una sola vez.
+
+### Si una columna se carga vacía
+
+Pasó en la primera carga con las dos columnas de número entero, que entonces eran `int`: `clientes.edad` y `alertas.puntuacion_riesgo`. Las filas estaban todas, pero la comprobación 2 daba `0`:
+
+![La comprobación de tipos tras la primera carga: las dos columnas int con 0 valores y las demás correctas](../../assets/capturas/28-eventhouse-columnas-int-vacias.png)
+
+1. **Mira qué ha hecho el asistente con el CSV.** Cada carga crea un mapeo que dice a qué columna va cada posición del archivo:
+
+   ```kql
+   .show table clientes ingestion csv mappings
+   | mv-expand m = parse_json(Mapping)
+   | project columna = tostring(m.Name), posicion = tostring(m.Ordinal)
+   ```
+
+   La posición 4 del CSV, la edad, iba a una columna `edad_1`, no a `edad`:
+
+   ![El mapeo que creó el asistente para clientes: la posición 4 del CSV va a la columna edad_1](../../assets/capturas/29-eventhouse-mapeo-edad_1.png)
+
+2. **Confirma las columnas y sus tipos:**
+
+   ```kql
+   clientes
+   | getschema
+   | where ColumnName has "edad"
+   | project ColumnName, ColumnType
+   ```
+
+   Salían dos: `edad` (`int`, vacía) y `edad_1` (`long`, con los datos). El asistente lee los enteros como `long`; como no coincidía con el `int` de la tabla, creó una columna aparte.
+
+3. **Arréglalo sin recargar:** borra la columna vacía y dale su nombre a la que tiene los datos. Un comando cada vez.
+
+   ```kql
+   .drop column clientes.edad
+
+   .rename column clientes.edad_1 to edad
+   ```
+
+   ![El esquema después del arreglo: una sola columna edad y una sola puntuacion_riesgo, las dos de tipo long](../../assets/capturas/30-eventhouse-columnas-corregidas.png)
+
+El script actual define ya esas columnas como `long`, que es el tipo que usa el asistente. Falta confirmarlo con una carga nueva.
+
+## 5. Preparar la detección
+
+1. Ejecuta el comando `.set-or-replace perfil_tarjetas` de `kql/01_tablas.kql`: calcula el gasto mediano de cada tarjeta y su última compra en el extranjero, que usan las reglas de importe y país inusual.
+2. Copia [`kql/02_funciones.kql`](../../kql/02_funciones.kql) y ejecuta uno a uno los cinco `.create-or-alter function`. Aparecerán en la carpeta **Functions › Fraude** de la base de datos.
+
+## 6. Primeras consultas sobre el histórico
 
 Prueba el bloque C de [`kql/03_consultas_demo.kql`](../../kql/03_consultas_demo.kql). Resultados esperados:
 

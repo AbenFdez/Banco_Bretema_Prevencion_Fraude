@@ -6,8 +6,12 @@
 // Cómo:  ejecuta cada comando por separado: coloca el cursor en él y pulsa Ejecutar.
 //
 // Crear las tablas antes de cargar los CSV fija los tipos de cada columna. Si
-// dejas que el asistente «Obtener datos» las cree, puede convertir columnas de
+// dejas que el asistente «Get data» las cree, puede convertir columnas de
 // texto en números o fechas sin hora.
+//
+// Los números enteros van como long, no como int: el asistente lee los enteros
+// de un CSV como long y, si la columna de la tabla es int, no la rellena: crea
+// otra columna con el sufijo _1 (edad_1) y deja la original vacía.
 // ============================================================================
 
 // Operaciones con tarjeta: histórico (CSV) y tiempo real (Eventstream)
@@ -31,7 +35,7 @@
     fecha_hora: datetime,
     tipo_alerta: string,
     motivo: string,
-    puntuacion_riesgo: int,
+    puntuacion_riesgo: long,
     prioridad: string,
     estado: string,
     resolucion: string,
@@ -69,7 +73,7 @@
     nombre: string,
     tipo_cliente: string,
     segmento: string,
-    edad: int,
+    edad: long,
     municipio: string,
     provincia: string,
     fecha_alta: datetime,
@@ -109,13 +113,29 @@
 ```
 
 // ----------------------------------------------------------------------------
-// Después de cargar los CSV (Obtener datos › Archivo local › tabla existente)
+// Después de cargar los CSV (Get data › Local file, una vez por tabla)
 // ----------------------------------------------------------------------------
 
-// Comprobación: tienen que salir 161462, 949, 294, 3236, 2400 y 24 filas
+// Comprobación 1 · Filas: tienen que salir 949, 2400, 294, 24, 3236 y 161462.
+// Si una tabla no aparece, está vacía; si tiene el doble, se ha cargado dos veces.
 union withsource = tabla transacciones, alertas, comercios, tarjetas, clientes, oficinas
 | summarize filas = count() by tabla
 | order by tabla asc
+
+// Comprobación 2 · Tipos: cuántas filas tienen valor en las columnas de número
+// y de fecha. Tienen que salir, en este orden: 949, 2287 (las empresas no tienen
+// edad), 256 (los comercios online no tienen coordenadas), 24, 3236, 161462 y 161462.
+// Un 0 significa que la columna se ha cargado vacía.
+union
+    (alertas       | summarize filas = count(), con_valor = countif(isnotnull(puntuacion_riesgo)) | extend columna = "alertas.puntuacion_riesgo (long)"),
+    (clientes      | summarize filas = count(), con_valor = countif(isnotnull(edad))              | extend columna = "clientes.edad (long)"),
+    (comercios     | summarize filas = count(), con_valor = countif(isnotnull(latitud))           | extend columna = "comercios.latitud (real)"),
+    (oficinas      | summarize filas = count(), con_valor = countif(isnotnull(latitud))           | extend columna = "oficinas.latitud (real)"),
+    (tarjetas      | summarize filas = count(), con_valor = countif(isnotnull(limite_eur))        | extend columna = "tarjetas.limite_eur (real)"),
+    (transacciones | summarize filas = count(), con_valor = countif(isnotnull(fecha_hora))        | extend columna = "transacciones.fecha_hora (datetime)"),
+    (transacciones | summarize filas = count(), con_valor = countif(isnotnull(importe_eur))       | extend columna = "transacciones.importe_eur (real)")
+| project columna, filas, con_valor
+| order by columna asc
 
 // Perfil de gasto de cada tarjeta, calculado sobre el histórico. Lo usan las
 // reglas de importe inusual y país inusual de 02_funciones.kql. Ejecútalo cuando

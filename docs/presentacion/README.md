@@ -71,6 +71,10 @@ Las capturas se guardan en [`assets/capturas/`](../../assets/capturas/) con esto
 | `25-eventhouse-comprobacion-oficinas.png` | Consulta KQL de comprobación sobre `oficinas`: 24 filas y 0 cabeceras | Sin diapositiva todavía | ✅ |
 | `26-eventhouse-inspect-comercios.png` | Pantalla **Inspect** del asistente **Get data** con `comercios.csv` | Sin diapositiva todavía | ✅ |
 | `27-eventhouse-tabla-comercios.png` | Página de la tabla `comercios` en el Eventhouse: 294 filas, vista previa y detalles | Sin diapositiva todavía | ✅ |
+| `28-eventhouse-columnas-int-vacias.png` | Comprobación de tipos tras la primera carga: las columnas `int` vacías | Sin diapositiva todavía | ✅ |
+| `29-eventhouse-mapeo-edad_1.png` | Mapeo del asistente: la edad va a la columna `edad_1` | Sin diapositiva todavía | ✅ |
+| `30-eventhouse-columnas-corregidas.png` | Esquema corregido: `edad` y `puntuacion_riesgo` como `long` | Sin diapositiva todavía | ✅ |
+| `31-eventhouse-comprobacion-final.png` | Comprobación final de la carga del Eventhouse, todo correcto | Sin diapositiva todavía | ✅ |
 | `01-eventstream-vista-previa.png` | Eventstream `ES_Transacciones` con la vista previa de datos | 17 | Pendiente |
 | `02-kql-rafagas.png` | Consultas B5 y B6 con una ráfaga | 21 (opcional, sin hueco) | Pendiente |
 | `03-panel-fraude-en-directo.png` | Real-Time Dashboard con una ráfaga recién detectada | 23 | Pendiente |
