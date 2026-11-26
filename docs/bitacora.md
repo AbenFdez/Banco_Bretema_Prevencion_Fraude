@@ -14,7 +14,8 @@ Para cada sesión nueva, copia la plantilla del final.
 - Creada el área de trabajo **`Bretema`** sobre la F2, con el logo del banco. La guía y los comandos usan ya ese nombre.
 - Fase 1 en marcha: creado el Lakehouse **`Bretema_LH`**, con esquemas, subidos los ocho CSV a `Files/` e importado el notebook `01_cargar_lakehouse`. La guía y el resto del repositorio usan ya ese nombre (antes `LH_Bretema`).
 
-- **Ejecutado en Fabric el notebook `01_cargar_lakehouse`** sobre `Bretema_LH`: terminó sin errores y sin tocar el código. Es la primera ejecución real con Delta.
+- **Ejecutado en Fabric el notebook `01_cargar_lakehouse`** sobre `Bretema_LH`, con `ORIGEN = "files"` y `CARPETA = "Files"` (los CSV subidos a mano): terminó sin errores y sin tocar el código. Es la primera ejecución real con Delta.
+- **Fase 1 terminada**: en **Tables › dbo** están las once tablas (las ocho del banco, `app_alertas`, `app_movimientos` y `revisiones`) y la sesión de Spark quedó parada.
 
 **Notebooks**
 - Nuevo `notebooks/01_crear_tablas_sql.ipynb`: crea las mismas tablas que `01_cargar_lakehouse`, pero con `CREATE TABLE` e `INSERT … SELECT` en Spark SQL, una sentencia por celda. Lee los CSV de `Files/`.
@@ -22,7 +23,7 @@ Para cada sesión nueva, copia la plantilla del final.
 **Probado**
 - `01_crear_tablas_sql` en local con Spark 3.5: las 32 sentencias se ejecutan y las 13 comprobaciones salen en `OK`. En local las tablas se guardaron en Parquet, porque no hay Delta instalado; falta ejecutarlo en Fabric.
 
-- `01_cargar_lakehouse` **en Fabric (F2)**: las cinco comprobaciones salen en `OK` con las cifras esperadas: 53 alertas abiertas, 37 tarjetas bloqueadas por fraude, 949 alertas en `app_alertas`, 161.462 transacciones y 93 tarjetas en Ponte Alta del 3 al 11 de octubre. La consulta final devuelve Vigo Centro 12, Vigo Bouzas 5, Ourense Centro 4, Tui 3 y A Coruña Centro 3. Son las mismas cifras que da `scripts/comprobar_historia.py` sobre los CSV: esas cinco quedan confirmadas en Fabric. Las demás de la presentación (por ejemplo, 23 de 27 tarjetas en Ponte Alta) se confirmarán en el Eventhouse. La celda de comprobaciones tardó unos 3 segundos y la consulta final 2; el tiempo total de la ejecución no quedó anotado.
+- `01_cargar_lakehouse` **en Fabric (F2)**: las cinco comprobaciones salen en `OK` con las cifras esperadas: 53 alertas abiertas, 37 tarjetas bloqueadas por fraude, 949 alertas en `app_alertas`, 161.462 transacciones y 93 tarjetas en Ponte Alta del 3 al 11 de octubre. La consulta final devuelve Vigo Centro 12, Vigo Bouzas 5, Ourense Centro 4, Tui 3 y A Coruña Centro 3. Son las mismas cifras que da `scripts/comprobar_historia.py` sobre los CSV: esas cinco quedan confirmadas en Fabric. Las demás de la presentación (por ejemplo, 23 de 27 tarjetas en Ponte Alta) se confirmarán en el Eventhouse. La celda de comprobaciones tardó unos 3 segundos y la consulta final 2. Entre la primera celda (14:02:07) y la última (14:03:34) pasó cerca de minuto y medio; el arranque de la sesión no está medido.
 
 **Capturas**
 - `assets/capturas/00-area-de-trabajo-fabric.png`: el área de trabajo recién creada, vacía y con el rombo de capacidad. Está en la [fase 0](paso-a-paso/00-preparacion.md) y en la diapositiva 19 de la presentación.
@@ -30,6 +31,7 @@ Para cada sesión nueva, copia la plantilla del final.
 - `assets/capturas/11-lakehouse-y-punto-sql.png`: la lista del área de trabajo con el notebook importado, el Lakehouse y el punto de conexión SQL que Fabric crea con él (recorte). En la [fase 1](paso-a-paso/01-lakehouse.md); todavía no está en la presentación.
 - `assets/capturas/12-notebook-con-lakehouse.png`: el notebook `01_cargar_lakehouse` abierto en Fabric, con `Bretema_LH` como Lakehouse predeterminado y la celda de parámetros con los valores por defecto. En la [fase 1](paso-a-paso/01-lakehouse.md); todavía no está en la presentación.
 - `assets/capturas/13-notebook-comprobaciones-ok.png`: el final del notebook `01_cargar_lakehouse` ejecutado en Fabric, con las cinco comprobaciones en `OK` y las oficinas con más alertas abiertas. Recortada para dejar fuera las pestañas del navegador. En la [fase 1](paso-a-paso/01-lakehouse.md); todavía no está en la presentación.
+- `assets/capturas/14-lakehouse-once-tablas.png`: el explorador del notebook con las once tablas de `Bretema_LH` en **Tables › dbo** y la celda de parámetros tal como se ejecutó. Recortada para dejar fuera las pestañas del navegador. En la [fase 1](paso-a-paso/01-lakehouse.md); todavía no está en la presentación.
 - `assets/capturas/00-capacidad-f2-azure.png`: la capacidad F2 en el portal de Azure, activa y en Spain Central. Está recortada y con el identificador de la suscripción tapado. En la [fase 0](paso-a-paso/00-preparacion.md); todavía no está en la presentación.
 
 **Presentación**
@@ -52,9 +54,10 @@ Para cada sesión nueva, copia la plantilla del final.
 **Pendiente**
 - [ ] Activar los ajustes de ontología, agente de datos, Copilot / Azure OpenAI y Fabric Apps, y anotar si algún nombre es distinto al de la guía.
 - [x] Fase 1: ejecutar en Fabric el notebook 01 de PySpark y anotar el resultado de las comprobaciones.
-- [ ] Fase 1: comprobar que en **Tables › dbo** hay once tablas y guardar la captura. Anotar el tiempo total del notebook la próxima vez que se ejecute.
+- [x] Fase 1: comprobar que en **Tables › dbo** hay once tablas y guardar la captura.
+- [ ] El texto del notebook `01_cargar_lakehouse` habla de `Files/datos`, pero la guía sube los CSV a `Files/`. Unificarlo.
 - [ ] Fase 1: ejecutar en Fabric `01_crear_tablas_sql`, que solo se ha probado en local. Recrea las mismas tablas, así que se puede lanzar sobre el mismo Lakehouse.
-- [ ] Actualizar la presentación: todavía dice `LH_Bretema` y le faltan las capturas de la capacidad, del Lakehouse y de las comprobaciones del notebook.
+- [ ] Actualizar la presentación: todavía dice `LH_Bretema` y le faltan las capturas de la capacidad, del Lakehouse, de las once tablas y de las comprobaciones del notebook.
 - [ ] Pausar la capacidad al terminar cada sesión.
 
 ---

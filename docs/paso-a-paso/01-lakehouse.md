@@ -84,7 +84,13 @@ Si no has subido los CSV, deja los valores por defecto (`ORIGEN = "github"`): el
 
 #### Al terminar
 
-Pulsa **Stop session** para no consumir la F2. Con cualquiera de las dos opciones, en **Tables › dbo** tienen que aparecer once tablas: las ocho del banco, `app_alertas`, `app_movimientos` y `revisiones` (vacía). La última parte del notebook muestra las comprobaciones, que deben salir todas en `OK`.
+Pulsa **Stop session** para no consumir la F2. Con cualquiera de las dos opciones, en **Tables › dbo** tienen que aparecer once tablas: las ocho del banco, `app_alertas`, `app_movimientos` y `revisiones` (vacía).
+
+![El explorador del notebook con las once tablas en Tables › dbo de Bretema_LH y la celda de parámetros con ORIGEN = "files" y CARPETA = "Files"](../../assets/capturas/14-lakehouse-once-tablas.png)
+
+En la captura se ven las once tablas, la celda de parámetros tal como se ejecutó y, abajo a la izquierda, **Not connected**: la sesión ya está parada.
+
+La última parte del notebook muestra las comprobaciones, que deben salir todas en `OK`.
 
 ![El notebook 01_cargar_lakehouse ejecutado en Fabric: las cinco comprobaciones en OK y las oficinas con más alertas abiertas](../../assets/capturas/13-notebook-comprobaciones-ok.png)
 
@@ -121,7 +127,6 @@ Comprueba también los tipos: `tarjeta_enmascarada` debe ser texto (`**** 0120`)
 ## Qué apuntar en la bitácora
 
 - Si **Cargar en tablas** infirió algún tipo distinto del esperado.
-- Una captura de las tablas en el explorador, para la presentación. La de las cinco comprobaciones ya está.
-- Cuánto tardó el notebook en la F2.
+- Cuánto tardó el notebook en la F2. El 26 de noviembre pasó cerca de minuto y medio entre la primera celda y la última, sin contar el arranque de la sesión.
 
 Siguiente: [Fase 2 · Histórico en el Eventhouse](02-eventhouse.md)
