@@ -32,7 +32,7 @@ Datos, simulador y guía para construir **paso a paso** una demo de Microsoft Fa
 ```mermaid
 flowchart LR
     CSV1[CSV estáticos] --> LH[(Lakehouse<br/>Bretema_LH)]
-    CSV2[CSV histórico] --> EH[(Eventhouse<br/>EH_Bretema)]
+    CSV2[CSV histórico] --> EH[(Eventhouse<br/>Bretema_EH)]
     SIM[Simulador Python] -->|Event Hubs| ES[Eventstream<br/>ES_Transacciones] --> EH
     EH --> KQL[Funciones KQL<br/>de detección]
     KQL --> RTD[Real-Time Dashboard]

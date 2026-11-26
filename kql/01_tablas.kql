@@ -1,7 +1,7 @@
 // ============================================================================
 // Banco Brétema · 01 · Tablas del Eventhouse
 //
-// Dónde: Eventhouse EH_Bretema › base de datos KQL EH_Bretema › Explorar los datos
+// Dónde: Eventhouse Bretema_EH › base de datos KQL Bretema_EH › Explorar los datos
 //        (o un conjunto de consultas KQL conectado a esa base de datos).
 // Cómo:  ejecuta cada comando por separado: coloca el cursor en él y pulsa Ejecutar.
 //
@@ -89,18 +89,22 @@
 ) with (folder = "Referencia")
 
 // Mapeo JSON para los eventos del simulador. El asistente del Eventstream crea
-// uno equivalente; este sirve si configuras la ingesta a mano.
+// uno equivalente; este sirve si configuras la ingesta a mano. Es opcional:
+// no hace falta para cargar los CSV.
+// La ruta de cada campo va dentro de "Properties", como en la documentación
+// actual. La versión anterior de este comando, con "path" y "datatype" junto a
+// "column", devolvió BadRequest_InvalidMapping en Fabric.
 .create-or-alter table transacciones ingestion json mapping "transacciones_json"
 ```
 [
-    {"column": "transaccion_id", "path": "$.transaccion_id", "datatype": "string"},
-    {"column": "tarjeta_id",     "path": "$.tarjeta_id",     "datatype": "string"},
-    {"column": "comercio_id",    "path": "$.comercio_id",    "datatype": "string"},
-    {"column": "fecha_hora",     "path": "$.fecha_hora",     "datatype": "datetime"},
-    {"column": "importe_eur",    "path": "$.importe_eur",    "datatype": "real"},
-    {"column": "canal",          "path": "$.canal",          "datatype": "string"},
-    {"column": "pais",           "path": "$.pais",           "datatype": "string"},
-    {"column": "resultado",      "path": "$.resultado",      "datatype": "string"}
+    {"column": "transaccion_id", "Properties": {"Path": "$.transaccion_id"}},
+    {"column": "tarjeta_id",     "Properties": {"Path": "$.tarjeta_id"}},
+    {"column": "comercio_id",    "Properties": {"Path": "$.comercio_id"}},
+    {"column": "fecha_hora",     "Properties": {"Path": "$.fecha_hora"}},
+    {"column": "importe_eur",    "Properties": {"Path": "$.importe_eur"}},
+    {"column": "canal",          "Properties": {"Path": "$.canal"}},
+    {"column": "pais",           "Properties": {"Path": "$.pais"}},
+    {"column": "resultado",      "Properties": {"Path": "$.resultado"}}
 ]
 ```
 

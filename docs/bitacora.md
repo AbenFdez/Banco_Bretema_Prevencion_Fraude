@@ -17,6 +17,9 @@ Para cada sesión nueva, copia la plantilla del final.
 - **Ejecutado en Fabric el notebook `01_cargar_lakehouse`** sobre `Bretema_LH`, con `ORIGEN = "files"` y `CARPETA = "Files"` (los CSV subidos a mano): terminó sin errores y sin tocar el código. Es la primera ejecución real con Delta.
 - **Fase 1 terminada**: en **Tables › dbo** están las once tablas (las ocho del banco, `app_alertas`, `app_movimientos` y `revisiones`) y la sesión de Spark quedó parada.
 
+- Fase 2: creadas en `Bretema_EH` las seis tablas con `kql/01_tablas.kql` (carpetas **Banco** y **Referencia**) y el mapeo JSON `transacciones_json`. Todavía vacías: falta cargar los CSV. Es la primera vez que el script se ejecuta en un Eventhouse real.
+- Fase 2 en marcha: creado el Eventhouse **`Bretema_EH`**, con su base de datos KQL del mismo nombre, en Spain Central. La guía, los scripts KQL y el resto del repositorio usan ya ese nombre (antes `EH_Bretema`).
+
 **Notebooks**
 - Nuevo `notebooks/01_crear_tablas_sql.ipynb`: crea las mismas tablas que `01_cargar_lakehouse`, pero con `CREATE TABLE` e `INSERT … SELECT` en Spark SQL, una sentencia por celda. Lee los CSV de `Files/`.
 
@@ -32,6 +35,10 @@ Para cada sesión nueva, copia la plantilla del final.
 - `assets/capturas/12-notebook-con-lakehouse.png`: el notebook `01_cargar_lakehouse` abierto en Fabric, con `Bretema_LH` como Lakehouse predeterminado y la celda de parámetros con los valores por defecto. En la [fase 1](paso-a-paso/01-lakehouse.md); todavía no está en la presentación.
 - `assets/capturas/13-notebook-comprobaciones-ok.png`: el final del notebook `01_cargar_lakehouse` ejecutado en Fabric, con las cinco comprobaciones en `OK` y las oficinas con más alertas abiertas. Recortada para dejar fuera las pestañas del navegador. En la [fase 1](paso-a-paso/01-lakehouse.md); todavía no está en la presentación.
 - `assets/capturas/14-lakehouse-once-tablas.png`: el explorador del notebook con las once tablas de `Bretema_LH` en **Tables › dbo** y la celda de parámetros tal como se ejecutó. Recortada para dejar fuera las pestañas del navegador. En la [fase 1](paso-a-paso/01-lakehouse.md); todavía no está en la presentación.
+- `assets/capturas/21-eventhouse-queryset-vacio.png`: el conjunto de consultas `Bretema_EH_queryset` abierto y vacío, antes de crear las tablas. Recortada para dejar fuera las pestañas del navegador. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
+- `assets/capturas/22-eventhouse-mapeo-json.png`: el mapeo JSON creado, con el comando corregido en una pestaña nueva del conjunto de consultas. Recortada y con el identificador de la base de datos tapado. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
+- `assets/capturas/23-eventhouse-seis-tablas.png`: el panel del Eventhouse con las carpetas **Banco** y **Referencia** desplegadas y las seis tablas. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
+- `assets/capturas/20-eventhouse-creado.png`: el Eventhouse `Bretema_EH` recién creado, vacío, con su base de datos KQL. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/00-capacidad-f2-azure.png`: la capacidad F2 en el portal de Azure, activa y en Spain Central. Está recortada y con el identificador de la suscripción tapado. En la [fase 0](paso-a-paso/00-preparacion.md); todavía no está en la presentación.
 
 **Presentación**
@@ -42,6 +49,12 @@ Para cada sesión nueva, copia la plantilla del final.
 - *La opción «Fabric» salía en gris al crear el área de trabajo*, aunque la capacidad estaba activa en Azure y los permisos ya eran correctos en el portal de administración. **Se resolvió recargando la página de Fabric**: el panel se había abierto antes de que Fabric reconociera la capacidad. Qué comprobar si recargar no basta: [fase 0](paso-a-paso/00-preparacion.md#si-la-opción-fabric-sale-en-gris).
 - *Los ajustes del inquilino pueden tardar hasta una hora*, no unos minutos como decía la guía. Corregido.
 - *Un repositorio dentro de OneDrive y `git am` con varios cambios seguidos no se llevan bien.* Al aplicar doce parches de una vez, git se paró dos veces con «does not match index», cada vez en un paso distinto: los archivos que acababa de escribir un parche figuraban como cambiados al aplicar el siguiente. Pausar OneDrive no lo evitó. Se resolvió juntando todo en **un único parche**, que entró a la primera. Desde ahora cada actualización llega como un solo archivo `.patch`. Si vuelve a pasar: `git am --abort` deja el repositorio como estaba.
+
+- *Fabric crea un conjunto de consultas con cada base de datos KQL*: `Bretema_EH_queryset`, colgando de la base de datos en el panel del Eventhouse. No hace falta crear uno para la fase 2; la guía indica ya ese camino. La fase 4 habla todavía de crear `KQL_Fraude`: falta decidir si se usa el que crea Fabric.
+- *En el conjunto de consultas, **Run** ejecuta lo que esté seleccionado.* Con todo el archivo seleccionado intentó ejecutar las 125 líneas como una sola consulta y devolvió «Syntax error: A recognition error occurred». Los comandos que empiezan por punto van de uno en uno: un clic dentro del comando, sin seleccionar, y **Run**.
+- *La consulta de comprobación ejecutada antes de tiempo* da «Failed to resolve table expression named 'tarjetas'»: avisa de que falta una tabla y no cambia nada.
+- *El mapeo JSON del script estaba mal.* Con `"path"` y `"datatype"` junto a `"column"`, Fabric devolvió `BadRequest_InvalidMapping`. Corregido en `kql/01_tablas.kql`: la ruta va dentro de `"Properties": {"Path": …}`, como en la documentación actual. Con ese formato se creó a la primera (0,2 s).
+- *Para copiar un script del repositorio sin abrirlo*: `pbcopy < kql/01_tablas.kql` desde la terminal, o el botón **Copy raw file** del archivo en GitHub.
 
 **Decisiones**
 - *Haremos las dos variantes de la ontología*, cada una en su elemento: `BancoBretemaFraude`, con todo enlazado al Lakehouse, y `BancoBretemaFraude_RT`, con Transaccion y Alerta enlazadas al Eventhouse. Así la demo enseña el compromiso entre recorridos por el grafo y tiempo real, y queda resuelta la duda de dónde enlazar las transacciones. Detalle en la [fase 6](paso-a-paso/06-ontologia.md#dos-variantes-dos-ontologías).
@@ -57,7 +70,9 @@ Para cada sesión nueva, copia la plantilla del final.
 - [x] Fase 1: comprobar que en **Tables › dbo** hay once tablas y guardar la captura.
 - [ ] El texto del notebook `01_cargar_lakehouse` habla de `Files/datos`, pero la guía sube los CSV a `Files/`. Unificarlo.
 - [ ] Fase 1: ejecutar en Fabric `01_crear_tablas_sql`, que solo se ha probado en local. Recrea las mismas tablas, así que se puede lanzar sobre el mismo Lakehouse.
-- [ ] Actualizar la presentación: todavía dice `LH_Bretema` y le faltan las capturas de la capacidad, del Lakehouse, de las once tablas y de las comprobaciones del notebook.
+- [ ] Actualizar la presentación: todavía dice `LH_Bretema` y `EH_Bretema`, y le faltan las capturas de la capacidad, del Lakehouse, de las once tablas y de las comprobaciones del notebook.
+- [ ] Decidir si la fase 4 usa `Bretema_EH_queryset` o un conjunto de consultas nuevo (`KQL_Fraude`), y unificar la guía y el guion.
+- [ ] Fase 2: cargar los seis CSV en el Eventhouse, ejecutar la comprobación de filas, `perfil_tarjetas` y las funciones de `kql/02_funciones.kql`.
 - [ ] Pausar la capacidad al terminar cada sesión.
 
 ---
@@ -104,7 +119,7 @@ Para cada sesión nueva, copia la plantilla del final.
 
 **Pendiente**
 - [ ] Probar el envío real al Eventstream con la cadena de conexión de `ES_Transacciones` (fase 3) y anotar la latencia.
-- [ ] Ejecutar los scripts KQL en `EH_Bretema` y confirmar las cifras del bloque C. Los scripts no se han podido ejecutar en un Eventhouse real todavía.
+- [ ] Ejecutar los scripts KQL en `Bretema_EH` y confirmar las cifras del bloque C. Los scripts no se han podido ejecutar en un Eventhouse real todavía.
 - [ ] Importar `banco_bretema.ttl` y anotar el resumen de la importación.
 - [x] Decidir dónde se enlazan Transaccion y Alerta para la demo del agente: se hacen las dos variantes (decisión del 26 de noviembre).
 - [ ] Hacer las capturas pendientes de la presentación y sustituir los huecos (lista en [presentacion/README.md](presentacion/README.md)).

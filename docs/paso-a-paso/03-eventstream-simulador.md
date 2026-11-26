@@ -8,7 +8,7 @@ flowchart LR
     subgraph ES_Transacciones
         EP --> DST[Destino Eventhouse]
     end
-    DST --> T[("EH_Bretema<br/>transacciones")]
+    DST --> T[("Bretema_EH<br/>transacciones")]
 ```
 
 ## 1. Crear el Eventstream
@@ -17,7 +17,7 @@ flowchart LR
 2. **Agregar origen › Endpoint personalizado** (Custom endpoint). Nombre del origen: `simulador`. Pulsa **Agregar**.
 3. **Agregar destino › Eventhouse**:
    - Modo de ingesta: **Ingesta directa** (Direct ingestion).
-   - Área de trabajo `Bretema`, Eventhouse `EH_Bretema`, base de datos `EH_Bretema`.
+   - Área de trabajo `Bretema`, Eventhouse `Bretema_EH`, base de datos `Bretema_EH`.
    - Nombre del destino: `transacciones`.
 4. Pulsa **Publicar**.
 5. Con el Eventstream publicado, en el nodo del destino, pulsa **Configurar**: elige la **tabla existente** `transacciones` y, como formato, **JSON**. El asistente propone el mapeo con las ocho columnas; comprueba que `fecha_hora` es `datetime` e `importe_eur` es `real`. Si prefieres, elige el mapeo `transacciones_json` creado en la fase 2.

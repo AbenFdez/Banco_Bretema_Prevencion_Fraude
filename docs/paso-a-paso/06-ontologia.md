@@ -10,7 +10,7 @@ La ontología da nombre de negocio a lo que hay en el Lakehouse y en el Eventhou
 | Cuenta | Lakehouse | `cuentas` | `cuenta_id` |
 | Tarjeta | Lakehouse | `tarjetas` | `tarjeta_id` |
 | Comercio | Lakehouse | `comercios` | `comercio_id` |
-| Transaccion | **Eventhouse `EH_Bretema`** | `transacciones` (histórico y tiempo real) | `transaccion_id` |
+| Transaccion | **Eventhouse `Bretema_EH`** | `transacciones` (histórico y tiempo real) | `transaccion_id` |
 | Alerta | **Eventhouse** | `alertas` | `alerta_id` |
 | Revision | Lakehouse | `revisiones` (solo si haces la fase 7) | `revision_id` |
 
@@ -20,7 +20,7 @@ Los pasos detallados, con las relaciones, las reglas y las instrucciones del age
 
 1. **Nuevo elemento › Ontology (preview)**, con el nombre `BancoBretemaFraude`.
 2. **Import ontology** con `ontologia/banco_bretema.ttl`: crea 9 entidades y 12 relaciones con descripciones y sinónimos.
-3. Enlaza cada entidad con su tabla según la tabla de arriba (**Bind data › OneLake catalog**). Para Transaccion y Alerta, abre el Eventhouse `EH_Bretema` en lugar del Lakehouse. Si el asistente pide una columna de marca de tiempo, elige `fecha_hora`.
+3. Enlaza cada entidad con su tabla según la tabla de arriba (**Bind data › OneLake catalog**). Para Transaccion y Alerta, abre el Eventhouse `Bretema_EH` en lugar del Lakehouse. Si el asistente pide una columna de marca de tiempo, elige `fecha_hora`.
 4. Elige la clave de cada entidad y configura las 12 relaciones.
 5. Añade las cuatro reglas de negocio.
 6. **Grafo**: materialízalo con las entidades del Lakehouse. Las del Eventhouse no entran en el grafo, que solo admite tablas Delta de Lakehouse o bases de datos reflejadas.
@@ -33,7 +33,7 @@ La ontología admite las dos fuentes: tablas de Lakehouse y tablas de un Eventho
 | | Variante A · Todo en el Lakehouse | Variante B · Lakehouse y Eventhouse |
 | --- | --- | --- |
 | Elemento | `BancoBretemaFraude` | `BancoBretemaFraude_RT` |
-| Transaccion y Alerta | Tablas Delta `transacciones` y `alertas` de `Bretema_LH` | Tablas `transacciones` y `alertas` de `EH_Bretema` |
+| Transaccion y Alerta | Tablas Delta `transacciones` y `alertas` de `Bretema_LH` | Tablas `transacciones` y `alertas` de `Bretema_EH` |
 | Resto de entidades | Lakehouse | Lakehouse |
 | Qué ganas | Las nueve entidades entran en el grafo: el agente recorre alerta → tarjeta → transacción → comercio | La ontología ve las operaciones del simulador en cuanto llegan |
 | Qué pierdes | El tiempo real: el Lakehouse solo tiene el histórico | Transaccion y Alerta quedan fuera del grafo |

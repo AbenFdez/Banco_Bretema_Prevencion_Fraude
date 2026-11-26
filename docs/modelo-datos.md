@@ -1,6 +1,6 @@
 # Modelo de datos
 
-Ocho tablas del banco, dos tablas preparadas para la Fabric App y la tabla de decisiones que vuelve de la app. Las seis tablas estáticas van al Lakehouse `Bretema_LH`; `transacciones` y `alertas`, al Eventhouse `EH_Bretema`, donde también llegan las operaciones del simulador. El histórico cubre del 1 de junio al 24 de noviembre de 2026.
+Ocho tablas del banco, dos tablas preparadas para la Fabric App y la tabla de decisiones que vuelve de la app. Las seis tablas estáticas van al Lakehouse `Bretema_LH`; `transacciones` y `alertas`, al Eventhouse `Bretema_EH`, donde también llegan las operaciones del simulador. El histórico cubre del 1 de junio al 24 de noviembre de 2026.
 
 ```mermaid
 erDiagram

@@ -63,6 +63,10 @@ Las capturas se guardan en [`assets/capturas/`](../../assets/capturas/) con esto
 | `12-notebook-con-lakehouse.png` | Notebook `01_cargar_lakehouse` abierto, con el Lakehouse predeterminado y la celda de parámetros | Sin diapositiva todavía | ✅ |
 | `13-notebook-comprobaciones-ok.png` | Final del notebook `01_cargar_lakehouse` en Fabric: cinco comprobaciones en `OK` y oficinas con más alertas abiertas | Sin diapositiva todavía | ✅ |
 | `14-lakehouse-once-tablas.png` | Las once tablas de `Bretema_LH` en **Tables › dbo** y la celda de parámetros ejecutada | Sin diapositiva todavía | ✅ |
+| `20-eventhouse-creado.png` | Eventhouse `Bretema_EH` recién creado, con su base de datos KQL | Sin diapositiva todavía | ✅ |
+| `21-eventhouse-queryset-vacio.png` | Conjunto de consultas `Bretema_EH_queryset` abierto y vacío, antes de crear las tablas | Sin diapositiva todavía | ✅ |
+| `22-eventhouse-mapeo-json.png` | Mapeo JSON `transacciones_json` creado en el conjunto de consultas | Sin diapositiva todavía | ✅ |
+| `23-eventhouse-seis-tablas.png` | Panel del Eventhouse con las seis tablas en las carpetas **Banco** y **Referencia** | Sin diapositiva todavía | ✅ |
 | `01-eventstream-vista-previa.png` | Eventstream `ES_Transacciones` con la vista previa de datos | 17 | Pendiente |
 | `02-kql-rafagas.png` | Consultas B5 y B6 con una ráfaga | 21 (opcional, sin hueco) | Pendiente |
 | `03-panel-fraude-en-directo.png` | Real-Time Dashboard con una ráfaga recién detectada | 23 | Pendiente |

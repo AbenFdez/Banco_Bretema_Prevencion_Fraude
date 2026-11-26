@@ -4,7 +4,7 @@ Con el simulador enviando, KQL permite ver el fraude a medida que ocurre. Las fu
 
 ## 1. Conjunto de consultas
 
-1. **Nuevo elemento › Conjunto de consultas KQL**, con el nombre `KQL_Fraude`, conectado a la base de datos `EH_Bretema`.
+1. **Nuevo elemento › Conjunto de consultas KQL**, con el nombre `KQL_Fraude`, conectado a la base de datos `Bretema_EH`.
 2. Pega [`kql/03_consultas_demo.kql`](../../kql/03_consultas_demo.kql). Cada bloque se ejecuta por separado.
 
 Orden recomendado para la demo:
@@ -24,7 +24,7 @@ Los operadores que conviene explicar: `lookup` (cruce con las tablas de referenc
 ## 2. Real-Time Dashboard «Fraude en directo»
 
 1. **Nuevo elemento › Real-Time Dashboard**, con el nombre `Fraude en directo`.
-2. **Agregar origen de datos**: la base de datos KQL `EH_Bretema`.
+2. **Agregar origen de datos**: la base de datos KQL `Bretema_EH`.
 3. Crea un mosaico por cada consulta de [`kql/04_panel_tiempo_real.kql`](../../kql/04_panel_tiempo_real.kql), con el visual que indica el comentario.
 4. Arriba, pon el intervalo de tiempo en **Últimos 30 minutos** y la **actualización automática** cada 10 segundos.
 5. Guarda.

@@ -2,7 +2,7 @@
 // Banco Brétema · 04 · Real-Time Dashboard «Fraude en directo»
 //
 // Una consulta por mosaico. En el panel, crea el mosaico con «Agregar mosaico»,
-// elige la base de datos EH_Bretema, pega la consulta y elige el visual indicado.
+// elige la base de datos Bretema_EH, pega la consulta y elige el visual indicado.
 // _startTime y _endTime son los parámetros de intervalo de tiempo del panel:
 // ponlo en «Últimos 30 minutos» y la actualización automática cada 10 segundos.
 // ============================================================================
