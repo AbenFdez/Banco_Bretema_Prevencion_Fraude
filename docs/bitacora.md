@@ -6,7 +6,7 @@ Para cada sesión nueva, copia la plantilla del final.
 
 ---
 
-## 26 de noviembre de 2026 · Fases 0, 1 y 2: capacidad, Lakehouse y Eventhouse
+## 26 de noviembre de 2026 · Fases 0, 1 y 2: capacidad, Lakehouse y Eventhouse, terminadas
 
 **Hecho, en orden**
 
@@ -38,6 +38,9 @@ Para cada sesión nueva, copia la plantilla del final.
 19. Comprobación final, a las 16:22: las seis tablas con sus filas (949, 2.400, 294, 24, 3.236 y 161.462) y todas las columnas de número y de fecha con valor. **Carga del Eventhouse terminada.**
 20. Creada la tabla `perfil_tarjetas` con `.set-or-replace`: 3.236 filas, una por tarjeta, en menos de un segundo. Aparece la carpeta **Fraude**.
 21. Creadas las cinco funciones de `kql/02_funciones.kql`, a la primera y sin errores: `fn_transacciones`, `fn_rafagas`, `fn_alertas_tiempo_real`, `fn_punto_compromiso` y `fn_tarjetas_expuestas`, en **Functions › Fraude**. Es la primera vez que el script se ejecuta en un Eventhouse real.
+22. Primera consulta de la demo, C2 (`fn_punto_compromiso`): **Gasolineira Ponte Alta, 23 de 27 tarjetas, 85,2 %**; los comercios siguientes, 11 (40,7 %). Coincide con lo calculado sobre los CSV. En 0,3 segundos.
+23. C3 (`fn_tarjetas_expuestas`): **93 tarjetas** pasaron por Ponte Alta del 3 al 11 de octubre; 70 activas y 23 bloqueadas.
+24. C5, el gráfico de anomalías: las compras diarias en comercios de riesgo alto, estables hasta mediados de octubre y disparadas después, con el pico de 17 del 7 de noviembre marcado como anomalía. **Fase 2 terminada.**
 
 Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema` (área de trabajo), `Bretema_LH` (antes `LH_Bretema`) y `Bretema_EH` (antes `EH_Bretema`).
 
@@ -75,6 +78,9 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - `assets/capturas/31-eventhouse-comprobacion-final.png`: la comprobación de tipos con las seis tablas correctas. Las cuatro están en la [fase 2](paso-a-paso/02-eventhouse.md#4-comprobar-la-carga); todavía no están en la presentación.
 - `assets/capturas/32-eventhouse-perfil-tarjetas.png`: la tabla `perfil_tarjetas` recién creada, con 3.236 filas. En la [fase 2](paso-a-paso/02-eventhouse.md#5-preparar-la-detección); todavía no está en la presentación.
 - `assets/capturas/33-eventhouse-funciones.png`: el panel con las cinco funciones en **Functions › Fraude**. En la [fase 2](paso-a-paso/02-eventhouse.md#5-preparar-la-detección); todavía no está en la presentación.
+- `assets/capturas/34-eventhouse-punto-compromiso.png`: el resultado de C2, con Ponte Alta en cabeza. En la [fase 2](paso-a-paso/02-eventhouse.md#6-primeras-consultas-sobre-el-histórico); es la captura prevista para la diapositiva 22.
+- `assets/capturas/35-eventhouse-tarjetas-expuestas.png`: el resultado de C3, 93 tarjetas expuestas.
+- `assets/capturas/36-eventhouse-grafico-anomalias.png`: el gráfico de anomalías de C5. Las dos están en la [fase 2](paso-a-paso/02-eventhouse.md#6-primeras-consultas-sobre-el-histórico); la 36 es la otra captura que la presentación tenía reservada.
 - `assets/capturas/20-eventhouse-creado.png`: el Eventhouse `Bretema_EH` recién creado, vacío, con su base de datos KQL. En la [fase 2](paso-a-paso/02-eventhouse.md); todavía no está en la presentación.
 - `assets/capturas/00-capacidad-f2-azure.png`: la capacidad F2 en el portal de Azure, activa y en Spain Central. Está recortada y con el identificador de la suscripción tapado. En la [fase 0](paso-a-paso/00-preparacion.md); todavía no está en la presentación.
 
@@ -121,7 +127,9 @@ Los nombres reales sustituyen a los de la guía en todo el repositorio: `Bretema
 - [x] Fase 2: confirmar las seis cargas con las consultas de comprobación.
 - [x] Fase 2: crear `perfil_tarjetas`.
 - [x] Fase 2: crear las cinco funciones de `kql/02_funciones.kql`.
-- [ ] Fase 2: probar las consultas C del histórico (`kql/03_consultas_demo.kql`) y confirmar las cifras de la presentación.
+- [x] Fase 2: probar las consultas C2, C3 y C5 del histórico. Coinciden con las cifras de la presentación.
+- [ ] Probar el resto del bloque C (C1, C4, C6 y C7) cuando se ensaye el guion.
+- [ ] Fase 3: crear el Eventstream y arrancar el simulador.
 - [ ] Probar una carga con el asistente sobre una tabla creada con el script nuevo (`long`), para confirmar que ya no aparece la columna `_1`.
 - [ ] Decidir cuándo y dónde activar **OneLake availability** (previsiblemente en `transacciones` y `alertas`, para la variante B de la ontología) y comprobar si incluye los datos ya cargados.
 - [ ] Pausar la capacidad al terminar cada sesión.

@@ -237,9 +237,51 @@ Prueba el bloque C de [`kql/03_consultas_demo.kql`](../../kql/03_consultas_demo.
 | C5 · Compras diarias en comercios de riesgo alto | Media de 1,6 al día de junio a septiembre y de 5,3 desde el 19 de octubre; pico de 17 el 7 de noviembre |
 | C6 · País inusual | 469 alertas: 448 cerradas, todas falso positivo, y 21 abiertas |
 
+**C2 es la consulta central de la historia.** Pregunta en qué comercios presenciales coincidieron, en los 60 días anteriores a su primera alerta, las tarjetas con fraude confirmado:
+
+```kql
+fn_punto_compromiso(datetime(2026-10-15), datetime(2026-11-30))
+| take 10
+```
+
+![Resultado de fn_punto_compromiso: Gasolineira Ponte Alta con 23 de 27 tarjetas (85,2 %) y, a continuación, comercios con 11 o menos](../../assets/capturas/34-eventhouse-punto-compromiso.png)
+
+De las 27 tarjetas, **23 pasaron por la Gasolineira Ponte Alta (85,2 %)**. El siguiente comercio coincide en 11 (40,7 %): la diferencia es lo que señala a la gasolinera como punto de compromiso. Respondió en 0,3 segundos sobre 161.462 transacciones.
+
+**C3 mide el alcance.** Si la gasolinera es el punto de compromiso, ¿cuántas tarjetas pasaron por allí en los días del fraude?
+
+```kql
+fn_tarjetas_expuestas()
+| summarize tarjetas = count(), activas = countif(estado_tarjeta == "Activa"), bloqueadas = countif(estado_tarjeta == "Bloqueada")
+```
+
+![Resultado de fn_tarjetas_expuestas: 93 tarjetas, 70 activas y 23 bloqueadas](../../assets/capturas/35-eventhouse-tarjetas-expuestas.png)
+
+**93 tarjetas** pasaron por Ponte Alta del 3 al 11 de octubre. Las 23 bloqueadas son las que ya tienen fraude confirmado; las otras **70 siguen activas** y son las que hay que vigilar. La pregunta deja de ser «qué tarjetas han tenido fraude» y pasa a ser «qué tarjetas pueden tenerlo».
+
+**C5 enseña que el histórico ya lo decía.** Cuenta por día las compras en comercios de riesgo alto y deja que KQL marque los días anómalos:
+
+```kql
+transacciones
+| where fecha_hora between (datetime(2026-06-01) .. datetime(2026-11-25))
+| lookup kind = leftouter (comercios | project comercio_id, nivel_riesgo) on comercio_id
+| where nivel_riesgo == "Alto"
+| make-series operaciones = count() default = 0 on fecha_hora from datetime(2026-06-01) to datetime(2026-11-25) step 1d
+| extend anomalias = series_decompose_anomalies(operaciones, 2.5)
+| render anomalychart with (anomalycolumns = anomalias)
+```
+
+![Gráfico de anomalías: compras diarias en comercios de riesgo alto, estables de junio a mediados de octubre y disparadas después, con dos días marcados como anomalía](../../assets/capturas/36-eventhouse-grafico-anomalias.png)
+
+- `make-series` convierte las filas en una serie con un valor por día, y pone 0 en los días sin compras.
+- `series_decompose_anomalies` separa la tendencia y el ruido de la serie y marca los puntos que se salen de lo esperado. El `2.5` es la sensibilidad.
+- `render anomalychart` dibuja la serie y pone en rojo las anomalías. El resultado aparece en la pestaña **Visual**; a la derecha, **Visual Formatting** permite cambiar el tipo de gráfico.
+
+De junio a mediados de octubre la línea se mueve entre 0 y 6 compras al día. Desde la segunda quincena de octubre se dispara, con un pico de **17 el 7 de noviembre**, marcado en rojo. Nadie miraba esta serie: el motor de reglas evaluaba cada operación por separado.
+
 ## Qué apuntar en la bitácora
 
-- El tiempo que tardó la carga de `transacciones.csv`.
+- El tiempo que tardó la carga de `transacciones.csv` (el 26 de noviembre no se midió).
 - Si las cifras de las consultas C coinciden.
 - Capturas de C2 (punto de compromiso) y C5 (gráfico de anomalías): son dos buenos momentos de la demo.
 

@@ -77,6 +77,9 @@ Las capturas se guardan en [`assets/capturas/`](../../assets/capturas/) con esto
 | `31-eventhouse-comprobacion-final.png` | Comprobación final de la carga del Eventhouse, todo correcto | Sin diapositiva todavía | ✅ |
 | `32-eventhouse-perfil-tarjetas.png` | Tabla `perfil_tarjetas` creada con `.set-or-replace`: 3.236 filas | Sin diapositiva todavía | ✅ |
 | `33-eventhouse-funciones.png` | Las cinco funciones de detección en **Functions › Fraude** | Sin diapositiva todavía | ✅ |
+| `34-eventhouse-punto-compromiso.png` | Resultado de C2: Ponte Alta, 23 de 27 tarjetas (85,2 %) | Prevista para la 22; todavía sin poner | ✅ |
+| `35-eventhouse-tarjetas-expuestas.png` | Resultado de C3: 93 tarjetas expuestas, 70 activas y 23 bloqueadas | Sin diapositiva todavía | ✅ |
+| `36-eventhouse-grafico-anomalias.png` | Gráfico de anomalías de C5, con el pico de 17 del 7 de noviembre | Sin diapositiva todavía | ✅ |
 | `01-eventstream-vista-previa.png` | Eventstream `ES_Transacciones` con la vista previa de datos | 17 | Pendiente |
 | `02-kql-rafagas.png` | Consultas B5 y B6 con una ráfaga | 21 (opcional, sin hueco) | Pendiente |
 | `03-panel-fraude-en-directo.png` | Real-Time Dashboard con una ráfaga recién detectada | 23 | Pendiente |
@@ -91,4 +94,4 @@ En ninguna captura puede verse la cadena de conexión del Eventstream.
 
 ## Qué falta por comprobar
 
-Las cifras de las diapositivas 13, 22 y 27 salen de `scripts/comprobar_historia.py` sobre los CSV. En Fabric están confirmadas las cinco que comprueba el notebook 01 (53 alertas abiertas, 37 tarjetas bloqueadas, 949 alertas, 161.462 transacciones y 93 tarjetas en Ponte Alta); el resto todavía no se ha confirmado en el Eventhouse ni con el agente. Tampoco están medidas las latencias de la diapositiva 20 ni los tiempos de la 18: son los de la guía. Las notas del orador lo indican en cada caso.
+Las cifras de las diapositivas 13, 22 y 27 salen de `scripts/comprobar_historia.py` sobre los CSV. En Fabric están confirmadas las cinco que comprueba el notebook 01 (53 alertas abiertas, 37 tarjetas bloqueadas, 949 alertas, 161.462 transacciones y 93 tarjetas en Ponte Alta) y, en el Eventhouse, la de la diapositiva 22 (23 de 27 tarjetas, 85,2 %), las 93 tarjetas expuestas y el pico de 17 compras del 7 de noviembre; el resto todavía no se ha confirmado en el Eventhouse ni con el agente. Tampoco están medidas las latencias de la diapositiva 20 ni los tiempos de la 18: son los de la guía. Las notas del orador lo indican en cada caso.
