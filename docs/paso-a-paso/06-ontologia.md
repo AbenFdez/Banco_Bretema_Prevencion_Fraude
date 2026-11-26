@@ -4,7 +4,7 @@ La ontología da nombre de negocio a lo que hay en el Lakehouse y en el Eventhou
 
 | Entidad | Origen | Tabla | Clave |
 | --- | --- | --- | --- |
-| Oficina | Lakehouse `LH_Bretema` | `oficinas` | `oficina_id` |
+| Oficina | Lakehouse `Bretema_LH` | `oficinas` | `oficina_id` |
 | Gestor | Lakehouse | `gestores` | `gestor_id` |
 | Cliente | Lakehouse | `clientes` | `cliente_id` |
 | Cuenta | Lakehouse | `cuentas` | `cuenta_id` |
@@ -26,9 +26,23 @@ Los pasos detallados, con las relaciones, las reglas y las instrucciones del age
 6. **Grafo**: materialízalo con las entidades del Lakehouse. Las del Eventhouse no entran en el grafo, que solo admite tablas Delta de Lakehouse o bases de datos reflejadas.
 7. **Agente de datos** `AG_Bretema` con la ontología como fuente y las instrucciones del README de la ontología.
 
-### Si quieres el histórico dentro del grafo
+## Dos variantes, dos ontologías
 
-Ejecuta el notebook `01_cargar_lakehouse` (crea también `transacciones` y `alertas` en el Lakehouse) y enlaza Transaccion y Alerta a esas tablas en lugar de al Eventhouse. Ganas recorridos por el grafo, pero pierdes el tiempo real en la ontología.
+La ontología admite las dos fuentes: tablas de Lakehouse y tablas de un Eventhouse. En la demo hacemos las dos variantes, cada una en su propio elemento Ontology, para enseñar qué se gana y qué se pierde con cada una. El archivo Turtle es el mismo; solo cambia dónde se enlazan Transaccion y Alerta.
+
+| | Variante A · Todo en el Lakehouse | Variante B · Lakehouse y Eventhouse |
+| --- | --- | --- |
+| Elemento | `BancoBretemaFraude` | `BancoBretemaFraude_RT` |
+| Transaccion y Alerta | Tablas Delta `transacciones` y `alertas` de `Bretema_LH` | Tablas `transacciones` y `alertas` de `EH_Bretema` |
+| Resto de entidades | Lakehouse | Lakehouse |
+| Qué ganas | Las nueve entidades entran en el grafo: el agente recorre alerta → tarjeta → transacción → comercio | La ontología ve las operaciones del simulador en cuanto llegan |
+| Qué pierdes | El tiempo real: el Lakehouse solo tiene el histórico | Transaccion y Alerta quedan fuera del grafo |
+| Preguntas del guion | P1 a P8 | P1, P5 y la pregunta sobre la última ráfaga |
+| Requisito | Notebook `01_cargar_lakehouse`, que crea también `transacciones` y `alertas` en el Lakehouse | Fases 2 y 3 hechas |
+
+La tabla del principio de esta página describe la variante B. Para la variante A, enlaza Transaccion y Alerta al Lakehouse igual que las demás.
+
+Empieza por la variante A: es la que responde a las preguntas del punto de compromiso. Que las entidades del Eventhouse no entren en el grafo es lo que indicaba la documentación cuando se preparó la guía; anota en la bitácora lo que diga **Review validation** al materializarlo.
 
 ## Preguntas para probar el agente
 
@@ -44,6 +58,7 @@ Más preguntas y respuestas en el [guion de la demo](../guion-demo.md).
 
 - El resumen de la importación del Turtle: cuántos elementos quedaron como *Preserved*, *Fixed automatically* o *Not supported*.
 - Si el enlace con el Eventhouse pidió columna de tiempo y cómo se comportó.
+- En la variante B, qué entidades marca el grafo como no aptas.
 - Las respuestas reales del agente a cada pregunta.
 
 Siguiente: [Fase 7 · Fabric App](07-fabric-app.md)

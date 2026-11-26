@@ -27,7 +27,7 @@ services:
     embedded:
       only: false
 
-# Lectura del Lakehouse LH_Bretema a través de su punto de conexión SQL de análisis.
+# Lectura del Lakehouse Bretema_LH a través de su punto de conexión SQL de análisis.
 # Los identificadores se leen de rayfin/.env (copia rayfin/.env.example y rellénalo).
 # La app lee con su propia identidad (la de quien la despliega), así que esa
 # persona necesita acceso de lectura al Lakehouse.

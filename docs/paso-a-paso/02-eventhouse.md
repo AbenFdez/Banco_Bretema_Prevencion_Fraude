@@ -22,7 +22,7 @@ Para cada fila de la tabla: en la base de datos, **Obtener datos › Archivo loc
 
 | Tabla | CSV | Filas |
 | --- | --- | ---: |
-| `transacciones` | `transacciones.csv` (19 MB) | 161.462 |
+| `transacciones` | `transacciones.csv` (13 MB) | 161.462 |
 | `alertas` | `alertas.csv` | 949 |
 | `comercios` | `comercios.csv` | 294 |
 | `tarjetas` | `tarjetas.csv` | 3.236 |

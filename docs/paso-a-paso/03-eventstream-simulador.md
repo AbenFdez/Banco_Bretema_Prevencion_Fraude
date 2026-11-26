@@ -17,7 +17,7 @@ flowchart LR
 2. **Agregar origen › Endpoint personalizado** (Custom endpoint). Nombre del origen: `simulador`. Pulsa **Agregar**.
 3. **Agregar destino › Eventhouse**:
    - Modo de ingesta: **Ingesta directa** (Direct ingestion).
-   - Área de trabajo `Banco Brétema · Fraude`, Eventhouse `EH_Bretema`, base de datos `EH_Bretema`.
+   - Área de trabajo `Bretema`, Eventhouse `EH_Bretema`, base de datos `EH_Bretema`.
    - Nombre del destino: `transacciones`.
 4. Pulsa **Publicar**.
 5. Con el Eventstream publicado, en el nodo del destino, pulsa **Configurar**: elige la **tabla existente** `transacciones` y, como formato, **JSON**. El asistente propone el mapeo con las ocho columnas; comprueba que `fecha_hora` es `datetime` e `importe_eur` es `real`. Si prefieres, elige el mapeo `transacciones_json` creado en la fase 2.

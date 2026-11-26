@@ -31,7 +31,7 @@ Datos, simulador y guía para construir **paso a paso** una demo de Microsoft Fa
 
 ```mermaid
 flowchart LR
-    CSV1[CSV estáticos] --> LH[(Lakehouse<br/>LH_Bretema)]
+    CSV1[CSV estáticos] --> LH[(Lakehouse<br/>Bretema_LH)]
     CSV2[CSV histórico] --> EH[(Eventhouse<br/>EH_Bretema)]
     SIM[Simulador Python] -->|Event Hubs| ES[Eventstream<br/>ES_Transacciones] --> EH
     EH --> KQL[Funciones KQL<br/>de detección]
@@ -70,7 +70,8 @@ Detalle de columnas y cómo se generaron: [docs/modelo-datos.md](docs/modelo-dat
 │   ├── 04_panel_tiempo_real.kql          # Mosaicos del Real-Time Dashboard
 │   └── 05_opcional_politica_actualizacion.kql
 ├── notebooks/
-│   ├── 01_cargar_lakehouse.ipynb         # Alternativa a la carga manual
+│   ├── 01_crear_tablas_sql.ipynb         # Tablas del Lakehouse con CREATE TABLE (Spark SQL)
+│   ├── 01_cargar_lakehouse.ipynb         # Las mismas tablas con PySpark
 │   ├── 02_sincronizar_revisiones.ipynb   # Decisiones de la app → Lakehouse
 │   └── 03_simulador_tiempo_real.ipynb    # El simulador, ejecutado desde Fabric
 ├── ontologia/                  # Ontología en Turtle y su guía
@@ -81,8 +82,10 @@ Detalle de columnas y cómo se generaron: [docs/modelo-datos.md](docs/modelo-dat
 │   ├── bitacora.md             # Diario de la construcción de la demo
 │   ├── modelo-datos.md
 │   ├── guion-demo.md           # Guion para presentarla
+│   ├── presentacion/           # Presentación de la formación (PowerPoint, branding NTT DATA)
+│   ├── publicar-en-github.md   # Cómo se subió y cómo se actualiza el repositorio
 │   └── configuracion-fabric.md
-└── assets/                     # Logo y capturas
+└── assets/                     # Logo y capturas (assets/capturas/)
 ```
 
 ## Requisitos

@@ -2,7 +2,7 @@ import { entity, date, decimal, text, role } from '@microsoft/rayfin-core';
 import { Source } from '@microsoft/rayfin-connectors';
 
 /**
- * Tabla `dbo.app_movimientos` del Lakehouse LH_Bretema: las transacciones con
+ * Tabla `dbo.app_movimientos` del Lakehouse Bretema_LH: las transacciones con
  * tarjeta y los datos del comercio, para enseñar los últimos movimientos.
  *
  * Generada a mano a partir del esquema que crea notebooks/01_cargar_lakehouse.ipynb,

@@ -9,7 +9,7 @@ export { AppMovimientos } from './AppMovimientos.js';
 
 /**
  * Conector `bretema`: el punto de conexión SQL de análisis del Lakehouse
- * LH_Bretema, de solo lectura. Las operaciones tienen que coincidir con las de
+ * Bretema_LH, de solo lectura. Las operaciones tienen que coincidir con las de
  * la entrada `bretema` de rayfin/rayfin.yml.
  */
 export const connectorConfig = {

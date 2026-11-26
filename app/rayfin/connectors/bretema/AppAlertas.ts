@@ -2,7 +2,7 @@ import { entity, date, decimal, int, text, role } from '@microsoft/rayfin-core';
 import { Source } from '@microsoft/rayfin-connectors';
 
 /**
- * Tabla `dbo.app_alertas` del Lakehouse LH_Bretema: una fila por alerta del motor
+ * Tabla `dbo.app_alertas` del Lakehouse Bretema_LH: una fila por alerta del motor
  * antifraude, ya cruzada con la transacción, el comercio, la tarjeta, el cliente,
  * su oficina y su gestor.
  *

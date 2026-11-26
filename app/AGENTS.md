@@ -2,7 +2,7 @@
 
 Consola de alertas de fraude de **Banco Brétema**, un banco ficticio (datos sintéticos) para una demo de Fabric IQ y Fabric Apps.
 
-- Lee del Lakehouse `LH_Bretema` con el conector `bretema` (`fabric-sqlanalytics`, solo lectura): entidades `AppAlertas` y `AppMovimientos` en `rayfin/connectors/bretema/`.
+- Lee del Lakehouse `Bretema_LH` con el conector `bretema` (`fabric-sqlanalytics`, solo lectura): entidades `AppAlertas` y `AppMovimientos` en `rayfin/connectors/bretema/`.
 - Escribe las decisiones en la entidad propia `RevisionAlerta` (`packages/data/src/RevisionAlerta.ts`); la tabla resultante es `RevisionAlertas`, que el notebook `02_sincronizar_revisiones` copia al Lakehouse. No renombres la entidad ni sus propiedades sin actualizar ese notebook y la ontología.
 - La interfaz está en español de España.
 - Los identificadores del Lakehouse se leen de `rayfin/.env` (plantilla en `rayfin/.env.example`).

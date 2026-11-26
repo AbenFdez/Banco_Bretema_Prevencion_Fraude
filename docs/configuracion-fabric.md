@@ -1,11 +1,11 @@
 # Configuración de Fabric
 
-Lo que hay que tener listo antes de cargar datos. Si eres administradora de Fabric, todo esto lo haces tú en unos minutos. Los cambios en la configuración del tenant pueden tardar varios minutos en aplicarse.
+Lo que hay que tener listo antes de cargar datos. Si eres administradora de Fabric, todo esto lo haces tú en unos minutos. Los cambios en la configuración del tenant pueden tardar hasta una hora en aplicarse.
 
 ## 1. Capacidad y área de trabajo
 
 1. Comprueba que tu capacidad F está en una **región donde Fabric Apps está disponible**: [disponibilidad por región](https://learn.microsoft.com/fabric/admin/region-availability). Si tu región no aparece, la ontología y el agente funcionan igual, pero la app no se podrá desplegar.
-2. Crea un área de trabajo, por ejemplo `Banco Brétema · Fraude`, y asígnale la capacidad F en **Configuración del área de trabajo › Licencia**.
+2. Crea un área de trabajo, por ejemplo `Bretema`, y asígnale la capacidad F en **Configuración del área de trabajo › Licencia**.
 3. Tú necesitas rol de **Administrador** o **Miembro**. Quien vaya a usar la consola necesita al menos permiso **Ejecutar e interactuar** sobre la app.
 
 > Para la demo, crea todo en la misma área de trabajo: el Lakehouse, la ontología, el agente y la app. El agente de la ontología solo descubre elementos de su área de trabajo.
@@ -33,9 +33,9 @@ Referencias:
 
 ## 3. Lakehouse
 
-1. En el área de trabajo, **Nuevo elemento › Lakehouse**, con el nombre `LH_Bretema`. Puedes dejar activados los esquemas de Lakehouse: las tablas se crean en `dbo`.
+1. En el área de trabajo, **Nuevo elemento › Lakehouse**, con el nombre `Bretema_LH`. Puedes dejar activados los esquemas de Lakehouse: las tablas se crean en `dbo`.
 2. Importa los notebooks: **Nuevo elemento › Importar › Notebook › Desde este equipo** y elige los dos `.ipynb` de la carpeta `notebooks/`.
-3. Abre `01_cargar_lakehouse`, añade `LH_Bretema` como Lakehouse predeterminado en el panel **Explorador** y ejecútalo entero. La última celda tiene que mostrar `OK` en las cinco comprobaciones.
+3. Abre `01_cargar_lakehouse`, añade `Bretema_LH` como Lakehouse predeterminado en el panel **Explorador** y ejecútalo entero. La última celda tiene que mostrar `OK` en las cinco comprobaciones.
 
 Si tu capacidad no tiene salida a internet, sube los ocho CSV de `datos/` a `Files/datos` del Lakehouse y cambia `ORIGEN` a `"files"` en la primera celda.
 

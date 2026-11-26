@@ -2,7 +2,7 @@
 
 Aplicación web de Banco Brétema para el equipo de prevención del fraude. Se despliega como elemento **Fabric App (preview)** en el área de trabajo y se construye con la CLI y el SDK de [Rayfin](https://github.com/microsoft/rayfin): TypeScript, React y Vite.
 
-- **Lee** las alertas abiertas y los movimientos de cada tarjeta del Lakehouse `LH_Bretema`, a través de su punto de conexión SQL de análisis (conector `bretema`, solo lectura).
+- **Lee** las alertas abiertas y los movimientos de cada tarjeta del Lakehouse `Bretema_LH`, a través de su punto de conexión SQL de análisis (conector `bretema`, solo lectura).
 - **Escribe** la decisión de la analista (Fraude confirmado, Falso positivo o Escalada al gestor) en la entidad `RevisionAlerta`, que Rayfin guarda en la SQL database propia de la app (tabla `RevisionAlertas`).
 - Exige **inicio de sesión con Microsoft Entra ID**. Cualquier usuario autenticado lee todas las decisiones, pero solo puede crear decisiones a su nombre, y nadie puede editarlas ni borrarlas.
 
@@ -49,7 +49,7 @@ Necesitas Node.js LTS (v20, v22 o v24), el tenant con **Fabric Apps (preview)** 
 
    ```bash
    npx rayfin login
-   npx rayfin up --workspace "Banco Brétema · Fraude" --item-name "Consola de alertas"
+   npx rayfin up --workspace "Bretema" --item-name "Consola de alertas"
    npx rayfin up status
    ```
 

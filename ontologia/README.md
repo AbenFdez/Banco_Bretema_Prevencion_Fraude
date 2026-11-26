@@ -18,7 +18,7 @@ flowchart LR
     Revision -- revisa --> Alerta
 ```
 
-Antes de empezar tienen que estar hechas las fases 1 y 2 de la [guía paso a paso](../docs/paso-a-paso/README.md): las tablas estáticas en el Lakehouse `LH_Bretema` y el histórico en el Eventhouse `EH_Bretema`. Se sigue el patrón del tutorial de Microsoft: entidades estáticas desde el Lakehouse y las que llegan en tiempo real desde el Eventhouse.
+Antes de empezar tienen que estar hechas las fases 1 y 2 de la [guía paso a paso](../docs/paso-a-paso/README.md): las tablas estáticas en el Lakehouse `Bretema_LH` y el histórico en el Eventhouse `EH_Bretema`. Se sigue el patrón del tutorial de Microsoft: entidades estáticas desde el Lakehouse y las que llegan en tiempo real desde el Eventhouse.
 
 ## 1. Crear el elemento
 
@@ -39,7 +39,7 @@ El archivo no trae propiedades: aparecen en el paso siguiente, con el nombre y e
 Para cada fila de la tabla:
 
 1. En el **Explorador**, selecciona la entidad, pulsa **…** y **Bind data**. Si la entidad no tiene propiedades, la opción se llama **Add properties from data**.
-2. En **Data sources**, pulsa **+ › OneLake catalog** y abre el origen de la tabla siguiente: `LH_Bretema › Schemas › dbo` para el Lakehouse o la base de datos KQL `EH_Bretema` para el Eventhouse. Si al enlazar una tabla del Eventhouse te pide una columna de marca de tiempo, elige `fecha_hora`.
+2. En **Data sources**, pulsa **+ › OneLake catalog** y abre el origen de la tabla siguiente: `Bretema_LH › Schemas › dbo` para el Lakehouse o la base de datos KQL `EH_Bretema` para el Eventhouse. Si al enlazar una tabla del Eventhouse te pide una columna de marca de tiempo, elige `fecha_hora`.
 3. En **Entity type › Properties** aparecen las columnas como propiedades propuestas. Déjalas todas con su nombre y pulsa **Create**.
 4. En **Configure**, elige la **clave de la entidad** (entity type key): la propiedad que indica la columna «Clave» de la tabla siguiente. Todas son de texto.
 
@@ -87,7 +87,7 @@ Si al configurar una relación faltan claves, es que alguna de las dos entidades
 El agente de la ontología (**Inicio › Ontology agent**) puede proponer los enlaces. Trabaja en modo **Plan** y aplica en modo **Act**. Úsalo con una o dos entidades cada vez y revisa la propuesta antes de aplicarla. Ejemplo:
 
 ```text
-Bind the entity type Tarjeta to the table dbo.tarjetas in the lakehouse LH_Bretema of this workspace.
+Bind the entity type Tarjeta to the table dbo.tarjetas in the lakehouse Bretema_LH of this workspace.
 Use all columns as properties with the same names and use tarjeta_id as the entity type key.
 Then configure the relationship vinculada_a from Tarjeta (cuenta_id) to Cuenta (cuenta_id).
 ```

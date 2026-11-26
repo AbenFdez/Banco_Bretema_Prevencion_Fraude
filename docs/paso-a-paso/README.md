@@ -5,7 +5,7 @@ La demo se construye en fases. Cada fase tiene su archivo con lo que hay que hac
 | Fase | Qué se construye | Elementos de Fabric | Tiempo |
 | --- | --- | --- | --- |
 | [0 · Preparación](00-preparacion.md) | Área de trabajo y ajustes del tenant en la F2 | Área de trabajo | 15 min |
-| [1 · Datos estáticos](01-lakehouse.md) | Clientes, tarjetas, comercios… en tablas Delta | Lakehouse `LH_Bretema` | 15 min |
+| [1 · Datos estáticos](01-lakehouse.md) | Clientes, tarjetas, comercios… en tablas Delta | Lakehouse `Bretema_LH` | 15 min |
 | [2 · Histórico en tiempo real](02-eventhouse.md) | Seis meses de transacciones y alertas, con KQL | Eventhouse `EH_Bretema` | 20 min |
 | [3 · Simulador en directo](03-eventstream-simulador.md) | Operaciones nuevas cada segundo | Eventstream `ES_Transacciones` | 20 min |
 | [4 · KQL y panel en directo](04-kql-panel.md) | Detección de ráfagas y panel que se actualiza solo | Conjunto de consultas KQL, Real-Time Dashboard | 30 min |
@@ -15,7 +15,7 @@ La demo se construye en fases. Cada fase tiene su archivo con lo que hay que hac
 
 ```mermaid
 flowchart LR
-    CSV1[CSV estáticos] --> LH[(Lakehouse<br/>LH_Bretema)]
+    CSV1[CSV estáticos] --> LH[(Lakehouse<br/>Bretema_LH)]
     CSV2[CSV histórico] --> EH[(Eventhouse<br/>EH_Bretema)]
     SIM[Simulador Python] -->|Event Hubs| ES[Eventstream<br/>ES_Transacciones] --> EH
     EH --> KQL[KQL · funciones<br/>de detección]
@@ -33,8 +33,8 @@ Las fases 0 a 4 son el núcleo de tiempo real. Las fases 5 a 7 se apoyan en ella
 
 | Elemento | Nombre |
 | --- | --- |
-| Área de trabajo | `Banco Brétema · Fraude` |
-| Lakehouse | `LH_Bretema` |
+| Área de trabajo | `Bretema` |
+| Lakehouse | `Bretema_LH` |
 | Eventhouse y su base de datos KQL | `EH_Bretema` |
 | Eventstream | `ES_Transacciones` |
 | Conjunto de consultas KQL | `KQL_Fraude` |
